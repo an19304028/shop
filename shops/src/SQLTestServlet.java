@@ -1,5 +1,4 @@
 
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -12,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import mysqltest.MySQLTest;
+
 
 /**
  * Servlet implementation class SQLServlet

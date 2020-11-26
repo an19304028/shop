@@ -7,6 +7,7 @@
 <title>index</title>
 </head>
 <body>
-
+	<h1>ホーム</h1>
+	<a href="admininput">管理者画面へ</a>
 </body>
 </html>
