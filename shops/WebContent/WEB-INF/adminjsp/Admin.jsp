@@ -16,5 +16,6 @@
 		<input type='submit' value='登録'>
 	</form>
 	<a href="getcolors">カラー一覧</a>
+	<img src="image/sample.jpg" >
 </body>
 </html>

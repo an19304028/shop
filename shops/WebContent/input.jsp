@@ -10,5 +10,6 @@
       パスワード：<input type="text" name="pass" /><br>
       <input type="submit" value="送信" />
     </form>
+     <img src="image/sample.jpg" >
   </body>
 </html>
