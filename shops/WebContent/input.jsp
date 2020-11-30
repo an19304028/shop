@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>登録</title>
+
   </head>
   <body>
     <h1>登録</h1>
@@ -10,6 +11,12 @@
       パスワード：<input type="text" name="pass" /><br>
       <input type="submit" value="送信" />
     </form>
-     <img src="image/sample.jpg" >
+     <img id="img" >
+         <script>
+       
+	    var img = document.getElementById('img');
+	    console.log(img);
+	    var src = img.setAttribute('src','image/sample.jpg');
+    </script>
   </body>
 </html>
