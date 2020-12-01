@@ -12,7 +12,6 @@ import daofactory.Connector;
 
 public class MySQLColorDao implements ColorDao{
 	private PreparedStatement st = null;
-	private Connection cn = null;
 	
 
 	public void addColor(Color c) {
@@ -45,7 +44,7 @@ public class MySQLColorDao implements ColorDao{
 			String sql = "SELECT color_id, color_name,color_image_path FROM shop.color_table WHERE color_id=?";
 			st = cn.prepareStatement(sql);
 			
-			st.setString(1, colorId);
+			st.setString(1, "'colorId'");
 			
 			ResultSet rs = st.executeQuery();
 			System.out.println(rs.getString(1));
