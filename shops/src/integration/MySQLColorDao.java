@@ -41,13 +41,13 @@ public class MySQLColorDao implements ColorDao{
 		Color c = new Color();
 		try {
 			Connection cn = Connector.connect();
-			String sql = "SELECT color_name,color_image_path FROM shop.color_table WHERE color_id='?'";
+			String sql = "SELECT color_id, color_name,color_image_path FROM shop.color_table WHERE color_id=?";
 			st = cn.prepareStatement(sql);
 			
 			st.setString(1, colorId);
 			
 			ResultSet rs = st.executeQuery();
-			
+			rs.next();
 			c.setColorId(rs.getString(1));
 			c.setColorName(rs.getString(2));
 			c.setColorImagePath(rs.getString(3));

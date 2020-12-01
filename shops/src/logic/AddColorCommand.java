@@ -24,7 +24,14 @@ public class AddColorCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		ColorDao dao = factory.getColorDao();
 		dao.addColor(c);
-		resc.setMess("カラーを追加しました");
+		
+		if(dao.getColor(colorId)!=null) {
+			resc.setMess("この番号は使われています");
+		}//else{
+			
+			//resc.setMess("カラーを追加しました");
+		//}*/
+		
 		resc.setTarget("adminjsp/Admin");
 		System.out.println("target:"+resc.getTarget());
 	
