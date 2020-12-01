@@ -15,6 +15,7 @@ public class AddColorCommand extends AbstractCommand{
 		String colorName = rc.getParameter("colorName")[0];
 		String colorImagePath = rc.getParameter("colorImagePath")[0];
 		System.out.println(colorId + "\t"+colorName+"\t"+colorImagePath);
+		
 		Color c = new Color();
 		c.setColorId(colorId);
 		c.setColorName(colorName);
@@ -23,13 +24,9 @@ public class AddColorCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		ColorDao dao = factory.getColorDao();
 		dao.addColor(c);
-		//DbDummy.addProduct(p);
-		
-		//resc.setResult(DbDummy.getDatabase());
-		//List products = dao.getAllProducts();
-		//resc.setResult(products);
+		resc.setMess("カラーを追加しました");
 		resc.setTarget("adminjsp/Admin");
-		System.out.println(resc.getTarget());
+		System.out.println("target:"+resc.getTarget());
 	
 		return resc;
 	}

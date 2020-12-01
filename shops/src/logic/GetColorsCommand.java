@@ -15,9 +15,10 @@ public class GetColorsCommand extends AbstractCommand {
 		System.out.println(dao.getAllColors());
 		
 		resc.setResult(colors);
-		resc.setMess("追加しました");
+		resc.setMess("カラーを追加しました");
+		System.out.println("メッセージ:"+resc.getMess());
 		resc.setTarget("adminjsp/Color");
-		System.out.println(resc.getTarget());
+		System.out.println("target:"+resc.getTarget());
 		return resc;
 	}
 }

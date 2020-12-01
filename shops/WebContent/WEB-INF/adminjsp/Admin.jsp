@@ -8,7 +8,8 @@
 </head>
 <body>
 	<h1>管理者</h1>
-	<p>${mess}</p>
+	<h2>カラー追加</h2>
+	<p><font color="red">${mess}</font></p>
 	<form method='post' action='addcolor'>
 		カラーID<input type='text' name='colorId'><br>
 		カラー名<input type='text' name='colorName'><br>
@@ -16,6 +17,6 @@
 		<input type='submit' value='登録'>
 	</form>
 	<a href="getcolors">カラー一覧</a>
-	<img src="image/sample.jpg" >
+	<img src="sample.jpg" >
 </body>
 </html>
