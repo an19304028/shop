@@ -33,6 +33,7 @@ public abstract class CommandFactory {
 
 			// パスに対応した文字列を取得します
 			name = p.getProperty(rc.getCommandPath());
+			System.out.println("getCommandPath:"+rc.getCommandPath());
 			System.out.println("Commandプロパティ名:"+name);
 
 			// 指定された名前のクラスに対応したClassクラスの

@@ -6,11 +6,9 @@
 <meta charset="UTF-8">
 <title>Admin</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<!-- <script src="js/lightbox.js"></script>-->
+<script src="js/lightbox.js"></script>
 <script>
 	
-
-   
 </script>
 </head>
 <body>
@@ -25,12 +23,14 @@
 		<br>
 		<input type='submit' value='登録'>
 	</form>
-	<!-- <button id="getColorPath">パス取得</button>-->
+	<button id="getColorPath">パス取得</button>
 	<div id="output_message"></div>
 	
 	 <script type="text/javascript">
 		  function getColorPath() {
 		    var colorId = document.getElementById("colorId").value;
+		    colorId = "image/"+colorId+".jpg";
+		    console.log(colorId);
 		    return colorId;
 		  }
 		  
@@ -38,12 +38,12 @@
 				 $("#getColorPath").on("click",function(){
 					 var colorPath=getColorPath();
 					 console.log(colorPath);
-				     $("#colorPath").val($(getColorPath()).val())
+				     $("#colorPath").val($(colorPath).val())
 				    });
 				
 			});
   	</script>
 	<a href="getcolors">カラー一覧</a>
-	<!-- <img src="sample.jpg" >-->
+	<img src="image/sample.jpg" >
 </body>
 </html>

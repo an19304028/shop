@@ -32,6 +32,7 @@ public class WebApplicationController implements ApplicationController {
 		
 		
 		RequestDispatcher rd = req.getRequestDispatcher(resc.getTarget());
+		
 		try {
 			rd.forward(req, res);
 		}catch(ServletException e) {
