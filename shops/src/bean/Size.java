@@ -18,5 +18,5 @@ public class Size implements Serializable {
 	public void setSizeName(String sizeName) {
 		this.sizeName = sizeName;
 	}
-	
+
 }
