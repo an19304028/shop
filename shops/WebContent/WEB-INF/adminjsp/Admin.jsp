@@ -44,6 +44,6 @@
 			});
   	</script>
 	<a href="getcolors">カラー一覧</a>
-	<img src="image/sample.jpg" >
-</body>
+	<img src="image/sample.jpg"  height="100px"  width="100px">
+</body>　　
 </html>
