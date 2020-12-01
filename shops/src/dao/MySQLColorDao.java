@@ -1,4 +1,4 @@
-package integration;
+package dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -47,6 +47,7 @@ public class MySQLColorDao implements ColorDao{
 			st.setString(1, colorId);
 			
 			ResultSet rs = st.executeQuery();
+			System.out.println(rs.getString(1));
 			rs.next();
 			c.setColorId(rs.getString(1));
 			c.setColorName(rs.getString(2));

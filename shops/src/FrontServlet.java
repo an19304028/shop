@@ -7,10 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-import logic.AbstractCommand;
+import command.AbstractCommand;
+import command.CommandFactory;
 import presentation.ApplicationController;
-import logic.CommandFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;
 import presentation.WebApplicationController;

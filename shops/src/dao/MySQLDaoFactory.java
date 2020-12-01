@@ -1,4 +1,4 @@
-package integration;
+package dao;
 
 public class MySQLDaoFactory extends AbstractDaoFactory{
 	public ColorDao getColorDao() {

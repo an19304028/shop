@@ -1,10 +1,10 @@
-package integration;
+package dao;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
 
-import logic.CommandFactory;
+import command.CommandFactory;
 
 public abstract class AbstractDaoFactory {
 	public static AbstractDaoFactory getFactory() {

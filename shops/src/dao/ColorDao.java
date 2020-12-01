@@ -1,4 +1,4 @@
-package integration;
+package dao;
 
 import java.util.List;
 

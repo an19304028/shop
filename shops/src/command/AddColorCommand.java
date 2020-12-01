@@ -1,9 +1,8 @@
-package logic;
+package command;
 
-import integration.AbstractDaoFactory;
-import integration.ColorDao;
-import integration.ColorDao;
 import bean.Color;
+import dao.AbstractDaoFactory;
+import dao.ColorDao;
 import presentation.RequestContext;
 import presentation.ResponseContext;
 
@@ -23,14 +22,14 @@ public class AddColorCommand extends AbstractCommand{
 		
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		ColorDao dao = factory.getColorDao();
-		dao.addColor(c);
-		
 		if(dao.getColor(colorId)!=null) {
 			resc.setMess("この番号は使われています");
-		}//else{
+		}else {
+			dao.addColor(c);
 			
-			//resc.setMess("カラーを追加しました");
-		//}*/
+			resc.setMess("カラーを追加しました");
+		}
+		
 		
 		resc.setTarget("adminjsp/Admin");
 		System.out.println("target:"+resc.getTarget());

@@ -1,5 +1,5 @@
 
-package logic;
+package command;
 //import java.util.Map;
 import presentation.RequestContext;
 import presentation.ResponseContext;

@@ -1,9 +1,9 @@
-package logic;
+package command;
 
 import java.util.List;
 
-import integration.AbstractDaoFactory;
-import integration.ColorDao;
+import dao.AbstractDaoFactory;
+import dao.ColorDao;
 import presentation.ResponseContext;
 
 public class GetColorsCommand extends AbstractCommand {
