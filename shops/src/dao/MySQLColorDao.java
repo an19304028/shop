@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.Color;
+import daofactory.Connector;
 
 public class MySQLColorDao implements ColorDao{
 	private PreparedStatement st = null;

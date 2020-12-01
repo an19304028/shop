@@ -1,7 +1,7 @@
 package command;
 
 import bean.Color;
-import dao.AbstractDaoFactory;
+import daofactory.AbstractDaoFactory;
 import dao.ColorDao;
 import presentation.RequestContext;
 import presentation.ResponseContext;

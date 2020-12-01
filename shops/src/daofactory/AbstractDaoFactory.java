@@ -1,10 +1,11 @@
-package dao;
+package daofactory;
 
 import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
 
 import command.CommandFactory;
+import dao.ColorDao;
 
 public abstract class AbstractDaoFactory {
 	public static AbstractDaoFactory getFactory() {

@@ -2,7 +2,7 @@ package command;
 
 import java.util.List;
 
-import dao.AbstractDaoFactory;
+import daofactory.AbstractDaoFactory;
 import dao.ColorDao;
 import presentation.ResponseContext;
 
