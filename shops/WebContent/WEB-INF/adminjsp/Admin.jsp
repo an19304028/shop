@@ -38,7 +38,7 @@
 				 $("#getColorPath").on("click",function(){
 					 var colorPath=getColorPath();
 					 console.log(colorPath);
-				     $("#colorPath").val($(colorPath).val())
+				     $("#colorPath").val(colorPath)
 				    });
 				
 			});
