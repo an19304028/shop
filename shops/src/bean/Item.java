@@ -11,6 +11,7 @@ public class Item implements Serializable{
 	private int price;
 	private String categoryId;
 	private String detail;
+	private String imageId;
 
 	public String getItemId() {
 		return itemId;
@@ -59,5 +60,12 @@ public class Item implements Serializable{
 	}
 	public void setDetail(String detail) {
 		this.detail = detail;
+	}
+	public String getImageId() {
+		return imageId;
+	}
+
+	public void setImageId(String imageId) {
+		this.imageId = imageId;
 	}
 }
