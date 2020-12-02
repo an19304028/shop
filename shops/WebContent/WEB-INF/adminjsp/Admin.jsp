@@ -15,21 +15,25 @@
 	<h1>管理者</h1>
 	<h2>カラー追加</h2>
 	<p><font color="red">${mess}</font></p>
+	<p><font color="red">${data.colorId}</font></p>
 	<p><font color="red">IDはCOから始める</font></p>
 	<form method='post' action='addcolor'>
 		カラーID<input id="colorId" type='text' name='colorId' required><br>
 		カラー名<input id="colorName" type='text' name='colorName' required><br>
-		画像のパス<input id="colorPath" type='text' name='colorImagePath' value="image/" required>
+		画像のパス<input id="colorPath" type='text' name='colorImagePath' value="image/color/" required>
 		<br>
 		<input type='submit' value='登録'>
 	</form>
 	<button id="getColorPath">パス取得</button>
+	<form method='post' action="getmaxcolorid">
+		<input type="submit"  value="最後のIDのを取得">
+	</form>
 	<div id="output_message"></div>
 	
 	 <script type="text/javascript">
 		  function getColorPath() {
 		    var colorId = document.getElementById("colorId").value;
-		    colorId = "image/"+colorId+".jpg";
+		    colorId = "image/color/"+colorId+".jpg";
 		    console.log(colorId);
 		    return colorId;
 		  }
@@ -44,6 +48,6 @@
 			});
   	</script>
 	<a href="getcolors">カラー一覧</a>
-	<img src="image\color\CO002.jpg" >
+	
 </body>　　
 </html>

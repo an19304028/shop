@@ -2,21 +2,20 @@ package command;
 
 import java.util.List;
 
-import daofactory.AbstractDaoFactory;
 import dao.ColorDao;
+import daofactory.AbstractDaoFactory;
 import presentation.ResponseContext;
 
-public class GetColorsCommand extends AbstractCommand {
+public class GetMaxColorIdCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
-		ColorDao dao = factory.getColorDao(); 
+		ColorDao dao = factory.getColorDao();  
 		
-		List colors = dao.getAllColors();
-		System.out.println(dao.getAllColors());
-		
-		resc.setResult(colors);
+		List maxId = dao.getMaxColorId();	
+		resc.setResult(maxId);
 		resc.setTarget("adminjsp/Color");
 		System.out.println("target:"+resc.getTarget());
 		return resc;
 	}
+
 }

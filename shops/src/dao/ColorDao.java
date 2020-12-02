@@ -9,4 +9,5 @@ public interface ColorDao {
 	public void addColor(Color c);
 	public Color getColor(String colorId);
 	public List getAllColors();
+	public List getMaxColorId() ;
 }

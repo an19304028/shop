@@ -16,13 +16,12 @@ public class MySQLImageDao implements ImageDao {
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "INSERT into shop.image_table VALUES(?,?,?)";
+			String sql = "INSERT into shop.image_table VALUES(?,?)";
 
 			st = cn.prepareStatement(sql);
 
 			st.setString(1, i.getImageId());
 			st.setString(2, i.getImagePath());
-			st.setString(3, i.getItemId());
 
 			st.executeUpdate();
 
@@ -47,7 +46,6 @@ public class MySQLImageDao implements ImageDao {
 			rs.next();
 			i.setImageId(rs.getString(1));
 			i.setImagePath(rs.getString(2));
-			i.setItemId(rs.getString(3));
 
 			cn.commit();
 			cn.close();

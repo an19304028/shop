@@ -53,7 +53,6 @@ public class MySQLColorDao implements ColorDao{
 			c.setColorName(rs.getString(2));
 			c.setColorImagePath(rs.getString(3));
 				
-			cn.commit();
 			cn.close();
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -66,7 +65,7 @@ public class MySQLColorDao implements ColorDao{
 		ArrayList colors = new ArrayList();
 		try {
 			Connection cn = Connector.connect();
-			String sql = "SELECT color_id, color_name ,color_image_path FROM shop.color_table";
+			String sql = "SELECT color_id, color_name ,color_image_path FROM shop.color_table ORDER BY LENGTH(color_id)";
 			st = cn.prepareStatement(sql);
 			
 			ResultSet rs = st.executeQuery();
@@ -79,7 +78,6 @@ public class MySQLColorDao implements ColorDao{
 				colors.add(c);
 				
 			}
-			cn.commit();
 			cn.close();
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -87,5 +85,31 @@ public class MySQLColorDao implements ColorDao{
 		
 		return colors;
 	}
+
+	public List getMaxColorId() {
+		List maxId = null;
+		try {
+			Connection cn = Connector.connect();
+			String sql = "SELECT MAX(color_id) FROM shop.color_table";
+			st = cn.prepareStatement(sql);
+			
+			ResultSet rs = st.executeQuery();
+			
+			rs.next();
+			Color c = new Color();
+			String max  = rs.getString(1);
+			System.out.println("最大値"+max);
+			c.setColorId(max);
+			maxId.add(c);
 	
+			cn.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return maxId;
+	}
+
 }
+	
+
