@@ -8,6 +8,8 @@
 </head>
 <body>
 	<h1>ホーム</h1>
-	<a href="admininput">管理者画面へ</a>
+	<a href="userregistinput">ユーザー登録</a><br>
+	<a href="logininput">ログイン</a><br>
+	<a href="admininput">管理者画面へ</a><br>
 </body>
 </html>

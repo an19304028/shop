@@ -13,7 +13,6 @@ import dao.MySQLItemDao;
 import dao.MySQLOrderDao;
 import dao.MySQLOrderDetailDao;
 import dao.MySQLSizeDao;
-import dao.MySQLUserDao;
 import dao.OrderDao;
 import dao.OrderDetailDao;
 import dao.SizeDao;
