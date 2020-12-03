@@ -5,6 +5,7 @@ import bean.User;
 
 public interface UserDao {
 	public void addUser(User u);
-	public User getUser(String userId);
+	public List getUser(String userId);
 	public List getAllUsers();
+	public void removeUser(String userId);
 }

@@ -6,6 +6,7 @@ import java.util.Properties;
 
 import command.CommandFactory;
 import dao.ColorDao;
+import dao.UserDao;
 
 public abstract class AbstractDaoFactory {
 	public static AbstractDaoFactory getFactory() {
@@ -25,4 +26,5 @@ public abstract class AbstractDaoFactory {
 		return factory;
 	}
 	public abstract ColorDao getColorDao();
+	public abstract UserDao getUserDao();
 }
