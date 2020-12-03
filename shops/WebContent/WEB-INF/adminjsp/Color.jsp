@@ -6,6 +6,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Color</title>
+<script type="text/javascript">
+	function checkSubmit() {
+		result = confirm("削除しても良いですか？");
+		if (result) {
+			document.myform.action = "PostWriteServlet";
+			} else {
+			alert("キャンセルします。");
+			return false;
+		}
+	}
+</script>
 <style>
 	#table{
 		background-color: beige;
@@ -22,7 +33,7 @@
 		    <td>${color.colorImagePath}</td>
 		    <td><img src="${color.colorImagePath}" width="10px" height="10px"></td>
 		    <td>
-		    	<form action="removecolor" method="post">
+		    	<form action="removecolor" onSubmit="return checkSubmit()" method="post">
 		    		<input type="hidden" name="colorId" value="${color.colorId}">
 		    		<input type="submit" value="削除">
 		    	</form>
@@ -32,6 +43,7 @@
 	</c:forEach>
 	</table>
 	
+            
 	<a href="/shops/">ホームへ</a>
 </body>
 </html>

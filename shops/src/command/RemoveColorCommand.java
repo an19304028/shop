@@ -6,7 +6,7 @@ import presentation.RequestContext;
 import presentation.ResponseContext;
 
 public class RemoveColorCommand extends AbstractCommand{
-	public ResponseContext execute(ResponseContext resc) {
+	public ResponseContext execute(ResponseContext resc){
 		RequestContext rc = getRequestContext();
 		String colorId = rc.getParameter("colorId")[0]; 
 		
