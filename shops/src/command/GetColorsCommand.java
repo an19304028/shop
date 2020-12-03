@@ -15,7 +15,7 @@ public class GetColorsCommand extends AbstractCommand {
 		System.out.println(dao.getAllColors());
 		
 		resc.setResult(colors);
-		resc.setTarget("adminjsp/Color");
+		resc.setTarget("/WEB-INF/adminjsp/Color.jsp");
 		System.out.println("target:"+resc.getTarget());
 		return resc;
 	}

@@ -2,10 +2,10 @@ package command;
 
 import presentation.ResponseContext;
 
-public class LoginInputCommand extends AbstractCommand {
+public class InputAdminCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
 	
-		resc.setTarget("userjsp/Login");
+		resc.setTarget("/WEB-INF/adminjsp/Admin.jsp");
 		return resc;
 	}
 

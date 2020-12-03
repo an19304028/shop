@@ -13,7 +13,7 @@ public class GetMaxColorIdCommand extends AbstractCommand {
 		
 		List maxId = dao.getMaxColorId();	
 		resc.setResult(maxId);
-		resc.setTarget("adminjsp/Color");
+		resc.setTarget("/WEB-INF/adminjsp/Admin.jsp");
 		System.out.println("target:"+resc.getTarget());
 		return resc;
 	}

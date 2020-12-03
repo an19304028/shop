@@ -37,34 +37,42 @@ public class MySQLColorDao implements ColorDao{
 		
 	}
 
-	public Color getColor(String colorId) {
-		Color c = new Color();
+	public List getColor(String colorId) {
+		ArrayList color = new ArrayList();
 		try {
 			Connection cn = Connector.connect();
 			String sql = "SELECT color_id, color_name,color_image_path FROM shop.color_table WHERE color_id=?";
+			
 			st = cn.prepareStatement(sql);
-			
-			st.setString(1, "'colorId'");
-			
+			st.setString(1, colorId);
 			ResultSet rs = st.executeQuery();
-			System.out.println(rs.getString(1));
-			rs.next();
-			c.setColorId(rs.getString(1));
-			c.setColorName(rs.getString(2));
-			c.setColorImagePath(rs.getString(3));
+			
+			if(rs.next()) {
+				
+				Color c = new Color();
+				System.out.println(c.getColorId());
+				c.setColorId(rs.getString(1));
+				c.setColorName(rs.getString(2));
+				c.setColorImagePath(rs.getString(3));
+				
+				color.add(c);
+			}else {
+				return null;
+			}
 				
 			cn.close();
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 		
-		return c;
+		return color;
 	}
 
 	public List getAllColors() {
 		ArrayList colors = new ArrayList();
 		try {
 			Connection cn = Connector.connect();
+			
 			String sql = "SELECT color_id, color_name ,color_image_path FROM shop.color_table ORDER BY LENGTH(color_id)";
 			st = cn.prepareStatement(sql);
 			
@@ -87,7 +95,7 @@ public class MySQLColorDao implements ColorDao{
 	}
 
 	public List getMaxColorId() {
-		List maxId = null;
+		ArrayList maxId = new ArrayList();
 		try {
 			Connection cn = Connector.connect();
 			String sql = "SELECT MAX(color_id) FROM shop.color_table";
@@ -100,7 +108,9 @@ public class MySQLColorDao implements ColorDao{
 			String max  = rs.getString(1);
 			System.out.println("最大値"+max);
 			c.setColorId(max);
+			
 			maxId.add(c);
+			System.out.println(maxId);
 	
 			cn.close();
 		}catch(SQLException e) {
@@ -108,6 +118,21 @@ public class MySQLColorDao implements ColorDao{
 		}
 		
 		return maxId;
+	}
+	public void removeColor(String colorId) {
+		try {
+			Connection cn = Connector.connect();
+			String sql = "DELETE FROM shop.color_table WHERE color_id=?";
+			st = cn.prepareStatement(sql);
+			st.setString(1,colorId);
+			
+			st.executeUpdate();
+			
+			cn.commit();
+			cn.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

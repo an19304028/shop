@@ -2,10 +2,10 @@ package command;
 
 import presentation.ResponseContext;
 
-public class UserRegistInputCommand extends AbstractCommand {
+public class InputUserRegistCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
 	
-		resc.setTarget("userjsp/UserRegist");
+		resc.setTarget("/WEB-INF/userjsp/UserRegist.jsp");
 		return resc;
 	}
 
