@@ -28,7 +28,7 @@
 	     住所:<input type="text" name="address"  required /><br>
       	  
       	
-      <input type="submit" value="ユーザー作成" />
+      <input type="submit" value="送信" />
     </form>
     <script>
 	 		const pwd = document.getElementById('password');
