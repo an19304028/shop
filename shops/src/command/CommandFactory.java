@@ -1,15 +1,12 @@
 
 package command;
-import java.awt.Graphics;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
+
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
 
-import javax.imageio.ImageIO;
 
 import presentation.RequestContext;
 
@@ -28,6 +25,7 @@ public abstract class CommandFactory {
 			// プロパティファイルを読み込む
 			
 			InputStream file = CommandFactory.class.getClassLoader().getResourceAsStream("commands.properties");
+			//p.load(new FileInputStream("commands.properties"));
 			p.load(file);
 		
 
@@ -59,12 +57,6 @@ public abstract class CommandFactory {
 		} catch (IllegalAccessException e) {
 			// 実際には独自例外にラップしてスローする
 			throw new RuntimeException(e.getMessage(), e);
-		}catch(NullPointerException e) {
-			System.out.println("プロパティ名がありません");
-			if(rc.getCommandPath().matches(".*jpg")) {
-				System.out.println("画像ファイルです");
-				
-			}		
 		}
 
 		return command;

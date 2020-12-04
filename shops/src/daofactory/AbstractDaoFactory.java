@@ -14,6 +14,9 @@ public abstract class AbstractDaoFactory {
 		Properties p = new Properties();
 		try {
 			InputStream file = CommandFactory.class.getClassLoader().getResourceAsStream("dao.properties");
+			//p.load(new FileInputStream("../dao.properties"));
+			
+
 			p.load(file);
 			String name = p.getProperty("mysql");
 			System.out.println("DAOプロパティ名:"+name);

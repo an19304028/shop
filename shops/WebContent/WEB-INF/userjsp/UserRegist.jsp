@@ -41,6 +41,6 @@
 			     }
 		 	}, false);
 	 </script> 
-    
+    <a href="/shops/">ホームへ</a>
 </body>
 </html>
