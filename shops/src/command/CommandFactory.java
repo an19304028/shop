@@ -25,7 +25,7 @@ public abstract class CommandFactory {
 			// プロパティファイルを読み込む
 			
 			InputStream file = CommandFactory.class.getClassLoader().getResourceAsStream("commands.properties");
-			//p.load(new FileInputStream("commands.properties"));
+			//p.load(new FileInputStream("shops/WEB-INF/classes/command/commands.properties"));
 			p.load(file);
 		
 
