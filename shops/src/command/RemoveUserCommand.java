@@ -1,6 +1,6 @@
 package command;
 
-import dao.UserDao;
+import dao.RemoveUserDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;
@@ -11,7 +11,7 @@ public class RemoveUserCommand extends AbstractCommand{
 		String userId = rc.getParameter("userId")[0]; 
 		
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
-		UserDao dao = factory.getUserDao();
+		RemoveUserDao dao = factory.getRemoveUserDao();
 		System.out.println("削除"+userId);
 		dao.removeUser(userId);
 		

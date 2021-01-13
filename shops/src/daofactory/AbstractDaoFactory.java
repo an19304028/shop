@@ -5,8 +5,12 @@ import java.io.InputStream;
 import java.util.Properties;
 
 import command.CommandFactory;
+import dao.AddUserDao;
 import dao.ColorDao;
-import dao.UserDao;
+import dao.GetAllUsersDao;
+import dao.GetUserDao;
+import dao.RemoveUserDao;
+
 
 public abstract class AbstractDaoFactory {
 	public static AbstractDaoFactory getFactory() {
@@ -29,5 +33,8 @@ public abstract class AbstractDaoFactory {
 		return factory;
 	}
 	public abstract ColorDao getColorDao();
-	public abstract UserDao getUserDao();
+	public abstract AddUserDao getAddUserDao();
+	public abstract GetAllUsersDao getAllUsersDao();
+	public abstract GetUserDao getUserDao();
+	public abstract RemoveUserDao getRemoveUserDao();	
 }

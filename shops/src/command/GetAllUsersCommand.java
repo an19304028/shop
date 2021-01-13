@@ -2,14 +2,14 @@ package command;
 
 import java.util.List;
 
-import dao.UserDao;
+import dao.GetAllUsersDao;
 import daofactory.AbstractDaoFactory;
 import presentation.ResponseContext;
 
-public class GetUsersCommand extends AbstractCommand {
+public class GetAllUsersCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
-		UserDao dao = factory.getUserDao(); 
+		GetAllUsersDao dao = factory.getAllUsersDao(); 
 		
 		List users = dao.getAllUsers();
 		System.out.println(dao.getAllUsers());

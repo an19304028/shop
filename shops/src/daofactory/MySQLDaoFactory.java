@@ -1,51 +1,41 @@
 package daofactory;
 
-import dao.CategoryDao;
 import dao.ColorDao;
-import dao.FavoriteDao;
-import dao.ImageDao;
-import dao.ItemDao;
-import dao.MySQLCategoryDao;
+import dao.GetAllUsersDao;
+import dao.GetUserDao;
 import dao.MySQLColorDao;
-import dao.MySQLFavoriteDao;
-import dao.MySQLImageDao;
-import dao.MySQLItemDao;
-import dao.MySQLOrderDao;
-import dao.MySQLOrderDetailDao;
-import dao.MySQLSizeDao;
-import dao.MySQLUserDao;
-import dao.OrderDao;
-import dao.OrderDetailDao;
-import dao.SizeDao;
-import dao.UserDao;
+import dao.MySQLGetAllUsersDao;
+import dao.MySQLGetUserDao;
+import dao.MySQLRemoveUserDao;
+import dao.RemoveUserDao;
+import dao.MySQLAddUserDao;
+import dao.AddUserDao;
 
 public class MySQLDaoFactory extends AbstractDaoFactory{
 	public ColorDao getColorDao() {
 		return new MySQLColorDao();
 	}
-	public CategoryDao getCategoryDao() {
-		return new MySQLCategoryDao();
+
+	public AddUserDao getAddUserDao() {
+		return new MySQLAddUserDao();
 	}
-	public FavoriteDao getFavoriteDao() {
-		return new MySQLFavoriteDao();
+
+	@Override
+	public GetAllUsersDao getAllUsersDao() {
+		// TODO 自動生成されたメソッド・スタブ
+		return new MySQLGetAllUsersDao();
 	}
-	public ImageDao getImageDao() {
-		return new MySQLImageDao();
+
+	@Override
+	public GetUserDao getUserDao() {
+		// TODO 自動生成されたメソッド・スタブ
+		return new MySQLGetUserDao();
 	}
-	public ItemDao getItemDao() {
-		return new MySQLItemDao();
-	}
-	public OrderDao getOrderDao() {
-		return new MySQLOrderDao();
-	}
-	public OrderDetailDao getOrderDetailDao() {
-		return new MySQLOrderDetailDao();
-	}
-	public SizeDao getSizeDao() {
-		return new MySQLSizeDao();
-	}
-	public UserDao getUserDao() {
-		return new MySQLUserDao();
+
+	@Override
+	public RemoveUserDao getRemoveUserDao() {
+		// TODO 自動生成されたメソッド・スタブ
+		return new MySQLRemoveUserDao();
 	}
 	
 }

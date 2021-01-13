@@ -1,7 +1,7 @@
 package command;
 
 import bean.User;
-import dao.UserDao;
+import dao.AddUserDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;
@@ -38,7 +38,7 @@ public class AddUserCommand extends AbstractCommand{
 		u.setAddress(address);
 		
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
-		UserDao dao = factory.getUserDao();
+		AddUserDao dao = factory.getAddUserDao();
 		
 		dao.addUser(u);	
 		resc.setMess(name+"を登録しました");
