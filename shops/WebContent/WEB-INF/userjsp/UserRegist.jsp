@@ -14,9 +14,7 @@
 	      名前：<input type="text" name="name" required /><br>
 	      ふりがな：<input type="text" name="kana" required /><br>
 	      メール：<input type="text" name="mail" required /><br>
-	      <font color="red">※</font>
 	      ログインID：<input type="text" name="loginId" required /><br>
-	      <font color="red">※</font>
 	      パスワード：<input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[0-9A-Za-z]+$" maxlength="10" name="password" required /><br>
 	      <input type="checkbox" id="password-check">パスワードを表示する<br>
 	      性別：男<input type="radio" name="gender" value="男" />
