@@ -6,6 +6,8 @@ import dao.GetAllUsersDao;
 import dao.GetUserDao;
 import dao.MySQLAddUserDao;
 import dao.MySQLColorDao;
+import dao.MySQLGetAllUsersDao;
+import dao.MySQLGetUserDao;
 import dao.MySQLRemoveUserDao;
 import dao.RemoveUserDao;
 
@@ -27,13 +29,13 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 	@Override
 	public GetUserDao getUserDao() {
 		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return new MySQLGetUserDao();
 	}
 
 	@Override
 	public GetAllUsersDao getAllUsersDao() {
 		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return new MySQLGetAllUsersDao();
 	}
 
 }
