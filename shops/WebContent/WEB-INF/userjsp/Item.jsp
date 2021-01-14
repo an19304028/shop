@@ -7,6 +7,14 @@
 <title>Item</title>
 </head>
 <body>
+    <c:forEach var="item" items="${item_list} }">
+		<ul>
+			<li>${item.image}</li>
+			<li>${item.name}</li>
+			<li>${item.code}</li>
+			<li>${item.price}(税込み)</li>
 
+		</ul>
+	</c:forEach>
 </body>
 </html>
