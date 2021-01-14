@@ -16,9 +16,7 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 		return new MySQLColorDao();
 	}
 
-	public AddUserDao getAddUserDao() {
-		return new MySQLAddUserDao();
-	}
+
 
 	@Override
 	public RemoveUserDao getRemoveUserDao() {
@@ -36,6 +34,14 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 	public GetAllUsersDao getAllUsersDao() {
 		// TODO 自動生成されたメソッド・スタブ
 		return new MySQLGetAllUsersDao();
+	}
+
+
+
+	@Override
+	public AddUserDao getAddUserDao() {
+		// TODO 自動生成されたメソッド・スタブ
+		return new MySQLAddUserDao();
 	}
 
 }
