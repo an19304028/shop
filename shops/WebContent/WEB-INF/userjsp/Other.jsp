@@ -8,6 +8,15 @@
 <title>Other</title>
 </head>
 <body>
+	<!-- ヘッダー -->
+	<div id="box"></div>
+
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+		$(function(){
+			$("#box").load("Header.jsp");
+		});
+	</script>
 	<ul>
 	<li>並び替え:</li>
 	<!-- ソートの仕方どうしましょうか(それによってhrefの中身の書き方が変わるかもしれん) -->

@@ -7,6 +7,15 @@
 <title>index</title>
 </head>
 <body>
+	<!-- ヘッダー -->
+	<div id="box"></div>
+
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+		$(function(){
+			$("#box").load("Header.jsp");
+		});
+	</script>
 	<h1>ホーム</h1>
 	<a href="userregistinput">ユーザー登録</a><br>
 	<a href="logininput">ログイン</a><br>
