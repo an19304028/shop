@@ -14,7 +14,7 @@
 </head>
 <body>
 	<h1>管理者</h1>
-	<a href="getusers">ユーザー一覧</a>
+	<a href="getallusers">ユーザー一覧</a>
 	<h2>カラー追加</h2>
 	<p><font color="red">${mess}</font></p>
 	
