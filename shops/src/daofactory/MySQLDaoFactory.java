@@ -1,15 +1,16 @@
 package daofactory;
 
-import dao.AddUserDao;
-import dao.ColorDao;
-import dao.GetUserListDao;
-import dao.GetUserDao;
-import dao.MySQLAddUserDao;
-import dao.MySQLColorDao;
-import dao.MySQLGetUserListDao;
+
+import dao.user.RemoveUserDao;
+import dao.user.MySQLRemoveUserDao;
+import dao.user.AddUserDao;
+import dao.user.MySQLAddUserDao;
 import dao.MySQLGetUserDao;
-import dao.MySQLRemoveUserDao;
-import dao.RemoveUserDao;
+import dao.admin.ColorDao;
+import dao.admin.GetUserDao;
+import dao.admin.GetUserListDao;
+import dao.admin.MySQLColorDao;
+import dao.admin.MySQLGetUserListDao;
 
 public class MySQLDaoFactory extends AbstractDaoFactory{
 	public ColorDao getColorDao() {
