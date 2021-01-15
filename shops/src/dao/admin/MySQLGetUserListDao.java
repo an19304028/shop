@@ -1,4 +1,4 @@
-package dao;
+package dao.admin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -17,14 +17,14 @@ public class MySQLGetUserListDao implements GetUserListDao {
 		ArrayList user = new ArrayList();
 		try {
 			Connection cn = Connector.connect();
-			
+
 			String sql = "SELECT user_id, name, kana, mail, login_id, password, gender, birthday, tell, postal_code, address, point FROM shop.user_table ORDER BY user_id";
 			st = cn.prepareStatement(sql);
-			
+
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
 				User u = new User();
-				
+
 				u.setUserId(rs.getString(1));
 				u.setName(rs.getString(2));
 				u.setKana(rs.getString(3));
@@ -37,14 +37,14 @@ public class MySQLGetUserListDao implements GetUserListDao {
 				u.setPostalCode(rs.getString(10));
 				u.setAddress(rs.getString(11));
 				u.setPoint(rs.getInt(12));
-				
+
 				user.add(u);
 			}
 			cn.close();
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return user;
 	}
 }
