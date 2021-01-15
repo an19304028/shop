@@ -20,4 +20,14 @@
   	<servlet-name>default</servlet-name>
   	<url-pattern>/js/lightbox.js</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>header</servlet-name>
+    <jsp-file>/WEB-INF/userjsp/header.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>header</servlet-name>
+    <url-pattern>/header</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
