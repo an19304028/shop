@@ -2,11 +2,11 @@ package daofactory;
 
 import dao.AddUserDao;
 import dao.ColorDao;
-import dao.GetAllUsersDao;
+import dao.GetUserListDao;
 import dao.GetUserDao;
 import dao.MySQLAddUserDao;
 import dao.MySQLColorDao;
-import dao.MySQLGetAllUsersDao;
+import dao.MySQLGetUserListDao;
 import dao.MySQLGetUserDao;
 import dao.MySQLRemoveUserDao;
 import dao.RemoveUserDao;
@@ -31,9 +31,9 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 	}
 
 	@Override
-	public GetAllUsersDao getAllUsersDao() {
+	public GetUserListDao getUserListDao() {
 		// TODO 自動生成されたメソッド・スタブ
-		return new MySQLGetAllUsersDao();
+		return new MySQLGetUserListDao();
 	}
 
 

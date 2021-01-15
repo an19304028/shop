@@ -10,7 +10,7 @@ import java.util.List;
 import bean.User;
 import daofactory.Connector;
 
-public class MySQLGetAllUsersDao implements GetAllUsersDao {
+public class MySQLGetUserListDao implements GetUserListDao {
 	private PreparedStatement st = null;
 	@Override
 	public List getAllUsers() {

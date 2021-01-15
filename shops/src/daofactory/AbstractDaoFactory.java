@@ -7,7 +7,7 @@ import java.util.Properties;
 import command.CommandFactory;
 import dao.AddUserDao;
 import dao.ColorDao;
-import dao.GetAllUsersDao;
+import dao.GetUserListDao;
 import dao.GetUserDao;
 import dao.RemoveUserDao;
 
@@ -34,7 +34,7 @@ public abstract class AbstractDaoFactory {
 	}
 	public abstract ColorDao getColorDao();
 	public abstract AddUserDao getAddUserDao();
-	public abstract GetAllUsersDao getAllUsersDao();
+	public abstract GetUserListDao getUserListDao();
 	public abstract GetUserDao getUserDao();
 	public abstract RemoveUserDao getRemoveUserDao();	
 }
