@@ -1,8 +1,9 @@
-package command;
+package command.admin;
 
 import bean.Color;
+import command.AbstractCommand;
 import daofactory.AbstractDaoFactory;
-import dao.ColorDao;
+import dao.admin.ColorDao;
 import presentation.RequestContext;
 import presentation.ResponseContext;
 
