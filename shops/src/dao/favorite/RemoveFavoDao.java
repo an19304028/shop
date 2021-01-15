@@ -1,4 +1,4 @@
-package dao.favofite;
+package dao.favorite;
 
 public interface RemoveFavoDao {
 	public void removeFavo(String userId, String itemId);

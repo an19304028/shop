@@ -1,4 +1,4 @@
-package dao.favofite;
+package dao.favorite;
 
 import bean.Favorite;
 
