@@ -5,11 +5,11 @@ import java.io.InputStream;
 import java.util.Properties;
 
 import command.CommandFactory;
-import dao.AddUserDao;
-import dao.ColorDao;
-import dao.GetUserListDao;
-import dao.GetUserDao;
-import dao.RemoveUserDao;
+import dao.user.AddUserDao;
+import dao.admin.ColorDao;
+import dao.admin.GetUserListDao;
+import dao.admin.GetUserDao;
+import dao.user.RemoveUserDao;
 
 
 public abstract class AbstractDaoFactory {

@@ -1,4 +1,4 @@
-package command.admins;
+package command.admin;
 
 import command.AbstractCommand;
 import dao.admin.ColorDao;

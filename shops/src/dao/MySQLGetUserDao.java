@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import bean.User;
+import dao.admin.GetUserDao;
 import daofactory.Connector;
 
 public class MySQLGetUserDao implements GetUserDao{
