@@ -1,4 +1,4 @@
-package dao;
+package dao.item;
 
 public interface SearchItemDao {
 
