@@ -7,6 +7,15 @@
 <title>UserRegist</title>
 </head>
 <body>
+	<!-- ヘッダー -->
+	<div id="box"></div>
+
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+		$(function(){
+			$("#box").load("Header.jsp");
+		});
+	</script>
 	 <h1>ユーザー登録</h1>
 	 <form method="post" action="adduser">
 	    <font color="red">${mess}</font><br>
@@ -24,8 +33,8 @@
 	     電話番号：<input type="text" name="tell" required /><br>
 	     郵便番号:<input type="text" name="postalCode" required /><br>
 	     住所:<input type="text" name="address"  required /><br>
-      	  
-      	
+
+
       <input type="submit" value="送信" />
     </form>
     <script>
@@ -38,7 +47,7 @@
 			         pwd.setAttribute('type', 'password');
 			     }
 		 	}, false);
-	 </script> 
+	 </script>
     <a href="/shops/">ホームへ</a>
 </body>
 </html>

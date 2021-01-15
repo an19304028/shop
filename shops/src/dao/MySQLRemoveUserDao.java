@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import dao.RemoveUserDao;
 import daofactory.Connector;
 
 public class MySQLRemoveUserDao implements RemoveUserDao {

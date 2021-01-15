@@ -7,6 +7,15 @@
 <title>Login</title>
 </head>
 <body>
+	<!-- ヘッダー -->
+	<div id="box"></div>
+
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script>
+		$(function(){
+			$("#box").load("Header.jsp");
+		});
+	</script>
 	<h1>ログイン</h1>
 	<font color="blue">ユーザー名とパスワードを入力してください。</font>
   	<form action="" method="post" >
@@ -25,6 +34,6 @@
 			         pwd.setAttribute('type', 'password');
 			     }
 		 	}, false);
-	 	</script> 
+	 	</script>
 </body>
 </html>
