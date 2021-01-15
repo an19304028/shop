@@ -1,7 +1,8 @@
-package command;
+package command.user;
 
 import bean.User;
-import dao.AddUserDao;
+import command.AbstractCommand;
+import dao.user.AddUserDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;

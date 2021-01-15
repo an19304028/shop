@@ -1,5 +1,6 @@
-package command;
+package command.admin;
 
+import command.AbstractCommand;
 import presentation.ResponseContext;
 
 public class InputAdminCommand extends AbstractCommand {
