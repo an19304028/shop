@@ -17,5 +17,27 @@
 		});
 	</script>
 
+	<ul>
+	<li>TOP</li>
+	<li><a>CATEGORY</a>
+		<ul>
+			<li><a href="">ALL</a></li>
+			<li><a href="">TOPS</a></li>
+			<li><a href="">BOTTOMS</a></li>
+			<li><a href="">ONEPIECE</a></li>
+			<li><a href="">OUTER</a></li>
+			<li><a href="">ACCESSORY</a></li>
+			<li><a href="">OTHER</a></li>
+		</ul>
+	</li>
+	<li><a href="">ガイド</a></li>
+	<li><a href="">お問い合わせ</a></li>
+	<li><a href="">ログイン</a></li>
+	<br>
+	<li><a href="">買い物かご</a></li>
+	<br>
+	<li><a href="">ログアウト</a></li>
+	</ul>
+
 </body>
 </html>
