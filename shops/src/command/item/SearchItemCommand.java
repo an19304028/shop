@@ -1,4 +1,4 @@
-package command;
+package command.item;
 
 public class SearchItemCommand {
 

@@ -1,6 +1,7 @@
-package command;
+package command.admins;
 
-import dao.ColorDao;
+import command.AbstractCommand;
+import dao.admin.ColorDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;

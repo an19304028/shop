@@ -1,8 +1,9 @@
-package command;
+package command.admin;
 
 import java.util.List;
 
-import dao.GetUserListDao;
+import command.AbstractCommand;
+import dao.admin.GetUserListDao;
 import daofactory.AbstractDaoFactory;
 import presentation.ResponseContext;
 
