@@ -1,9 +1,10 @@
-package command;
+package command.admin;
 
 import java.util.List;
 
+import command.AbstractCommand;
 import daofactory.AbstractDaoFactory;
-import dao.ColorDao;
+import dao.admin.ColorDao;
 import presentation.ResponseContext;
 
 public class GetColorListCommand extends AbstractCommand {

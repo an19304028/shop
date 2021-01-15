@@ -1,6 +1,7 @@
-package command;
+package command.user;
 
-import dao.RemoveUserDao;
+import command.AbstractCommand;
+import dao.user.RemoveUserDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;

@@ -1,8 +1,9 @@
-package command;
+package command.admin;
 
 import java.util.List;
 
-import dao.ColorDao;
+import command.AbstractCommand;
+import dao.admin.ColorDao;
 import daofactory.AbstractDaoFactory;
 import presentation.ResponseContext;
 
