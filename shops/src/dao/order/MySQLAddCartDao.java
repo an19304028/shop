@@ -1,5 +1,8 @@
 package dao.order;
 
-public class MySQLAddCartDao {
+import bean.Order;
 
+public class MySQLAddCartDao implements AddCartDao{
+	@Override
+	public void addCart(Order o) {}
 }
