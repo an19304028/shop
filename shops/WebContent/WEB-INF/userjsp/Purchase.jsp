@@ -8,14 +8,22 @@
 </head>
 <body>
 	<!-- ヘッダー -->
-	<div id="box"></div>
+	<div id="header"></div>
 
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>
 		$(function(){
-			$("#box").load("Header.jsp");
+			$("#header").load("common/Header.html");
+		});
+
+		$(function(){
+			$("#footer").load("common/Footer.html");
 		});
 	</script>
-</body>
+
+	<!-- フッター -->
+	<div id="footer"></div>
+
  <p>購入が完了しました</p>
+</body>
 </html>

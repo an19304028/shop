@@ -8,14 +8,19 @@
 </head>
 <body>
 	<!-- ヘッダー -->
-	<div id="box"></div>
+	<div id="header"></div>
 
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>
 		$(function(){
-			$("#box").load("Header.jsp");
+			$("#header").load("common/Header.html");
+		});
+
+		$(function(){
+			$("#footer").load("common/Footer.html");
 		});
 	</script>
+
     <c:forEach var="item" items="${item_list} }">
 		<ul>
 			<li>${item.image}</li>
@@ -25,5 +30,8 @@
 
 		</ul>
 	</c:forEach>
+
+	<!-- フッター -->
+	<div id="footer"></div>
 </body>
 </html>

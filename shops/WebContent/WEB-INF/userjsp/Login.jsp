@@ -8,14 +8,19 @@
 </head>
 <body>
 	<!-- ヘッダー -->
-	<div id="box"></div>
+	<div id="header"></div>
 
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>
 		$(function(){
-			$("#box").load("Header.jsp");
+			$("#header").load("common/Header.html");
+		});
+
+		$(function(){
+			$("#footer").load("common/Footer.html");
 		});
 	</script>
+
 	<h1>ログイン</h1>
 	<font color="blue">ユーザー名とパスワードを入力してください。</font>
   	<form action="" method="post" >
@@ -35,5 +40,8 @@
 			     }
 		 	}, false);
 	 	</script>
+
+	<!-- フッター -->
+	<div id="footer"></div>
 </body>
 </html>

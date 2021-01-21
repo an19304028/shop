@@ -8,14 +8,19 @@
 </head>
 <body>
 	<!-- ヘッダー -->
-	<div id="box"></div>
+	<div id="header"></div>
 
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>
 		$(function(){
-			$("#box").load("Header.jsp");
+			$("#header").load("common/Header.html");
+		});
+
+		$(function(){
+			$("#footer").load("common/Footer.html");
 		});
 	</script>
+
 	 <h1>ユーザー登録</h1>
 	 <form method="post" action="adduser">
 	    <font color="red">${mess}</font><br>
@@ -49,5 +54,8 @@
 		 	}, false);
 	 </script>
     <a href="/shops/">ホームへ</a>
+
+	<!-- フッター -->
+	<div id="footer"></div>
 </body>
 </html>
