@@ -1,5 +1,6 @@
 package command.user;
 
+import bean.User;
 import command.AbstractCommand;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
