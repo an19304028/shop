@@ -10,7 +10,6 @@
 	<a href="getitemlist">商品一覧</a>
 	<h2>商品追加</h2>
 	<form method='post' action='additem'>
-		商品ID<input id="itemId" type='text' name='itemId' required><br>
 		商品名<input id="itemName" type='text' name='itemName' required><br>
 		在庫数<input id="stockCount" type='text' name='stockCount' required><br>
 		サイズID<input id="sizeId" type='text' name='sizeId' required><br>
