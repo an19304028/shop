@@ -1,5 +1,6 @@
 package command.user;
 
+import bean.Credit;
 import dao.user.GetCreditDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
@@ -9,12 +10,12 @@ public class GetCreditCommand {
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
 
-		User u = new User();
+		Credit c = new Credit();
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetCreditDao dao = factory.getGetCreditDao();
 
-		dao.addUser(u);
+		dao.getCredit(c);
 		resc.setMess("");
 
 		resc.setTarget("/WEB-INF/userjsp/UserRegist.jsp");

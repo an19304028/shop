@@ -4,17 +4,17 @@ import dao.user.GetPasswordDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;
+import sun.security.util.Password;
 
 public class GetPasswordCommand {
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
 
-		User u = new User();
+		Password p = new Password();
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetPasswordDao dao = factory.getGetPasswordDao();
 
-		dao.addUser(u);
 		resc.setMess("");
 
 
