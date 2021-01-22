@@ -143,4 +143,30 @@ public class MySQLItemDao implements ItemDao{
 
 	}
 
+	public List getMaxItemId() {
+		ArrayList maxId = new ArrayList();
+		try {
+			Connection cn = Connector.connect();
+			String sql = "SELECT MAX(item_id) FROM shop.item_table";
+			st = cn.prepareStatement(sql);
+
+			ResultSet rs = st.executeQuery();
+
+			rs.next();
+			Item i = new Item();
+			String max  = rs.getString(1);
+			System.out.println("最大値"+max);
+			i.setItemId(max);
+
+			maxId.add(i);
+			System.out.println(maxId);
+
+			cn.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+
+		return maxId;
+	}
+
 }
