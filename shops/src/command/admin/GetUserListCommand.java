@@ -13,6 +13,9 @@ public class GetUserListCommand extends AbstractCommand {
 		GetUserListDao dao = factory.getUserListDao(); 
 		
 		List users = dao.getAllUsers();
+		if(users.size()==0) {
+			resc.setMess("ユーザーがありません");
+		}
 		System.out.println(dao.getAllUsers());
 		
 		resc.setResult(users);

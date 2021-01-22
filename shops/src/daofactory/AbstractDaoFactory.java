@@ -8,7 +8,7 @@ import command.CommandFactory;
 import dao.user.AddUserDao;
 import dao.admin.ColorDao;
 import dao.admin.GetUserListDao;
-import dao.admin.GetUserDao;
+
 import dao.user.RemoveUserDao;
 
 
@@ -35,6 +35,5 @@ public abstract class AbstractDaoFactory {
 	public abstract ColorDao getColorDao();
 	public abstract AddUserDao getAddUserDao();
 	public abstract GetUserListDao getUserListDao();
-	public abstract GetUserDao getUserDao();
 	public abstract RemoveUserDao getRemoveUserDao();	
 }

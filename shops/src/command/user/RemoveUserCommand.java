@@ -18,7 +18,7 @@ public class RemoveUserCommand extends AbstractCommand{
 		
 		resc.setMess(userId+"を削除しました");
 		
-		resc.setTarget("getusers");
+		resc.setTarget("getallusers");
 		System.out.println("target:"+resc.getTarget());
 	
 		return resc;
