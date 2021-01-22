@@ -56,6 +56,8 @@
 	<a href="getcolors">カラー一覧</a>
 	<br><br>
 	<a href="inputitemregist">商品登録</a>
+	<br><br>
+	<a href="inputitemregist">商品一覧</a>
 
 
 </body>　　

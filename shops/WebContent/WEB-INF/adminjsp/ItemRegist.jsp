@@ -7,7 +7,7 @@
 <title>ItemRegist</title>
 </head>
 <body>
-	<a href="getallitems">商品一覧</a>
+	<a href="getitemlist">商品一覧</a>
 	<h2>商品追加</h2>
 	<form method='post' action='additem'>
 		商品ID<input id="itemId" type='text' name='itemId' required><br>

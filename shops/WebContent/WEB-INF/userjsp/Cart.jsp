@@ -10,6 +10,8 @@
 	<!-- ヘッダー -->
 	<div id="header"></div>
 
+	<h1>買い物かご</h1>
+
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>
 		$(function(){
@@ -39,8 +41,14 @@
 		</tr>
 	</table>
 
+	<a href="">買い物に戻る</a>
+	<a href="">カートを空にする</a>
+	<br>
 
-	<!-- フッター -->
+	<a href="">購入手続きに進む</a>
+
+
+
 	<div id="footer"></div>
 
 </body>
