@@ -11,13 +11,11 @@ import presentation.ResponseContext;
 public class AddImageCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
-		String imageId = rc.getParameter("imageId")[0];
 		String imagePath = rc.getParameter("imagePath")[0];
 		String itemId = rc.getParameter("itemId")[0];
-		System.out.println(imageId + "\t"+"\t"+imagePath);
+		System.out.println(imagePath);
 		
 		Image i = new Image();
-		i.setImageId(imageId);
 		i.setImagePath(imagePath);
 		i.setImageId(itemId);
 		

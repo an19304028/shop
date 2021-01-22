@@ -11,7 +11,6 @@
 	<a href="getitemlist">商品一覧</a>
 	<h2>商品追加</h2>
 
-	<button id="getColorPath">パス取得</button>
 	<form method='post' action="getmaxitemid">
 		<input type="submit"  value="最後のIDのを取得">
 		<c:forEach var="item" items="${data}">
@@ -29,14 +28,7 @@
 		    return colorId;
 		  }
 
-		  $(function(){
-				 $("#getColorPath").on("click",function(){
-					 var colorPath=getColorPath();
-					 console.log(colorPath);
-				     $("#itemId").val(colorPath)
-				    });
 
-			});
   	</script>
 
 	<form method='post' action='additem'>
@@ -50,7 +42,12 @@
 		<br>
 		<input type='submit' value='登録'>
 	</form>
-
+	<h2>画像の追加</h2>
+	<form action="addimage" method="post">
+	画像のパス<input id="imagePath" type='text' name='imagePath' required><br>
+	アイテムID<input id="itemId" type='text' name='itemId' required><br>
+	<input type='submit' value='登録'>
+	</form>
 
 </body>
 </html>

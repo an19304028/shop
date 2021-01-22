@@ -39,12 +39,7 @@
 	</c:forEach>
 	</table>
 
-	<h2>画像の追加</h2>
-	<form>
-	画像のパス<input id="imagePath" type='text' name='imagePath' required><br>
-	アイテムID<input id="itemId" type='hidden' name='itemId' value=''><br>
-	<input type='submit' value='登録'>
-	</form>
+	
 
 
 </body>
