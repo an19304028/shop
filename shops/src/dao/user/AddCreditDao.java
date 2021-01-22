@@ -1,8 +1,8 @@
 package dao.user;
 
-import bean.User;
+import bean.Credit;
 
 public interface AddCreditDao {
-	public void addCredit(User u);
+	public void addCredit(Credit c);
 
 }
