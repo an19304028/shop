@@ -8,6 +8,7 @@ public class InputAdminCommand extends AbstractCommand {
 	
 		resc.setTarget("/WEB-INF/adminjsp/Admin.jsp");
 		return resc;
+		
 	}
 
 }
