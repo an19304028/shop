@@ -4,26 +4,26 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import bean.User;
+import bean.Credit;
 import daofactory.Connector;
 
 public class MySQLAddCreditDao implements AddCreditDao{
 	private PreparedStatement st = null;
 
 	@Override
-	public void addCredit(User u) {
+	public void addCredit(Credit c){
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "INSERT INTO shop.credit_table(userId, creditNumber, securityCode, expirationDate, payCount) VALUES(?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO shop.credit_table VALUES(?, ?, ?, ?, ?)";
 
 			st = cn.prepareStatement(sql);
 
-			st.setString(1, u.getUserId());
-			st.setString(2, u.getCreditNumber());
-			st.setString(3, u.getSecurityCode());
-			st.setString(4, u.getExpirationDate());
-			st.setString(5, u.getPayCount());
+			st.setString(1, c.getUserId());
+			st.setString(2, c.getCreditNumber());
+			st.setString(3, c.getSecurityCode());
+			st.setString(4, c.getExpirationDate());
+			st.setInt(5, c.getPayCount());
 
 			st.executeUpdate();
 

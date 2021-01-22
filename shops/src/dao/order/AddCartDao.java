@@ -1,7 +1,7 @@
 package dao.order;
 
-import bean.Order;
+import bean.Cart;
 
 public interface AddCartDao {
-	public void addCart(Order o);
+	public void addCart(Cart c);
 }

@@ -1,5 +1,7 @@
 package dao.order;
 
+import java.util.List;
+
 public interface GetOrderListDao {
-	void getOrderList(String key);
+	public List getOrderList();
 }
