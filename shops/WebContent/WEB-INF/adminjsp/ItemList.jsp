@@ -28,7 +28,7 @@
 		    <td>${item.sizeId}</td>
 		    <td>${item.colorId}</td>
 		    <td>${item.price}</td>
-		    <td>${item.vategoryId}</td>
+		    <td>${item.categoryId}</td>
 		    <td>${item.detail}</td>
 		    <td>${item.imageId}</td>
 		    <td>
