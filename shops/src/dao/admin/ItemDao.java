@@ -12,5 +12,6 @@ public interface ItemDao {
 	public List getAllItem();
 	public List getItem(String itemId);
 	public void removeItem(String itemId);
+	public List getMaxItemId();
 
 }
