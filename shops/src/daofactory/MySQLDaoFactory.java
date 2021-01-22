@@ -3,8 +3,12 @@ package daofactory;
 
 import dao.user.RemoveUserDao;
 import dao.user.MySQLRemoveUserDao;
+import dao.user.RemoveCreditDao;
+import dao.user.AddCreditDao;
 import dao.user.AddUserDao;
+import dao.user.MySQLAddCreditDao;
 import dao.user.MySQLAddUserDao;
+import dao.user.MySQLRemoveCreditDao;
 import dao.admin.AddImageDao;
 import dao.admin.ColorDao;
 
