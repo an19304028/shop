@@ -1,14 +1,24 @@
 package daofactory;
 
-import java.io.FileInputStream;
 import java.io.InputStream;
 import java.util.Properties;
-
 import command.CommandFactory;
 import dao.user.AddUserDao;
+import dao.admin.AddImageDao;
 import dao.admin.ColorDao;
 import dao.admin.GetUserListDao;
-
+import dao.admin.ItemDao;
+import dao.admin.RemoveImageDao;
+import dao.favorite.AddFavoDao;
+import dao.favorite.GetFavoListDao;
+import dao.favorite.RemoveFavoDao;
+import dao.item.GetItemDetailDao;
+import dao.item.SearchItemDao;
+import dao.item.SortItemDao;
+import dao.order.AddCartDao;
+import dao.order.AddOrderDao;
+import dao.order.GetOrderListDao;
+import dao.order.RemoveCartDao;
 import dao.user.RemoveUserDao;
 
 
@@ -35,5 +45,37 @@ public abstract class AbstractDaoFactory {
 	public abstract ColorDao getColorDao();
 	public abstract AddUserDao getAddUserDao();
 	public abstract GetUserListDao getUserListDao();
-	public abstract RemoveUserDao getRemoveUserDao();	
+	public abstract RemoveUserDao getRemoveUserDao();
+	
+	//dao.admin
+	public abstract AddImageDao getAddImageDao();	
+	public abstract ItemDao getItemDao();
+	public abstract RemoveImageDao getRemoveImageDao();
+	
+	//dao.favorite
+	public abstract AddFavoDao getAddFavoDao();
+	public abstract GetFavoListDao getGetFavoListDao();
+	public abstract RemoveFavoDao getRemoveFavoDao();
+
+	//dao.item
+	public abstract GetItemDetailDao getGetItemDetailDao();
+	public abstract SearchItemDao getSearchItemDao();
+	public abstract SortItemDao getSortItemDao();
+
+	//dao.order
+	public abstract AddCartDao getAddCartDao();
+	public abstract AddOrderDao getAddOrderDao();
+	public abstract GetCartListDao getGetCartListDao();
+	public abstract GetOrderListDao getGetOrderListDao();
+	public abstract RemoveCartDao getRemoveCartDao();
+
+	//dao.user
+	public abstract AddCreditDao getAddCreditDao();
+	public abstract EditUserDao getEditUserDao();
+	public abstract GetCreditDao getGetCreditDao();
+	public abstract GetPasswordDao getGetPasswordDao();
+	public abstract LoginDao getLoginDao();
+	public abstract RemoveCreditDao getRemoveCreditDao();
+
+
 }
