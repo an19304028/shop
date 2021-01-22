@@ -1,7 +1,10 @@
 package command.user;
 
+import bean.Credit;
 import dao.user.AddCreditDao;
 import daofactory.AbstractDaoFactory;
+import presentation.RequestContext;
+import presentation.ResponseContext;
 
 public class AddCreditCommand{
 	public ResponseContext execute(ResponseContext resc){
@@ -14,18 +17,18 @@ public class AddCreditCommand{
 
 		//System.out.println(userId);
 
-		User u = new User();
+		Credit c = new Credit();
 
 		//u.setUserId(userId);
-		u.setCreditNumber(creditNumber);
-		u.setSecurityCode(securityCode);
-		u.setExcirationDate(expirationDate);
-		u.setPayCount(payCount);
+		c.setCreditNumber(creditNumber);
+		c.setSecurityCode(securityCode);
+		c.setExpirationDate(expirationDate);
+		c.setPayCount(Integer.parseInt(payCount));
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		AddCreditDao dao = factory.getAddCreditDao();
 
-		dao.addCredit(u);
+		dao.addCredit(c);
 		resc.setMess(creditNumber+"を登録しました");
 
 
@@ -33,5 +36,10 @@ public class AddCreditCommand{
 		System.out.println("target:"+resc.getTarget());
 
 		return resc;
+	}
+
+	private RequestContext getRequestContext() {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
 	}
 }
