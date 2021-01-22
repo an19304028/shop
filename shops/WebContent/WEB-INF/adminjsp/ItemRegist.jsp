@@ -17,10 +17,10 @@
 		価格<input id="price" type='text' name='price' required><br>
 		カテゴリーID<input id="categoryId" type='text' name='categoryId' required><br>
 		詳細<input id="detail" type='text' name='detail' required><br>
-		画像ID<input id="imageId" type='text' name='imageId' required><br>
 		<br>
 		<input type='submit' value='登録'>
 	</form>
+
 
 </body>
 </html>

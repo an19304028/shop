@@ -18,7 +18,6 @@
 		<th>価格</th>
 		<th>カテゴリーID</th>
 		<th>詳細</th>
-		<th>画像ID</th>
 	</tr>
 	<c:forEach var="item" items="${data}">
 		<tr>
@@ -30,7 +29,6 @@
 		    <td>${item.price}</td>
 		    <td>${item.categoryId}</td>
 		    <td>${item.detail}</td>
-		    <td>${item.imageId}</td>
 		    <td>
 		    	<form action="removeitem" onSubmit="return checkSubmit()" method="post">
 		    		<input type="hidden" name="itemId" value="${item.itemId}">
@@ -40,6 +38,14 @@
 		</tr>
 	</c:forEach>
 	</table>
+
+	<h2>画像の追加</h2>
+	<form>
+	画像のパス<input id="imagePath" type='text' name='imagePath' required><br>
+	アイテムID<input id="itemId" type='hidden' name='itemId' value=''><br>
+	<input type='submit' value='登録'>
+	</form>
+
 
 </body>
 </html>
