@@ -1,5 +1,5 @@
 package command.user;
 
-public class EditUserCommand {
+public class EditUserCommand{
 
 }
