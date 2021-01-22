@@ -1,9 +1,9 @@
 package dao.admin;
 
-import bean.image;
+import bean.Image;
 
 public class MySQLAddImageDao implements AddImageDao{
 
-	public void addImage(image i) {}
+	public void addImage(Image i) {}
 
 }
