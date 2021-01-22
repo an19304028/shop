@@ -2,6 +2,7 @@ package command.user;
 
 import command.AbstractCommand;
 import daofactory.AbstractDaoFactory;
+import presentation.RequestContext;
 import presentation.ResponseContext;
 
 public class InputUserRegistCommand extends AbstractCommand {
