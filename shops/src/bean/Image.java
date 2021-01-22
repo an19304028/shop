@@ -5,6 +5,13 @@ import java.io.Serializable;
 public class Image implements Serializable{
 	private String imageId;
 	private String imagePath;
+	private String itemId;
+	public String getItemId() {
+		return itemId;
+	}
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
+	}
 	public String getImageId() {
 		return imageId;
 	}

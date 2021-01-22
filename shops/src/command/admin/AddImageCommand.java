@@ -13,11 +13,13 @@ public class AddImageCommand extends AbstractCommand{
 		RequestContext rc = getRequestContext();
 		String imageId = rc.getParameter("imageId")[0];
 		String imagePath = rc.getParameter("imagePath")[0];
+		String itemId = rc.getParameter("itemId")[0];
 		System.out.println(imageId + "\t"+"\t"+imagePath);
 		
 		Image i = new Image();
 		i.setImageId(imageId);
 		i.setImagePath(imagePath);
+		i.setImageId(itemId);
 		
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		AddImageDao dao = factory.getAddImageDao();
