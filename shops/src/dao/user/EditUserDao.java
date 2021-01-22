@@ -1,5 +1,7 @@
 package dao.user;
 
-public interface EditUserDao {
+import bean.User;
 
+public interface EditUserDao {
+	public void editUser(User u);
 }
