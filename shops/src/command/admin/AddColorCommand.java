@@ -28,6 +28,7 @@ public class AddColorCommand extends AbstractCommand{
 		}else {
 			dao.addColor(c);
 			
+			
 			resc.setMess("カラーを追加しました");
 		}
 		
