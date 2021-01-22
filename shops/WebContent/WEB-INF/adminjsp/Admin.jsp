@@ -7,9 +7,8 @@
 <meta charset="UTF-8">
 <title>Admin</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="js/lightbox.js"></script>
 <script>
-	
+
 </script>
 </head>
 <body>
@@ -17,7 +16,7 @@
 	<a href="getallusers">ユーザー一覧</a>
 	<h2>カラー追加</h2>
 	<p><font color="red">${mess}</font></p>
-	
+
 	<p><font color="red">IDはCOから始める</font></p>
 	<form method='post' action='addcolor'>
 		カラーID<input id="colorId" type='text' name='colorId' required><br>
@@ -33,9 +32,9 @@
 			<font color="blue">${color.colorId}</font>
 		</c:forEach>
 	</form>
-	
+
 	<div id="output_message"></div>
-	
+
 	 <script type="text/javascript">
 		  function getColorPath() {
 		    var colorId = document.getElementById("colorId").value;
@@ -43,18 +42,21 @@
 		    console.log(colorId);
 		    return colorId;
 		  }
-		  
+
 		  $(function(){
 				 $("#getColorPath").on("click",function(){
 					 var colorPath=getColorPath();
 					 console.log(colorPath);
 				     $("#colorPath").val(colorPath)
 				    });
-				
+
 			});
   	</script>
+
 	<a href="getcolors">カラー一覧</a>
-	
-	
+	<br><br>
+	<a href="inputitemregist">商品登録</a>
+
+
 </body>　　
 </html>

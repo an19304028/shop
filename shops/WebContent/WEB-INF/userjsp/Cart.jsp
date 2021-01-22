@@ -21,6 +21,25 @@
 		});
 	</script>
 
+	<table id="table" border="1">
+		<tr>
+			<th>注文番号</th>
+			<th>商品情報</th>
+			<th>注文日</th>
+			<th>価格</th>
+			<th>数量</th>
+		</tr>
+
+		<tr>
+			<td>${order.orderId}</td>
+			<td>${order.userId}</td>
+			<td>${order.buyDate}</td>
+			<td>${order.price}</td>
+			<td>${order.itemCount}</td>
+		</tr>
+	</table>
+
+
 	<!-- フッター -->
 	<div id="footer"></div>
 
