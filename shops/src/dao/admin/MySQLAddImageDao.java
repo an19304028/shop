@@ -14,11 +14,10 @@ public class MySQLAddImageDao implements AddImageDao{
 	public void addImage(Image i) {
 		try {
 			Connection cn = Connector.connect();
-			String sql= "INSERT into shop.image_table VALUES(?, ?, ?)";
+			String sql= "INSERT into shop.image_table VALUES(?, ?)";
 
 			st = cn.prepareStatement(sql);
 
-			st.setString(1, i.getImageId());
 			st.setString(2, i.getImagePath());
 			st.setString(3, i.getItemId());
 
