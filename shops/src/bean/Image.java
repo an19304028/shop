@@ -2,7 +2,7 @@ package bean;
 
 import java.io.Serializable;
 
-public class image implements Serializable{
+public class Image implements Serializable{
 	private String imageId;
 	private String imagePath;
 	public String getImageId() {
