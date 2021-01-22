@@ -19,7 +19,7 @@ public class MySQLItemDao implements ItemDao{
 	public void addItem(Item i) {
 		try {
 			Connection cn = Connector.connect();
-			String sql= "INSERT into shop.item_table(item_name, stock_count, size_id, color_id, price, category_id, detail, image_id) VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql= "INSERT into shop.item_table(item_name, stock_count, size_id, color_id, price, category_id, detail) VALUES(?, ?, ?, ?, ?, ?, ?)";
 
 			st = cn.prepareStatement(sql);
 
@@ -30,8 +30,6 @@ public class MySQLItemDao implements ItemDao{
 			st.setInt(5, i.getPrice());
 			st.setString(6, i.getCategoryId());
 			st.setString(7, i.getDetail());
-			st.setString(8, i.getImageId());
-
 
 			st.executeUpdate();
 
@@ -63,7 +61,7 @@ public class MySQLItemDao implements ItemDao{
 		ArrayList items = new ArrayList();
 		try {
 			Connection cn = Connector.connect();
-			String sql = "SELECT item_id, item_name, stock_count, size_id, color_id, price, category_id, detail, image_id FROM shop.item_table ORDER BY LENGTH(item_id)";
+			String sql = "SELECT item_id, item_name, stock_count, size_id, color_id, price, category_id, detail FROM shop.item_table ORDER BY LENGTH(item_id)";
 			st = cn.prepareStatement(sql);
 
 			ResultSet rs = st.executeQuery();
@@ -77,7 +75,6 @@ public class MySQLItemDao implements ItemDao{
 				i.setPrice(rs.getInt(6));
 				i.setCategoryId(rs.getString(7));
 				i.setDetail(rs.getString(8));
-				i.setImageId(rs.getString(9));
 
 				items.add(i);
 			}
@@ -94,8 +91,7 @@ public class MySQLItemDao implements ItemDao{
 		ArrayList Item = new ArrayList();
 		try {
 			Connection cn = Connector.connect();
-			String sql = "SELECT item_id, item_name, stock_count, size_id, color_id, price, category_id, detail, image_id FROM shop.item_table WHERE item_id = ?";
-			//長くなったので改行
+			String sql = "SELECT item_id, item_name, stock_count, size_id, color_id, price, category_id, detail FROM shop.item_table WHERE item_id = ?";
 
 			st = cn.prepareStatement(sql);
 			st.setString(1, itemId);
@@ -112,7 +108,6 @@ public class MySQLItemDao implements ItemDao{
 				i.setPrice(rs.getInt(6));
 				i.setCategoryId(rs.getString(7));
 				i.setDetail(rs.getString(8));
-				i.setImageId(rs.getString(9));
 
 				Item.add(i);
 
