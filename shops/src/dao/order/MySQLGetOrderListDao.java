@@ -19,7 +19,7 @@ public class MySQLGetOrderListDao implements GetOrderListDao{
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "SELECT FROM shop.user_table";
+			String sql = "SELECT FROM shop.order_table";
 			st = cn.prepareStatement(sql);
 
 			ResultSet rs = st.executeQuery();
