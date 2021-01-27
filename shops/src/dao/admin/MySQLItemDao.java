@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import bean.Image;
 import bean.Item;
 import daofactory.Connector;
 
@@ -19,6 +20,7 @@ public class MySQLItemDao implements ItemDao{
 	public void addItem(Item i) {
 		try {
 			Connection cn = Connector.connect();
+			//変更保留
 			String sql= "INSERT into shop.item_table(item_name, stock_count, size_id, color_id, price, category_id, detail) VALUES(?, ?, ?, ?, ?, ?, ?)";
 
 			st = cn.prepareStatement(sql);
@@ -61,12 +63,14 @@ public class MySQLItemDao implements ItemDao{
 		ArrayList items = new ArrayList();
 		try {
 			Connection cn = Connector.connect();
-			String sql = "SELECT item_id, item_name, stock_count, size_id, color_id, price, category_id, detail FROM shop.item_table ORDER BY LENGTH(item_id)";
+			//結合で書いて
+			String sql = "SELECT shop.item_table.item_id, item_name, stock_count, size_id, color_id, price, category_id, detail image_path FROM shop.item_table LEFT JOIN shop.image_table USING(item_id) ORDER BY LENGTH(shop.item_table.item_id)";
 			st = cn.prepareStatement(sql);
 
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
 				Item i = new Item();
+				Image image = new Image();
 				i.setItemId(rs.getString(1));
 				i.setItemName(rs.getString(2));
 				i.setStockCount(rs.getInt(3));
@@ -75,8 +79,10 @@ public class MySQLItemDao implements ItemDao{
 				i.setPrice(rs.getInt(6));
 				i.setCategoryId(rs.getString(7));
 				i.setDetail(rs.getString(8));
+				image.setImagePath(rs.getString(9));
 
 				items.add(i);
+
 			}
 			cn.close();
 		}catch(SQLException e) {
@@ -91,7 +97,8 @@ public class MySQLItemDao implements ItemDao{
 		ArrayList Item = new ArrayList();
 		try {
 			Connection cn = Connector.connect();
-			String sql = "SELECT item_id, item_name, stock_count, size_id, color_id, price, category_id, detail FROM shop.item_table WHERE item_id = ?";
+			//結合で書いて
+			String sql = "SELECT item_id, item_name, stock_count, size_id, color_id, price, category_id, detail, image_path FROM shop.item_table LEFT JOIN shop.image_table USING(item_id) WHERE item_id = ?";
 
 			st = cn.prepareStatement(sql);
 			st.setString(1, itemId);
@@ -99,6 +106,7 @@ public class MySQLItemDao implements ItemDao{
 
 			if(rs.next()) {
 				Item i = new Item();
+				Image image = new Image();
 				System.out.println(i.getItemId());
 				i.setItemId(rs.getString(1));
 				i.setItemName(rs.getString(2));
@@ -108,6 +116,7 @@ public class MySQLItemDao implements ItemDao{
 				i.setPrice(rs.getInt(6));
 				i.setCategoryId(rs.getString(7));
 				i.setDetail(rs.getString(8));
+				image.setImagePath(rs.getString(9));
 
 				Item.add(i);
 
