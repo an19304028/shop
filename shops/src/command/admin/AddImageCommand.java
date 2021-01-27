@@ -21,11 +21,11 @@ public class AddImageCommand extends AbstractCommand{
 		
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		AddImageDao dao = factory.getAddImageDao();
+		
+
 		dao.addImage(i);
-		resc.setMess("画像を追加しました");
 		
-		
-		resc.setTarget("/WEB-INF/adminjsp/Admin.jsp");
+		resc.setTarget("/WEB-INF/adminjsp/ItemList.jsp");
 		System.out.println("target:"+resc.getTarget());
 	
 		return resc;
