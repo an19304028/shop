@@ -17,7 +17,7 @@ public class AddImageCommand extends AbstractCommand{
 		
 		Image i = new Image();
 		i.setImagePath(imagePath);
-		i.setImageId(itemId);
+		i.setItemId(itemId);
 		
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		AddImageDao dao = factory.getAddImageDao();
