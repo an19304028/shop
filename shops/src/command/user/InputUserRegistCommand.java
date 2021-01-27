@@ -1,4 +1,3 @@
-package command;
 package command.user;
 
 import command.AbstractCommand;
