@@ -1,12 +1,13 @@
 package command.user;
 
 import bean.Credit;
+import command.AbstractCommand;
 import dao.user.AddCreditDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;
 
-public class AddCreditCommand{
+public class AddCreditCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc){
 		RequestContext rc = getRequestContext();
 		//String userId = rc.getParameter("userId")[0];
@@ -15,7 +16,7 @@ public class AddCreditCommand{
 		String expirationDate = rc.getParameter("expirationDate")[0];
 		String payCount = rc.getParameter("payCount")[0];
 
-		//System.out.println(userId);
+		System.out.println(creditNumber);
 
 		Credit c = new Credit();
 
@@ -36,10 +37,5 @@ public class AddCreditCommand{
 		System.out.println("target:"+resc.getTarget());
 
 		return resc;
-	}
-
-	private RequestContext getRequestContext() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
 	}
 }
