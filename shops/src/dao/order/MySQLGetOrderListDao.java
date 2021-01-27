@@ -26,14 +26,11 @@ public class MySQLGetOrderListDao implements GetOrderListDao{
 			while(rs.next()) {
 				Order o = new Order();
 
-				o.set(rs.getString(1));
-				o.set(rs.getString(2));
-				o.set(rs.getString(3));
-				o.set(rs.getString(4));
-				o.set(rs.getString(5));
-				o.set(rs.getString(6));
-				o.set(rs.getString(7));
-
+				o.setOrderId(rs.getString(1));
+				o.setUserId(rs.getString(2));
+				o.setBuyDate(rs.getString(3));
+				o.setPrice(rs.getInt(4));
+				o.setItemCount(rs.getInt(5));
 
 				order.add(o);
 			}

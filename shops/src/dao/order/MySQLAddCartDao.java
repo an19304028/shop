@@ -16,7 +16,7 @@ public class MySQLAddCartDao implements AddCartDao{
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "INSERT INTO shop.cart_table(user_id, item_id, buy_count) VALUES(?, ?, ?)";
+			String sql = "INSERT INTO shop.cart_table VALUES(?, ?, ?)";
 
 			st = cn.prepareStatement(sql);
 
@@ -32,6 +32,5 @@ public class MySQLAddCartDao implements AddCartDao{
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-
 	}
 }
