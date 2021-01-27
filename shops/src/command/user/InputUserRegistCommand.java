@@ -9,5 +9,4 @@ public class InputUserRegistCommand extends AbstractCommand {
 		resc.setTarget("/WEB-INF/userjsp/UserRegist.jsp");
 		return resc;
 	}
-
 }
