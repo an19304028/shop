@@ -80,6 +80,8 @@ public class MySQLItemDao implements ItemDao{
 				i.setDetail(rs.getString(8));
 				i.setImagePath(rs.getString(9));
 
+				System.out.println(i.getImagePath());
+
 				items.add(i);
 				//items.add(image);
 
