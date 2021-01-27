@@ -58,6 +58,8 @@ public abstract class AbstractDaoFactory {
 	public abstract AddImageDao getAddImageDao();	
 	public abstract ItemDao getItemDao();
 	public abstract RemoveImageDao getRemoveImageDao();
+	public abstract GetImageDao getGetImageDao();
+
 	
 	//dao.favorite
 	public abstract AddFavoDao getAddFavoDao();

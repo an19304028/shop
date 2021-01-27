@@ -19,6 +19,8 @@ import dao.user.MySQLLoginDao;
 import dao.user.MySQLRemoveCreditDao;
 import dao.admin.AddImageDao;
 import dao.admin.ColorDao;
+import dao.admin.GetImageDao;
+import dao.admin.MySQLGetImageDao;
 
 import dao.admin.GetUserListDao;
 import dao.admin.ItemDao;
@@ -82,6 +84,7 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 	public AddImageDao getAddImageDao() { return new MySQLAddImageDao();}
 	public ItemDao getItemDao() { return new MySQLItemDao();}
 	public RemoveImageDao getRemoveImageDao() { return new MySQLRemoveImageDao();}
+	public GetImageDao getGetImageDao() { return new MySQLGetImageDao();}
 
 
 	//favorite
