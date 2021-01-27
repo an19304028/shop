@@ -12,6 +12,7 @@ import dao.user.LoginDao;
 import dao.user.RemoveCreditDao;
 import dao.admin.AddImageDao;
 import dao.admin.ColorDao;
+import dao.admin.GetImageDao;
 import dao.admin.GetUserListDao;
 import dao.admin.ItemDao;
 import dao.admin.RemoveImageDao;
