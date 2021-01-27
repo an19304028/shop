@@ -64,7 +64,7 @@ public class MySQLItemDao implements ItemDao{
 		try {
 			Connection cn = Connector.connect();
 			//結合で書いて
-			String sql = "SELECT shop.item_table.item_id, item_name, stock_count, size_id, color_id, price, category_id, detail image_path FROM shop.item_table LEFT JOIN shop.image_table USING(item_id) ORDER BY LENGTH(shop.item_table.item_id)";
+			String sql = "SELECT shop.item_table.item_id, item_name, stock_count, size_id, color_id, price, category_id, detail, image_path FROM shop.item_table LEFT JOIN shop.image_table USING(item_id) ORDER BY LENGTH(shop.item_table.item_id)";
 			st = cn.prepareStatement(sql);
 
 			ResultSet rs = st.executeQuery();
