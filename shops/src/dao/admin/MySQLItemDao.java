@@ -82,6 +82,7 @@ public class MySQLItemDao implements ItemDao{
 				image.setImagePath(rs.getString(9));
 
 				items.add(i);
+				items.add(image);
 
 			}
 			cn.close();
@@ -119,6 +120,7 @@ public class MySQLItemDao implements ItemDao{
 				image.setImagePath(rs.getString(9));
 
 				Item.add(i);
+				Item.add(image);
 
 				cn.close();
 
