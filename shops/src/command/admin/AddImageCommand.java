@@ -25,7 +25,7 @@ public class AddImageCommand extends AbstractCommand{
 
 		dao.addImage(i);
 		
-		resc.setTarget("/WEB-INF/adminjsp/ItemList.jsp");
+		resc.setTarget("getitemlist");
 		System.out.println("target:"+resc.getTarget());
 	
 		return resc;
