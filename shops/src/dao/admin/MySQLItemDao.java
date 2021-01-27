@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import bean.Image;
 import bean.Item;
 import daofactory.Connector;
 
@@ -70,7 +69,7 @@ public class MySQLItemDao implements ItemDao{
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
 				Item i = new Item();
-				Image image = new Image();
+				//Image image = new Image();
 				i.setItemId(rs.getString(1));
 				i.setItemName(rs.getString(2));
 				i.setStockCount(rs.getInt(3));
@@ -79,10 +78,10 @@ public class MySQLItemDao implements ItemDao{
 				i.setPrice(rs.getInt(6));
 				i.setCategoryId(rs.getString(7));
 				i.setDetail(rs.getString(8));
-				image.setImagePath(rs.getString(9));
+				i.setImagePath(rs.getString(9));
 
 				items.add(i);
-				items.add(image);
+				//items.add(image);
 
 			}
 			cn.close();
@@ -107,7 +106,7 @@ public class MySQLItemDao implements ItemDao{
 
 			if(rs.next()) {
 				Item i = new Item();
-				Image image = new Image();
+				//Image image = new Image();
 				System.out.println(i.getItemId());
 				i.setItemId(rs.getString(1));
 				i.setItemName(rs.getString(2));
@@ -117,10 +116,10 @@ public class MySQLItemDao implements ItemDao{
 				i.setPrice(rs.getInt(6));
 				i.setCategoryId(rs.getString(7));
 				i.setDetail(rs.getString(8));
-				image.setImagePath(rs.getString(9));
+				i.setImagePath(rs.getString(9));
 
 				Item.add(i);
-				Item.add(image);
+				//Item.add(image);
 
 				cn.close();
 
