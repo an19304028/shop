@@ -67,18 +67,21 @@
 	</ul>
 	<br>
 
-	<h2>User</h2>
+	<h2>Page</h2>
 	<ul>
 		<li><a href="getitemlist">CATEGORY		（カテゴリー）</a></li>
-		<li><a href="">GUIDE		（ご利用内容）</a></li>
-		<li><a href="">CONTACT		（お問い合わせ）</a></li>
 		<li><a href="login">LOGIN		（ログイン）</a></li>
 		<li><a href="getcartlist">カート</a></li>
+		<li><a href="getfavolist">お気に入り一覧</a></li>
+		<br>
+		<p></p>
 		<li><a href="">商品ページ</a></li>
 		<li><a href="">サイトマップ</a></li>
 		<li><a href="">売り切れページ</a></li>
-		<li><a href="getfavolist">お気に入り一覧</a></li>
 		<li><a href="">ユーザー登録</a></li>
+		<li><a href="">GUIDE		（ご利用内容）</a></li>
+		<li><a href="">CONTACT		（お問い合わせ）</a></li>
+
 	</ul>
 
 </body>
