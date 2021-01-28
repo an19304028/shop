@@ -9,5 +9,4 @@ public class InputCreditCommand extends AbstractCommand {
 		resc.setTarget("/WEB-INF/userjsp/Payment.jsp");
 		return resc;
 	}
-
 }

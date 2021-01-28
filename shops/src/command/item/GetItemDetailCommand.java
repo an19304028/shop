@@ -18,5 +18,4 @@ public class GetItemDetailCommand extends AbstractCommand{
 		resc.setTarget("/WEB-INF/userjsp/Item.jsp");
 		return resc;
 	}
-
 }
