@@ -15,6 +15,8 @@ public class GetItemDetailCommand extends AbstractCommand{
 		String detail = rc.getParameter("detail")[0];
 		String imageId = rc.getParameter("imageId")[0];
 
+		resc.setTarget("/WEB-INF/userjsp/Item.jsp");
+		return resc;
 	}
 
 }
