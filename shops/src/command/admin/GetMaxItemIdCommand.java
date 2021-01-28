@@ -14,7 +14,7 @@ public class GetMaxItemIdCommand extends AbstractCommand {
 		
 		List maxId = dao.getMaxItemId();	
 		resc.setResult(maxId);
-		resc.setTarget("/WEB-INF/adminjsp/Admin.jsp");
+		resc.setTarget("/WEB-INF/adminjsp/ItemRegist.jsp");
 		System.out.println("target:"+resc.getTarget());
 		return resc;
 	}

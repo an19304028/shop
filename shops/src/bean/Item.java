@@ -11,7 +11,14 @@ public class Item implements Serializable{
 	private int price;
 	private String categoryId;
 	private String detail;
+	private String imagePath;
 
+	public String getImagePath() {
+		return imagePath;
+	}
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
 	public String getItemId() {
 		return itemId;
 	}

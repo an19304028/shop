@@ -1,12 +1,13 @@
 package command.user;
 
+import command.AbstractCommand;
 import dao.user.GetPasswordDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;
 import sun.security.util.Password;
 
-public class GetPasswordCommand {
+public class GetPasswordCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
 

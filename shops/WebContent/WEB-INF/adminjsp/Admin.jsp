@@ -58,15 +58,16 @@
 
 <h1>リンク一覧</h1>
 
-	<h2>管理ページ</h2>
+	<h2>Admin</h2>
 	<ul>
-		<li><a href="inputitemregist">商品登録</a></li>
-		<li><a href="getitemlist">商品一覧</a></li>
+		<li><a href="inputitemregist">アイテム登録</a></li>
+		<li><a href="getitemlist">アイテム一覧</a></li>
+		<br>
 		<li><a href="getcolors">カラー一覧</a></li>
 	</ul>
 	<br>
 
-	<h2>各ページ</h2>
+	<h2>User</h2>
 	<ul>
 		<li><a href="getitemlist">CATEGORY		（カテゴリー）</a></li>
 		<li><a href="">GUIDE		（ご利用内容）</a></li>

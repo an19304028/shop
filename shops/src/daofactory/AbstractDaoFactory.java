@@ -12,6 +12,7 @@ import dao.user.LoginDao;
 import dao.user.RemoveCreditDao;
 import dao.admin.AddImageDao;
 import dao.admin.ColorDao;
+import dao.admin.GetImageDao;
 import dao.admin.GetUserListDao;
 import dao.admin.ItemDao;
 import dao.admin.RemoveImageDao;
@@ -58,6 +59,8 @@ public abstract class AbstractDaoFactory {
 	public abstract AddImageDao getAddImageDao();	
 	public abstract ItemDao getItemDao();
 	public abstract RemoveImageDao getRemoveImageDao();
+	public abstract GetImageDao getGetImageDao();
+
 	
 	//dao.favorite
 	public abstract AddFavoDao getAddFavoDao();

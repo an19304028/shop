@@ -14,7 +14,7 @@ public class MySQLAddImageDao implements AddImageDao{
 	public void addImage(Image i) {
 		try {
 			Connection cn = Connector.connect();
-			String sql= "INSERT into image_path, item_id shop.image_table VALUES(?, ?)";
+			String sql= "INSERT into shop.image_table(image_path, item_id) VALUES(?, ?)";
 
 			st = cn.prepareStatement(sql);
 

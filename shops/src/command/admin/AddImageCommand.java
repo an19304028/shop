@@ -11,23 +11,21 @@ import presentation.ResponseContext;
 public class AddImageCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
-		String imageId = rc.getParameter("imageId")[0];
 		String imagePath = rc.getParameter("imagePath")[0];
 		String itemId = rc.getParameter("itemId")[0];
-		System.out.println(imageId + "\t"+"\t"+imagePath);
+		System.out.println(imagePath);
 		
 		Image i = new Image();
-		i.setImageId(imageId);
 		i.setImagePath(imagePath);
-		i.setImageId(itemId);
+		i.setItemId(itemId);
 		
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		AddImageDao dao = factory.getAddImageDao();
+		
+
 		dao.addImage(i);
-		resc.setMess("画像を追加しました");
 		
-		
-		resc.setTarget("/WEB-INF/adminjsp/Admin.jsp");
+		resc.setTarget("getitemlist");
 		System.out.println("target:"+resc.getTarget());
 	
 		return resc;

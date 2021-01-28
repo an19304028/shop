@@ -1,4 +1,4 @@
-package dao.order;
+package dao.admin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,37 +7,33 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import bean.Cart;
+import bean.Image;
 import daofactory.Connector;
 
-public class MySQLGetCartListDao implements GetCartListDao {
+public class MySQLGetImageDao implements GetImageDao{
 	private PreparedStatement st = null;
+
 	@Override
-	public List getCartList() {
-		ArrayList cart = new ArrayList();
+	public List getImage(String itemId) {
+		ArrayList images = new ArrayList();
 		try {
 			Connection cn = Connector.connect();
-
-			String sql = "SELECT * FROM shop.cart_table";
+			String sql = "SELECT image_path FROM shop.image_table WHERE item_id = ?";
 			st = cn.prepareStatement(sql);
-
+			st.setString(1, itemId);
 			ResultSet rs = st.executeQuery();
+
 			while(rs.next()) {
-				Cart c = new Cart();
+				Image i = new Image();
+				i.setImagePath(rs.getString(1));
 
-				c.setUserId(rs.getString(1));
-				c.setItemId(rs.getString(2));
-				c.setBuyCount(rs.getInt(3));
-
-
-				cart.add(c);
+				images.add(i);
 			}
 			cn.close();
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-
-		return cart;
+		return images;
 	}
 
 }
