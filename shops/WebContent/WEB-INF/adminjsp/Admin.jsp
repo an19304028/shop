@@ -69,19 +69,19 @@
 
 	<h2>Page</h2>
 	<ul>
-		<li><a href="">CATEGORY		（カテゴリー）</a></li>
-		<li><a href="">LOGIN		（ログイン）</a></li>
-		<li><a href="">GUIDE		（ご利用内容）</a></li>
-		<li><a href="">CONTACT		（お問い合わせ）</a></li>
+		<li><a href="inputcategory">CATEGORY		（カテゴリー）</a></li>
+		<li><a href="inputlogin">LOGIN		（ログイン）</a></li>
+		<li><a href="inputguide">GUIDE		（ご利用内容）</a></li>
+		<li><a href="inputcontact">CONTACT		（お問い合わせ）</a></li>
 		<br>
-		<li><a href="">クレカ入力画面</a></li>
+		<li><a href="inputcredit">クレカ入力画面</a></li>
 		<br>
-		<li><a href="">カート</a></li>
-		<li><a href="">お気に入り一覧</a></li>
-		<li><a href="">商品ページ</a></li>
-		<li><a href="">サイトマップ</a></li>
-		<li><a href="">売り切れページ</a></li>
-		<li><a href="">ユーザー登録</a></li>
+		<li><a href="inputcart">カート</a></li>
+		<li><a href="inputfavo">お気に入り一覧</a></li>
+		<li><a href="inputitem">商品ページ</a></li>
+		<li><a href="inputsitemap">サイトマップ</a></li>
+		<li><a href="inputsoldout">売り切れページ</a></li>
+		<li><a href="inputuserregist">ユーザー登録</a></li>
 
 
 	</ul>
