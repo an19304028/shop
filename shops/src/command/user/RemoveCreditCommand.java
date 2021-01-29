@@ -18,7 +18,7 @@ public class RemoveCreditCommand extends AbstractCommand{
 
 		resc.setMess("削除しました");
 
-		resc.setTarget("/WEB-INF/userjsp/CheckPayment.jsp");
+		resc.setTarget("getcredit");
 		System.out.println("target:"+resc.getTarget());
 
 		return resc;
