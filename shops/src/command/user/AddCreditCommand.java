@@ -11,7 +11,7 @@ public class AddCreditCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc){
 		RequestContext rc = getRequestContext();
 		String userId = rc.getParameter("userId")[0];
-		String creditNumber = rc.getParameter("creditNumber")[0];
+		String cardNumber = rc.getParameter("cardNumber")[0];
 		String securityCode = rc.getParameter("securityCode")[0];
 		String expirationMonth = rc.getParameter("expirationMonth")[0];
 		String expirationYear = rc.getParameter("expirationYear")[0];
@@ -32,7 +32,7 @@ public class AddCreditCommand extends AbstractCommand{
 
 
 		c.setUserId(userId);
-		c.setCreditNumber(creditNumber);
+		c.setCardNumber(cardNumber);
 		c.setSecurityCode(securityCode);
 		c.setExpirationDate(expirationDate);
 		c.setPayCount(Integer.parseInt(payCount));
@@ -41,7 +41,7 @@ public class AddCreditCommand extends AbstractCommand{
 		AddCreditDao dao = factory.getAddCreditDao();
 
 		dao.addCredit(c);
-		resc.setMess(creditNumber+"を登録しました");
+		resc.setMess(cardNumber+"を登録しました");
 
 
 		resc.setTarget("getcredit");

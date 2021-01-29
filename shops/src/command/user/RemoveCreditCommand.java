@@ -9,12 +9,12 @@ import presentation.ResponseContext;
 public class RemoveCreditCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
-		String userId = rc.getParameter("userId")[0];
+		String cardNumber = rc.getParameter("userId")[0];
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		RemoveCreditDao dao = factory.getRemoveCreditDao();
 
-		dao.removeCredit(userId);
+		dao.removeCredit(cardNumber);
 
 		resc.setMess("削除しました");
 
