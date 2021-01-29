@@ -64,9 +64,6 @@
 
 	</form>
 
-	<form action="removecredit" method="post">
-		<input type='submit' value='削除'>
-	</form>
 
 	<!-- フッター -->
 	<div id="footer"></div>

@@ -35,8 +35,13 @@
 	</table>
 	<br>
 
-		<input type='button' value='入力画面へ戻る'>
-		<input type='submit' value='完了'>
+	<form action="removecredit" method="post">
+		<input type='submit' value='削除'>
+	</form>
+
+
+	<input type='button' value='入力画面へ戻る'>
+	<input type='submit' value='完了'>
 
 
 	<!-- フッター -->
