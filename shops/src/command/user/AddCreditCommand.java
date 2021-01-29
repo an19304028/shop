@@ -10,7 +10,7 @@ import presentation.ResponseContext;
 public class AddCreditCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc){
 		RequestContext rc = getRequestContext();
-		//String userId = rc.getParameter("userId")[0];
+		String userId = rc.getParameter("userId")[0];
 		String creditNumber = rc.getParameter("creditNumber")[0];
 		String securityCode = rc.getParameter("securityCode")[0];
 		String expirationDate = rc.getParameter("expirationDate")[0];
@@ -20,7 +20,7 @@ public class AddCreditCommand extends AbstractCommand{
 
 		Credit c = new Credit();
 
-		//u.setUserId(userId);
+		c.setUserId(userId);
 		c.setCreditNumber(creditNumber);
 		c.setSecurityCode(securityCode);
 		c.setExpirationDate(expirationDate);
@@ -33,7 +33,7 @@ public class AddCreditCommand extends AbstractCommand{
 		resc.setMess(creditNumber+"を登録しました");
 
 
-		resc.setTarget("/WEB-INF/userjsp/UserRegist.jsp");
+		resc.setTarget("/WEB-INF/userjsp/Payment.jsp");
 		System.out.println("target:"+resc.getTarget());
 
 		return resc;
