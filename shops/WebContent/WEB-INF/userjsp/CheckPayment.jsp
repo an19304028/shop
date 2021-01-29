@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,11 +25,13 @@
 	<p>以下の内容で良いですか？</p>
 
 	<table border="1">
+		<c:forEach var="credit" items="${data}">
 		<tr><td>ユーザーID</td><td>${credit.userId}</td></tr>
 		<tr><td>カード番号</td><td>${credit.creditNumber}</td></tr>
 		<tr><td>セキュリティーコード</td><td>${credit.securityCode}</td></tr>
 		<tr><td>有効期限</td><td>${credit.expirationDate}</td></tr>
 		<tr><td>支払回数</td><td>${credit.payCount}</td></tr>
+		</c:forEach>
 	</table>
 	<br>
 
