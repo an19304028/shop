@@ -1,6 +1,8 @@
 package dao.user;
 
+import java.util.List;
+
 public interface GetCreditDao {
-	public void getCredit(String userId);
+	public List getCredit(String userId);
 
 }
