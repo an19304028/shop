@@ -15,7 +15,7 @@ public class MySQLGetCreditDao implements GetCreditDao {
 		ArrayList credit = new ArrayList();
 		try {
 			Connection cn = Connector.connect();
-			String sql = "SELECT * FROM shop.credit_table WHERE user_id=?";
+			String sql = "SELECT * FROM shop.credit_table";
 			st = cn.prepareStatement(sql);
 			st.setString(1,userId);
 
