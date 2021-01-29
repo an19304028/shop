@@ -24,10 +24,14 @@ public class MySQLGetCreditDao implements GetCreditDao {
 			while(rs.next()) {
 				Credit c = new Credit();
 
+				String expirationDate = new String(rs.getString(4));
+				String month = expirationDate.substring(5,7);
+				String year = expirationDate.substring(2,4);
+
 				c.setUserId(rs.getString(1));
 				c.setCreditNumber(rs.getString(2));
 				c.setSecurityCode(rs.getString(3));
-				c.setExpirationDate(rs.getString(4));
+				c.setExpirationDate(month + "/" + year);
 				c.setPayCount(rs.getInt(5));
 
 
