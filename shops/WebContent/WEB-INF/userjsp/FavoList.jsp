@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>FavoList</title>
+<title>お気に入り一覧</title>
 </head>
 <body>
 	<!-- ヘッダー -->

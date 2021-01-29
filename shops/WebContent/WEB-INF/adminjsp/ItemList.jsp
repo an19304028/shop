@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ItemList</title>
+<title>アイテム一覧</title>
 </head>
 <body>
 	<table id="item-list" border="1">

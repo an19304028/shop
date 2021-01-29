@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>template</title>
+<title>クレカ登録画面</title>
 
 <body>
 	<!-- ヘッダー -->

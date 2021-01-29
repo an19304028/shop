@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>UserRegist</title>
+<title>ユーザー登録</title>
 </head>
 <body>
 	<!-- ヘッダー -->
@@ -25,6 +25,7 @@
 	 <form method="post" action="adduser">
 	    <font color="red">${mess}</font><br>
 	    <font color="blue">※ユーザー名、パスワードは10字以内の半角英数字のみで作成して下さい。</font><br>
+
 	      名前：<input type="text" name="name" required /><br>
 	      ふりがな：<input type="text" name="kana" required /><br>
 	      メール：<input type="text" name="mail" required /><br>
@@ -39,9 +40,9 @@
 	     郵便番号:<input type="text" name="postalCode" required /><br>
 	     住所:<input type="text" name="address"  required /><br>
 
-
       <input type="submit" value="送信" />
     </form>
+
     <script>
 	 		const pwd = document.getElementById('password');
 	 		const pwdCheck = document.getElementById('password-check');

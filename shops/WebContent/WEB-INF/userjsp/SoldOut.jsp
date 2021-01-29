@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SoldOut</title>
+<title>売り切れ</title>
 </head>
 <body>
 	<!-- ヘッダー -->

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SiteMap</title>
+<title>サイトマップ</title>
 </head>
 <body>
 	<!-- ヘッダー -->

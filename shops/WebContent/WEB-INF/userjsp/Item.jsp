@@ -21,7 +21,7 @@
 		});
 	</script>
 
-    <c:forEach var="item" items="${item_list} }">
+    <c:forEach var="item" items="${item_list}">
 		<ul>
 			<li>${item.image}</li>
 			<li>${item.name}</li>

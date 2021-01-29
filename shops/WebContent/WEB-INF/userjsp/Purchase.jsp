@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Purchase</title>
+<title>購入完了画面</title>
 </head>
 <body>
 	<!-- ヘッダー -->

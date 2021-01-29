@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Guide</title>
+<title>ご利用ガイド</title>
 </head>
 <body>
 	<!-- ヘッダー -->
