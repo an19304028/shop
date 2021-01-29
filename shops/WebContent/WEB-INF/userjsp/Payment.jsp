@@ -29,7 +29,7 @@
 		<!-- 名義人<input id="name" type='text' name='name' required><br> -->
 		セキュリティーコード<input id="securityCode" type='text' name='securityCode' required><br>
 		<!-- 有効期限<input id="expirationDate" type='text' name='expirationDate' required><br> -->
-		有効期限<select>
+		有効期限<select name="expirationMonth">
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -43,7 +43,7 @@
 					<option value="11">11</option>
 					<option value="12">12</option>
 				</select> 月 /
-				<select>
+				<select name="expirationYear">
 					<option value="21">21</option>
 					<option value="22">22</option>
 					<option value="23">23</option>
