@@ -44,7 +44,7 @@ public class AddCreditCommand extends AbstractCommand{
 		resc.setMess(creditNumber+"を登録しました");
 
 
-		resc.setTarget("/WEB-INF/userjsp/Payment.jsp");
+		resc.setTarget("getcredit");
 		System.out.println("target:"+resc.getTarget());
 
 		return resc;
