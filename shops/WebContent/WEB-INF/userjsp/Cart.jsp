@@ -40,12 +40,12 @@
 			<td>${order.itemCount}</td>
 		</tr>
 	</table>
-
-	<a href="">買い物に戻る</a>
-	<a href="">カートを空にする</a>
 	<br>
 
-	<a href="">購入手続きに進む</a>
+	<input type="button" value="買い物に戻る">
+	<input type="button" value="カートを空にする">
+	<br><br>
+	<input type="submit" value="購入手続きに進む">
 
 
 
