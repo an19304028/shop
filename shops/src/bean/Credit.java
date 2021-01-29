@@ -20,8 +20,8 @@ public class Credit implements Serializable {
 	public String getCardNumber() {
 		return cardNumber;
 	}
-	public void setCardNumber(String creditNumber) {
-		this.cardNumber = creditNumber;
+	public void setCardNumber(String cardNumber) {
+		this.cardNumber = cardNumber;
 	}
 	public String getSecurityCode() {
 		return securityCode;
