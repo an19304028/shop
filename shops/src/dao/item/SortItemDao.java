@@ -1,5 +1,7 @@
 package dao.item;
 
+import java.util.List;
+
 public interface SortItemDao {
-	void sortItem(String key);
+	List sortItem(String key);
 }

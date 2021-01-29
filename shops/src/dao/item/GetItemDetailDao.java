@@ -1,6 +1,8 @@
 package dao.item;
 
+import java.util.List;
+
 public interface GetItemDetailDao {
-	void getItemDetail(String key);
+	List getItemDetail(String key);
 
 }
