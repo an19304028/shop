@@ -59,8 +59,13 @@
 		<br>
 		支払回数<input id="payCount" type='text' name='payCount' required><br>
 		<br>
-		<input type='button' value='削除'>
+
 		<input type='submit' value='入力内容を確認する'>
+
+	</form>
+
+	<form action="removecredit" method="post">
+		<input type='submit' value='削除'>
 	</form>
 
 	<!-- フッター -->
