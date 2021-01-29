@@ -59,7 +59,7 @@
 		<br>
 		支払回数<input id="payCount" type='text' name='payCount' required><br>
 		<br>
-		<!-- 戻るボタンも必要かな -->
+		<input type='button' value='削除'>
 		<input type='submit' value='入力内容を確認する'>
 	</form>
 
