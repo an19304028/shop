@@ -20,7 +20,7 @@ public class MySQLAddCreditDao implements AddCreditDao{
 			st = cn.prepareStatement(sql);
 
 			st.setString(1, c.getUserId());
-			st.setString(2, c.getCreditNumber());
+			st.setString(2, c.getCardNumber());
 			st.setString(3, c.getSecurityCode());
 			st.setString(4, c.getExpirationDate());
 			st.setInt(5, c.getPayCount());

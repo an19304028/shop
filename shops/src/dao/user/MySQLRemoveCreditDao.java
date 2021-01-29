@@ -8,12 +8,12 @@ import daofactory.Connector;
 
 public class MySQLRemoveCreditDao implements RemoveCreditDao {
 	private PreparedStatement st = null;
-	public void removeCredit(String userId) {
+	public void removeCredit(String cardNumber) {
 		try {
 			Connection cn = Connector.connect();
-			String sql = "DELETE FROM shop.credit_table WHERE user_id=?";
+			String sql = "DELETE FROM shop.credit_table WHERE card_number=?";
 			st = cn.prepareStatement(sql);
-			st.setString(1,userId);
+			st.setString(1,cardNumber);
 
 			st.executeUpdate();
 

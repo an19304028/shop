@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class Credit implements Serializable {
 
 	private String userId;
-	private String creditNumber;
+	private String cardNumber;
 	private String securityCode;
 	private String expirationDate;
 	private int payCount;
@@ -17,11 +17,11 @@ public class Credit implements Serializable {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	public String getCreditNumber() {
-		return creditNumber;
+	public String getCardNumber() {
+		return cardNumber;
 	}
-	public void setCreditNumber(String creditNumber) {
-		this.creditNumber = creditNumber;
+	public void setCardNumber(String creditNumber) {
+		this.cardNumber = creditNumber;
 	}
 	public String getSecurityCode() {
 		return securityCode;

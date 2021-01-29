@@ -29,7 +29,7 @@ public class MySQLGetCreditDao implements GetCreditDao {
 				String year = expirationDate.substring(2,4);
 
 				c.setUserId(rs.getString(1));
-				c.setCreditNumber(rs.getString(2));
+				c.setCardNumber(rs.getString(2));
 				c.setSecurityCode(rs.getString(3));
 				c.setExpirationDate(month + "/" + year);
 				c.setPayCount(rs.getInt(5));
