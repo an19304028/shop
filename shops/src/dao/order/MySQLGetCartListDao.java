@@ -18,7 +18,7 @@ public class MySQLGetCartListDao implements GetCartListDao {
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "SELECT item_id, item_count FROM shop.cart_table WHERE = ?";
+			String sql = "SELECT user_id, item_id, item_count FROM shop.cart_table WHERE = ?";
 			st = cn.prepareStatement(sql);
 			st.setString(1, userId);
 
@@ -26,8 +26,9 @@ public class MySQLGetCartListDao implements GetCartListDao {
 			while(rs.next()) {
 				Cart c = new Cart();
 
-				c.setItemId(rs.getString(1));
-				c.setBuyCount(rs.getInt(2));
+				c.setUserId(rs.getString(1));
+				c.setItemId(rs.getString(2));
+				c.setBuyCount(rs.getInt(3));
 
 
 				cart.add(c);
