@@ -6,13 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import bean.User;
+import bean.Credit;
 import daofactory.Connector;
 
 public class MySQLGetCreditDao implements GetCreditDao {
 	private PreparedStatement st = null;
 	public void getCredit(String userId) {
-		ArrayList user = new ArrayList();
+		ArrayList credit = new ArrayList();
 		try {
 			Connection cn = Connector.connect();
 			String sql = "SELECT * FROM shop.credit_table WHERE user_id=?";
@@ -21,22 +21,20 @@ public class MySQLGetCreditDao implements GetCreditDao {
 
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
-				User u = new User();
+				Credit c = new Credit();
 
-				u.setUserId(rs.getString(1));
-				u.setCreditNumber(rs.getString(2));
-				u.setSecurtyCode(rs.getString(3));
-				u.setExpirationCode(rs.getString(4));
-				u.setPayCount(rs.getInt(5));
+				c.setUserId(rs.getString(1));
+				c.setCreditNumber(rs.getString(2));
+				c.setSecurityCode(rs.getString(3));
+				c.setExpirationDate(rs.getString(4));
+				c.setPayCount(rs.getInt(5));
 
 
-				user.add(u);
-
-			cn.close();
+				credit.add(c);
+			}
+		cn.close();
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
 	}
-
-
 }
