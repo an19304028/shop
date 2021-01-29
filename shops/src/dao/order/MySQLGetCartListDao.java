@@ -13,21 +13,21 @@ import daofactory.Connector;
 public class MySQLGetCartListDao implements GetCartListDao {
 	private PreparedStatement st = null;
 	@Override
-	public List getCartList() {
+	public List getCartList(String userId) {
 		ArrayList cart = new ArrayList();
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "SELECT * FROM shop.cart_table";
+			String sql = "SELECT item_id, item_count FROM shop.cart_table WHERE=";
 			st = cn.prepareStatement(sql);
+			st.setString(1, userId);
 
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
 				Cart c = new Cart();
 
-				c.setUserId(rs.getString(1));
-				c.setItemId(rs.getString(2));
-				c.setBuyCount(rs.getInt(3));
+				c.setItemId(rs.getString(1));
+				c.setBuyCount(rs.getInt(2));
 
 
 				cart.add(c);
