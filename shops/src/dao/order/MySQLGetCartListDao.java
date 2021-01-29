@@ -18,7 +18,7 @@ public class MySQLGetCartListDao implements GetCartListDao {
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "SELECT item_id, item_count FROM shop.cart_table WHERE=";
+			String sql = "SELECT item_id, item_count FROM shop.cart_table WHERE = ?";
 			st = cn.prepareStatement(sql);
 			st.setString(1, userId);
 
