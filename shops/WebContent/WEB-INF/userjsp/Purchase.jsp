@@ -25,5 +25,7 @@
 	<div id="footer"></div>
 
  <p>購入が完了しました</p>
+
+ <input type="button" value="TOPページに戻る">
 </body>
 </html>
