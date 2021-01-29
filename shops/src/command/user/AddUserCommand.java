@@ -21,11 +21,11 @@ public class AddUserCommand extends AbstractCommand{
 		String tell = rc.getParameter("tell")[0];
 		String postalCode = rc.getParameter("postalCode")[0];
 		String address = rc.getParameter("address")[0];
-		
+
 		//System.out.println(userId);
-		
+
 		User u = new User();
-		
+
 		//u.setUserId(userId);
 		u.setName(name);
 		u.setKana(kana);
@@ -37,17 +37,17 @@ public class AddUserCommand extends AbstractCommand{
 		u.setTell(tell);
 		u.setPostalCode(postalCode);
 		u.setAddress(address);
-		
+
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		AddUserDao dao = factory.getAddUserDao();
-		
-		dao.addUser(u);	
+
+		dao.addUser(u);
 		resc.setMess(name+"を登録しました");
-				
-		
-		resc.setTarget("/WEB-INF/userjsp/UserRegist.jsp");
+
+
+		resc.setTarget("/WEB-INF/userjsp/RegistUser.jsp");
 		System.out.println("target:"+resc.getTarget());
-	
+
 		return resc;
 	}
 }
