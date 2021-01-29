@@ -20,6 +20,7 @@ public class AddCreditCommand extends AbstractCommand{
 
 		Credit c = new Credit();
 
+
 		c.setUserId(userId);
 		c.setCreditNumber(creditNumber);
 		c.setSecurityCode(securityCode);
