@@ -24,14 +24,13 @@
 	<p>以下の内容で良いですか？</p>
 
 	<table border="1">
-		<tr>
-			<th>ユーザーID<th><td>${credit.userId}</td><br>
-			<th>カード番号</th><td>${credit.creditNumber}</td><br>
-			<th>セキュリティーコード</th><td>${credit.securityCode}</td><br>
-			<th>有効期限</th><td>${credit.expirationDate}</td><br>
-			<th>支払回数</th><td>${credit.payCount}</td><br>
-		</tr>
+		<tr><td>ユーザーID</td><td>${credit.userId}</td></tr>
+		<tr><td>カード番号</td><td>${credit.creditNumber}</td></tr>
+		<tr><td>セキュリティーコード</td><td>${credit.securityCode}</td></tr>
+		<tr><td>有効期限</td><td>${credit.expirationDate}</td></tr>
+		<tr><td>支払回数</td><td>${credit.payCount}</td></tr>
 	</table>
+	<br>
 
 		<input type='button' value='入力画面へ戻る'>
 		<input type='submit' value='完了'>

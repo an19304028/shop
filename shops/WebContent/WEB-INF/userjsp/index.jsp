@@ -23,7 +23,7 @@
 
 	<h1>ホーム</h1>
 	<a href="userregistinput">ユーザー登録</a><br>
-	<a href="logininput">ログイン</a><br>
+	<a href="logininput">ログイン</a><br><br>
 	<a href="admininput">管理者画面へ</a><br>
 
 	<!-- フッター -->
