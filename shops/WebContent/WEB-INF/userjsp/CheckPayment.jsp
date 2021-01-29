@@ -31,13 +31,16 @@
 		<tr><td>セキュリティーコード</td><td>${credit.securityCode}</td></tr>
 		<tr><td>有効期限</td><td>${credit.expirationDate}</td></tr>
 		<tr><td>支払回数</td><td>${credit.payCount}</td></tr>
+	    <tr><td>
+	    	<form action="removecredit" onSubmit="return checkSubmit()" method="post">
+	    		<input type="hidden" name="cardNumber" value="${credit.cardNumber}">
+	    		<input type="submit" value="削除">
+	    	</form>
+		  <tr></td>
 		</c:forEach>
 	</table>
 	<br>
 
-	<form action="removecredit" method="post">
-		<input type='submit' value='削除'>
-	</form>
 
 
 	<input type='button' value='入力画面へ戻る'>
