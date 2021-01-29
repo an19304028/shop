@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>購入完了画面</title>
+<title>購入手続き画面</title>
 </head>
 <body>
 	<!-- ヘッダー -->
@@ -21,10 +21,10 @@
 		});
 	</script>
 
+
+
 	<!-- フッター -->
 	<div id="footer"></div>
-
- <p>購入が完了しました</p>
 
  <input type="button" value="TOPページに戻る">
 </body>
