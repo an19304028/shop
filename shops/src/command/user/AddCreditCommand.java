@@ -13,10 +13,11 @@ public class AddCreditCommand extends AbstractCommand{
 		String userId = rc.getParameter("userId")[0];
 		String creditNumber = rc.getParameter("creditNumber")[0];
 		String securityCode = rc.getParameter("securityCode")[0];
-		String expirationDate = rc.getParameter("expirationDate")[0];
+		String expirationMonth = rc.getParameter("expirationMonth")[0];
+		String expirationYear = rc.getParameter("expirationYear")[0];
 		String payCount = rc.getParameter("payCount")[0];
 
-		System.out.println(creditNumber);
+		System.out.println(expirationYear+"/"+expirationMonth);
 
 		Credit c = new Credit();
 
