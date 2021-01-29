@@ -17,7 +17,16 @@ public class AddCreditCommand extends AbstractCommand{
 		String expirationYear = rc.getParameter("expirationYear")[0];
 		String payCount = rc.getParameter("payCount")[0];
 
-		System.out.println(expirationYear+"/"+expirationMonth);
+		System.out.println("20"+ expirationYear+"-0"+expirationMonth+"-01");
+		String expirationDate=null;
+
+		if(expirationMonth.equals("10")||expirationMonth.equals("11")||expirationMonth.equals("12")) {
+			 expirationDate = "20"+ expirationYear+"-"+expirationMonth+"-01";
+
+		}else {
+			 expirationDate = "20"+ expirationYear+"-0"+expirationMonth+"-01";
+
+		}
 
 		Credit c = new Credit();
 
