@@ -34,6 +34,7 @@
 	    <tr><td>
 	    	<form action="removecredit" onSubmit="return checkSubmit()" method="post">
 	    		<input type="hidden" name="cardNumber" value="${credit.cardNumber}">
+	    		<input type="hidden" name="userId" value="${credit.userId}">
 	    		<input type="submit" value="削除">
 	    	</form>
 		  <tr></td>
