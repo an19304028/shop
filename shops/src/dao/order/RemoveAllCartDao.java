@@ -1,5 +1,5 @@
 package dao.order;
 
 public interface RemoveAllCartDao {
-	public 
+	public void removeAllCart(String userId);
 }
