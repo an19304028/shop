@@ -16,8 +16,14 @@ public class GetCartListCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetCartListDao dao = factory.getGetCartListDao();
 
-		List cart = dao.getCartList(rc.getParameter("userId")[0]);
+		String userId = rc.getParameter("userId")[0];
+
+		List cart = dao.getCartList(userId);
 		System.out.println(dao.getCartList(rc.getParameter("userId")[0]));
+
+		String total = Integer.toString(dao.getTotalAmount(userId));
+
+		resc.setMess(total);
 
 		resc.setResult(cart);
 		resc.setTarget("/WEB-INF/userjsp/Cart.jsp");
@@ -25,5 +31,7 @@ public class GetCartListCommand extends AbstractCommand{
 		System.out.println("target:"+resc.getTarget());
 		return resc;
 	}
+
+
 
 }
