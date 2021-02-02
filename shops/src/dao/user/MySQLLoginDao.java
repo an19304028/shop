@@ -2,6 +2,7 @@ package dao.user;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import bean.User;
@@ -11,23 +12,25 @@ public class MySQLLoginDao implements LoginDao{
 	private PreparedStatement st = null;
 
 	@Override
-	public String login(String userId) {
+	public User login(String userId) {
 		User user = new User();
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "SELECT login_id FROM shop.user_table WHERE login_id=?\"";
+			String sql = "SELECT password FROM shop.user_table WHERE login_id=?";
 
 			st=cn.prepareStatement(sql);
-			st.setString(1, sql);
+			st.setString(1, userId);
 
-			st.executeUpdate();
+			ResultSet rs =  st.executeQuery();
+
+			user.setPassword(rs.getString(1));
 
 			cn.commit();
 			cn.close();
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		return user.getLoginId();
+		return user;
 	}
 }

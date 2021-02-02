@@ -1,5 +1,7 @@
 package dao.user;
 
+import bean.User;
+
 public interface LoginDao {
-	public String login(String loginId);
+	public User login(String loginId);
 }
