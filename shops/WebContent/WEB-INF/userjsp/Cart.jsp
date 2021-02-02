@@ -43,17 +43,14 @@
 	   		    <td>${item.point}</td>
 			    <td>${item.price}</td>
 			</tr>
-			<tr>
-				<td>
-					<form action="addorderdetail" onSubmit="return checkSubmit()" method="post">
-				        <input type="hidden" name="buyCount" value="${item.buyCount}">
-				        <input type="hidden" name="itemId" value="${item.itemId}">
-				        <input type="submit" value="注文確定">
-			     	</form>
-		     	</td>
-	     	</tr>
+
 		</c:forEach>
 	</table>
+	<form action="addorderdetail" onSubmit="return checkSubmit()" method="post">
+		<input type="hidden" name="userId" value="1">
+		<input type="submit" value="注文確定">
+	</form>
+
 
 
 	<br>
