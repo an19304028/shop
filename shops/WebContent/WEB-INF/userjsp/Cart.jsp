@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,29 +24,35 @@
 		});
 	</script>
 
+	<c:forEach var="item" items="${data}">
 	<table id="table" border="1">
 		<tr>
-			<th>注文番号</th>
-			<th>商品情報</th>
-			<th>注文日</th>
-			<th>価格</th>
+			<th>商品名</th>
+			<th>サイズ</th>
+			<th>カラー</th>
 			<th>数量</th>
+			<th>ポイント</th>
+			<th>価格</th>
 		</tr>
 
-		<tr>
-			<td>${order.orderId}</td>
-			<td>${order.userId}</td>
-			<td>${order.buyDate}</td>
-			<td>${order.price}</td>
-			<td>${order.itemCount}</td>
-		</tr>
+			<tr>
+				<td>${item.itemName}</td>
+			    <td>${item.sizeName}</td>
+			    <td>${item.colorName}</td>
+			    <td>${item.buyCount}</td>
+	   		    <td>${item.point}</td>
+			    <td>${item.price}</td>
+			</tr>
 	</table>
+	<form action="addorderdetail" onSubmit="return checkSubmit()" method="post">
+        <input type="hidden" name="buyCount" value="${item.buyCount}">
+        <input type="hidden" name="itemId" value="${item.itemId}">
+        <input type="submit" value="注文確定">
+      </form>
+	</c:forEach>
+
 	<br>
 
-	<input type="button" value="買い物に戻る">
-	<input type="button" value="カートを空にする">
-	<br><br>
-	<input type="submit" value="購入手続きに進む">
 
 
 
