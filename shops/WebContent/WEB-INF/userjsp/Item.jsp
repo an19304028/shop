@@ -24,7 +24,7 @@
 
 	<table id="item-list" border="1">
 		<tr>
-	
+
 			<th>商品名</th>
 			<th>在庫数</th>
 			<th>サイズ</th>
@@ -36,7 +36,7 @@
 		</tr>
 		<c:forEach var="item" items="${data}">
 			<tr>
-	
+
 			    <td>${item.itemName}</td>
 			    <td>${item.stockCount}</td>
 			    <td>${item.sizeName}</td>
@@ -51,6 +51,13 @@
 			    		<input type="hidden" name="itemId" value="${item.itemId}">
 			    		<input type="text" name="buyCount">
 			    		<input type="submit" value="カートに追加">
+			    	</form>
+			    </td>
+			    <td>
+			    	<form action="addfavo" onSubmit="return checkSubmit()" method="post">
+				    	<input type="hidden" name="userId" value="1">
+			    		<input type="hidden" name="itemId" value="${item.itemId}">
+			    		<input type="submit" name="itemId" value="お気に入り登録">
 			    	</form>
 			    </td>
 			</tr>
