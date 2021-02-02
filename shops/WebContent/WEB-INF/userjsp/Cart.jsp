@@ -54,7 +54,7 @@
 	   		    <td>${item.point}</td>
 			    <td>${item.price}</td>
 			    <td>
-				    <form action="removecart" onSubmit="return checkSubmit()" method="post">
+				    <form action="removecart" method="post">
 			    		<input type="hidden" name="itemId" value="${item.itemId}">
 			    		<input type="hidden" name="userId" value="${item.userId}">
 			    		<input type="submit" value="削除">
@@ -68,7 +68,7 @@
 		<input type="hidden" name="userId" value="1">
 		<input type="submit" value="カートを空にする">
 	</form>
-	<form action="addorder" onSubmit="return checkSubmit()" method="post">
+	<form action="addorder" method="post">
 		<input type="hidden" name="userId" value="1">
 		<input type="submit" value="注文確定">
 	</form>
