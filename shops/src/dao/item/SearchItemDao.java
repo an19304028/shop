@@ -1,7 +1,9 @@
 package dao.item;
 
+import java.util.List;
+
 public interface SearchItemDao {
 
-	void searchItem(String key);
+	List searchItem(String key);
 
 }

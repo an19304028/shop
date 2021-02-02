@@ -52,7 +52,9 @@ import dao.order.MySQLAddCartDao;
 import dao.order.MySQLAddOrderDao;
 import dao.order.MySQLGetCartListDao;
 import dao.order.MySQLGetOrderListDao;
+import dao.order.MySQLRemoveAllCartDao;
 import dao.order.MySQLRemoveCartDao;
+import dao.order.RemoveAllCartDao;
 import dao.order.RemoveCartDao;
 
 public class MySQLDaoFactory extends AbstractDaoFactory{
@@ -107,7 +109,9 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 	public GetCartListDao getGetCartListDao() { return new MySQLGetCartListDao();}
 	public GetOrderListDao getGetOrderListDao() { return new MySQLGetOrderListDao();}
 	public RemoveCartDao getRemoveCartDao() { return new MySQLRemoveCartDao();}
+	public RemoveAllCartDao getRemoveAllCartDao() { return new MySQLRemoveAllCartDao();}
 
+	
 	//user
 	public AddCreditDao getAddCreditDao() { return new MySQLAddCreditDao();}
 	public EditUserDao getEditUserDao() { return new MySQLEditUserDao();}
