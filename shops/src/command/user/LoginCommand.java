@@ -15,7 +15,7 @@ public class LoginCommand extends AbstractCommand {
 
 		String target = null;
 		String mes = null;
-		String flg = "NG";
+		String flag = "NG";
 
 		RequestContext rc = getRequestContext();
 
@@ -31,8 +31,13 @@ public class LoginCommand extends AbstractCommand {
 
 		if(id.equals(u.getLoginId())) {
 			if(pass.equals(u.getPassword())) {
-				target = "/";
-				flg = "OK";
+				String path = rc.getOldPath();
+				if( path == null) {
+					target = "/";
+				}else {
+					target = path;
+				}
+				flag = "OK";
 			}else {
 				mes = "パスワードが違います";
 				target = "/WEB-INF/userjsp/Login.jsp";
@@ -44,8 +49,9 @@ public class LoginCommand extends AbstractCommand {
 
 		resc.setTarget(target);
 		resc.setMess(mes);
-		rc.setSession(flg);
+		rc.setFlag(flag);
 
+		System.out.println("mes:"+resc.getMess());
 		System.out.println("target:"+resc.getTarget());
 
 		return resc;

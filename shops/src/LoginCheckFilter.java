@@ -5,21 +5,24 @@ import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet Filter implementation class LoginFilter
+ * Servlet Filter implementation class LoginCheckFilter
  */
-@WebFilter("/LoginFilter")
-public class LoginFilter implements Filter {
+@WebFilter("/LoginCheckFilter")
+public class LoginCheckFilter implements Filter {
 
     /**
      * Default constructor.
      */
-    public LoginFilter() {
+    public LoginCheckFilter() {
         // TODO Auto-generated constructor stub
     }
 
@@ -37,10 +40,26 @@ public class LoginFilter implements Filter {
 		// TODO Auto-generated method stub
 		// place your code here
 
+		request.setCharacterEncoding("utf-8");
 
+		HttpServletRequest hreq = (HttpServletRequest)request;
 
+		HttpSession session = hreq.getSession();
+
+		if(session.getAttribute("flag").equals("NG")) {
+
+			session.setAttribute("oldPath", hreq.getServletPath());
+
+			RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/userjsp/Login.jsp");
+
+			disp.forward(request, response);
+
+		}else {
+
+			chain.doFilter(request, response);
+
+		}
 		// pass the request along the filter chain
-		chain.doFilter(request, response);
 	}
 
 	/**

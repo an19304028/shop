@@ -5,6 +5,7 @@ public interface RequestContext {
 	public abstract String[] getParameter(String key);
 	public abstract void setRequest(Object req);
 	public abstract Object getRequest();
-	public abstract void setSession(String flg);
-	public abstract String getSession();
+	public abstract void setFlag(String flag);
+	public abstract String getFlag();
+	public abstract String getOldPath();
 }
