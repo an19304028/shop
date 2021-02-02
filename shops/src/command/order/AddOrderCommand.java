@@ -35,6 +35,8 @@ public class AddOrderCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		AddOrderDao dao = factory.getAddOrderDao();
 
+		dao.addOrder(o);
+
 		resc.setMess("注文情報を確定いたしました。");
 
 		resc.setTarget("/WEB-INF/userjsp/Purchase.jsp");

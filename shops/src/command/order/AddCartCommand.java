@@ -25,9 +25,11 @@ public class AddCartCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		AddCartDao dao = factory.getAddCartDao();
 
+		dao.addCart(c);
+
 		resc.setMess(itemId+"を"+buyCount+"個カートに追加しました");
 
-		resc.setTarget("/WEB-INF/userjsp/Cart.jsp");
+		resc.setTarget("getcartlist");
 		System.out.println("target:"+resc.getTarget());
 
 		return resc;

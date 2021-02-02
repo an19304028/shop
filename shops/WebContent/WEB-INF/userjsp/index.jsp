@@ -26,6 +26,8 @@
 	<a href="logininput">ログイン</a><br><br>
 	<a href="admininput">管理者画面へ</a><br>
 
+	<a href="getuseritemlist">アイテム一覧へ</a>
+
 	<!-- フッター -->
 	<div id="footer"></div>
 </body>
