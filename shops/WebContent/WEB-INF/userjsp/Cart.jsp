@@ -56,6 +56,7 @@
 			    <td>
 				    <form action="removecart" onSubmit="return checkSubmit()" method="post">
 			    		<input type="hidden" name="itemId" value="${item.itemId}">
+			    		<input type="hidden" name="userId" value="${item.userId}">
 			    		<input type="submit" value="削除">
 			    	</form>
 			    </td>
