@@ -17,14 +17,18 @@ public class MySQLLoginDao implements LoginDao{
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "SELECT password FROM shop.user_table WHERE login_id=?";
+			String sql = "SELECT login_id,password FROM shop.user_table WHERE login_id=?";
 
 			st=cn.prepareStatement(sql);
 			st.setString(1, userId);
 
 			ResultSet rs =  st.executeQuery();
 
-			user.setPassword(rs.getString(1));
+			while(rs.next()) {
+
+				user.setLoginId(rs.getString(1));
+				user.setPassword(rs.getString(2));
+			}
 
 			cn.commit();
 			cn.close();

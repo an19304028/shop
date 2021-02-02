@@ -31,7 +31,7 @@ public class LoginCommand extends AbstractCommand {
 
 		if(id.equals(u.getLoginId())) {
 			if(pass.equals(u.getPassword())) {
-				target = "";
+				target = "/";
 				flg = "OK";
 			}else {
 				mes = "パスワードが違います";

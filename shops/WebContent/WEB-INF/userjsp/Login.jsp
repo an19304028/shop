@@ -23,8 +23,8 @@
 
 	<h1>ログイン</h1>
 	<font color="blue">ユーザー名とパスワードを入力してください。</font>
-  	<form action="" method="post" >
-      ログインID：<input type="text" pattern="^[0-9A-Za-z]+$" name="loginId" required /><br>
+  	<form action="login" method="post" >
+      ログインID：<input type="text" pattern="^[0-9A-Za-z_]+$" name="loginId" required /><br>
       パスワード：<input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[A-Za-z]+$" maxlength="10" name="pass" required /><br>
       <input type="checkbox" id="password-check">パスワードを表示する<br>
   	  <input type="submit" value="ログイン" />
