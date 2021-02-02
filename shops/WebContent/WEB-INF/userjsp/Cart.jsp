@@ -6,6 +6,17 @@
 <head>
 <meta charset="UTF-8">
 <title>Cart</title>
+<script type="text/javascript">
+	function checkSubmit() {
+		result = confirm("空にしても良いですか？");
+		if (result) {
+			document.myform.action = "PostWriteServlet";
+			} else {
+			alert("キャンセルします。");
+			return false;
+		}
+	}
+</script>
 </head>
 <body>
 	<!-- ヘッダー -->
@@ -42,10 +53,20 @@
 			    <td>${item.buyCount}</td>
 	   		    <td>${item.point}</td>
 			    <td>${item.price}</td>
+			    <td>
+				    <form action="removecart" onSubmit="return checkSubmit()" method="post">
+			    		<input type="hidden" name="itemId" value="${item.itemId}">
+			    		<input type="submit" value="削除">
+			    	</form>
+			    </td>
 			</tr>
-
 		</c:forEach>
 	</table>
+
+	<form action="removeallcart" onSubmit="return checkSubmit()" method="post">
+		<input type="hidden" name="userId" value="1">
+		<input type="submit" value="カートを空にする">
+	</form>
 	<form action="addorderdetail" onSubmit="return checkSubmit()" method="post">
 		<input type="hidden" name="userId" value="1">
 		<input type="submit" value="注文確定">

@@ -21,7 +21,7 @@
 		});
 	</script>
 
-
+	<p><font color="red">${mess}</font></p>
 
 	<!-- フッター -->
 	<div id="footer"></div>

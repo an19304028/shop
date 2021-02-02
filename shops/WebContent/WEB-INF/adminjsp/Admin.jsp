@@ -13,6 +13,17 @@
 </head>
 <body>
 	<h1>管理者</h1>
+
+	<ul>
+		<li><a href="inputcart">カート</a></li>
+		<br>
+		<li><a href="inputitemregist">アイテム登録</a></li>
+		<li><a href="getitemlist">アイテム一覧</a></li>
+		<br>
+		<li><a href="getcolors">カラー一覧</a></li>
+		<br>
+	</ul>
+	<br>
 	<a href="getallusers">ユーザー一覧</a>
 	<h2>カラー追加</h2>
 	<p><font color="red">${mess}</font></p>
@@ -58,14 +69,6 @@
 
 <h1>リンク一覧</h1>
 
-	<h2>Admin</h2>
-	<ul>
-		<li><a href="inputitemregist">アイテム登録</a></li>
-		<li><a href="getitemlist">アイテム一覧</a></li>
-		<br>
-		<li><a href="getcolors">カラー一覧</a></li>
-	</ul>
-	<br>
 
 	<h2>Page</h2>
 	<ul>
