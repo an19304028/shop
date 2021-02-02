@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
 <title>index</title>
 
 <body>
@@ -25,8 +27,6 @@
 	<a href="userregistinput">ユーザー登録</a><br>
 	<a href="logininput">ログイン</a><br><br>
 	<a href="admininput">管理者画面へ</a><br>
-
-	<a href="getuseritemlist">アイテム一覧へ</a>
 
 	<!-- フッター -->
 	<div id="footer"></div>

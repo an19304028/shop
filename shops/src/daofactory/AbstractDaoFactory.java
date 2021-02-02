@@ -28,6 +28,7 @@ import dao.order.AddCartDao;
 import dao.order.AddOrderDao;
 import dao.order.GetCartListDao;
 import dao.order.GetOrderListDao;
+import dao.order.RemoveAllCartDao;
 import dao.order.RemoveCartDao;
 import dao.user.RemoveUserDao;
 
@@ -82,6 +83,8 @@ public abstract class AbstractDaoFactory {
 	public abstract GetCartListDao getGetCartListDao();
 	public abstract GetOrderListDao getGetOrderListDao();
 	public abstract RemoveCartDao getRemoveCartDao();
+	public abstract RemoveAllCartDao getRemoveAllCartDao();
+
 
 	//dao.user
 	public abstract AddCreditDao getAddCreditDao();
