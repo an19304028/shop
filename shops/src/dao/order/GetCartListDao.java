@@ -4,5 +4,6 @@ import java.util.List;
 
 public interface GetCartListDao {
 	public List getCartList(String userId);
+	public int getTotalAmount(String userId);
 
 }
