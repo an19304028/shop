@@ -37,7 +37,9 @@ import dao.favorite.MySQLGetFavoListDao;
 import dao.favorite.MySQLRemoveFavoDao;
 import dao.favorite.RemoveFavoDao;
 import dao.item.GetItemDetailDao;
+import dao.item.GetUserItemListDao;
 import dao.item.MySQLGetItemDetailDao;
+import dao.item.MySQLGetUserItemListDao;
 import dao.item.MySQLSearchItemDao;
 import dao.item.MySQLSortItemDao;
 import dao.item.SearchItemDao;
@@ -96,6 +98,8 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 	public GetItemDetailDao getGetItemDetailDao() { return new MySQLGetItemDetailDao();}
 	public SearchItemDao getSearchItemDao() { return new MySQLSearchItemDao();}
 	public SortItemDao getSortItemDao() { return new MySQLSortItemDao();}
+	public GetUserItemListDao getGetUserItemListDao() { return new MySQLGetUserItemListDao();}
+
 
 	//order
 	public AddCartDao getAddCartDao() { return new MySQLAddCartDao();}

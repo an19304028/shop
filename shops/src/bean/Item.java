@@ -12,7 +12,28 @@ public class Item implements Serializable{
 	private String categoryId;
 	private String detail;
 	private String imagePath;
+	private String sizeName;
+	private String categoryName;
+	private String colorName;
 
+	public String getSizeName() {
+		return sizeName;
+	}
+	public void setSizeName(String sizeName) {
+		this.sizeName = sizeName;
+	}
+	public String getCategoryName() {
+		return categoryName;
+	}
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+	public String getColorName() {
+		return colorName;
+	}
+	public void setColorName(String colorName) {
+		this.colorName = colorName;
+	}
 	public String getImagePath() {
 		return imagePath;
 	}

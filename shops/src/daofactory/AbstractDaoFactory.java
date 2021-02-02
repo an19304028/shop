@@ -20,8 +20,10 @@ import dao.favorite.AddFavoDao;
 import dao.favorite.GetFavoListDao;
 import dao.favorite.RemoveFavoDao;
 import dao.item.GetItemDetailDao;
+import dao.item.GetUserItemListDao;
 import dao.item.SearchItemDao;
 import dao.item.SortItemDao;
+
 import dao.order.AddCartDao;
 import dao.order.AddOrderDao;
 import dao.order.GetCartListDao;
@@ -71,6 +73,8 @@ public abstract class AbstractDaoFactory {
 	public abstract GetItemDetailDao getGetItemDetailDao();
 	public abstract SearchItemDao getSearchItemDao();
 	public abstract SortItemDao getSortItemDao();
+	public abstract GetUserItemListDao getGetUserItemListDao();
+
 
 	//dao.order
 	public abstract AddCartDao getAddCartDao();
