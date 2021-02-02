@@ -51,7 +51,7 @@ public class AddOrderCommand extends AbstractCommand{
 		resc.setTarget("/WEB-INF/userjsp/Purchase.jsp");
 		System.out.println("target:"+resc.getTarget());
 
-		return null;
+		return resc;
 	}
 
 }
