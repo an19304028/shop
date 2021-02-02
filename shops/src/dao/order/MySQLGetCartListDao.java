@@ -50,7 +50,7 @@ public class MySQLGetCartListDao implements GetCartListDao {
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "SELECT SUM(price) FROM cart_table c JOIN item_table i USING(item_id) JOIN size_table s USING(size_id) JOIN color_table co USING(color_id) WHERE user_id=?";
+			String sql = "SELECT SUM(*buy_count) FROM cart_table c JOIN item_table i USING(item_id) JOIN size_table s USING(size_id) JOIN color_table co USING(color_id) WHERE user_id=?";
 			st = cn.prepareStatement(sql);
 			st.setString(1, userId);
 
