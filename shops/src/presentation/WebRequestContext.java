@@ -33,22 +33,29 @@ public class WebRequestContext implements RequestContext {
 		return request;
 	}
 	@Override
-	public void setFlag(String flag) {
+	public void setToken(String token) {
 		// TODO 自動生成されたメソッド・スタブ
 
-		 request.getSession().setAttribute("flag", flag);
+		 request.getSession(true).setAttribute("token", token);
 
 	}
 	@Override
-	public String getFlag() {
+	public String getToken() {
 		// TODO 自動生成されたメソッド・スタブ
 
-		return (String)request.getSession().getAttribute("flg");
+		return (String)request.getSession(true).getAttribute("token");
 	}
 	@Override
 	public String getOldPath() {
 		// TODO 自動生成されたメソッド・スタブ
-		return (String)request.getSession().getAttribute("oldPath");
+		return (String)request.getSession(true).getAttribute("oldPath");
+	}
+	@Override
+	public void invalidateSession() {
+		// TODO 自動生成されたメソッド・スタブ
+
+		request.getSession(true).invalidate();
+
 	}
 
 }

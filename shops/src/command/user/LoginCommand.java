@@ -15,7 +15,7 @@ public class LoginCommand extends AbstractCommand {
 
 		String target = null;
 		String mes = null;
-		String flag = "NG";
+		String token = "NG";
 
 		RequestContext rc = getRequestContext();
 
@@ -37,7 +37,7 @@ public class LoginCommand extends AbstractCommand {
 				}else {
 					target = path;
 				}
-				flag = "OK";
+				token = "OK";
 			}else {
 				mes = "パスワードが違います";
 				target = "/WEB-INF/userjsp/Login.jsp";
@@ -49,7 +49,7 @@ public class LoginCommand extends AbstractCommand {
 
 		resc.setTarget(target);
 		resc.setMess(mes);
-		rc.setFlag(flag);
+		rc.setToken(token);
 
 		System.out.println("mes:"+resc.getMess());
 		System.out.println("target:"+resc.getTarget());
