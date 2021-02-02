@@ -9,6 +9,7 @@
 <title>ItemRegist</title>
 </head>
 <body>
+	<a href="admininput">>> 管理者TOP</a><br><br>
 	<a href="getitemlist">商品一覧</a>
 	<h2>商品追加</h2>
 

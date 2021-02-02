@@ -16,13 +16,13 @@
 	<h1>管理者</h1>
 
 	<ul>
-		<li><a href="inputcart">カート</a></li>
 		<br>
 		<li><a href="inputitemregist">アイテム登録</a></li>
 		<li><a href="getitemlist">アイテム一覧</a></li>
 		<br>
 		<li><a href="getcolors">カラー一覧</a></li>
 		<br>
+		<li><a href="inputcart">カート</a></li>
 	</ul>
 	<br>
 	<a href="getallusers">ユーザー一覧</a>

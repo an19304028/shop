@@ -25,6 +25,8 @@
 </style>
 </head>
 <body>
+
+	<a href="admininput">>> 管理者TOP</a>
 	<p><font color="red">${mess}</font></p>
 	<table id="table" border="1">
 	<tr><th>カラーID</th><th>カラー名</th><th>画像のパス</th><th>画像</th></tr>

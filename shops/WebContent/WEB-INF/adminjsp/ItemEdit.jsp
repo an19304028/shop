@@ -8,6 +8,7 @@
 <title>ItemEdit</title>
 </head>
 <body>
+	<a href="admininput">>> 管理者TOP</a>
 	<a href="getallitems">商品一覧</a>
 	<h2>商品 編集</h2>
 	<form method='post' action='additem'>

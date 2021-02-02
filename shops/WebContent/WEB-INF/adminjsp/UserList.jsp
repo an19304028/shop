@@ -20,6 +20,7 @@
 </script>
 </head>
 <body>
+	<a href="admininput">>> 管理者TOP</a><br>
 	<p><font color="red">${mess}</font></p>
 	<table id="table" border="1">
 	<tr>

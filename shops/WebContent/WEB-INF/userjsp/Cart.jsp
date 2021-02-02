@@ -65,6 +65,8 @@
 		</c:forEach>
 	</table>
 
+	<p><font color="red">${mess}</font></p>
+
 	<form action="removeallcart" onSubmit="return checkSubmit()" method="post">
 		<input type="hidden" name="userId" value="1">
 		<input type="submit" value="カートを空にする">
