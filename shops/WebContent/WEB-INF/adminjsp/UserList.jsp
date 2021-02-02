@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
 <title>UserList</title>
 <script type="text/javascript">
 	function checkSubmit() {
@@ -58,7 +59,7 @@
 		</tr>
 	</c:forEach>
 	</table>
-	
-            
+
+
 	<a href="/shops/">ホームへ</a>
 </html>
