@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,15 +22,40 @@
 		});
 	</script>
 
-    <c:forEach var="item" items="${item_list}">
-		<ul>
-			<li>${item.image}</li>
-			<li>${item.name}</li>
-			<li>${item.code}</li>
-			<li>${item.price}(税込み)</li>
-
-		</ul>
-	</c:forEach>
+	<table id="item-list" border="1">
+		<tr>
+	
+			<th>商品名</th>
+			<th>在庫数</th>
+			<th>サイズ</th>
+			<th>カラー</th>
+			<th>価格</th>
+			<th>カテゴリー</th>
+			<th>詳細</th>
+			<!-- <th>画像</th> -->
+		</tr>
+		<c:forEach var="item" items="${data}">
+			<tr>
+	
+			    <td>${item.itemName}</td>
+			    <td>${item.stockCount}</td>
+			    <td>${item.sizeName}</td>
+			    <td>${item.colorName}</td>
+			    <td>${item.price}</td>
+			    <td>${item.categoryName}</td>
+			    <td>${item.detail}</td>
+			 <%--    <td><img src="image/item/${item.imagePath}"  width="40px" height="40px"></td> --%>
+			    <td>
+			    	<form action="addcart" onSubmit="return checkSubmit()" method="post">
+			    		<input type="hidden" name="userId" value="1">
+			    		<input type="hidden" name="itemId" value="${item.itemId}">
+			    		<input type="text" name="buyCount">
+			    		<input type="submit" value="カートに追加">
+			    	</form>
+			    </td>
+			</tr>
+		</c:forEach>
+</table>
 
 	<!-- フッター -->
 	<div id="footer"></div>
