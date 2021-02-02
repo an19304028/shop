@@ -68,7 +68,7 @@
 		<input type="hidden" name="userId" value="1">
 		<input type="submit" value="カートを空にする">
 	</form>
-	<form action="addorderdetail" onSubmit="return checkSubmit()" method="post">
+	<form action="addorder" onSubmit="return checkSubmit()" method="post">
 		<input type="hidden" name="userId" value="1">
 		<input type="submit" value="注文確定">
 	</form>
