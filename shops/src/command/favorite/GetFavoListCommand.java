@@ -22,7 +22,7 @@ public class GetFavoListCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetFavoListDao dao = factory.getGetFavoListDao();
 
-		dao.getFavoList(f);
+		dao.getFavoList();
 
 		resc.setTarget("/WEB-INF/userjsp/FavoList.jsp");
 		System.out.println("target:"+resc.getTarget());
