@@ -6,6 +6,7 @@ import bean.Order;
 import bean.OrderDetail;
 import command.AbstractCommand;
 import dao.order.AddOrderDao;
+import dao.order.RemoveAllCartDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;
@@ -33,9 +34,10 @@ public class AddOrderCommand extends AbstractCommand{
 
 			list.add(od);
 			itemCount += Integer.parseInt(rc.getParameter("buyCount")[i]);
-			price += Integer.parseInt(rc.getParameter("price")[i])*itemCount;
+			price += Integer.parseInt(rc.getParameter("price")[i])*Integer.parseInt(rc.getParameter("buyCount")[i]);
 
 			System.out.println("item_id:"+rc.getParameter("itemId")[i]+"\tbuy_count:"+rc.getParameter("buyCount")[i]+"\tprice:"+rc.getParameter("price")[i]);
+
 		}
 
 		Order o = new Order();
@@ -52,6 +54,10 @@ public class AddOrderCommand extends AbstractCommand{
 		dao.addOrder(o, list);
 
 		resc.setMess("注文情報を確定いたしました。");
+
+		RemoveAllCartDao removedao = factory.getRemoveAllCartDao();
+
+		removedao.removeAllCart(userId);
 
 		resc.setTarget("/WEB-INF/userjsp/Purchase.jsp");
 		System.out.println("target:"+resc.getTarget());

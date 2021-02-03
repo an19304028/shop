@@ -39,6 +39,18 @@ public class MySQLAddOrderDao implements AddOrderDao{
 				st.executeUpdate();
 			}
 
+			String countsql = "UPDATE shop.item_table set stock_count = stock_count - ? where item_id = ?";
+			for(int i = 0; i < list.size(); i++) {
+				OrderDetail od = (OrderDetail)list.get(i);
+
+				st = cn.prepareStatement(countsql);
+				st.setInt(1, od.getBuyCount());
+				st.setString(2, od.getItemId());
+
+				st.executeUpdate();
+			}
+
+
 			cn.commit();
 			cn.close();
 		} catch (Exception e) {

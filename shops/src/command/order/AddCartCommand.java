@@ -1,5 +1,7 @@
 package command.order;
 
+import java.awt.List;
+
 import bean.Cart;
 import command.AbstractCommand;
 import dao.order.AddCartDao;
@@ -24,10 +26,16 @@ public class AddCartCommand extends AbstractCommand{
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		AddCartDao dao = factory.getAddCartDao();
+		
+		int stock = dao.getStockCount(c);
+		
+		if(stock>=buyCount) {
+			dao.addCart(c);
+			resc.setMess(itemId+"を"+buyCount+"個カートに追加しました");
+		}else if(stock<buyCount) {
+			resc.setMess("在庫が足りません");
+		}
 
-		dao.addCart(c);
-
-		resc.setMess(itemId+"を"+buyCount+"個カートに追加しました");
 
 		resc.setTarget("getcartlist");
 		System.out.println("target:"+resc.getTarget());

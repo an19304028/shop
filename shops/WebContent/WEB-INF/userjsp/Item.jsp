@@ -39,7 +39,7 @@
 			<tr>
 
 			    <td>${item.itemName}</td>
-			    <td>${item.stockCount}</td>
+			    <td id="stock">${item.stockCount}</td>
 			    <td>${item.sizeName}</td>
 			    <td>${item.colorName}</td>
 			    <td>${item.price}</td>
@@ -47,11 +47,11 @@
 			    <td>${item.detail}</td>
 			 <%--    <td><img src="image/item/${item.imagePath}"  width="40px" height="40px"></td> --%>
 			    <td>
-			    	<form action="addcart" onSubmit="return checkSubmit()" method="post">
+			    	<form name="addcart" action=""  method="post">
 			    		<input type="hidden" name="userId" value="1">
 			    		<input type="hidden" name="itemId" value="${item.itemId}">
-			    		<input type="text" name="buyCount">
-			    		<input type="submit" value="カートに追加">
+			    		<input type="text" name="buyCount" id="buyCount">
+			    		<input type="submit"  onclick="checkStock();" value="カートに追加">
 			    	</form>
 			    </td>
 			    <td>
@@ -64,7 +64,23 @@
 			</tr>
 		</c:forEach>
 </table>
-
+	<script>
+		console.log(stock);
+		function checkStock(){
+			var stock = document.getElementById("stock").textContent;
+			var buyCount = document.getElementById("buyCount").value;
+			console.log(stock);
+			if(stock<buyCount){
+				alert("在庫数を超えています");
+				
+			}else if(buyCount==""){
+				alert("入力してください");
+			}else{
+				document.addcart.action= 'addcart';
+			}
+		}
+		
+	</script>
 	<!-- フッター -->
 	<div id="footer"></div>
 </body>
