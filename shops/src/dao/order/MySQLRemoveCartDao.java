@@ -4,19 +4,20 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import bean.Order;
 import daofactory.Connector;
 
 public class MySQLRemoveCartDao implements RemoveCartDao{
 	private PreparedStatement st = null;
 
 	@Override
-	public void removeCart(String itemId) {
+	public void removeCart(String userId,String itemId) {
 		try {
 			Connection cn = Connector.connect();
-			String sql = "DELETE FROM shop.cart_table WHERE item_id=?";
+			String sql = "DELETE FROM shop.cart_table WHERE user_id=?, item_id=?";
 			st = cn.prepareStatement(sql);
-			st.setString(1,itemId);
+
+			st.setString(1,userId);
+			st.setString(2,itemId);
 
 			st.executeUpdate();
 
