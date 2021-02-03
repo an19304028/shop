@@ -58,7 +58,7 @@
 			    	<form action="addfavo" onSubmit="return checkSubmit()" method="post">
 				    	<input type="hidden" name="userId" value="1">
 			    		<input type="hidden" name="itemId" value="${item.itemId}">
-			    		<input type="submit" name="itemId" value="お気に入り登録">
+			    		<input type="submit" name="itemId" onclick="location.href='./FavoList.jsp'" value="♡">
 			    	</form>
 			    </td>
 			</tr>

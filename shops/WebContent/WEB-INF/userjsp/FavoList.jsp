@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +22,40 @@
 			$("#footer").load("common/Footer.html");
 		});
 	</script>
-	<!-- フッター -->
+
+	<h2>お気に入り一覧</h2>
+
+	<table id="favo-list" border="1">
+		<tr>
+			<th>商品名</th>
+			<th>在庫数</th>
+			<th>サイズ</th>
+			<th>カラー</th>
+			<th>価格</th>
+			<th>カテゴリー</th>
+			<th>詳細</th>
+			<!-- <th>画像</th> -->
+		</tr>
+		<c:forEach var="item" items="${data}">
+			<tr>
+			    <td>${item.itemName}</td>
+			    <td>${item.stockCount}</td>
+			    <td>${item.sizeName}</td>
+			    <td>${item.colorName}</td>
+			    <td>${item.price}</td>
+			    <td>${item.categoryName}</td>
+			    <td>${item.detail}</td>
+			 <%--    <td><img src="image/item/${item.imagePath}"  width="40px" height="40px"></td> --%>
+			 	<td>
+			    	<form action="removefavo" method="post">
+				    	<input type="hidden" name="userId" value="1">
+			    		<input type="hidden" name="itemId" value="${item.itemId}">
+			    		<input type="submit" name="itemId" value="削除">
+			    	</form>
+			    </td>
+			</tr>
+		</c:forEach>
+	</table>
 	<div id="footer"></div>
 </body>
 </html>

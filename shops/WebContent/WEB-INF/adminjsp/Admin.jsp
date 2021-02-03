@@ -15,6 +15,8 @@
 <body>
 	<h1>管理者</h1>
 
+	<a href="/shops">>> indexへ戻る</a>
+
 	<ul>
 		<br>
 		<li><a href="inputitemregist">アイテム登録</a></li>

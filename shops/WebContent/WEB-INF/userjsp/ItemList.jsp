@@ -9,6 +9,19 @@
 <title>アイテム一覧</title>
 </head>
 <body>
+	<!-- ヘッダー -->
+	<div id="header"></div>
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
+	<script>
+		$(function(){
+			$("#header").load("common/Header.html");
+		});
+
+		$(function(){
+			$("#footer").load("common/Footer.html");
+		});
+	</script>
 	<table id="item-list" border="1">
 	<tr>
 
@@ -44,7 +57,8 @@
 	</c:forEach>
 	</table>
 
-
+	<!-- フッター -->
+	<div id="footer"></div>
 
 
 
