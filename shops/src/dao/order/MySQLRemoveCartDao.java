@@ -13,7 +13,7 @@ public class MySQLRemoveCartDao implements RemoveCartDao{
 	public void removeCart(String userId,String itemId) {
 		try {
 			Connection cn = Connector.connect();
-			String sql = "DELETE FROM shop.cart_table WHERE user_id=? & item_id=?";
+			String sql = "DELETE FROM shop.cart_table WHERE user_id=? AND item_id=?";
 			st = cn.prepareStatement(sql);
 
 			st.setString(1,userId);
