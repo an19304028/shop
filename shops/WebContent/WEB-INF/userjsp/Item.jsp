@@ -65,6 +65,7 @@
 		</c:forEach>
 </table>
 	<script>
+		console.log(stock);
 		function checkStock(){
 			var stock = document.getElementById("stock").textContent;
 			var buyCount = document.getElementById("buyCount").value;
