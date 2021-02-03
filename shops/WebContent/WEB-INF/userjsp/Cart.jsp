@@ -57,7 +57,7 @@
 			    <td>
 				    <form action="removecart" method="post">
 			    		<input type="hidden" name="itemId" value="${item.itemId}">
-			    		<input type="hidden" name="userId" value="${item.userId}">
+			    		<input type="hidden" name="userId" value="1">
 			    		<input type="submit" value="削除">
 			    	</form>
 			    </td>
@@ -72,6 +72,12 @@
 		<input type="submit" value="カートを空にする">
 	</form>
 	<form action="addorder" method="post">
+		<c:forEach var="item" items="${data}">
+			<input type="hidden" name="itemId" value="${item.itemId}">
+			<input type="hidden" name="buyCount" value="${item.buyCount}">
+			<input type="hidden" name="price" value="${item.price}">
+		</c:forEach>
+
 		<input type="hidden" name="userId" value="1">
 		<input type="submit" value="注文確定">
 	</form>

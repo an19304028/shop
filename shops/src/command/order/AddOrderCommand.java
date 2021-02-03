@@ -18,10 +18,11 @@ public class AddOrderCommand extends AbstractCommand{
 
 		String userId =rc.getParameter("userId")[0];
 		//String itemId= rc.getParameter("itemId")[0];
-		int price = Integer.parseInt(rc.getParameter("price")[0]);
-		int itemCount = Integer.parseInt(rc.getParameter("itemCount")[0]);
+		int price = 0;
+		//int itemCount = Integer.parseInt(rc.getParameter("itemCount")[0]);
+		int itemCount = 0;
 		//int buyCount = Integer.parseInt(rc.getParameter("buyCount")[0]);
-		System.out.println(userId + "\t"+price + "\t"+itemCount);
+
 
 		ArrayList list = new ArrayList();
 		//for文でparameter全部引っ張り出す
@@ -31,8 +32,10 @@ public class AddOrderCommand extends AbstractCommand{
 			od.setBuyCount(Integer.parseInt(rc.getParameter("buyCount")[i]));
 
 			list.add(od);
+			itemCount += Integer.parseInt(rc.getParameter("buyCount")[i]);
+			price += Integer.parseInt(rc.getParameter("price")[i])*itemCount;
 
-			System.out.println("item_id:"+rc.getParameter("itemId")[i]+"\tbuy_count:"+rc.getParameter("buyCount")[i]);
+			System.out.println("item_id:"+rc.getParameter("itemId")[i]+"\tbuy_count:"+rc.getParameter("buyCount")[i]+"\tprice:"+rc.getParameter("price")[i]);
 		}
 
 		Order o = new Order();
@@ -40,6 +43,8 @@ public class AddOrderCommand extends AbstractCommand{
 		o.setUserId(userId);
 		o.setPrice(price);
 		o.setItemCount(itemCount);
+
+		System.out.println(userId + "\t"+price + "\t"+itemCount);
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		AddOrderDao dao = factory.getAddOrderDao();
