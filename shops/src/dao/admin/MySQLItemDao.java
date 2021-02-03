@@ -45,14 +45,23 @@ public class MySQLItemDao implements ItemDao{
 	@Override
 	//編集
 	public void EditItem(Item i) {
-		//一旦保留by加村
-//		try {
-//			Connection cnConnection = Connector.connect();
-//			String sqlString = "UPDATE shop.item_table set";
-//
-//		} catch (Exception e) {
-//			// TODO: handle exception
-//		}
+		try {
+			Connection cn = Connector.connect();
+			String sql = "UPDATE shop.item_table set stock_count = ?, detail = ? where item_id = ?";
+
+			st = cn.prepareStatement(sql);
+
+			st.setInt(1, i.getStockCount());
+			st.setString(2, i.getDetail());
+			st.setString(3, i.getItemId());
+
+			st.executeUpdate();
+
+			cn.commit();
+			cn.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
 
 	}
 
