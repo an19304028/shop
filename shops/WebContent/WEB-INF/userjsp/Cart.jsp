@@ -20,10 +20,12 @@
 </script>
 </head>
 <body>
+
 	<!-- ヘッダー -->
 	<div id="header"></div>
 
 	<h1>買い物かご</h1>
+	<p>${mess1}</p>
 
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>

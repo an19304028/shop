@@ -9,6 +9,7 @@
 <title>Item</title>
 </head>
 <body>
+	<p>${mess1}</p>
 	<!-- ヘッダー -->
 	<div id="header"></div>
 
@@ -72,14 +73,14 @@
 			console.log(stock);
 			if(stock<buyCount){
 				alert("在庫数を超えています");
-				
+
 			}else if(buyCount==""){
 				alert("入力してください");
 			}else{
 				document.addcart.action= 'addcart';
 			}
 		}
-		
+
 	</script>
 	<!-- フッター -->
 	<div id="footer"></div>
