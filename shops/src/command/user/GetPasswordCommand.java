@@ -16,8 +16,6 @@ public class GetPasswordCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetPasswordDao dao = factory.getGetPasswordDao();
 
-		resc.setMess("");
-
 
 		resc.setTarget("/WEB-INF/userjsp/UserRegist.jsp");
 		System.out.println("target:"+resc.getTarget());
