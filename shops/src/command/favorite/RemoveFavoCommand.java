@@ -22,7 +22,7 @@ public class RemoveFavoCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		RemoveFavoDao dao = factory.getRemoveFavoDao();
 
-		dao.removeFavo(f);
+		dao.removeFavo(userId,itemId);
 		resc.setMess(itemId+"をお気に入りから削除しました");
 
 		resc.setTarget("/WEB-INF/userjsp/FavoList.jsp");
