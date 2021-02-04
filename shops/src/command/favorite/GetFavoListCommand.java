@@ -24,3 +24,4 @@ public class GetFavoListCommand extends AbstractCommand{
 		return resc;
 	}
 }
+
