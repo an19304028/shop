@@ -43,15 +43,6 @@ public class WebResponseContext implements ResponseContext {
 		return response;
 	}
 
-	@Override
-	public String getMess() {
-		return mess;
-	}
 
-	@Override
-	public void setMess(String mess) {
-		this.mess = mess;
-		
-	}
 
 }
