@@ -26,6 +26,7 @@ public class AddImageCommand extends AbstractCommand{
 		dao.addImage(i);
 		
 		resc.setTarget("getitemlist");
+		rc.setAttribute("addimage",(Object)"画像を追加しました");
 		System.out.println("target:"+resc.getTarget());
 	
 		return resc;

@@ -24,10 +24,10 @@ public class AddColorCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		ColorDao dao = factory.getColorDao();
 		if(dao.getColor(c.getColorId())!=null) {
-			resc.setMess("この番号は使われています");
+			rc.setAttribute("mess1",(Object)"この番号は使われています");
 		}else {
 			dao.addColor(c);
-			resc.setMess("カラーを追加しました");
+			rc.setAttribute("mess1",(Object)"カラーを追加しました");
 		}
 		
 		

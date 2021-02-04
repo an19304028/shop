@@ -10,4 +10,10 @@ public interface RequestContext {
 	public abstract String getToken();
 	public abstract String getOldPath();
 	public abstract void invalidateSession();
+	
+	public abstract void setAttribute(String key, Object o);
+	public abstract Object getAttribute(String key);
+	
+	public abstract void setSessionAttribute(String key, Object o);
+	public abstract Object getSessonAttribuet(String key);
 }
