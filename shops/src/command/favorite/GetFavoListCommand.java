@@ -14,7 +14,6 @@ public class GetFavoListCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetFavoListDao dao = factory.getGetFavoListDao();
 
-
 		String userId = rc.getParameter("userId")[0];
 
 		List favo = dao.getFavoList(userId);
