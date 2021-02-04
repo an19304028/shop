@@ -16,7 +16,7 @@ public class RemoveImageCommand extends AbstractCommand{
 		System.out.println("削除"+imageId);
 		dao.removeImage(imageId);
 		
-		resc.setMess(imageId+"を削除しました");
+		rc.setAttribute("mess",imageId+"を削除しました");
 		
 		resc.setTarget("getitemlist");
 		System.out.println("target:"+resc.getTarget());

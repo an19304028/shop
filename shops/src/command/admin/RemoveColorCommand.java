@@ -16,7 +16,7 @@ public class RemoveColorCommand extends AbstractCommand{
 		System.out.println("削除"+colorId);
 		dao.removeColor(colorId);
 		
-		resc.setMess(colorId+"を削除しました");
+		rc.setAttribute("mess",colorId+"を削除しました");
 		
 		resc.setTarget("getcolors");
 		System.out.println("target:"+resc.getTarget());

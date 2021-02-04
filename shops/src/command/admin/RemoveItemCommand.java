@@ -16,7 +16,7 @@ public class RemoveItemCommand extends AbstractCommand{
 		System.out.println("削除"+itemId);
 		dao.removeItem(itemId);
 		
-		resc.setMess(itemId+"を削除しました");
+		rc.setAttribute("mess",itemId+"を削除しました");
 		
 		resc.setTarget("getitemlist");
 		System.out.println("target:"+resc.getTarget());
