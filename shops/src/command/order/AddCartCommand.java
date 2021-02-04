@@ -32,7 +32,7 @@ public class AddCartCommand extends AbstractCommand{
 		if(stock>=buyCount+cartcount) {
 			dao.addCart(c);
 			rc.setAttribute("mess1",itemId+"を"+buyCount+"個カートに追加しました");
-		}else if(stock>=buyCount+cartcount) {
+		}else if(stock<buyCount+cartcount) {
 			rc.setAttribute("mess1","在庫が足りません");
 		}
 
