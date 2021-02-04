@@ -3,10 +3,12 @@ package presentation;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 public class WebRequestContext implements RequestContext {
 	private Map parameters;
 	private HttpServletRequest request;
+	private HttpSession session;
 	public WebRequestContext() {}
 	@Override
 	public String getCommandPath() {
@@ -56,6 +58,28 @@ public class WebRequestContext implements RequestContext {
 
 		request.getSession(true).invalidate();
 
+	}
+	
+	
+	@Override
+	public void setAttribute(String key, Object o) {
+		// TODO 自動生成されたメソッド・スタブ
+		request.setAttribute(key, o);
+	}
+	@Override
+	public Object getAttribute(String key) {
+		// TODO 自動生成されたメソッド・スタブ
+		return request.getAttribute(key);
+	}
+	@Override
+	public void setSessionAttribute(String key, Object o) {
+		// TODO 自動生成されたメソッド・スタブ
+		session.setAttribute(key, o);
+	}
+	@Override
+	public Object getSessonAttribuet(String key) {
+		// TODO 自動生成されたメソッド・スタブ
+		return session.getAttribute(key);
 	}
 
 }

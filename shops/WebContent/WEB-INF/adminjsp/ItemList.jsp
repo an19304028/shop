@@ -10,6 +10,7 @@
 </head>
 <body>
 	<a href="admininput">>> 管理者TOP</a><br><br>
+	<p><font color="red">${addimage}</font></p>
 	<table id="item-list" border="1">
 	<tr>
 		<th>商品ID</th>
