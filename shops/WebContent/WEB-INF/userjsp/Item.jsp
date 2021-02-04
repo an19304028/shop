@@ -9,7 +9,6 @@
 <title>Item</title>
 </head>
 <body>
-	<p>${mess1}</p>
 	<!-- ヘッダー -->
 	<div id="header"></div>
 
@@ -23,7 +22,7 @@
 			$("#footer").load("common/Footer.html");
 		});
 	</script>
-
+	<p>${mess1}</p>
 	<table id="item-list" border="1">
 		<tr>
 
@@ -71,16 +70,16 @@
 			var stock = document.getElementById("stock").textContent;
 			var buyCount = document.getElementById("buyCount").value;
 			console.log(stock);
-			if(stock<buyCount){
+			if(Number(stock)<Number(buyCount)){
 				alert("在庫数を超えています");
-
+				
 			}else if(buyCount==""){
 				alert("入力してください");
 			}else{
 				document.addcart.action= 'addcart';
 			}
 		}
-
+		
 	</script>
 	<!-- フッター -->
 	<div id="footer"></div>
