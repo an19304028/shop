@@ -72,7 +72,6 @@ public class MySQLAddCartDao implements AddCartDao{
 
 			ResultSet rs = st.executeQuery();
 			if(rs.next()==true) {
-				rs.next();
 				i.setPrice(rs.getInt(1));
 				count=rs.getInt(1);
 			}else {
