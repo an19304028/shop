@@ -11,13 +11,13 @@ public class MySQLRemoveFavoDao implements RemoveFavoDao{
 
 	@Override
 	public void removeFavo(String userId, String itemId) {
-		// TODO 自動生成されたメソッド・スタブ
 		try {
 			Connection cn = Connector.connect();
-			String sql = "DELETE FROM shop.favo_table WHERE user_id, item_id = ?";
+			String sql = "DELETE FROM shop.favo_table WHERE user_id=? AND item_id=?";
 			st = cn.prepareStatement(sql);
-			st.setString(1, userId);
-			st.setString(2, itemId );
+
+			st.setString(1,userId);
+			st.setString(2,itemId);
 
 			st.executeUpdate();
 
