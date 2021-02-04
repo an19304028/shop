@@ -25,7 +25,7 @@ public class AddFavoCommand extends AbstractCommand{
 		dao.addFavo(f);
 		resc.setMess(itemId+"をお気に入りに登録しました");
 
-		resc.setTarget("/WEB-INF/userjsp/FavoList.jsp");
+		resc.setTarget("getfavolist");
 		System.out.println("target:"+resc.getTarget());
 		return resc;
 	}
