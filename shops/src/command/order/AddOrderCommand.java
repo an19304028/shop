@@ -53,7 +53,7 @@ public class AddOrderCommand extends AbstractCommand{
 
 		dao.addOrder(o, list);
 
-		resc.setMess("注文情報を確定いたしました。");
+		rc.setAttribute("mess","注文情報を確定いたしました。");
 
 		RemoveAllCartDao removedao = factory.getRemoveAllCartDao();
 

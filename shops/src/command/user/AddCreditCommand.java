@@ -41,7 +41,7 @@ public class AddCreditCommand extends AbstractCommand{
 		AddCreditDao dao = factory.getAddCreditDao();
 
 		dao.addCredit(c);
-		resc.setMess(cardNumber+"を登録しました");
+		rc.setAttribute("mess",cardNumber+"を登録しました");
 
 
 		resc.setTarget("getcredit");
