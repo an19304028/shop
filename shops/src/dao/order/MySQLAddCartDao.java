@@ -59,4 +59,28 @@ public class MySQLAddCartDao implements AddCartDao{
 		}
 		return stock;
 	}
+	public int getCartCount(Cart i) {
+		int count=0;
+		try {
+			Connection cn = Connector.connect();
+
+			String sql = "SELECT SUM(buy_count) FROM cart_table WHERE item_id = ? AND user_id = ? GROUP BY item_id,user_id";
+
+			st = cn.prepareStatement(sql);
+			st.setString(1, i.getItemId());
+			st.setString(2, i.getUserId());
+
+			ResultSet rs = st.executeQuery();
+			rs.next();
+			i.setPrice(rs.getInt(1));
+			count=rs.getInt(1);
+			
+			
+			cn.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return count;
+		
+	}
 }
