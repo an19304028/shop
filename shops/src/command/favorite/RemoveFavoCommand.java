@@ -18,7 +18,7 @@ public class RemoveFavoCommand extends AbstractCommand{
 		System.out.println("カートから削除:"+itemId);
 		dao.removeFavo(userId, itemId);
 
-		resc.setMess("お気に入りから"+itemId+"を削除しました");
+		rc.setAttribute("Mess","お気に入りから"+itemId+"を削除しました");
 
 		resc.setTarget("getfavolist");
 		System.out.println("target:"+resc.getTarget());
