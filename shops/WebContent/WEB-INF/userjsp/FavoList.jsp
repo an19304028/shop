@@ -48,7 +48,7 @@
 			 <%--    <td><img src="image/item/${item.imagePath}"  width="40px" height="40px"></td> --%>
 			 	<td>
 			    	<form action="removefavo" method="post">
-				    	<input type="hidden" name="userId" value="1">
+				    			<input type="hidden" name="userId" value="${sessionScope.userId}">
 			    		<input type="hidden" name="itemId" value="${item.itemId}">
 			    		<input type="submit" name="itemId" value="削除">
 			    	</form>
