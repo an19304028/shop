@@ -21,5 +21,14 @@
   	<url-pattern>/common/*</url-pattern>
   </servlet-mapping>
 
+  <filter>
+        <filter-name>LoginCheckFilter</filter-name>
+        <filter-class>LoginCheckFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginCheckFilter</filter-name>
+        <url-pattern>/addcart</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
 
 </web-app>

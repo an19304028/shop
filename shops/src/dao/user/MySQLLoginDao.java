@@ -37,4 +37,27 @@ public class MySQLLoginDao implements LoginDao{
 		}
 		return user;
 	}
+	public String getUserId(String loginId) {
+		String userId = null;
+		try {
+			Connection cn = Connector.connect();
+
+			String sql = "SELECT user_id FROM shop.user_table WHERE login_id=?";
+
+			st=cn.prepareStatement(sql);
+			st.setString(1, loginId);
+
+			ResultSet rs =  st.executeQuery();
+			
+			rs.next();
+			userId = rs.getString(1);
+			
+
+			cn.commit();
+			cn.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return userId;
+	}
 }

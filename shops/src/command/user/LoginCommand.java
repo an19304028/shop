@@ -27,17 +27,22 @@ public class LoginCommand extends AbstractCommand {
 		LoginDao dao = factory.getLoginDao();
 
 		User u = dao.login(id);
-
+		
+		String userId = dao.getUserId(id);
+		System.out.println("userID:"+userId);
 
 		if(id.equals(u.getLoginId())) {
 			if(pass.equals(u.getPassword())) {
 				String path = rc.getOldPath();
 				if( path == null) {
-					target = "/";
+					target = "/getcategory?category=new";
 				}else {
 					target = path;
 				}
 				token = "OK";
+
+				rc.setSessionAttribute("userId", userId);
+				mes = userId+"でログインしました";
 			}else {
 				mes = "パスワードが違います";
 				target = "/WEB-INF/userjsp/Login.jsp";
@@ -48,9 +53,9 @@ public class LoginCommand extends AbstractCommand {
 		}
 
 		resc.setTarget(target);
-		rc.setAttribute("mess",mes);
+		rc.setAttribute("login",mes);
 		rc.setToken(token);
-
+		
 		System.out.println("mes:"+rc.getAttribute("mess"));
 		System.out.println("target:"+resc.getTarget());
 

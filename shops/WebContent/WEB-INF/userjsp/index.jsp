@@ -26,6 +26,7 @@
 	<h1>ホーム</h1>
 	<a href="userregistinput">ユーザー登録</a><br>
 	<a href="logininput">ログイン</a><br><br>
+	<a href="logout">ログアウト</a><br>
 	<a href="admininput">管理者画面へ</a><br>
 	<a href="getuseritemlist">アイテム一覧へ</a><br>
 	<!-- フッター -->

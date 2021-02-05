@@ -25,7 +25,7 @@
 		});
 	</script>
 	
-	
+	<p>${login}</p>
 	<p>${mess}</p>
 	<c:choose>
 		<c:when test="${count>0}">

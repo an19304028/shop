@@ -74,11 +74,13 @@ public class WebRequestContext implements RequestContext {
 	@Override
 	public void setSessionAttribute(String key, Object o) {
 		// TODO 自動生成されたメソッド・スタブ
+		session = request.getSession();
 		session.setAttribute(key, o);
 	}
 	@Override
-	public Object getSessonAttribuet(String key) {
+	public Object getSessonAttribute(String key) {
 		// TODO 自動生成されたメソッド・スタブ
+		session = request.getSession();
 		return session.getAttribute(key);
 	}
 

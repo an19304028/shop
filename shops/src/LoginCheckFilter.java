@@ -46,7 +46,7 @@ public class LoginCheckFilter implements Filter {
 
 		HttpSession session = hreq.getSession(true);
 
-		if(session.getAttribute("token").equals("NG")) {
+		if(session.getAttribute("token")==null) {
 
 			session.setAttribute("oldPath", hreq.getServletPath());
 
