@@ -29,7 +29,8 @@
 	<br>
 	<a href="getallusers">ユーザー一覧</a>
 	<h2>カラー追加</h2>
-	<p><font color="red">${mess1}</font></p>
+
+	<p><font color="red">${mess}</font></p>
 
 	<p><font color="red">IDはCOから始める</font></p>
 	<form method='post' action='addcolor'>
