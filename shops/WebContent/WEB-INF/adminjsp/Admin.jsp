@@ -15,7 +15,7 @@
 <body>
 	<h1>管理者</h1>
 
-	<a href="/shops/">>> indexへ戻る</a>
+	<a href="/shops/getcategory?category=new">>> indexへ戻る</a>
 
 	<ul>
 		<br>
@@ -24,7 +24,7 @@
 		<br>
 		<li><a href="getcolors">カラー一覧</a></li>
 		<br>
-		<li><a href="inputcart">カート</a></li>
+		<li><a href="getcartlist?userId=1">カート</a></li>
 	</ul>
 	<br>
 	<a href="getallusers">ユーザー一覧</a>
@@ -75,14 +75,14 @@
 
 	<h2>Page</h2>
 	<ul>
-		<li><a href="inputcategory">CATEGORY		（カテゴリー）</a></li>
-		<li><a href="inputlogin">LOGIN		（ログイン）</a></li>
+		<li><a href="getcategory?category=new">CATEGORY		（カテゴリー）</a></li>
+		<li><a href="logininput">LOGIN		（ログイン）</a></li>
 		<li><a href="inputguide">GUIDE		（ご利用内容）</a></li>
 		<li><a href="inputcontact">CONTACT		（お問い合わせ）</a></li>
 		<br>
 		<li><a href="inputcredit">クレカ入力画面</a></li>
 		<br>
-		<li><a href="inputcart">カート</a></li>
+		<li><a href="getcartlist?userId=1">カート</a></li>
 		<li><a href="inputfavo">お気に入り一覧</a></li>
 		<li><a href="inputitem">商品ページ</a></li>
 		<li><a href="inputsitemap">サイトマップ</a></li>

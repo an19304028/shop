@@ -23,7 +23,7 @@ public class SearchItemCommand extends AbstractCommand {
 		if(dao.getSearchCount(key2)!=0) {
 			items = dao.searchItem(key2);
 			int count = dao.getSearchCount(key2);
-			rc.setAttribute("mess", count+"件");
+			rc.setAttribute("mess",key+"の検索結果："+count+"件");
 			rc.setAttribute("count", count);
 		}else {
 			rc.setAttribute("mess","商品がありません");

@@ -25,7 +25,7 @@
 	<div id="header"></div>
 
 	<h1>買い物かご</h1>
-	<p>${mess1}</p>
+	
 
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>
@@ -37,58 +37,60 @@
 			$("#footer").load("common/Footer.html");
 		});
 	</script>
+	
+	<c:choose>
+		<c:when test="${total==1}">
+			<table id="table" border="1">
+				<tr>
+					<th>商品名</th>
+					<th>サイズ</th>
+					<th>カラー</th>
+					<th>数量</th>
+					<th>ポイント</th>
+					<th>価格</th>
+				</tr>
+				<c:forEach var="item" items="${data}">
+					<tr>
+						<td>${item.itemName}</td>
+					    <td>${item.sizeName}</td>
+					    <td>${item.colorName}</td>
+					    <td>${item.buyCount}</td>
+			   		    <td>${item.point}</td>
+					    <td>${item.price}</td>
+					    <td>
+						    <form action="removecart" method="post">
+					    		<input type="hidden" name="itemId" value="${item.itemId}">
+					    		<input type="hidden" name="userId" value="1">
+					    		<input type="submit" value="削除">
+					    	</form>
+					    </td>
+					</tr>
+				</c:forEach>
+			</table>
+		
+			<p>${mess}</p>
+		
+			<form action="removeallcart" onSubmit="return checkSubmit()" method="post">
+				<input type="hidden" name="userId" value="1">
+				<input type="submit" value="カートを空にする">
+			</form>
+			<form action="addorder" method="post">
+				<c:forEach var="item" items="${data}">
+					<input type="hidden" name="itemId" value="${item.itemId}">
+					<input type="hidden" name="buyCount" value="${item.buyCount}">
+					<input type="hidden" name="price" value="${item.price}">
+				</c:forEach>
+		
+				<input type="hidden" name="userId" value="1">
+				<input type="submit" value="注文確定">
+			</form>
 
-
-	<table id="table" border="1">
-		<tr>
-			<th>商品名</th>
-			<th>サイズ</th>
-			<th>カラー</th>
-			<th>数量</th>
-			<th>ポイント</th>
-			<th>価格</th>
-		</tr>
-		<c:forEach var="item" items="${data}">
-			<tr>
-				<td>${item.itemName}</td>
-			    <td>${item.sizeName}</td>
-			    <td>${item.colorName}</td>
-			    <td>${item.buyCount}</td>
-	   		    <td>${item.point}</td>
-			    <td>${item.price}</td>
-			    <td>
-				    <form action="removecart" method="post">
-			    		<input type="hidden" name="itemId" value="${item.itemId}">
-			    		<input type="hidden" name="userId" value="1">
-			    		<input type="submit" value="削除">
-			    	</form>
-			    </td>
-			</tr>
-		</c:forEach>
-	</table>
-
-	<p><font color="red">${mess}</font></p>
-
-	<form action="removeallcart" onSubmit="return checkSubmit()" method="post">
-		<input type="hidden" name="userId" value="1">
-		<input type="submit" value="カートを空にする">
-	</form>
-	<form action="addorder" method="post">
-		<c:forEach var="item" items="${data}">
-			<input type="hidden" name="itemId" value="${item.itemId}">
-			<input type="hidden" name="buyCount" value="${item.buyCount}">
-			<input type="hidden" name="price" value="${item.price}">
-		</c:forEach>
-
-		<input type="hidden" name="userId" value="1">
-		<input type="submit" value="注文確定">
-	</form>
-
-
-
-	<br>
-
-
+			<br>
+	</c:when>
+	<c:otherwise>
+		<p>${mess}</p>
+	</c:otherwise>
+	</c:choose>
 
 
 	<div id="footer"></div>

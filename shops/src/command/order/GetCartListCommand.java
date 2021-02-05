@@ -20,11 +20,15 @@ public class GetCartListCommand extends AbstractCommand{
 
 		List cart = dao.getCartList(userId);
 		System.out.println(dao.getCartList(rc.getParameter("userId")[0]));
-
+		
 		String total = Integer.toString(dao.getTotalAmount(userId));
-
-		rc.setAttribute("mess",total);
-
+		if(total.equals("0")) {
+			rc.setAttribute("mess","カートの中身がありません");
+			rc.setAttribute("total", 0);
+		}else {
+			rc.setAttribute("mess",total+"円");
+			rc.setAttribute("total", 1);
+		}
 		resc.setResult(cart);
 		resc.setTarget("/WEB-INF/userjsp/Cart.jsp");
 

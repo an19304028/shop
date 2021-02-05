@@ -16,17 +16,24 @@ public class GetCategoryCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetCategoryDao dao = factory.getGetCategoryDao(); 
 		List item = null;
-		if(dao.getCategoryCount(category)!=0) {
-			item = dao.getCategory(category);
-			System.out.println(item);
-			int count = dao.getCategoryCount(category);
-			rc.setAttribute("mess",count+"件");
-			rc.setAttribute("count", count);
-		}else {
-			rc.setAttribute("mess", "商品がありません");
-		}
-		resc.setResult(item);
 		
+		if(category.equals("new")) {
+			item = dao.getNewItem();
+			rc.setAttribute("mess", "新着30件");
+			rc.setAttribute("count", 1);
+			resc.setResult(item);
+		}else {
+			if(dao.getCategoryCount(category)!=0) {
+				item = dao.getCategory(category);
+				System.out.println(item);
+				int count = dao.getCategoryCount(category);
+				rc.setAttribute("mess",count+"件");
+				rc.setAttribute("count", count);
+			}else {
+				rc.setAttribute("mess", "商品がありません");
+			}
+			resc.setResult(item);
+		}
 		resc.setTarget("/WEB-INF/userjsp/Category.jsp");
 		return resc;
 	}

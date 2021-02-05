@@ -73,5 +73,28 @@ public class MySQLGetCategoryDao implements GetCategoryDao{
 		}
 		return count;
 	}
+	public List getNewItem() {
+		ArrayList list = new ArrayList();
+		try {
+			Connection cn = Connector.connect();
+			String sql="SELECT i.item_id, i.item_name, im.image_path FROM shop.item_table i JOIN image_table im USING(item_id) JOIN category_table c USING(category_id) WHERE image_path LIKE '%samne.jpg%' ORDER BY add_date LIMIT 30";
+			st = cn.prepareStatement(sql);
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				Item i = new Item();
+				i.setItemId(rs.getString(1));
+				i.setItemName(rs.getString(2));
+				i.setImagePath(rs.getString(3));
+
+				list.add(i);
+			}
+			cn.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
 	
 }

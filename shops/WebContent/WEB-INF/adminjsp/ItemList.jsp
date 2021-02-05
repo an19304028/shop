@@ -11,6 +11,7 @@
 <body>
 	<a href="admininput">>> 管理者TOP</a><br><br>
 	<p><font color="red">${addimage}</font></p>
+	<p>${mess}</p>
 	<table id="item-list" border="1">
 	<tr>
 		<th>商品ID</th>
@@ -38,6 +39,12 @@
 		    	<form action="removeitem" onSubmit="return checkSubmit()" method="post">
 		    		<input type="hidden" name="itemId" value="${item.itemId}">
 		    		<input type="submit" value="削除">
+		    	</form>
+		    </td>
+		    <td>
+		    	<form action="getitem" onSubmit="return checkSubmit()" method="post">
+		    		<input type="hidden" name="itemId" value="${item.itemId}">
+		    		<input type="submit" value="編集">
 		    	</form>
 		    </td>
 		</tr>
