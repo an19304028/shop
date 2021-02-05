@@ -19,8 +19,7 @@ public class MySQLItemDao implements ItemDao{
 	public void addItem(Item i) {
 		try {
 			Connection cn = Connector.connect();
-			//変更保留
-			String sql= "INSERT into shop.item_table(item_name, stock_count, size_id, color_id, price, category_id, detail) VALUES(?, ?, ?, ?, ?, ?, ?)";
+			String sql= "INSERT into shop.item_table(item_name, stock_count, size_id, color_id, price, category_id, detail, add_date) VALUES(?, ?, ?, ?, ?, ?, ?, NOW())";
 
 			st = cn.prepareStatement(sql);
 
@@ -47,13 +46,16 @@ public class MySQLItemDao implements ItemDao{
 	public void EditItem(Item i) {
 		try {
 			Connection cn = Connector.connect();
-			String sql = "UPDATE shop.item_table set stock_count = ?, detail = ? where item_id = ?";
+			//名前、値段、
+			String sql = "UPDATE shop.item_table set item_name = ?, stock_count = ?, price = ?,detail = ? where item_id = ?";
 
 			st = cn.prepareStatement(sql);
 
-			st.setInt(1, i.getStockCount());
-			st.setString(2, i.getDetail());
-			st.setString(3, i.getItemId());
+			st.setString(1, i.getItemName());
+			st.setInt(2, i.getStockCount());
+			st.setInt(3, i.getPrice());
+			st.setString(4, i.getDetail());
+			st.setString(5, i.getItemId());
 
 			st.executeUpdate();
 
