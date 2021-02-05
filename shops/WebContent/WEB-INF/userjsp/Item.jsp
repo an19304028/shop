@@ -58,7 +58,7 @@
 			    	<form action="addfavo" onSubmit="return checkSubmit()" method="post">
 				    	<input type="hidden" name="userId" value="1">
 			    		<input type="hidden" name="itemId" value="${item.itemId}">
-			    		<input type="submit" name="itemId" onclick="location.href='./FavoList.jsp'" value="♡">
+			    		<input type="submit" name="itemId" value="♡">
 			    	</form>
 			    </td>
 			</tr>
@@ -72,14 +72,14 @@
 			console.log(stock);
 			if(stock<buyCount){
 				alert("在庫数を超えています");
-				
+
 			}else if(buyCount==""){
 				alert("入力してください");
 			}else{
 				document.addcart.action= 'addcart';
 			}
 		}
-		
+
 	</script>
 	<!-- フッター -->
 	<div id="footer"></div>
