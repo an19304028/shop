@@ -19,6 +19,7 @@ import dao.admin.RemoveImageDao;
 import dao.favorite.AddFavoDao;
 import dao.favorite.GetFavoListDao;
 import dao.favorite.RemoveFavoDao;
+import dao.item.GetCategoryDao;
 import dao.item.GetItemDetailDao;
 import dao.item.GetUserItemListDao;
 import dao.item.SearchItemDao;
@@ -75,6 +76,7 @@ public abstract class AbstractDaoFactory {
 	public abstract SearchItemDao getSearchItemDao();
 	public abstract SortItemDao getSortItemDao();
 	public abstract GetUserItemListDao getGetUserItemListDao();
+	public abstract GetCategoryDao getGetCategoryDao();
 
 
 	//dao.order

@@ -15,10 +15,20 @@ public class SearchItemCommand extends AbstractCommand {
 		
 		RequestContext rc = getRequestContext();
 		String key = rc.getParameter("key")[0]; 
-		SearchItemDao dao = factory.getSearchItemDao(); 
+		SearchItemDao dao = factory.getSearchItemDao();
+		String key2 = "%"+key+"%";
+		System.out.println("key:"+key2);
 		
-		List items = dao.searchItem(key);
-		System.out.println(items);
+		List items = null;
+		if(dao.getSearchCount(key2)!=0) {
+			items = dao.searchItem(key2);
+			int count = dao.getSearchCount(key2);
+			rc.setAttribute("mess", count+"件");
+			rc.setAttribute("count", count);
+		}else {
+			rc.setAttribute("mess","商品がありません");
+			
+		}
 		
 		resc.setResult(items);
 		resc.setTarget("/WEB-INF/userjsp/ItemList.jsp");
