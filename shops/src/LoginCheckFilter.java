@@ -49,13 +49,14 @@ public class LoginCheckFilter implements Filter {
 		if(session.getAttribute("token")==null) {
 
 			session.setAttribute("oldPath", hreq.getServletPath());
+			System.out.println("filter");
 
 			RequestDispatcher disp = request.getRequestDispatcher("/WEB-INF/userjsp/Login.jsp");
 
 			disp.forward(request, response);
 
 		}else {
-
+			System.out.println("filter");
 			chain.doFilter(request, response);
 
 		}
