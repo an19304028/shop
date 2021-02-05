@@ -26,7 +26,7 @@ public class GetFavoListCommand extends AbstractCommand{
 		rc.setAttribute("favoCheck", favoCheck);
 
 		resc.setResult(favo);
-		resc.setTarget("/WEB-INF/userjsp/FavoList.jsp");
+		resc.setTarget("getitemdetail");
 		System.out.println("target:"+resc.getTarget());
 		return resc;
 	}
