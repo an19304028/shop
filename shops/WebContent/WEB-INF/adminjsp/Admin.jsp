@@ -15,7 +15,7 @@
 <body>
 	<h1>管理者</h1>
 
-	<a href="/shops">>> indexへ戻る</a>
+	<a href="/shops/">>> indexへ戻る</a>
 
 	<ul>
 		<br>
