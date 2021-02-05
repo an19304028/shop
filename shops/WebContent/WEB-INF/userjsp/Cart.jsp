@@ -39,7 +39,7 @@
 	</script>
 	
 	<c:choose>
-		<c:when test="${total==1}">
+		<c:when test="${total!=0}">
 			<table id="table" border="1">
 				<tr>
 					<th>商品名</th>
@@ -60,7 +60,7 @@
 					    <td>
 						    <form action="removecart" method="post">
 					    		<input type="hidden" name="itemId" value="${item.itemId}">
-					    		<input type="hidden" name="userId" value="1">
+					    		<input type="hidden" name="userId" value="${sessionScope.userId}">
 					    		<input type="submit" value="削除">
 					    	</form>
 					    </td>

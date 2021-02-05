@@ -19,7 +19,6 @@ public class RemoveAllCartCommand extends AbstractCommand{
 		dao.removeAllCart(userId);
 
 		rc.setAttribute("mess","カートを空にしました。");
-
 		resc.setTarget("getcartlist");
 		System.out.println("target:"+resc.getTarget());
 

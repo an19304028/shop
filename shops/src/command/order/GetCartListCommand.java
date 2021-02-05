@@ -31,7 +31,7 @@ public class GetCartListCommand extends AbstractCommand{
 		}
 		resc.setResult(cart);
 		resc.setTarget("/WEB-INF/userjsp/Cart.jsp");
-
+		System.out.println(rc.getAttribute("total"));
 		System.out.println("target:"+resc.getTarget());
 		return resc;
 	}
