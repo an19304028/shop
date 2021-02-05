@@ -15,8 +15,15 @@ public class GetFavoListCommand extends AbstractCommand{
 		GetFavoListDao dao = factory.getGetFavoListDao();
 
 		String userId = rc.getParameter("userId")[0];
+		String itemId = rc.getParameter("itemId")[0];
 
 		List favo = dao.getFavoList(userId);
+
+		boolean favoCheck = dao.getCheckfavo(userId, itemId);
+
+		System.out.println(favoCheck);
+
+		rc.setAttribute("favoCheck", favoCheck);
 
 		resc.setResult(favo);
 		resc.setTarget("/WEB-INF/userjsp/FavoList.jsp");

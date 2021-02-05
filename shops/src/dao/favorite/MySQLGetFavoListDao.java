@@ -48,4 +48,30 @@ public class MySQLGetFavoListDao implements GetFavoListDao{
 		return favo;
 	}
 
+
+	public boolean getCheckfavo(String userId, String itemId) {
+		boolean checked = false;
+
+		try {
+			Connection cn = Connector.connect();
+
+			String sql = "SELECT * FROM shop.favo_table WHERE user_id=? AND item_id=? ";
+			st = cn.prepareStatement(sql);
+			st.setString(1, userId);
+			st.setString(2,itemId);
+
+			ResultSet rs = st.executeQuery();
+			if(rs.next()) {
+				checked = true;
+			}
+			cn.close();
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
+
+
+
+		return checked;
+
+	}
 }

@@ -60,6 +60,28 @@
 			    		<input type="hidden" name="itemId" value="${item.itemId}">
 			    		<input type="submit" name="itemId" value="♡">
 			    	</form>
+			    	<form action="removefavo" method="post">
+				    	<input type="hidden" name="userId" value="1">
+			    		<input type="hidden" name="itemId" value="${item.itemId}">
+			    		<input type="submit" name="itemId" value="削除">
+			    	</form>
+
+			    	<c:choose>
+			    		<c:when test = "${favoCheck == true}">
+			    			<form action="addfavo" onSubmit="return checkSubmit()" method="post">
+				    			<input type="hidden" name="userId" value="${sessionScope.userId}">
+			    				<input type="hidden" name="itemId" value="${item.itemId}">
+			    				<input type="submit" name="itemId" value="♡">
+			    			</form>
+			    		</c:when>
+			    		<c:otherwise>
+			    			<form action="removefavo" method="post">
+				    			<input type="hidden" name="userId" value="1">
+			    				<input type="hidden" name="itemId" value="${item.itemId}">
+			    				<input type="submit" name="itemId" value="削除">
+			    			</form>
+			    		</c:otherwise>
+			    	</c:choose>
 			    </td>
 			</tr>
 		</c:forEach>
