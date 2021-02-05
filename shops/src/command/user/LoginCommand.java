@@ -48,10 +48,10 @@ public class LoginCommand extends AbstractCommand {
 		}
 
 		resc.setTarget(target);
-		resc.setMess(mes);
+		rc.setAttribute("mess",mes);
 		rc.setToken(token);
 
-		System.out.println("mes:"+resc.getMess());
+		System.out.println("mes:"+rc.getAttribute("mess"));
 		System.out.println("target:"+resc.getTarget());
 
 		return resc;

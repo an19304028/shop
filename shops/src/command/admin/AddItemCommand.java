@@ -35,7 +35,7 @@ public class AddItemCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		ItemDao dao = factory.getItemDao();
 		dao.addItem(i);
-		resc.setMess("商品を追加しました");
+		rc.setAttribute("mess","商品を追加しました");
 		
 		
 		resc.setTarget("/WEB-INF/adminjsp/Admin.jsp");

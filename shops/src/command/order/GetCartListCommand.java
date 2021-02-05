@@ -23,7 +23,7 @@ public class GetCartListCommand extends AbstractCommand{
 
 		String total = Integer.toString(dao.getTotalAmount(userId));
 
-		resc.setMess(total);
+		rc.setAttribute("mess",total);
 
 		resc.setResult(cart);
 		resc.setTarget("/WEB-INF/userjsp/Cart.jsp");

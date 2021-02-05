@@ -9,19 +9,19 @@ import presentation.ResponseContext;
 public class RemoveUserCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc){
 		RequestContext rc = getRequestContext();
-		String userId = rc.getParameter("userId")[0]; 
-		
+		String userId = rc.getParameter("userId")[0];
+
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		RemoveUserDao dao = factory.getRemoveUserDao();
 		System.out.println("削除"+userId);
 		dao.removeUser(userId);
-		
-		resc.setMess(userId+"を削除しました");
-		
+
+		rc.setAttribute("mess",userId+"を削除しました");
+
 		resc.setTarget("getallusers");
 		System.out.println("target:"+resc.getTarget());
-	
+
 		return resc;
-	} 
+	}
 
 }

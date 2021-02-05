@@ -22,7 +22,7 @@
 			$("#footer").load("common/Footer.html");
 		});
 	</script>
-
+	<p>${mess1}</p>
 	<table id="item-list" border="1">
 		<tr>
 
@@ -70,7 +70,7 @@
 			var stock = document.getElementById("stock").textContent;
 			var buyCount = document.getElementById("buyCount").value;
 			console.log(stock);
-			if(stock<buyCount){
+			if(Number(stock)<Number(buyCount)){
 				alert("在庫数を超えています");
 
 			}else if(buyCount==""){

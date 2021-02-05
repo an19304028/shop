@@ -16,7 +16,7 @@ public class RemoveCreditCommand extends AbstractCommand{
 
 		dao.removeCredit(cardNumber);
 
-		resc.setMess("削除しました");
+		rc.setAttribute("mess","削除しました。");
 
 		resc.setTarget("getcredit");
 		System.out.println("target:"+resc.getTarget());

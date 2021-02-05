@@ -7,6 +7,5 @@ public interface ResponseContext {
 	String getTarget();
 	void setResponse(Object res);
 	Object getResponse();
-	String getMess();
-	void setMess(String mess);
+	
 }

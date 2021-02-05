@@ -23,7 +23,7 @@ public class AddFavoCommand extends AbstractCommand{
 		AddFavoDao dao = factory.getAddFavoDao();
 
 		dao.addFavo(f);
-		resc.setMess(itemId+"をお気に入りに登録しました");
+		rc.setAttribute("Mess",itemId+"をお気に入りに登録しました");
 
 		resc.setTarget("getfavolist");
 		System.out.println("target:"+resc.getTarget());

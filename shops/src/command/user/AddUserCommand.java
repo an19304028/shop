@@ -42,7 +42,7 @@ public class AddUserCommand extends AbstractCommand{
 		AddUserDao dao = factory.getAddUserDao();
 
 		dao.addUser(u);
-		resc.setMess(name+"を登録しました");
+		rc.setAttribute("mess",name+"を登録しました");
 
 
 		resc.setTarget("/WEB-INF/userjsp/RegistUser.jsp");

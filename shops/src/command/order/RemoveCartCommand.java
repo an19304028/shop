@@ -20,7 +20,7 @@ public class RemoveCartCommand extends AbstractCommand{
 		System.out.println("カートから削除:"+itemId);
 		dao.removeCart(userId, itemId);
 
-		resc.setMess("カートから"+itemId+"を削除しました");
+		rc.setAttribute("mess","カートから"+itemId+"を削除しました");
 
 		resc.setTarget("getcartlist");
 		System.out.println("target:"+resc.getTarget());
