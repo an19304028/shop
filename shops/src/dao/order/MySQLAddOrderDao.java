@@ -50,7 +50,7 @@ public class MySQLAddOrderDao implements AddOrderDao{
 				st.executeUpdate();
 			}
 
-			String pointsql= "UPDATE shop.user_table set point = ? where user_id = ?";
+			String pointsql= "UPDATE shop.user_table set point = point + ? where user_id = ?";
 			st = cn.prepareStatement(pointsql);
 			st.setInt(1, point);
 			st.setString(2, o.getUserId());
