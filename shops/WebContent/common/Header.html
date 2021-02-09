@@ -44,6 +44,10 @@
 		padding: 0;
 	}
 
+	body{
+		font-family:Yu Gothic;
+	}
+
  	/* スクロールバー */
 	::-webkit-scrollbar{
 	  width: 13px;
@@ -112,7 +116,7 @@
 		padding: 1px;
 		width: 199px;
 		height: 50px;
-		background: white;
+		background: rgba(255,255,255,0.9);
 		border: 1px solid whitesmoke;
 		border-top	 : none;
 	  	border-left	 : none;
@@ -194,5 +198,52 @@
 	#search .searchText::-ms-clear {
 	  display        : none;
 	}
+
+	/* 上へ戻るボタン */
+
+#page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 14px;
+  line-height: 1;
+  z-index: 99;
+}
 	</style>
+
+	<script>
+
+	$(function(){
+	  var pagetop = $('#page-top');
+	  pagetop.hide();
+	  $(window).scroll(function () {
+	     if ($(this).scrollTop() > 100) {
+	          pagetop.fadeIn();
+	     } else {
+	          pagetop.fadeOut();
+	     }
+	  });
+	  pagetop.click(function () {
+	     $('body, html').animate({ scrollTop: 0 }, 500);
+	     return false;
+	  });
+	});
+
+	$(function(){
+	  var pagetop = $('#page-top');
+	  pagetop.hide();
+	  $(window).scroll(function () {
+	     if ($(this).scrollTop() > 100) {
+	          pagetop.fadeIn();
+	     } else {
+	          pagetop.fadeOut();
+	     }
+	  });
+	  pagetop.click(function () {
+	     $('body, html').animate({ scrollTop: 0 }, 500);
+	     return false;
+	  });
+	});
+
+	</script>
 
