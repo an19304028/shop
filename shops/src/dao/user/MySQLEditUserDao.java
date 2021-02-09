@@ -15,7 +15,7 @@ public class MySQLEditUserDao implements EditUserDao{
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "UPDATE shop.user_table SET mail=?, login_id=?, password=?, tell=?, postal_code=?, address=? WHERE = user_Id=?";
+			String sql = "UPDATE shop.user_table SET mail=?, login_id=?, password=?, tell=?, postal_code=?, address=? WHERE user_Id=?";
 
 			st = cn.prepareStatement(sql);
 
