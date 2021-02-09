@@ -51,6 +51,8 @@
 			    <td>${item.categoryName}</td>
 			    <td>${item.detail}</td>
 			 <%--    <td><img src="image/item/${item.imagePath}"  width="40px" height="40px"></td> --%>
+			    <c:choose>
+			    <c:when test="${item.stockCount!=0}">
 			    <td>
 			    	<form name="addcart" action=""  method="post">
 			    		<input type="hidden" name="userId" value="${sessionScope.userId}">
@@ -59,6 +61,11 @@
 			    		<input type="submit"  onclick="checkStock();" value="カートに追加">
 			    	</form>
 			    </td>
+			    </c:when>
+			    <c:otherwise>
+			    	<td>在庫がありません</td>
+			    </c:otherwise>
+			    </c:choose>
 			    <td>
 			    	<c:choose>
 			    		<c:when test = "${favoCheck == false}">
