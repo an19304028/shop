@@ -52,7 +52,7 @@
 			    <td>${item.detail}</td>
 			 <%--    <td><img src="image/item/${item.imagePath}"  width="40px" height="40px"></td> --%>
 			 	<td>
-			    	<form action="removefavo" method="post">
+			    	<form action="removelistfavo" method="post">
 				    			<input type="hidden" name="userId" value="${sessionScope.userId}">
 			    		<input type="hidden" name="itemId" value="${item.itemId}">
 			    		<input type="submit" name="itemId" value="削除">
