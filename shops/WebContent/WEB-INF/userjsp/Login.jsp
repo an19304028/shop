@@ -28,8 +28,10 @@
 	</script>
 
 	<div id="login-form">
+
 		<h1>ログイン</h1>
 		<font color="blue">ユーザー名とパスワードを入力してください。</font>
+	<div id="login-box">
 	  	<form action="login" method="post" >
 			ログインID<input type="text" pattern="^[0-9A-Za-z_]+$" name="loginId" required /><br>
 			パスワード<input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[A-Za-z]+$" maxlength="10" name="pass" required /><br>
@@ -49,15 +51,14 @@
 		 	</script>
 
 		 	<a href="">パスワードをお忘れの方はこちら</a>
+	</div>
 
-		<br>
-
-		<hr width="95%">
-
+	<div id="create-account">
 	 	<h2>まだ会員登録されていない方</h2>
 	 	<p>はじめてご利用の方は、こちらから会員登録をお願いいたします。</p>
 	 	<input type="button" onclick="location.href='userregistinput'" value="新規登録">
 		 </div>
+	</div>
 </div>
 	<!-- フッター -->
 <div id="footer-wrap">
