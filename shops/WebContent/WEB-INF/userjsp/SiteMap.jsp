@@ -11,6 +11,7 @@
 	<!-- ヘッダー -->
 	<div id="header"></div>
 
+<div id="wrapper">
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>
 		$(function(){
@@ -44,7 +45,10 @@
 	<li><a href="inputlogout">ログアウト</a></li>
 	</ul>
 
+</div>
 	<!-- フッター -->
+<div id="footer-wrap">
 	<div id="footer"></div>
+</div>
 </body>
 </html>

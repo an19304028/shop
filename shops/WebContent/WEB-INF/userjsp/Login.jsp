@@ -11,6 +11,7 @@
 	<!-- ヘッダー -->
 	<div id="header"></div>
 
+<div id="wrapper">
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>
 		$(function(){
@@ -49,8 +50,10 @@
 	 	<p>はじめてご利用の方は、こちらから会員登録をお願いいたします。</p>
 	 	<a href="">新規登録</a>
 
-
+</div>
 	<!-- フッター -->
+<div id="footer-wrap">
 	<div id="footer"></div>
+</div>
 </body>
 </html>

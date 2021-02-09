@@ -1,34 +1,203 @@
-
 	<!-- バナー クリックするとTOPにもどる  -->
 	<a href=""><img src=""/></a>
-	<div id ="search">
-		<form id="search" action="searchitem" method="post">
-		<input type="text" name="key">
-		<input type="submit" ><img src=""/>
-		</form>
-	</div>
 
-	<a href="/shops/">indexへ戻る</a>
+
+		<form id="search" action="searchitem" method="post">
+			<input type="text" name="key" class="searchText">
+			<input type="image" src="image/header/search.png" class="searchButton">
+		</form>
 
 	<!-- 買い物かご用 -->
-	<a href=""><img src=""></a>
+	<a class="mypage_img" href=""><img src="image/header/mypage.png"></a>
+	<a class="cart_img" href="getcartlist?userId=1"><img src="image/header/cart.png"></a>
 
-	<!-- ここからヘッダー(？)  -->
-	<ul>
-		<!-- カテゴリーのみマウスオーバーで一覧が出る  -->
-		<li><a>CATEGORY</a>
-			<ul>
-				<li><a href="getcategory?category=ALL">ALL</a></li>
-				<li><a href="getcategory?category=TOPS">TOPS</a></li>
-				<li><a href="getcategory?category=BOTTOMS">BOTTOMS</a></li>
-				<li><a href="getcategory?category=ONEPIECE">ONEPIECE</a></li>
-				<li><a href="getcategory?category=OUTER">OUTER</a></li>
-				<li><a href="getcategory?category=ACCESSORY">ACCESSORY</a></li>
-				<li><a href="getcategory?category=OTHER">OTHER</a></li>
-			</ul>
-		</li>
-		<li><a href="">GUIDE</a></li>
-		<li><a href="">CONTACT</a></li>
-		<li><a href="logininput">LOGIN</a></li>
+	<!-- ここからヘッダー -->
 
+	<div id="wrap">
+	<ul id="menu">
+	<!-- カテゴリーのみマウスオーバーで一覧が出る  -->
+	<li><label><a href="/shops/">TOP</a></label></li>
+	<li><label><a>CATEGORY</a></label>
+		<ul class="menu__sub">
+		<li><label><a href="getcategory?category=ALL">ALL</a></label></li>
+		<li><label><a href="getcategory?category=TOPS">TOPS</a></label></li>
+		<li><label><a href="getcategory?category=BOTTOMS">BOTTOMS</a></label></li>
+		<li><label><a href="getcategory?category=ONEPIECE">ONEPIECE</a></label></li>
+		<li><label><a href="getcategory?category=OUTER">OUTER</a></label></li>
+		<li><label><a href="getcategory?category=ACCESSORY">ACCESSORY</a></label></li>
+		<li><label><a href="getcategory?category=OTHER">OTHER</a></label></li>
+		</ul>
+	</li>
+	<li><label><a href="">GUIDE</a></label></li>
+	<li><label><a href="">CONTACT</a></label></li>
+	<li><label><a href="logininput">LOGIN</a></label></li>
 	</ul>
+	</div>
+
+	<br><br><br><br>
+
+	<style>
+
+	/* 全体の padding margin を0にする */
+	body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td {
+		margin: 0;
+		padding: 0;
+	}
+
+ 	/* スクロールバー */
+	::-webkit-scrollbar{
+	  width: 13px;
+	}
+	::-webkit-scrollbar-track{
+	  background: rgba(255,0,0,0);
+	  border: none;
+	  border-radius: 10px;
+	}
+	::-webkit-scrollbar-thumb{
+	  background: #ccc;
+	  border-radius: 10px;
+	  box-shadow: none;
+	}
+
+
+	#wrapper {
+		width: 1200px;
+		margin-left: auto;
+	    margin-right: auto;
+		min-height: 100vh;
+	}
+
+	#footer-wrap {
+		position: relative;
+		box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
+	}
+
+	/* リンク色変更 */
+	a {
+		color : dimgray;
+		text-decoration: none;
+	}
+	a:visited{
+		color : dimgray;
+	}
+
+	.cart_img img{
+		height : 35px;
+		position : absolute;
+		right : 5%;
+		top : 25px;
+	}
+	.mypage_img img{
+		height : 35px;
+		position : absolute;
+		right : 8%;
+		top : 25px;
+	}
+
+
+	/* メニュー */
+	#wrap {
+		margin-left : auto;
+		margin-right : auto;
+		width : 1006px;
+	}
+	#menu {
+		text-align: center;
+	}
+	#menu li {
+		list-style: none;
+		position: relative;
+		float: left;
+		margin: 0;
+		padding: 1px;
+		width: 199px;
+		height: 50px;
+		background: white;
+		border: 1px solid whitesmoke;
+		border-top	 : none;
+	  	border-left	 : none;
+	  	border-right : none;
+	}
+	#menu li a {
+		text-align: center;
+		text-decoration: none;
+		line-height: 50px;
+	}
+	#menu li:hover {
+		color: dimgray;
+		background: whitesmoke;
+	}
+	#menu li ul li {
+		float: left;
+		margin: 0;
+		padding: 0;
+		width: 200px;
+	}
+	#menu li ul li a {
+		text-decoration: none;
+		display: inline-block;
+		width: 200px;
+		height: 50px;
+	}
+	#menu li ul li a:hover {
+		background: whitesmoke;
+		color: dimgray;
+	}
+
+	/* 検索フォーム */
+
+	#search{
+	  width          : 180px;
+	  height         : 29px;
+	  margin-left    : 5%;
+	  margin-bottom  : 2%;
+	  letter-spacing : 0.1em;
+	  font-weight    : bold;
+	  line-height    : 0;
+	  border 		 : 1px solid dimgray;
+	  border-top	 : none;
+	  border-left	 : none;
+	  border-right	 : none;
+	}
+	#search .searchText {
+	  display        : block;
+	  float          : left;
+	  box-sizing     : border-box;
+	  height         : 29px;
+	  width          : 150px;
+	  margin         : 0;
+	  padding        : 0 5px;
+	  border		 : none;
+	  outline        : 0;
+	  font-size      : 12px;
+	}
+	#search .searchButton {
+	  float          : left;
+	  box-sizing     : border-box;
+	  height         : 25px;
+	  margin         : 0;
+	  padding        : 0px;
+	  border		 : none;
+	  color          : dimgray;
+	  cursor         : pointer;
+	  line-height    : 17px;
+	  font-size      : 12px;
+	  border : 1px;
+	}
+
+	 /* 入力エリア右側×消し */
+	#search .searchText::-ms-clear {
+	  display        : none;
+	}
+	</style>
+
+	<script>
+
+		$("#menu li").hover(function() {
+		    $(this).children('ul').show();
+		}, function() {
+		    $(this).children('ul').hide();
+		});
+
+
+	</script>

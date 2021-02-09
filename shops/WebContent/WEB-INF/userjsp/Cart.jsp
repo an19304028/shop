@@ -25,7 +25,8 @@
 	<div id="header"></div>
 
 	<h1>買い物かご</h1>
-	
+
+<div id="wrapper">
 
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>
@@ -37,7 +38,7 @@
 			$("#footer").load("common/Footer.html");
 		});
 	</script>
-	
+
 	<c:choose>
 		<c:when test="${total!=0}">
 			<table id="table" border="1">
@@ -67,9 +68,9 @@
 					</tr>
 				</c:forEach>
 			</table>
-		
+
 			<p>${mess}</p>
-		
+
 			<form action="removeallcart" onSubmit="return checkSubmit()" method="post">
 				<input type="hidden" name="userId" value="1">
 				<input type="submit" value="カートを空にする">
@@ -80,7 +81,7 @@
 					<input type="hidden" name="buyCount" value="${item.buyCount}">
 					<input type="hidden" name="price" value="${item.price}">
 				</c:forEach>
-		
+
 				<input type="hidden" name="userId" value="1">
 				<input type="submit" value="注文確定">
 			</form>
@@ -92,8 +93,11 @@
 	</c:otherwise>
 	</c:choose>
 
+</div>
 
+<div id="footer-wrap">
 	<div id="footer"></div>
+</div>
 
 </body>
 </html>

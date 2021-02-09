@@ -10,7 +10,7 @@
 <body>
 	<!-- ヘッダー -->
 	<div id="header"></div>
-
+<div id="wrapper">
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>
 		$(function(){
@@ -40,8 +40,11 @@
 	<h2>返品について</h2>
 	<p>（内容）</p>
 
-	<!-- フッター -->
-	<div id="footer"></div>
+</div>
 
+	<!-- フッター -->
+<div id="footer-wrap">
+	<div id="footer"></div>
+</div>
 </body>
 </html>

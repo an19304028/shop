@@ -12,6 +12,8 @@
 	<!-- ヘッダー -->
 	<div id="header"></div>
 
+<div id="wrapper">
+
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>
 		$(function(){
@@ -54,7 +56,11 @@
 			</tr>
 		</c:forEach>
 </table>
+
+</div>
 	<!-- フッター -->
+<div id="footer-wrap">
 	<div id="footer"></div>
+</div>
 </body>
 </html>

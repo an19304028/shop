@@ -11,6 +11,8 @@
 <body>
 	<!-- ヘッダー -->
 	<div id="header"></div>
+
+<div id="wrapper">
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
 	<script>
@@ -48,8 +50,10 @@
 	<input type='button' value='入力画面へ戻る'>
 	<input type='submit' value='完了'>
 
-
+</div>
 	<!-- フッター -->
+<div id="footer-wrap">
 	<div id="footer"></div>
+</div>
 </body>
 </html>
