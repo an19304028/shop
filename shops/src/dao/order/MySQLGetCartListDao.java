@@ -18,7 +18,7 @@ public class MySQLGetCartListDao implements GetCartListDao {
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "SELECT i.item_id, i.item_name, co.color_name, s.size_name, SUM(buy_count)  buy_count, TRUNCATE(price/200,0) point ,i.price FROM cart_table c JOIN item_table i USING(item_id) JOIN size_table s USING(size_id) JOIN color_table co USING(color_id) WHERE user_id=? GROUP BY item_id, user_id";
+			String sql = "SELECT i.item_id, i.item_name, co.color_name, s.size_name, SUM(buy_count)  buy_count, TRUNCATE(price/200,0)*SUM(buy_count) point ,i.price*SUM(buy_count) FROM cart_table c JOIN item_table i USING(item_id) JOIN size_table s USING(size_id) JOIN color_table co USING(color_id) WHERE user_id=? GROUP BY item_id, user_id";
 			st = cn.prepareStatement(sql);
 			st.setString(1, userId);
 
@@ -67,5 +67,26 @@ public class MySQLGetCartListDao implements GetCartListDao {
 
 		return total;
 	}
+	public int getPoint(String userId) {
+		int point = 0;
+		try {
+			Connection cn = Connector.connect();
 
+			String sql = "SELECT TRUNCATE(SUM(price * buy_count)/200,0) FROM cart_table c JOIN item_table i USING(item_id) JOIN size_table s USING(size_id) JOIN color_table co USING(color_id) WHERE user_id=?";
+			st = cn.prepareStatement(sql);
+			st.setString(1, userId);
+
+			ResultSet rs = st.executeQuery();
+
+
+			rs.next();
+			point = rs.getInt(1);
+
+			cn.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+
+		return point;
+	}
 }

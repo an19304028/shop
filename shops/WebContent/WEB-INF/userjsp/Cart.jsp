@@ -69,7 +69,7 @@
 				</c:forEach>
 			</table>
 
-			<p>${mess}</p>
+			<p>${mess}　 ${point}pt</p>
 
 			<form action="removeallcart" onSubmit="return checkSubmit()" method="post">
 				<input type="hidden" name="userId" value="1">
@@ -89,7 +89,7 @@
 			<br>
 	</c:when>
 	<c:otherwise>
-		<p>${mess}</p>
+		<p>${mess} </p>
 	</c:otherwise>
 	</c:choose>
 
