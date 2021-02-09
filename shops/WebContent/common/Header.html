@@ -7,32 +7,30 @@
 			<input type="image" src="image/header/search.png" class="searchButton">
 		</form>
 
-	<!-- 買い物かご用 -->
-	<a class="mypage_img" href=""><img src="image/header/mypage.png"></a>
-	<a class="cart_img" href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
 
 	<!-- ここからヘッダー -->
 
 	<div id="wrap">
-	<ul id="menu">
-	<!-- カテゴリーのみマウスオーバーで一覧が出る  -->
-	<li><label><a href="/shops/">TOP</a></label></li>
-	<li><label><a>CATEGORY</a></label>
-		<ul class="menu__sub">
-		<li><label><a href="getcategory?category=ALL">ALL</a></label></li>
-		<li><label><a href="getcategory?category=TOPS">TOPS</a></label></li>
-		<li><label><a href="getcategory?category=BOTTOMS">BOTTOMS</a></label></li>
-		<li><label><a href="getcategory?category=ONEPIECE">ONEPIECE</a></label></li>
-		<li><label><a href="getcategory?category=OUTER">OUTER</a></label></li>
-		<li><label><a href="getcategory?category=ACCESSORY">ACCESSORY</a></label></li>
-		<li><label><a href="getcategory?category=OTHER">OTHER</a></label></li>
+
+	<nav>
+<ul class="header__menu">
+	<li class="mega__menu"><a href="/shops/">TOP</a></li>
+	<li class="mega__menu"><a href="#">CATEGORY</a>
+		<ul class="mega__menu-second">
+		<li><a href="getcategory?category=ALL">ALL</a></li>
+		<li><a href="getcategory?category=TOPS">TOPS</a></li>
+		<li><a href="getcategory?category=BOTTOMS">BOTTOMS</a></li>
+		<li><a href="getcategory?category=ONEPIECE">ONEPIECE</a></li>
+		<li><a href="getcategory?category=OUTER">OUTER</a></li>
+		<li><a href="getcategory?category=ACCESSORY">ACCESSORY</a></li>
+		<li><a href="getcategory?category=OTHER">OTHER</a></li>
 		</ul>
 	</li>
-	<li><label><a href="">GUIDE</a></label></li>
-	<li><label><a href="">CONTACT</a></label></li>
-	<li><label><a href="logininput">LOGIN</a></label></li>
-	</ul>
-	</div>
+	<li class="mega__menu"><a href="#">GUIDE</a></li>
+	<li class="mega__menu"><a href="#">CONTACT</a></li>
+	<li class="mega__menu"><a href="logininput">LOGIN</a></li>
+</ul>
+</nav>
 
 	<br><br><br><br>
 
@@ -48,12 +46,16 @@
 		font-family:Yu Gothic;
 	}
 
- 	/* スクロールバー */
+	a{
+		text-decoration: none;
+	}
+
+ 	/* ---------- スクロールバー ---------- */
 	::-webkit-scrollbar{
 	  width: 13px;
 	}
 	::-webkit-scrollbar-track{
-	  background: rgba(255,0,0,0);
+	  background: rgba(255,255,255,0.1);
 	  border: none;
 	  border-radius: 10px;
 	}
@@ -76,7 +78,7 @@
 		box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
 	}
 
-	/* リンク色変更 */
+	/* ---------- リンク色変更 ---------- */
 	a {
 		color : dimgray;
 		text-decoration: none;
@@ -99,61 +101,68 @@
 	}
 
 
-	/* メニュー */
-	#wrap {
-		margin-left : auto;
-		margin-right : auto;
-		width : 1006px;
-	}
-	#menu {
-		text-align: center;
-	}
-	#menu li {
-		list-style: none;
+	/* ---------- メニュー ---------- */
+
+	.header__menu {
 		position: relative;
-		float: left;
-		margin: 0;
-		padding: 1px;
-		width: 199px;
-		height: 50px;
-		background: rgba(255,255,255,0.9);
-		border: 1px solid whitesmoke;
-		border-top	 : none;
-	  	border-left	 : none;
-	  	border-right : none;
-	}
-	#menu li a {
-		display: block;
+		width: 100%;
+		background: rgba(255,255,255,0.1);
 		text-align: center;
-		text-decoration: none;
-		line-height: 50px;
-	}
-	#menu li:hover {
-		color: dimgray;
-		background: whitesmoke;
-	}
-	#menu li ul li {
-		display:none;
-		float: left;
-		margin: 0;
+		list-style: none;
 		padding: 0;
-		width: 200px;
 	}
-	#menu li:hover ul li {
-		display:block;
-	}
-	#menu li ul li a {
-		text-decoration: none;
+	.header__menu li {
 		display: inline-block;
-		width: 200px;
-		height: 50px;
-	}
-	#menu li ul li a:hover {
-		background: whitesmoke;
-		color: dimgray;
+		padding: 1em 2.5em;
 	}
 
-	/* 検索フォーム */
+	ul.header__menu li a {
+		display: block;
+		color: dimgray;
+		text-decoration: none;
+	}
+
+	.header__menu li a:hover {
+		color: #426dd8;
+		text-decoration: none;
+	}
+
+	ul.header__menu ul li a {
+
+	}
+
+	ul.mega__menu-second {
+		visibility: hidden;
+		opacity: 0;
+	}
+
+	.header__menu li:hover {
+		background: rgba(255,255,255,0.1);
+		-webkit-transition: all 0.5s;
+		transition: all 0.5s;
+	}
+
+	li.mega__menu ul.mega__menu-second {
+		position: absolute;
+		top: 40px;
+		left: 0;
+		width: 100%;
+		background: rgba(255,255,255,0.1);
+		padding: 7px;
+		box-sizing: border-box;
+
+		transition: all 0.2s ease;
+		-webkit-transition: all 0.2s ease;
+	}
+
+	li.mega__menu:hover ul.mega__menu-second {
+		top: 58px;
+		visibility: visible;
+		opacity: 1;
+	}
+
+
+	/* ---------- 検索フォーム ---------- */
 
 	#search{
 	  width          : 180px;
@@ -199,16 +208,15 @@
 	  display        : none;
 	}
 
-	/* 上へ戻るボタン */
-
-#page-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 14px;
-  line-height: 1;
-  z-index: 99;
-}
+	/* ---------- 上へ戻るボタン ---------- */
+	#page-top {
+	  position: fixed;
+	  bottom: 20px;
+	  right: 20px;
+	  font-size: 14px;
+	  line-height: 1;
+	  z-index: 99;
+	}
 	</style>
 
 	<script>
