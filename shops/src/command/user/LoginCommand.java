@@ -43,6 +43,10 @@ public class LoginCommand extends AbstractCommand {
 
 				rc.setSessionAttribute("userId", userId);
 				mes = userId+"でログインしました";
+				int point = dao.getPoint(userId);
+				System.out.println(point);
+				rc.setSessionAttribute("userPoint", point+"pt");
+				System.out.println(rc.getSessonAttribute("userPoint"));
 			}else {
 				mes = "パスワードが違います";
 				target = "/WEB-INF/userjsp/Login.jsp";
