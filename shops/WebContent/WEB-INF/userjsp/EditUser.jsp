@@ -30,22 +30,34 @@
 	 <form method="post" action="edituser">
 	    <font color="red">${mess}</font><br>
 	    <font color="blue">※ユーザー名、パスワードは10字以内の半角英数字のみで作成して下さい。</font><br>
-	      名前：<input type="text" name="name" value=""${item.name} readonly /><br>
+	      名前：<input type="text" name="name" value="${item.name}" readonly /><br>
 	      ふりがな：<input type="text" name="kana" value="${item.kana}" readonly /><br>
 	      メール：<input type="text" name="mail" value="${item.mail}" required /><br>
 	      ログインID：<input type="text" name="loginId" value="${item.loginId}" required /><br>
-	      <!-- パスワード：<input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[0-9A-Za-z]+$" maxlength="10" name="password" required /><br>
-	      <input type="checkbox" id="password-check">パスワードを表示する<br> -->
+	      
 	      性別：<input type="text" name="gender" value="${item.gender}" readonly/><br>
 	     誕生日：<input type="text" name="birthday" value="${item.birthday}"  readonly/><br>
 	     電話番号：<input type="text" name="tell" value="${item.tell}" required /><br>
 	     郵便番号:<input type="text" name="postalCode" value="${item.postalCode}" required /><br>
 	     住所:<input type="text" name="address"  value="${item.address}" required /><br>
 
-
+		パスワード：<input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[0-9A-Za-z]+$" maxlength="10" name="password" required /><br>
+	      <input type="checkbox" id="password-check">パスワードを表示する<br> 
+	      <input type="hidden" name="userId" value="${sessionScope.userId}">
       <input type="submit" value="編集" />
     </form>
 	</c:forEach>
+	<script>
+	 		const pwd = document.getElementById('password');
+	 		const pwdCheck = document.getElementById('password-check');
+	 		pwdCheck.addEventListener('change', function() {
+			     if(pwdCheck.checked) {
+			         pwd.setAttribute('type', 'text');
+			     } else {
+			         pwd.setAttribute('type', 'password');
+			     }
+		 	}, false);
+	 	</script>
 </div>
 
 	<!-- フッター -->

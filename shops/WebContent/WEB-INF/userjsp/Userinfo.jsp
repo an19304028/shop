@@ -44,6 +44,7 @@
 			    <td>${item.name}</td>
 			    <td>${item.kana}</td>
 			    <td>${item.mail}</td>
+			    <td>${item.loginId}</td>
 			    <td>${item.gender}</td>
 			    <td>${item.birthday}</td>
 			    <td>${item.tell}</td>
