@@ -20,7 +20,7 @@ public class RemoveFavoCommand extends AbstractCommand{
 
 		rc.setAttribute("Mess","お気に入りから"+itemId+"を削除しました");
 
-		resc.setTarget("getfavolist");
+		resc.setTarget("checkfavo");
 		System.out.println("target:"+resc.getTarget());
 
 		return resc;
