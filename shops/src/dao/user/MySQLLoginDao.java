@@ -65,7 +65,7 @@ public class MySQLLoginDao implements LoginDao{
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "SELECT user_id FROM shop.user_table WHERE login_id=?";
+			String sql = "SELECT point FROM shop.user_table WHERE user_id=?";
 
 			st=cn.prepareStatement(sql);
 			st.setString(1, loginId);
