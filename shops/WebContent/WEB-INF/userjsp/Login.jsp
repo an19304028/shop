@@ -6,6 +6,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
 <title>ログイン</title>
+<%
+	String itemId = (String)request.getAttribute("itemId");
+	String buyCount = (String)request.getAttribute("buyCount");
+%>
 </head>
 <body>
 	<!-- ヘッダー -->
@@ -33,6 +37,8 @@
 		<font color="blue">ユーザー名とパスワードを入力してください。</font>
 	<div id="login-box">
 	  	<form action="login" method="post" >
+	  		<input type="hidden" name="itemId" value=<%= itemId %> />
+			<input type="hidden" name="buyCount" value=<%= buyCount %> />
 			ログインID<input type="text" pattern="^[0-9A-Za-z_]+$" name="loginId" required /><br>
 			パスワード<input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[A-Za-z]+$" maxlength="10" name="pass" required /><br>
 			 <input type="checkbox" id="password-check">パスワードを表示する<br>

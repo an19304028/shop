@@ -16,11 +16,10 @@ public class GetCartListCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetCartListDao dao = factory.getGetCartListDao();
 
-		String userId = rc.getParameter("userId")[0];
+		String userId = (String)rc.getSessonAttribute("userId");
 
 		List cart = dao.getCartList(userId);
-		System.out.println(dao.getCartList(rc.getParameter("userId")[0]));
-		
+
 		String total = Integer.toString(dao.getTotalAmount(userId));
 		if(total.equals("0")) {
 			rc.setAttribute("mess","カートの中身がありません");

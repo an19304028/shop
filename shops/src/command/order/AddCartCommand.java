@@ -12,9 +12,18 @@ public class AddCartCommand extends AbstractCommand{
 	@Override
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
-		String userId = rc.getParameter("userId")[0];
+		System.out.println("AddCartCommandだよ");
+
+		String userId = (String)rc.getSessonAttribute("userId");
+		System.out.println("USERID:" + (String)rc.getSessonAttribute("userId"));
+
 		String itemId = rc.getParameter("itemId")[0];
+		System.out.println("ITEMID:" + rc.getParameter("itemId")[0]);
+
+
 		int buyCount = Integer.parseInt(rc.getParameter("buyCount")[0]);
+		System.out.println("BUYCOUNT:" + rc.getParameter("buyCount")[0]);
+
 		System.out.println(userId +"\t"+itemId+"\t"+buyCount);
 
 		Cart c = new Cart();
