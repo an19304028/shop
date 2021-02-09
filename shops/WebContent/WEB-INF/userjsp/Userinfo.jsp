@@ -49,7 +49,7 @@
 			    <td>${item.address}</td>
 			    <td>
 			    	<form action="edituser"  method="post">
-				    	<input type="hidden" name="userId" value="1">
+				    	<input type="hidden" name="userId" value="${sessionScope.userId}">
 			    		<input type="submit"  value="編集">
 			    	</form>
 			    </td>
