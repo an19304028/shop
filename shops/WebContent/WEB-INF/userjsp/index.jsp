@@ -38,7 +38,6 @@
 	<a href="admininput">管理者画面</a><br>
 	<a href="getuseritemlist">アイテム一覧</a><br>
 	<a href="getuser?userId=${sessionScope.userId}">ユーザー情報</a><br>
-	<a href="getfavolist">お気に入り一覧</a><br>
 
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
