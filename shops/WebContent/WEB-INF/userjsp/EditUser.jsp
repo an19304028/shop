@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,27 +26,26 @@
 	</script>
 
 		 <h1>登録内容の編集</h1>
-	 <form method="post" action="adduser">
+	<c:forEach var="item" items="${data}">	 
+	 <form method="post" action="edituser">
 	    <font color="red">${mess}</font><br>
 	    <font color="blue">※ユーザー名、パスワードは10字以内の半角英数字のみで作成して下さい。</font><br>
-	      名前：<input type="text" name="name" value="" required /><br>
-	      ふりがな：<input type="text" name="kana" value="" required /><br>
-	      メール：<input type="text" name="mail" value="" required /><br>
-	      ログインID：<input type="text" name="loginId" value="" required /><br>
-	      パスワード：<input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[0-9A-Za-z]+$" maxlength="10" name="password" required /><br>
-	      <input type="checkbox" id="password-check">パスワードを表示する<br>
-	      性別：男<input type="radio" name="gender" value="男" />
-	     	    女<input type="radio" name="gender" value="女"/>
-	     	    その他<input type="radio" name="gender" value="その他"/><br>
-	     誕生日：<input type="text" name="birthday" required /><br>
-	     電話番号：<input type="text" name="tell" required /><br>
-	     郵便番号:<input type="text" name="postalCode" required /><br>
-	     住所:<input type="text" name="address"  required /><br>
+	      名前：<input type="text" name="name" value=""${item.name} readonly /><br>
+	      ふりがな：<input type="text" name="kana" value="${item.kana}" readonly /><br>
+	      メール：<input type="text" name="mail" value="${item.mail}" required /><br>
+	      ログインID：<input type="text" name="loginId" value="${item.loginId}" required /><br>
+	      <!-- パスワード：<input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[0-9A-Za-z]+$" maxlength="10" name="password" required /><br>
+	      <input type="checkbox" id="password-check">パスワードを表示する<br> -->
+	      性別：<input type="text" name="gender" value="${item.gender}" readonly/><br>
+	     誕生日：<input type="text" name="birthday" value="${item.birthday}"  readonly/><br>
+	     電話番号：<input type="text" name="tell" value="${item.tell}" required /><br>
+	     郵便番号:<input type="text" name="postalCode" value="${item.postalCode}" required /><br>
+	     住所:<input type="text" name="address"  value="${item.address}" required /><br>
 
 
       <input type="submit" value="編集" />
     </form>
-
+	</c:forEach>
 </div>
 
 	<!-- フッター -->

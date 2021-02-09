@@ -29,6 +29,7 @@
 		<tr>
 
 			<th>名前</th>
+			<th>ふりがな</th>
 			<th>メール</th>
 			<th>ログインID</th>
 			<th>性別</th>
@@ -40,15 +41,16 @@
 		<c:forEach var="item" items="${data}">
 			<tr>
 
-			    <td>${item.userName}</td>
+			    <td>${item.name}</td>
+			    <td>${item.kana}</td>
 			    <td>${item.mail}</td>
 			    <td>${item.gender}</td>
 			    <td>${item.birthday}</td>
-			    <td>${item.tel}</td>
+			    <td>${item.tell}</td>
 			    <td>${item.postalCode}</td>
 			    <td>${item.address}</td>
 			    <td>
-			    	<form action="edituser"  method="post">
+			    	<form action="getuseredit"  method="post">
 				    	<input type="hidden" name="userId" value="${sessionScope.userId}">
 			    		<input type="submit"  value="編集">
 			    	</form>

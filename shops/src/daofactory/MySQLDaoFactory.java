@@ -9,12 +9,14 @@ import dao.user.AddUserDao;
 import dao.user.EditUserDao;
 import dao.user.GetCreditDao;
 import dao.user.GetPasswordDao;
+import dao.user.GetUserDao;
 import dao.user.LoginDao;
 import dao.user.MySQLAddCreditDao;
 import dao.user.MySQLAddUserDao;
 import dao.user.MySQLEditUserDao;
 import dao.user.MySQLGetCreditDao;
 import dao.user.MySQLGetPasswordDao;
+import dao.user.MySQLGetUserDao;
 import dao.user.MySQLLoginDao;
 import dao.user.MySQLRemoveCreditDao;
 import dao.admin.AddImageDao;
@@ -122,6 +124,7 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 	public GetPasswordDao getGetPasswordDao() { return new MySQLGetPasswordDao();}
 	public LoginDao getLoginDao() { return new MySQLLoginDao();}
 	public RemoveCreditDao getRemoveCreditDao() { return new MySQLRemoveCreditDao();}
+	public GetUserDao getGetUserDao() { return new MySQLGetUserDao();}
 
 
 }

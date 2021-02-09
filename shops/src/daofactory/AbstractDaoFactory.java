@@ -8,6 +8,7 @@ import dao.user.AddUserDao;
 import dao.user.EditUserDao;
 import dao.user.GetCreditDao;
 import dao.user.GetPasswordDao;
+import dao.user.GetUserDao;
 import dao.user.LoginDao;
 import dao.user.RemoveCreditDao;
 import dao.admin.AddImageDao;
@@ -95,6 +96,7 @@ public abstract class AbstractDaoFactory {
 	public abstract GetPasswordDao getGetPasswordDao();
 	public abstract LoginDao getLoginDao();
 	public abstract RemoveCreditDao getRemoveCreditDao();
+	public abstract GetUserDao getGetUserDao();
 
 
 }
