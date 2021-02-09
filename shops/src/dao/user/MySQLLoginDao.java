@@ -24,7 +24,7 @@ public class MySQLLoginDao implements LoginDao{
 
 			ResultSet rs =  st.executeQuery();
 
-			while(rs.next()) {
+			if(rs.next()) {
 
 				user.setLoginId(rs.getString(1));
 				user.setPassword(rs.getString(2));
@@ -49,9 +49,9 @@ public class MySQLLoginDao implements LoginDao{
 
 			ResultSet rs =  st.executeQuery();
 			
-			rs.next();
-			userId = rs.getString(1);
-			
+			if(rs.next()) {
+				userId = rs.getString(1);
+			}
 
 			cn.commit();
 			cn.close();
