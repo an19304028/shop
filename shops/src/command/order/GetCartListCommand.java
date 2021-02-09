@@ -27,6 +27,9 @@ public class GetCartListCommand extends AbstractCommand{
 			rc.setAttribute("total", 0);
 		}else {
 			rc.setAttribute("mess",total+"円");
+			int point = dao.getPoint(userId);
+			System.out.println(point);
+			rc.setAttribute("point", point);
 			rc.setAttribute("total", 1);
 		}
 		resc.setResult(cart);
