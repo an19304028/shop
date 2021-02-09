@@ -129,10 +129,14 @@
 		background: whitesmoke;
 	}
 	#menu li ul li {
+		display:none;
 		float: left;
 		margin: 0;
 		padding: 0;
 		width: 200px;
+	}
+	#menu li:hover ul li {
+		display:block;
 	}
 	#menu li ul li a {
 		text-decoration: none;
@@ -192,13 +196,3 @@
 	}
 	</style>
 
-	<script>
-
-		$("#menu li").hover(function() {
-		    $(this).children('ul').show();
-		}, function() {
-		    $(this).children('ul').hide();
-		});
-
-
-	</script>
