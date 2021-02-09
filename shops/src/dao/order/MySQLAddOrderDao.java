@@ -12,7 +12,7 @@ public class MySQLAddOrderDao implements AddOrderDao{
 	PreparedStatement st = null;
 
 	@Override
-	public void addOrder(Order o, ArrayList list) {
+	public void addOrder(Order o, ArrayList list,int point) {
 		try {
 			Connection cn = Connector.connect();
 
@@ -50,6 +50,12 @@ public class MySQLAddOrderDao implements AddOrderDao{
 				st.executeUpdate();
 			}
 
+			String pointsql= "UPDATE shop.user_table set point = ? where user_id = ?";
+			st = cn.prepareStatement(pointsql);
+			st.setInt(1, point);
+			st.setString(2, o.getUserId());
+
+			st.executeUpdate();
 
 			cn.commit();
 			cn.close();

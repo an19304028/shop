@@ -23,7 +23,7 @@ public class AddOrderCommand extends AbstractCommand{
 		//int itemCount = Integer.parseInt(rc.getParameter("itemCount")[0]);
 		int itemCount = 0;
 		//int buyCount = Integer.parseInt(rc.getParameter("buyCount")[0]);
-
+		int point = Integer.parseInt(rc.getParameter("point")[0]);
 
 		ArrayList list = new ArrayList();
 		//for文でparameter全部引っ張り出す
@@ -51,7 +51,7 @@ public class AddOrderCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		AddOrderDao dao = factory.getAddOrderDao();
 
-		dao.addOrder(o, list);
+		dao.addOrder(o, list, point);
 
 		rc.setAttribute("mess","注文情報を確定いたしました。");
 

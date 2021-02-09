@@ -72,7 +72,7 @@
 			<p>${mess}　 ${point}pt</p>
 
 			<form action="removeallcart" onSubmit="return checkSubmit()" method="post">
-				<input type="hidden" name="userId" value="1">
+				<input type="hidden" name="userId" value="${sessionScope.userId}">
 				<input type="submit" value="カートを空にする">
 			</form>
 			<form action="addorder" method="post">
@@ -82,7 +82,8 @@
 					<input type="hidden" name="price" value="${item.price}">
 				</c:forEach>
 
-				<input type="hidden" name="userId" value="1">
+				<input type="hidden" name="userId" value="${sessionScope.userId}">
+				<input type="hidden" name="point" value="${point}">
 				<input type="submit" value="注文確定">
 			</form>
 
