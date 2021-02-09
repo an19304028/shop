@@ -52,10 +52,11 @@
 
 		<br>
 
-		<hr style="border: 0.5px solid #555;" width="95%">
+		<hr width="95%">
+
 	 	<h2>まだ会員登録されていない方</h2>
 	 	<p>はじめてご利用の方は、こちらから会員登録をお願いいたします。</p>
-	 	<a href="">新規登録</a>
+	 	<input type="button" onclick="location.href='userregistinput'" value="新規登録">
 		 </div>
 </div>
 	<!-- フッター -->
