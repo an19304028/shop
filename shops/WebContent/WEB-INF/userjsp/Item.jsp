@@ -64,7 +64,7 @@
 			    </c:when>
 			    <c:otherwise>
 			    	<td>在庫がありません<br>
-			    	<form name="" action=""  method="post">
+			    	<form name="" action="restock"  method="post">
 			    		<input type="hidden" name="userId" value="${sessionScope.userId}">
 			    		<input type="hidden" name="itemId" value="${item.itemId}">
 			    		<input type="submit"  onclick="checkStock();" value="再入荷のお知らせを受け取る">
