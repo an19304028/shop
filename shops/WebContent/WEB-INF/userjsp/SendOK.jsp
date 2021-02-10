@@ -27,12 +27,13 @@
 		});
 	</script>
 
+
 		<h1>送信が完了しました</h1>
 
 
 
 
-
+</div>
 	<!-- フッター -->
 <div id="footer-wrap">
 	<div id="footer"></div>

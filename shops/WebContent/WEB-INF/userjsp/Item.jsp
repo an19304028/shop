@@ -67,6 +67,7 @@
 			    	<form name="" action="restock"  method="post">
 			    		<input type="hidden" name="userId" value="${sessionScope.userId}">
 			    		<input type="hidden" name="itemId" value="${item.itemId}">
+			    		<input type="hidden" name="itemName" value="${item.itemName}">
 			    		<input type="submit"  onclick="checkStock();" value="再入荷のお知らせを受け取る">
 			    	</form>
 			    	</td>

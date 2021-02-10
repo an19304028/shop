@@ -1,6 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+	String userId = (String)request.getAttribute("userId");
+	String itemId = (String)request.getAttribute("itemId");
+	String itemName = (String)request.getAttribute("itemName");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,22 +32,28 @@
 			$("#footer").load("common/Footer.html");
 		});
 	</script>
-	
+	<script type="text/javascript">
+		var submitted = false;
+	</script>
+	<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='send-o';}"></iframe>
 	<h1>再入荷のお知らせ</h1>
 	<p>こちらの商品が入荷した際、メールにてお知らせをいたします。</p>
 	<c:forEach var="item" items="${data}">
 	<p>商品名：${item.itemName}</p>
 	<p>サイズ/カラー：${item.sizeName}/${item.colorName}</p>
 	</c:forEach>
-	<form action="" method="post">
-		　　　　　　お名前：<input type="text" name="name"><br>
-		通知メールアドレス：<input type="text" name="mail"><br>
+	<form action="https://docs.google.com/forms/u/0/d/1nPy_OpDr8lnFsJGcioGTVDz6NPM6act8jlZSByMI5Xk/prefill" method="post">
+		<input type="hidden" name="entry.2081137255" value= <%=userId %> readonly />
+		　　　　　　お名前：<input type="text" name="entry.983308274" /><br>
+		通知メールアドレス：<input type="text" name="entry.102717670" /><br>
+		<input type="hidden" name="entry.1770593522" value=<%=itemId %> readonly />
+		　　　　　　商品名：<input type="text" name="entry.298775810" value= <%=itemName %> readonly />
 		<input type="submit">
 	</form>
 
 </div>
 
-	
+
 	<!-- フッター -->
 <div id="footer-wrap">
 	<div id="footer"></div>
