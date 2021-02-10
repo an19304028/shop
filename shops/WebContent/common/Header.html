@@ -15,7 +15,7 @@
 	<nav>
 	<ul class="header__menu">
 	<li class="mega__menu"><a href="/shops/">TOP</a></li>
-	<li class="mega__menu"><a href="#">CATEGORY</a>
+	<li class="mega__menu"><a href="getcategory?category=new">CATEGORY</a>
 		<ul class="mega__menu-second">
 		<li><a href="getcategory?category=ALL">ALL</a></li>
 		<li><a href="getcategory?category=TOPS">TOPS</a></li>
@@ -234,11 +234,24 @@
 	}
 
 	#login-box {
-		padding : 30px 0px;
+		text-align : center;
 	}
 
-	#login-box input{
-		width:200px;
+
+	#loginId, #password{
+		margin: 10px;
+		padding : 5px 10px;
+		width : 300px;
+		height: 30px;
+
+		border-bottom: 1px solid;
+		border-top	 : none;
+		border-left	 : none;
+		border-right : none;
+	}
+
+	#login-button {
+
 	}
 
 	#create-account {

@@ -33,16 +33,16 @@
 
 	<div id="login-form">
 
-		<h1>ログイン</h1>
-		<font color="blue">ユーザー名とパスワードを入力してください。</font>
 	<div id="login-box">
+		<h1 style="margin:10px;">ログイン</h1>
+		<font color="dimgray" size="2">ユーザー名とパスワードを入力してください</font>
 	  	<form action="login" method="post" >
 	  		<input type="hidden" name="itemId" value=<%= itemId %> />
 			<input type="hidden" name="buyCount" value=<%= buyCount %> />
-			ログインID<input type="text" pattern="^[0-9A-Za-z_]+$" name="loginId" required /><br>
+			ログインID<input type="text" pattern="^[0-9A-Za-z_]+$" name="loginId" id="loginId" required /><br>
 			パスワード<input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[A-Za-z]+$" maxlength="10" name="pass" required /><br>
 			 <input type="checkbox" id="password-check">パスワードを表示する<br>
-			<input type="submit" value="ログイン" />
+			<input type="submit" id="login-button" value="ログイン" />
 	  	</form>
 	  		<script>
 		 		const pwd = document.getElementById('password');
