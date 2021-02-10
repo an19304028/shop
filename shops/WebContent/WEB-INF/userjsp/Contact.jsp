@@ -29,12 +29,12 @@
 
 		<h1>お問い合わせ</h1>
 	<p>以下のフォームの項目を入力し、よろしければ「この内容で問い合わせる」ボタンをクリックしてください。</p>
-		<form action="" method="">
+		<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeiUijIrG7X0t_MYjmPfneEB_j8h7hZVMtJCEM-aKZEqRNcOw/formResponse" method="POST">
 
 	<table border="1">
-		<tr><td>お名前</td><td><input type="text" name="name" id="" placeholder="お名前"></td></tr>
-		<tr><td>件名</td><td><input type="text" name="question" id="" placeholder="件名"></td></tr>
-		<tr><td>お問い合わせ内容</td><td><textarea type="text" name="content" id=""  rows="6" cols="30"></textarea></td></tr>
+		<tr><td>お名前</td><td><input type="text" name="entry.1591633300" id="" placeholder="お名前"></td></tr>
+		<tr><td>メールアドレス</td><td><input type="text" name="entry.326955045" id="" placeholder="件名"></td></tr>
+		<tr><td>お問い合わせ内容</td><td><textarea type="text" name="entry.1696159737" id=""  rows="6" cols="30"></textarea></td></tr>
 	</table>
 		<input type="submit" value="この内容で問い合わせる">
 		</form>
