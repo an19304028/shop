@@ -14,12 +14,17 @@ public class LogOutCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
 		// TODO 自動生成されたメソッド・スタブ
 		RequestContext rc = getRequestContext();
-		getRequestContext().invalidateSession();
-		System.out.println(rc.getSessonAttribute("userId"));
+		String userId = (String) rc.getSessonAttribute("userId");
+		System.out.println(userId);
+		if(userId==null) {
+			rc.setAttribute("mess", "ログインしてません");
+		}else {
+			getRequestContext().invalidateSession();
+			System.out.println(userId);
+			rc.setAttribute("mess", userId+"からログアウトしました");
+		}
 		resc.setTarget("/WEB-INF/userjsp/Logout.jsp");
-
 		System.out.println("target:"+resc.getTarget());
-
 		return resc;
 	}
 

@@ -35,5 +35,10 @@
         <url-pattern>/addfavo</url-pattern>
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
+       <filter-mapping>
+        <filter-name>LoginCheckFilter</filter-name>
+        <url-pattern>/getcartlist</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
 
 </web-app>
