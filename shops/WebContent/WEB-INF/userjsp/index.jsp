@@ -51,6 +51,7 @@
 	<a href="getuseritemlist">アイテム一覧</a><br>
 	<a href="getuser?userId=${sessionScope.userId}">ユーザー情報</a><br>
 	<a href="getfavolist?userId=${sessionScope.userId}">お気に入り一覧</a><br>
+	<a href="getorderlist">購入履歴</a><br>
 
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
