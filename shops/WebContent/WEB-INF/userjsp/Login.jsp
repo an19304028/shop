@@ -41,7 +41,7 @@
 			<input type="hidden" name="buyCount" value=<%= buyCount %> />
 			ログインID<input type="text" pattern="^[0-9A-Za-z_]+$" name="loginId" id="loginId" required /><br>
 			パスワード<input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[A-Za-z]+$" maxlength="10" name="pass" required /><br>
-			 <input type="checkbox" id="password-check">パスワードを表示する<br>
+			 <input type="checkbox" id="password-check"><label for="password-check">パスワードを表示する</label><br>
 			<input type="submit" id="login-button" value="ログイン" />
 	  	</form>
 	  		<script>
@@ -56,13 +56,13 @@
 			 	}, false);
 		 	</script>
 
-		 	<a href="">パスワードをお忘れの方はこちら</a>
+		 	<a style="font-size:80%;" href="">パスワードをお忘れの方はこちら</a>
 	</div>
 
 	<div id="create-account">
-	 	<h2>まだ会員登録されていない方</h2>
-	 	<p>はじめてご利用の方は、こちらから会員登録をお願いいたします。</p>
-	 	<input type="button" onclick="location.href='userregistinput'" value="新規登録">
+	 	<h2 style="margin-bottom:20px;">まだ会員登録されていない方</h2>
+	 	<p style="font-size:80%;">はじめてご利用の方は、こちらから会員登録をお願いいたします。</p>
+	 	<input type="button" onclick="location.href='userregistinput'" id="create-button" value="新規登録">
 		 </div>
 	</div>
 </div>
