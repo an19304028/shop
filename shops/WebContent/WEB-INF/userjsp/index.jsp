@@ -14,13 +14,18 @@
 	<!-- ヘッダー -->
 	<div id="header"></div>
 
-		<!-- 買い物かご用 -->
+	<!-- ポイント -->
+	<div><p>${SessionScope.userPoint}</p></div>
+
+	<!-- 買い物かご用 -->
 	<a class="mypage_img" href=""><img src="image/header/mypage.png"></a>
 	<a class="cart_img" href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
 
 
 
 <div id="wrapper">
+
+
 
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 
@@ -36,6 +41,8 @@
 	</script>
 
 	<h1>ホーム</h1>
+
+		<div><p>${SessionScope.userPoint}</p></div>
 	<br>
 	<a href="userregistinput">ユーザー登録</a><br><br>
 	<a href="logininput">ログイン</a><br>
