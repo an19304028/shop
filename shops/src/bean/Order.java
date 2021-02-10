@@ -11,6 +11,7 @@ public class Order implements Serializable{
 	private String itemName;
 	private String sizeName;
 	private String colorName;
+	private String imagePath;
 
 
 	public String getOrderId() {
@@ -60,6 +61,12 @@ public class Order implements Serializable{
 	}
 	public void setColorName(String colorName) {
 		this.colorName = colorName;
+	}
+	public String getImagePath() {
+		return imagePath;
+	}
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
 	}
 
 

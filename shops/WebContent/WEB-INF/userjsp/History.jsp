@@ -33,6 +33,7 @@
 	<table id="item-list" border="1">
 		<tr>
 			<th>商品名</th>
+			<th>画像</th>
 			<th>サイズ</th>
 			<th>色</th>
 			<th>値段</th>
@@ -42,6 +43,7 @@
 		<c:forEach var="item" items="${data}">
 		<tr>
 			<td>${item.itemName}</td>
+			<td><img src="image/item/${item.imagePath}"  width="40px" height="40px"></td>
 			<td>${item.sizeName}</td>
 			<td>${item.colorName}</td>
 			<td>${item.price}</td>
