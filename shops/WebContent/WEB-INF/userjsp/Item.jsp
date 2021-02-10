@@ -63,7 +63,13 @@
 			    </td>
 			    </c:when>
 			    <c:otherwise>
-			    	<td>在庫がありません</td>
+			    	<td>在庫がありません<br>
+			    	<form name="" action=""  method="post">
+			    		<input type="hidden" name="userId" value="${sessionScope.userId}">
+			    		<input type="hidden" name="itemId" value="${item.itemId}">
+			    		<input type="submit"  onclick="checkStock();" value="再入荷のお知らせを受け取る">
+			    	</form>
+			    	</td>
 			    </c:otherwise>
 			    </c:choose>
 			    <td>
@@ -72,14 +78,16 @@
 			    			<form action="addfavo" onSubmit="return checkSubmit()" method="post">
 				    			<input type="hidden" name="userId" value="${sessionScope.userId}">
 			    				<input type="hidden" name="itemId" value="${item.itemId}">
-			    				<input type="submit" name="itemId" value="♡">
+			    				<input type="image" src="image/icon/nofavo.png">
+			    				<!-- <input type="submit" name="itemId" value="♡"> -->
 			    			</form>
 			    		</c:when>
 			    		<c:otherwise>
 			    			<form action="removefavo" method="post">
 				    			<input type="hidden" name="userId" value="${sessionScope.userId}">
-			    				<input type="hidden" name="itemId" value="${item.itemId}">
-			    				<input type="submit" name="itemId" value="削除">
+			    				<input type="hidden" name="itemId" value="${item.itemId}" class="st">
+			    				<input type="image" src="image/icon/yesfavo.png">
+			    				<!-- <input type="submit" name="itemId" value="削除"> -->
 			    			</form>
 			    		</c:otherwise>
 			    	</c:choose>

@@ -10,9 +10,14 @@ import presentation.ResponseContext;
 public class AddFavoCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
+		System.out.println("AddFavoCommandだよ");
 
-		String userId = rc.getParameter("userId")[0];
+		String userId = (String)rc.getSessonAttribute("userId");
+		System.out.println("USERID:" + (String)rc.getSessonAttribute("userId"));
+
 		String itemId = rc.getParameter("itemId")[0];
+		System.out.println("ITEMID:" + rc.getParameter("itemId")[0]);
+
 
 		Favorite f = new Favorite();
 

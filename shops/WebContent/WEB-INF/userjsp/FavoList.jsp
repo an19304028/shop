@@ -26,10 +26,15 @@
 		$(function(){
 			$("#footer").load("common/Footer.html");
 		});
+	
 	</script>
 
 	<h2>お気に入り一覧</h2>
-
+	<c:choose>
+	<c:when test="${favo==0}">
+		<p>お気に入りに登録しているものはありません
+	</c:when>
+	<c:otherwise>
 	<table id="favo-list" border="1">
 		<tr>
 			<th>商品名</th>
@@ -54,17 +59,20 @@
 			 	<td>
 			    	<form action="removelistfavo" method="post">
 				    			<input type="hidden" name="userId" value="${sessionScope.userId}">
-			    		<input type="hidden" name="itemId" value="${item.itemId}">
-			    		<input type="submit" name="itemId" value="削除">
+			    		<input type="hidden" name="itemId" value="${item.itemId}" class="st">
+			    		<input type="image" src="image/icon/yesfavo.png">
+			    		<!-- <input type="submit" name="itemId" value="削除"> -->
 			    	</form>
 			    </td>
 			</tr>
 		</c:forEach>
 	</table>
+	</c:otherwise>
+	</c:choose>
 </div>
 
 <div id="footer-wrap">
 	<div id="footer"></div>
-</div>/div>
+</div>
 </body>
 </html>
