@@ -8,6 +8,9 @@ public class Order implements Serializable{
 	private String buyDate;
 	private int price;
 	private int itemCount;
+	private String itemName;
+	private String sizeName;
+	private String colorName;
 
 
 	public String getOrderId() {
@@ -39,6 +42,24 @@ public class Order implements Serializable{
 	}
 	public void setItemCount(int itemCount) {
 		this.itemCount = itemCount;
+	}
+	public String getItemName() {
+		return itemName;
+	}
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+	public String getSizeName() {
+		return sizeName;
+	}
+	public void setSizeName(String sizeName) {
+		this.sizeName = sizeName;
+	}
+	public String getColorName() {
+		return colorName;
+	}
+	public void setColorName(String colorName) {
+		this.colorName = colorName;
 	}
 
 

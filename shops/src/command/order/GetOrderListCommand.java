@@ -21,7 +21,7 @@ public class GetOrderListCommand extends AbstractCommand{
 		System.out.println(orders);
 		resc.setResult(orders);
 
-		resc.setTarget("/WEB-INF/adminjsp/Purchase.jsp");
+		resc.setTarget("/WEB-INF/userjsp/History.jsp");
 		System.out.println("target:"+resc.getTarget());
 		return resc;
 	}

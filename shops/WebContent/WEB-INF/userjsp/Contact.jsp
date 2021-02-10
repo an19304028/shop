@@ -32,9 +32,9 @@
 		<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeiUijIrG7X0t_MYjmPfneEB_j8h7hZVMtJCEM-aKZEqRNcOw/formResponse" method="POST">
 
 	<table border="1">
-		<tr><td>お名前</td><td><input type="text" name="entry.1591633300" id="" placeholder="お名前"></td></tr>
-		<tr><td>メールアドレス</td><td><input type="text" name="entry.326955045" id="" placeholder="件名"></td></tr>
-		<tr><td>お問い合わせ内容</td><td><textarea type="text" name="entry.1696159737" id=""  rows="6" cols="30"></textarea></td></tr>
+		<tr><td>お名前</td><td><input type="text" name="entry.1591633300" id="" placeholder="お名前" required></td></tr>
+		<tr><td>メールアドレス</td><td><input type="text" name="entry.326955045" id="" placeholder="件名" required></td></tr>
+		<tr><td>お問い合わせ内容</td><td><textarea name="entry.1696159737" id=""  rows="10" cols="60" required></textarea></td></tr>
 	</table>
 		<input type="submit" value="この内容で問い合わせる">
 		</form>
