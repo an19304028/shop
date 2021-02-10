@@ -39,7 +39,7 @@
 	<c:forEach var="item" items="${data}">
 	<p>商品名：${item.itemName}</p>
 	<p>サイズ/カラー：${item.sizeName}/${item.colorName}</p>
-	<form action="https://docs.google.com/forms/u/0/d/1nPy_OpDr8lnFsJGcioGTVDz6NPM6act8jlZSByMI5Xk/prefill" method="post">
+	<form action="https://docs.google.com/forms/u/0/d/1nPy_OpDr8lnFsJGcioGTVDz6NPM6act8jlZSByMI5Xk/prefill" method="post" target="hidden_iframe" onsubmit="submitted=true;">
 		<input type="hidden" name="entry.2081137255" value= <%=userId %> readonly />
 		　　　　　　お名前：<input type="text" name="entry.983308274" /><br>
 		通知メールアドレス：<input type="text" name="entry.102717670" /><br>
