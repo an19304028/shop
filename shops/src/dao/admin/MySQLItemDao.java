@@ -19,17 +19,18 @@ public class MySQLItemDao implements ItemDao{
 	public void addItem(Item i) {
 		try {
 			Connection cn = Connector.connect();
-			String sql= "INSERT into shop.item_table(item_name, stock_count, size_id, color_id, price, category_id, detail, add_date) VALUES(?, ?, ?, ?, ?, ?, ?, NOW())";
+			String sql= "INSERT into shop.item_table(item_id,item_name, stock_count, size_id, color_id, price, category_id, detail, add_date) VALUES(?,?, ?, ?, ?, ?, ?, ?, NOW())";
 
 			st = cn.prepareStatement(sql);
-
-			st.setString(1, i.getItemName());
-			st.setInt(2, i.getStockCount());
-			st.setString(3, i.getSizeId());
-			st.setString(4, i.getColorId());
-			st.setInt(5, i.getPrice());
-			st.setString(6, i.getCategoryId());
-			st.setString(7, i.getDetail());
+			
+			st.setString(1, i.getItemId());
+			st.setString(2, i.getItemName());
+			st.setInt(3, i.getStockCount());
+			st.setString(4, i.getSizeId());
+			st.setString(5, i.getColorId());
+			st.setInt(6, i.getPrice());
+			st.setString(7, i.getCategoryId());
+			st.setString(8, i.getDetail());
 
 			st.executeUpdate();
 
