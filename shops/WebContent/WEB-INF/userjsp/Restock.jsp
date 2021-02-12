@@ -2,9 +2,7 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%
-	String userId = (String)request.getAttribute("userId");
-	String itemId = (String)request.getAttribute("itemId");
-	String itemName = (String)request.getAttribute("itemName");
+	String userId = (String)session.getAttribute("userId");
 %>
 <!DOCTYPE html>
 <html>
@@ -41,15 +39,15 @@
 	<c:forEach var="item" items="${data}">
 	<p>商品名：${item.itemName}</p>
 	<p>サイズ/カラー：${item.sizeName}/${item.colorName}</p>
-	</c:forEach>
-	<form action="https://docs.google.com/forms/u/0/d/1nPy_OpDr8lnFsJGcioGTVDz6NPM6act8jlZSByMI5Xk/prefill" method="post">
+	<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScf0hRD9zG7tnof6JfRKlskSwdiQ7u8C9FahSCaWAPR-z-Avg/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
 		<input type="hidden" name="entry.2081137255" value= <%=userId %> readonly />
 		　　　　　　お名前：<input type="text" name="entry.983308274" /><br>
 		通知メールアドレス：<input type="text" name="entry.102717670" /><br>
-		<input type="hidden" name="entry.1770593522" value=<%=itemId %> readonly />
-		　　　　　　商品名：<input type="text" name="entry.298775810" value= <%=itemName %> readonly />
+		<input type="hidden" name="entry.1770593522" value="${item.itemId}" readonly />
+		　　　　　　商品名：<input type="text" name="entry.298775810" value= "${item.itemName}" readonly />
 		<input type="submit">
 	</form>
+	</c:forEach>
 
 </div>
 
