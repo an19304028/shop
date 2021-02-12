@@ -19,7 +19,7 @@ public class MySQLGetOrderListDao implements GetOrderListDao{
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "SELECT item_name, size_name, color_name, item_table.price, buy_date,image_path FROM shop.order_table JOIN shop.order_detail USING(order_id) JOIN shop.item_table USING (item_id) JOIN shop.size_table USING (size_id) JOIN shop.color_table USING(color_id) JOIN shop.image_table USING(item_id) WHERE user_id = ? and image_path LIKE '%samne.jpg'";
+			String sql = "SELECT item_name, size_name, color_name, item_table.price, buy_date,image_path FROM shop.order_table JOIN shop.order_detail USING(order_id) JOIN shop.item_table USING (item_id) JOIN shop.size_table USING (size_id) JOIN shop.color_table USING(color_id) JOIN shop.image_table USING(item_id) WHERE user_id = ? and image_path LIKE '%samne.jpg' ORDER BY buy_date desc";
 			st = cn.prepareStatement(sql);
 
 			st.setString(1, userId);
