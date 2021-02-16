@@ -56,6 +56,7 @@
 			    	<form name="addcart" action=""  method="post">
 			    		<input type="hidden" name="userId" value="${sessionScope.userId}">
 			    		<input type="hidden" name="itemId" value="${item.itemId}">
+			    		<input type="hidden" name="itemName" value="${item.itemName}">
 			    		<input type="text" name="buyCount" id="buyCount">
 			    		<input type="submit"  onclick="checkStock();" value="カートに追加">
 			    	</form>
