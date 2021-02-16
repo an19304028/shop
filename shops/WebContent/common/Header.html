@@ -32,6 +32,8 @@
 	</ul>
 	</nav>
 
+	<p id="page-top"><a href="#"><img src="image/header/pagetop.png" height="50" width="50" alt="ページトップボタン"></a></p>
+
 	<br><br><br><br>
 
 	</div>
@@ -256,7 +258,7 @@
 		border-right : none;
 	}
 
-	#login-button, #create-button{
+	#login-button, #create-button, #create-ok-button{
 		margin : 10px;
 		padding : 10px 20px;
 		background: #eee;
@@ -319,7 +321,51 @@
 	    border-color:  #585753;
 	}
 
-	</style>
+	/* ---------- ユーザー登録 ---------- */
+
+	#create-form{
+		width : 550px;
+		padding : 40px;
+		margin : auto;
+		border : 0.5px solid #555;
+		text-align:center;
+	}
+
+	#create-form table {
+		margin:auto;
+	}
+
+	#create-form table th{
+		width:100px;
+	}
+
+	#create-form #loginId,#password,#name,#kana,#mail,#birthday,#tel,#postalCode,#address{
+		margin: 10px;
+		padding : 5px 10px;
+		width : 300px;
+		height: 30px;
+
+		border-bottom: 1px solid;
+		border-top	 : none;
+		border-left	 : none;
+		border-right : none;
+	}
+
+	.radiobutton {
+	  display: none;
+	}
+	.radiobox label {
+	  background-color: whitesmoke;
+	  border-radius:20px;
+	  margin-right:5px;
+	  padding: 7px 15px;
+	}
+	.radiobutton:checked + label {
+	  background-color: peachpuff;
+	}
+
+
+</style>
 
 	<script>
 
