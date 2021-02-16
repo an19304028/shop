@@ -51,7 +51,7 @@
 				</c:forEach>
 			</table>
 
-			<p>${mess}　 ${point}pt</p>
+			<p>利用ポイント：${point}pt</p>
 
 			<form action="addorder" method="post">
 				<c:forEach var="item" items="${data}">
