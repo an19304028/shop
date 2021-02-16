@@ -5,5 +5,5 @@ import java.util.ArrayList;
 import bean.Order;
 
 public interface AddOrderDao {
-	public void addOrder(Order o, ArrayList list,int point);
+	public void addOrder(Order o, ArrayList list,int point,int usepoint);
 }
