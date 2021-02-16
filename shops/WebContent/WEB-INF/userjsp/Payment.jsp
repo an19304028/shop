@@ -89,7 +89,7 @@
 	</div> --%>
 
 		<label>
-			<input id="js-check" type="radio" name="rs" value="1" onclick="formSwitch();" form="getordercheck" checked>
+			<input id="js-check" type="radio" name="rs" value="1" onclick="formSwitch();" form="getordercheck" required>
 			クレジットカードでのお支払い
 		</label>
 	<div id="credit_form">
@@ -145,7 +145,7 @@
 				</tr>
 				<c:forEach var="item" items="${data}">
 					<tr>
-						<td><input type="radio" name="credit" value="${item.cardNumber}"></td>
+						<td><input type="radio" name="credit" form="getordercheck"></td>
 						<td>${item.cardNumber}</td>
 						<%-- <td>${item.userName}</td> --%>
 						<td>${item.expirationDate}</td>
@@ -159,7 +159,7 @@
 		<br>
 		<div id="Payment_cash">
 		<label>
-			<input type="radio" name="rs" value="1" onclick="formSwitch();" form="getordercheck">
+			<input type="radio" name="rs" value="1" onclick="formSwitch();" form="getordercheck" required>
 			現金でのお支払い
 		</label>
 		</div>
@@ -190,13 +190,13 @@
 		        $('#cardNumber').removeAttr("required");
 				$('#securityCode').removeAttr("required");
 				$('#payCount').removeAttr("required");
-
+				$('input[name="credit"]').removeAttr("required");
 		    } else if (check.checked==true) {
 		        selecterBox.style.display = "block";
 		        $('#cardNumber').prop("required", true);
 				$('#securityCode').prop("required", true);
 				$('#payCount').prop("required", true);
-
+				$('input[name="credit"]').prop("required", true);
 		    } else {
 		        selecterBox.style.display = "none";
 		    }
