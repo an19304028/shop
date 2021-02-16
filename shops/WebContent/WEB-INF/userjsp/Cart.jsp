@@ -79,7 +79,7 @@
 				<input type="hidden" name="userId" value="${sessionScope.userId}">
 				<input type="submit" value="カートを空にする">
 			</form>
-			<form action="addorder" method="post">
+			<form action="inputorder" method="post">
 				<c:forEach var="item" items="${data}">
 					<input type="hidden" name="itemId" value="${item.itemId}">
 					<input type="hidden" name="buyCount" value="${item.buyCount}">
@@ -88,7 +88,7 @@
 
 				<input type="hidden" name="userId" value="${sessionScope.userId}">
 				<input type="hidden" name="point" value="${point}">
-				<input type="submit" value="注文確定">
+				<input type="submit" value="購入手続きへ進む">
 			</form>
 
 			<br>
