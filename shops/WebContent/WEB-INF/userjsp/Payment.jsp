@@ -37,7 +37,7 @@
 		});
 
 	</script>
-	  <table id="table" border="1">
+	 <%--  <table id="table" border="1">
 	    <tr>
 	     <th>商品名</th>
 	     <th>サイズ</th>
@@ -56,7 +56,7 @@
 	         <td>${item.price}</td>
 	      </tr>
 	    </c:forEach>
-	   </table>
+	   </table> --%>
    <p>${mess}　 ${point}pt</p>
 
 

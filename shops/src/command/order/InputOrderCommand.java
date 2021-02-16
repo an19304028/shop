@@ -1,24 +1,26 @@
 package command.order;
 
+import java.util.List;
+
 import command.AbstractCommand;
+import dao.order.GetCartListDao;
+import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;
 
 public class InputOrderCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
-		String itemId = rc.getParameter("itemId")[0];
-		String buyCount = rc.getParameter("buyCount")[0];
-		String price = rc.getParameter("price")[0];
-		String userId =rc.getParameter("userId")[0];
-		String point = rc.getParameter("point")[0];
+		String userId = (String)rc.getSessonAttribute("userId");
+		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
+		GetCartListDao dao = factory.getGetCartListDao();
 		
-		rc.setSessionAttribute("itemId",itemId );
-		rc.setSessionAttribute("buyCount", buyCount);
-		rc.setSessionAttribute("price", price);
-		rc.setSessionAttribute("point", point);
-	
-		
+		int point = dao.getPoint(userId);
+		System.out.println(point);
+		rc.setAttribute("point", point);
+
+		List cart = dao.getCartList(userId);
+		//resc.setResult(cart);
 		resc.setTarget("/WEB-INF/userjsp/Payment.jsp");
 		return resc;
 	}
