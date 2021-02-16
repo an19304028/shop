@@ -20,7 +20,7 @@ public class GetCreditCommand extends AbstractCommand{
 		List credit = dao.getCredit(userId);
 		resc.setResult(credit);
 
-		resc.setTarget("/WEB-INF/userjsp/CheckPayment.jsp");
+		resc.setTarget("/WEB-INF/userjsp/Payment.jsp");
 		System.out.println("target:"+resc.getTarget());
 
 		return resc;
