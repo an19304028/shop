@@ -36,7 +36,6 @@
 			$("#footer").load("common/Footer.html");
 		});
 
-
 	</script>
 
 	<h2>支払方法</h2>
@@ -55,10 +54,10 @@
 
 	<form method='post' action='addcredit' >
 		<div id="credit_form">
-			ユーザーID<input id="userId" type='hidden' name='userId' value='1'><br>
-			カード番号<input id="cardNumber" type='text' name='cardNumber' required><br>
+			ユーザーID<input id="userId" type='hidden' name='userId' value='${sessionScope.userId}'><br>
+			カード番号<input id="cardNumber" type='text' name='cardNumber'><br>
 			<!-- 名義人<input id="name" type='text' name='name' required><br> -->
-			セキュリティーコード<input id="securityCode" type='text' name='securityCode' required><br>
+			セキュリティーコード<input id="securityCode" type='text' name='securityCode'><br>
 			<!-- 有効期限<input id="expirationDate" type='text' name='expirationDate' required><br> -->
 			有効期限<select name="expirationMonth">
 						<option value="1">1</option>
@@ -88,7 +87,7 @@
 					</select> 年
 			<!-- ↑ 月/年の表記 -->
 			<br>
-			支払回数<input id="payCount" type='text' name='payCount' required><br>
+			支払回数<input id="payCount" type='text' name='payCount'><br>
 			<br>
 		</div>
 			<h2>ポイント利用</h2>
@@ -120,6 +119,9 @@
 
 		    } else if (check.checked==true) {
 		        selecterBox.style.display = "block";
+		        $('#cardNumber').prop("required", true);
+				$('#securityCode').prop("required", true);
+				$('#payCount').prop("required", true);
 
 		    } else {
 		        selecterBox.style.display = "none";
