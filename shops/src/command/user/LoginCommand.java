@@ -45,7 +45,7 @@ public class LoginCommand extends AbstractCommand {
 				mes = userId+"でログインしました";
 				int point = dao.getPoint(userId);
 				System.out.println(point);
-				rc.setSessionAttribute("userPoint", point+"pt");
+				rc.setSessionAttribute("userPoint", point);
 				System.out.println(rc.getSessonAttribute("userPoint"));
 			}else {
 				mes = "パスワードが違います";

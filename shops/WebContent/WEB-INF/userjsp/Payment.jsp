@@ -60,7 +60,7 @@
 	      </tr>
 	    </c:forEach>
 	   </table> --%>
-   <p>${mess}　 ${point}pt</p>
+   <p>${mess}</p>
 
 
 	<h2>支払方法</h2>
@@ -166,7 +166,7 @@
 
 		<h2>ポイント利用</h2>
 		<div id="point_form">
-			現在のポイント:<p id="nowpoint">${sessionScope.point}</p>pt<br>
+			現在のポイント:<p id="nowpoint">${sessionScope.userPoint}</p>pt<br>
 			<label>ご利用ポイント</label>
 			<input type="text" name="usepoint" id="usepoint" form="getordercheck" value="0">pt <br>
 		</div>
