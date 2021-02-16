@@ -11,6 +11,9 @@
 	#credit_form {
  	 display:none;
 	}
+	#nowpoint{
+		display:inline;
+	}
 </style>
 
 </head>
@@ -62,12 +65,6 @@
 
 	<h2>支払方法</h2>
 
-	<div id="Payment_cash">
-		<label>
-			<input type="radio" name="rs" value="1" onclick="formSwitch();" form="credit_submit" checked>
-			現金でのお支払い
-		</label>
-	</div>
 
 <%-- 	<div id="Payment_Exist">
 		<label>
@@ -92,12 +89,12 @@
 	</div> --%>
 
 		<label>
-			<input id="js-check" type="radio" name="rs" value="1" onclick="formSwitch();" form="credit_submit">
+			<input id="js-check" type="radio" name="rs" value="1" onclick="formSwitch();" form="getordercheck" checked>
 			クレジットカードでのお支払い
 		</label>
 	<div id="credit_form">
 	<form method='post' action='addcredit' >
-			<input id="userId" type='hidden' name='userId' value='${sessionScope.userId}'><br>
+			<input type='hidden' name='userId' value='${sessionScope.userId}'><br>
 			カード番号<input id="cardNumber" type='text' name='cardNumber'><br>
 			<!-- 名義人<input id="name" type='text' name='name' required><br> -->
 			セキュリティーコード<input id="securityCode" type='text' name='securityCode'><br>
@@ -132,14 +129,13 @@
 			<br>
 			支払回数<input id="payCount" type='text' name='payCount'><br>
 			<br>
-
-
 			<input type='submit' value='登録'>
 		</form>
 
-		<form method="post" action="getcredit">
+		<h3>既存のクレジットカードから選択</h3>
+<%-- 		<form method="post" action="getcredit">
 			<input type="hidden" name='userId' value="${sessionScope.userId}">
-			<input type="submit" value="カード情報を取得">
+			<input type="submit" value="カード情報を取得"> --%>
 			<table border="1">
 				<tr>
 					<th>　</th>
@@ -149,7 +145,7 @@
 				</tr>
 				<c:forEach var="item" items="${data}">
 					<tr>
-						<td><input type="radio" name="credit" value="1"></td>
+						<td><input type="radio" name="credit" value="${item.cardNumber}"></td>
 						<td>${item.cardNumber}</td>
 						<%-- <td>${item.userName}</td> --%>
 						<td>${item.expirationDate}</td>
@@ -157,27 +153,32 @@
 				</c:forEach>
 			</table>
 			<!-- <input type="submit" value="このカードを使用"> -->
-		</form>
+<!-- 		</form> -->
 		</div>
-		<form method="post" action="getordercheck" id="credit_submit">
-			<input type="submit" value="確定">
-		</form>
 
+		<br>
+		<div id="Payment_cash">
+		<label>
+			<input type="radio" name="rs" value="1" onclick="formSwitch();" form="getordercheck">
+			現金でのお支払い
+		</label>
+		</div>
 
 		<h2>ポイント利用</h2>
 		<div id="point_form">
-			<p>現在のポイント:${sessionScope.point}pt</p>
+			現在のポイント:<p id="nowpoint">${sessionScope.point}</p>pt<br>
 			<label>ご利用ポイント</label>
-			<input type="text" name="point" value="0">pt <br>
+			<input type="text" name="usepoint" id="usepoint" form="getordercheck" value="0">pt <br>
 		</div>
 
+		<form method="post" name="ordercheck" action="" id="getordercheck">
+			<input type='hidden' name='userId' value='${sessionScope.userId}'><br>
+			<input onclick="checkPoint();" type="submit" value="確定">
+		</form>
 
-	<!-- 支払い方法だけでformが成り立ってるから送信の問題が残る -->
-	<!-- もしかしたらコマンド付け足さないとかも -->
 
 
-
-	<script type="text/javascript">
+	<script>
 		var selecterBox = document.getElementById('credit_form');
 		var selecterBox2 = document.getElementById('point_form');
 		//var check = false;
@@ -207,6 +208,19 @@
 		    if(document.getElementById('changeSelect')){
 		    id = document.getElementById('changeSelect').value;
 		}
+		}
+		//point
+		function checkPoint(){
+			var point = document.getElementById("nowpoint").textContent;
+			var usepoint = document.getElementById("usepoint").value;
+			console.log("point:"+point+"\t usepoint"+usepoint);
+			if(Number(point)<Number(usepoint)){
+				alert("ポイントが不足しています");
+			}else if(usepoint == ""){
+				alert("ポイントを入力してください");
+			}else{
+				document.ordercheck.action= 'getordercheck';
+			}
 		}
 	</script>
 
