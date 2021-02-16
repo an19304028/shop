@@ -156,13 +156,13 @@
 					</tr>
 				</c:forEach>
 			</table>
-			<input type="submit" value="このカードを使用">
+			<!-- <input type="submit" value="このカードを使用"> -->
 		</form>
+		</div>
 		<form method="post" action="getordercheck" id="credit_submit">
 			<input type="submit" value="確定">
 		</form>
 
-		</div>
 
 		<h2>ポイント利用</h2>
 		<div id="point_form">
