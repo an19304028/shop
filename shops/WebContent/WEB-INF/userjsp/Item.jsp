@@ -22,7 +22,6 @@
 		$(function(){
 			$("#header").load("common/Header.html");
 		});
-
 		$(function(){
 			$("#footer").load("common/Footer.html");
 		});
@@ -104,14 +103,12 @@
 			console.log(stock);
 			if(Number(stock)<Number(buyCount)){
 				alert("在庫数を超えています");
-
 			}else if(buyCount==""){
 				alert("入力してください");
 			}else{
 				document.addcart.action= 'addcart';
 			}
 		}
-
 	</script>
 
 </div>

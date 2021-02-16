@@ -51,6 +51,7 @@ public class LoginCheckFilter implements Filter {
 		if(session.getAttribute("token")==null) {
 
 			request.setAttribute("itemId",hreq.getParameter("itemId"));
+			request.setAttribute("itemName",hreq.getParameter("itemName"));
 			request.setAttribute("buyCount",hreq.getParameter("buyCount"));
 			session.setAttribute("oldPath", hreq.getServletPath());
 			System.out.println("filter");

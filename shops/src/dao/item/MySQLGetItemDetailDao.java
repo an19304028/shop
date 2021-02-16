@@ -20,7 +20,7 @@ public class MySQLGetItemDetailDao implements GetItemDetailDao{
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "SELECT i.item_id, i.item_name, i.stock_count, s.size_name ,c.color_name, ca.category_name, i.price, i.detail FROM shop.item_table i JOIN shop.size_table s USING(size_id) JOIN shop.color_table c USING(color_id) JOIN shop.category_table ca USING(category_id) Where item_id=?";
+			String sql = "SELECT i.item_id, i.item_name, i.stock_count, s.size_name ,c.color_name, ca.category_name, i.price, i.detail FROM shop.item_table i JOIN shop.size_table s USING(size_id) JOIN shop.color_table c USING(color_id) JOIN shop.category_table ca USING(category_id) Where item_name=?";
 			st = cn.prepareStatement(sql);
 			
 			st.setString(1,key);

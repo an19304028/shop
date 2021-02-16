@@ -9,6 +9,7 @@
 <%
 	String itemId = (String)request.getAttribute("itemId");
 	String buyCount = (String)request.getAttribute("buyCount");
+	String itemName = (String)request.getAttribute("itemName");
 %>
 </head>
 <body>
@@ -39,6 +40,7 @@
 	  	<form action="login" method="post" >
 	  		<input type="hidden" name="itemId" value=<%= itemId %> />
 			<input type="hidden" name="buyCount" value=<%= buyCount %> />
+			<input type="hidden" name="itemName" value=<%= itemName %> />
 			ログインID<input type="text" pattern="^[0-9A-Za-z_]+$" name="loginId" id="loginId" required /><br>
 			パスワード<input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[A-Za-z]+$" maxlength="10" name="pass" required /><br>
 			 <input type="checkbox" id="password-check"><label for="password-check">パスワードを表示する</label><br>

@@ -13,11 +13,12 @@ public class GetItemDetailCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
 		String itemId = rc.getParameter("itemId")[0];
+		String itemName = rc.getParameter("itemName")[0];
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetItemDetailDao dao = factory.getGetItemDetailDao();
 
-		List item = dao.getItemDetail(itemId);
+		List item = dao.getItemDetail(itemName);
 		System.out.println(item);
 
 		resc.setResult(item);

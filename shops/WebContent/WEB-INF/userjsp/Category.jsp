@@ -49,8 +49,8 @@
 				    <td>
 				    	<form action="getitemdetail" onSubmit="return checkSubmit()" method="post">
 
-				    		<input type="hidden" name="itemId" value="${item.itemId}">
-
+				    		<input type="hidden" name="itemName" value="${item.itemName}">
+							<input type="hidden" name="itemId" value="${item.itemId}">
 				    		<input type="submit" value="商品詳細へ">
 				    	</form>
 				    </td>
