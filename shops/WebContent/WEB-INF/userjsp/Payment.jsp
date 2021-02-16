@@ -42,7 +42,7 @@
 	<h2>支払方法</h2>
 
 	<label>
-		<input type="radio" name="rs" value="1" onclick="formSwitch();">
+		<input type="radio" name="rs" value="1" onclick="formSwitch();" checked>
 		現金でのお支払い
 	</label>
 	<br>
@@ -52,8 +52,9 @@
 		クレジットカードでのお支払い
 	</label>
 
-	<div id="credit_form">
-		<form method='post' action='addcredit' >
+
+	<form method='post' action='addcredit' >
+		<div id="credit_form">
 			ユーザーID<input id="userId" type='hidden' name='userId' value='1'><br>
 			カード番号<input id="cardNumber" type='text' name='cardNumber' required><br>
 			<!-- 名義人<input id="name" type='text' name='name' required><br> -->
@@ -89,23 +90,23 @@
 			<br>
 			支払回数<input id="payCount" type='text' name='payCount' required><br>
 			<br>
+		</div>
+			<h2>ポイント利用</h2>
+			<div id="point_form">
+				<p>現在のポイント:${sessionScope.point}pt</p>
+				<label>ご利用ポイント</label>
+				<input type="text" name="point" value="0">pt <br>
+			</div>
 
 			<input type='submit' value='入力内容を確認する'>
-
 		</form>
-	</div>
 
-	<h2>ポイント利用</h2>
+
+
 	<!-- 支払い方法だけでformが成り立ってるから送信の問題が残る -->
 	<!-- もしかしたらコマンド付け足さないとかも -->
 
-	<div id="point_form">
-		<label>ご利用ポイント</label>
-		<form method='post' action='addcredit' >
-			<input type="text" name="point" value="0">pt <br>
-			<input type="submit" value="入力内容を確認する">
-		</form>
-	</div>
+
 
 	<script>
 		var selecterBox = document.getElementById('credit_form');
