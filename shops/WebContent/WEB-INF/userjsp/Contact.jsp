@@ -31,8 +31,8 @@
 	</script>
 	<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='send-o';}"></iframe>
 	<div id="contact-form">
-		<h1>お問い合わせ</h1>
-		<p>以下のフォームの項目を入力し、よろしければ「この内容で問い合わせる」ボタンをクリックしてください。</p>
+		<h1 align="center">お問い合わせ</h1>
+		<p align="center">以下のフォームの項目を入力し、よろしければ「この内容で問い合わせる」ボタンをクリックしてください。</p>
 		<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeiUijIrG7X0t_MYjmPfneEB_j8h7hZVMtJCEM-aKZEqRNcOw/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
 
 			<table class="contact-table">
@@ -41,7 +41,7 @@
 				<tr><th>お問い合わせ内容</th><td><textarea name="entry.1696159737" id=""  rows="10" cols="60" required></textarea></td></tr>
 			</table>
 
-			<input id="contact-button" type="submit" value="この内容で問い合わせる">
+			<div><input id="contact-button" type="submit" value="この内容で問い合わせる"></div>
 		</form>
 	</div>
 

@@ -27,23 +27,47 @@
 		});
 	</script>
 
-	<h1>ご利用案内</h1>
-	<p>（内容）</p>
+	<h1 align="center">ご利用案内</h1>
 
-	<h2>ご利用方法</h2>
-	<p>（内容）</p>
+	<div id="guidejump">
+		<ul class="guide-list">
+			<li><a href="#link1">ご利用方法</a></li>
+			<li><a href="#link2">お支払いについて</a></li>
+			<li><a href="#link3">配送について</a></li>
+			<li><a href="#link4">消費税について</a></li>
+			<li><a href="#link5">返品について</a></li>
+		</ul>
+	</div>
 
-	<h2>お支払いについて</h2>
-	<p>（内容）</p>
+	<section>
+		<h2 style="padding-top:100px;" id="link1">ご利用方法</h2>
+		<p>（内容）</p>
+		<p style="padding-top:500px;">
+	</section>
 
-	<h2>配送について</h2>
-	<p>（内容）</p>
+	<section>
+		<h2 style="padding-top:100px;" id="link2">お支払いについて</h2>
+		<p>（内容）</p>
+		<p style="padding-top:500px;">
+	</section>
 
-	<h2>消費税について</h2>
-	<p>（内容）</p>
+	<section>
+		<h2 style="padding-top:100px;" id="link3">配送について</h2>
+		<p>（内容）</p>
+		<p style="padding-top:500px;">
+	</section>
 
-	<h2>返品について</h2>
-	<p>（内容）</p>
+	<section>
+		<h2 style="padding-top:100px;" id="link4">消費税について</h2>
+		<p>（内容）</p>
+		<p style="padding-top:500px;">
+	</section>
+
+	<section>
+		<h2 style="padding-top:100px;" id="link5">返品について</h2>
+		<p>（内容）</p>
+		<p style="padding-top:500px;">
+	</section>
 
 </div>
 
