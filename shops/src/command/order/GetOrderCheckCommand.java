@@ -13,12 +13,14 @@ public class GetOrderCheckCommand extends AbstractCommand {
 		RequestContext rc = getRequestContext();
 		String userId = (String)rc.getSessonAttribute("userId");
 		String usepoint = rc.getParameter("usepoint")[0];
+		String itempoint = rc.getParameter("itempoint")[0];
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetCartListDao dao = factory.getGetCartListDao();
 		
 		int point = dao.getPoint(userId);
 		System.out.println(point);
 		rc.setAttribute("point", usepoint);
+		rc.setAttribute("itempoint", itempoint);
 
 		List cart = dao.getCartList(userId);
 		resc.setResult(cart);

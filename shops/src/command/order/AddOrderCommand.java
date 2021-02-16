@@ -7,6 +7,7 @@ import bean.OrderDetail;
 import command.AbstractCommand;
 import dao.order.AddOrderDao;
 import dao.order.RemoveAllCartDao;
+import dao.user.LoginDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;
@@ -16,14 +17,15 @@ public class AddOrderCommand extends AbstractCommand{
 	@Override
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
-
+		String usepoints = rc.getParameter("usepoint")[0];
 		String userId =rc.getParameter("userId")[0];
 		//String itemId= rc.getParameter("itemId")[0];
 		int price = 0;
 		//int itemCount = Integer.parseInt(rc.getParameter("itemCount")[0]);
 		int itemCount = 0;
 		//int buyCount = Integer.parseInt(rc.getParameter("buyCount")[0]);
-		int point = Integer.parseInt(rc.getParameter("point")[0]);
+		int point = Integer.parseInt((String) rc.getParameter("itempoint")[0]);
+		int usepoint = Integer.parseInt(usepoints);
 
 		ArrayList list = new ArrayList();
 		//for文でparameter全部引っ張り出す
@@ -51,13 +53,18 @@ public class AddOrderCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		AddOrderDao dao = factory.getAddOrderDao();
 
-		dao.addOrder(o, list, point);
+		dao.addOrder(o, list, point,usepoint);
 
 		rc.setAttribute("mess","注文情報を確定いたしました。");
 
 		RemoveAllCartDao removedao = factory.getRemoveAllCartDao();
 
 		removedao.removeAllCart(userId);
+		
+		LoginDao login = factory.getLoginDao();
+		int points = login.getPoint(userId);
+		rc.setSessionAttribute("userPoint", points);
+		System.out.println(rc.getSessonAttribute("userPoint"));
 
 		resc.setTarget("/WEB-INF/userjsp/Purchase.jsp");
 		System.out.println("target:"+resc.getTarget());

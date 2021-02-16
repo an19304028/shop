@@ -50,7 +50,7 @@
 					</tr>
 				</c:forEach>
 			</table>
-
+			<p>${itempoint}</p>
 			<p>利用ポイント：${point}pt</p>
 
 			<form action="addorder" method="post">
@@ -61,7 +61,8 @@
 				</c:forEach>
 
 				<input type="hidden" name="userId" value="${sessionScope.userId}">
-				<input type="hidden" name="point" value="${point}">
+				<input type="hidden" name="usepoint" value="${point}">
+				<input type="hidden" name="itempoint" value="${itempoint}">
 				<input type="submit" value="確定">
 			</form>
 

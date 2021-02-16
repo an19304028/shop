@@ -15,6 +15,8 @@ public class InputOrderCommand extends AbstractCommand {
 		GetCreditDao dao = factory.getGetCreditDao();
 		RequestContext rc = getRequestContext();
 		String userId = rc.getParameter("userId")[0];
+		String point = rc.getParameter("point")[0];
+		rc.setAttribute("itempoint", point);
 
 		//Credit c = new Credit();
 		//c.setUserId(userId);

@@ -173,6 +173,7 @@
 
 		<form method="post" name="ordercheck" action="" id="getordercheck">
 			<input type='hidden' name='userId' value='${sessionScope.userId}'><br>
+			<input type="hidden" name="itempoint" value="${requestScope.itempoint}">
 			<input onclick="checkPoint();" type="submit" value="確定">
 		</form>
 
