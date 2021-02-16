@@ -258,7 +258,7 @@
 		border-right : none;
 	}
 
-	#login-button, #create-button, #create-ok-button{
+	#login-button, #create-button, #create-ok-button, #contact-button{
 		margin : 10px;
 		padding : 10px 20px;
 		background: #eee;
@@ -361,9 +361,107 @@
 	  padding: 7px 15px;
 	}
 	.radiobutton:checked + label {
-	  background-color: peachpuff;
+	  background-color: seashell;
 	}
 
+	/* ---------- お問い合わせ ---------- */
+
+	#contact-form {
+		text-align:center;
+	}
+
+	table.contact-table {
+		border-collapse: collapse;
+		border-top	 : none;
+		border-left	 : none;
+		border-right : none;
+	}
+
+	table.contact-table p {
+		font-size: 16px;
+		font-weight: bold;
+		text-align: center;
+		margin: 60px auto 40px;
+	}
+
+	table.contact-table textarea{
+		resize: none;
+	}
+
+	table.contact-table input[type="submit"],
+	input[type="text"],
+	select,
+	textarea,
+	button {
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+		outline: none;
+		border: none;
+	}
+
+	table.contact-table input[type="text"],
+	textarea {
+		background: #f8f8f8;
+		display: block;
+		font-size: 16px;
+		padding: 12px 15px;
+		width: 480px;
+		border-radius: 0;
+	}
+
+	table.contact-table input[type="text"]:focus,
+	textarea:focus {
+		background: #fcfcfc;
+	}
+
+	table.contact-table textarea[name="content"] {
+		display: inline-block;
+		width: 100%;
+		height: 200px;
+	}
+
+	table.contact-table input::placeholder,
+	textarea::placeholder {
+		color: #ccc;
+	}
+
+	::-webkit-input-placeholder {
+		color: #ccc;
+		opacity: 1;
+	}
+
+	::-moz-placeholder {
+		color: #ccc;
+		opacity: 1;
+	}
+
+	:-ms-input-placeholder {
+		color: #ccc;
+		opacity: 1;
+	}
+
+	.contact-table {
+		width: 750px;
+		margin: 30px auto;
+	}
+
+	.contact-table th,
+	.contact-table td {
+		border-top: 1px solid #555;
+		border-bottom: 1px solid #555;
+		padding: 20px;
+	}
+
+	.contact-table th {
+		background: snow;
+		padding: 20px;
+		position: relative;
+		text-align: center;
+		width: 200px;
+		border-right:none;
+	}
 
 </style>
 

@@ -30,17 +30,20 @@
 		var submitted = false;
 	</script>
 	<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='send-o';}"></iframe>
+	<div id="contact-form">
 		<h1>お問い合わせ</h1>
-	<p>以下のフォームの項目を入力し、よろしければ「この内容で問い合わせる」ボタンをクリックしてください。</p>
+		<p>以下のフォームの項目を入力し、よろしければ「この内容で問い合わせる」ボタンをクリックしてください。</p>
 		<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSeiUijIrG7X0t_MYjmPfneEB_j8h7hZVMtJCEM-aKZEqRNcOw/formResponse" method="POST" target="hidden_iframe" onsubmit="submitted=true;">
 
-	<table border="1">
-		<tr><td>お名前</td><td><input type="text" name="entry.1591633300" id="" placeholder="お名前" required></td></tr>
-		<tr><td>メールアドレス</td><td><input type="text" name="entry.326955045" id="" placeholder="件名" required></td></tr>
-		<tr><td>お問い合わせ内容</td><td><textarea name="entry.1696159737" id=""  rows="10" cols="60" required></textarea></td></tr>
-	</table>
-		<input type="submit" value="この内容で問い合わせる">
+			<table class="contact-table">
+				<tr><th>お名前</th><td><input type="text" name="entry.1591633300" id="" placeholder="" required></td></tr>
+				<tr><th>メールアドレス</th><td><input type="text" name="entry.326955045" id="" placeholder="" required></td></tr>
+				<tr><th>お問い合わせ内容</th><td><textarea name="entry.1696159737" id=""  rows="10" cols="60" required></textarea></td></tr>
+			</table>
+
+			<input id="contact-button" type="submit" value="この内容で問い合わせる">
 		</form>
+	</div>
 
 </div>
 
