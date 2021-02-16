@@ -9,7 +9,6 @@
 <title>クレカ登録画面</title>
 <style>
 	#credit_form {
- 	 margin-top:10px;
  	 display:none;
 	}
 </style>
@@ -38,17 +37,39 @@
 		});
 
 	</script>
+	  <table id="table" border="1">
+	    <tr>
+	     <th>商品名</th>
+	     <th>サイズ</th>
+	     <th>カラー</th>
+	     <th>数量</th>
+	     <th>ポイント</th>
+	     <th>価格</th>
+	    </tr>
+	    <c:forEach var="item" items="${data}">
+	     <tr>
+	      	<td>${item.itemName}</td>
+	         <td>${item.sizeName}</td>
+	         <td>${item.colorName}</td>
+	         <td>${item.buyCount}</td>
+	          <td>${item.point}</td>
+	         <td>${item.price}</td>
+	      </tr>
+	    </c:forEach>
+	   </table>
+   <p>${mess}　 ${point}pt</p>
+
 
 	<h2>支払方法</h2>
 
 	<div id="Payment_cash">
 		<label>
-			<input type="radio" name="rs" value="1" onclick="formSwitch();" checked>
+			<input type="radio" name="rs" value="1" onclick="formSwitch();" form="credit_submit" checked>
 			現金でのお支払い
 		</label>
 	</div>
 
-	<div id="Payment_Exist">
+<%-- 	<div id="Payment_Exist">
 		<label>
 			<input type="radio" name="rs" value="1" onclick="formSwitch();">
 			既存のクレジットカードでのお支払い
@@ -68,18 +89,15 @@
 				</tr>
 			</c:forEach>
 		</table>
-	</div>
+	</div> --%>
 
-	<div id="Payment_New">
 		<label>
-			<input id="js-check" type="radio" name="rs" value="1" onclick="formSwitch();" >
-			新規クレジットカードでのお支払い
+			<input id="js-check" type="radio" name="rs" value="1" onclick="formSwitch();" form="credit_submit">
+			クレジットカードでのお支払い
 		</label>
-	</div>
-
+	<div id="credit_form">
 	<form method='post' action='addcredit' >
-		<div id="credit_form">
-			ユーザーID<input id="userId" type='hidden' name='userId' value='${sessionScope.userId}'><br>
+			<input id="userId" type='hidden' name='userId' value='${sessionScope.userId}'><br>
 			カード番号<input id="cardNumber" type='text' name='cardNumber'><br>
 			<!-- 名義人<input id="name" type='text' name='name' required><br> -->
 			セキュリティーコード<input id="securityCode" type='text' name='securityCode'><br>
@@ -114,17 +132,44 @@
 			<br>
 			支払回数<input id="payCount" type='text' name='payCount'><br>
 			<br>
-		</div>
-			<h2>ポイント利用</h2>
-			<div id="point_form">
-				<p>現在のポイント:${sessionScope.point}pt</p>
-				<label>ご利用ポイント</label>
-				<input type="text" name="point" value="0">pt <br>
-			</div>
 
-			<input type='submit' value='入力内容を確認する'>
+
+			<input type='submit' value='登録'>
 		</form>
 
+		<form method="post" action="getcredit">
+			<input type="hidden" name='userId' value="${sessionScope.userId}">
+			<input type="submit" value="カード情報を取得">
+			<table border="1">
+				<tr>
+					<th>　</th>
+					<th>カード番号</th>
+<!-- 					<th>名義人</th> -->
+					<th>有効期限</th>
+				</tr>
+				<c:forEach var="item" items="${data}">
+					<tr>
+						<td><input type="radio" name="credit" value="1"></td>
+						<td>${item.cardNumber}</td>
+						<%-- <td>${item.userName}</td> --%>
+						<td>${item.expirationDate}</td>
+					</tr>
+				</c:forEach>
+			</table>
+			<input type="submit" value="このカードを使用">
+		</form>
+		<form method="post" action="getordercheck" id="credit_submit">
+			<input type="submit" value="確定">
+		</form>
+
+		</div>
+
+		<h2>ポイント利用</h2>
+		<div id="point_form">
+			<p>現在のポイント:${sessionScope.point}pt</p>
+			<label>ご利用ポイント</label>
+			<input type="text" name="point" value="0">pt <br>
+		</div>
 
 
 	<!-- 支払い方法だけでformが成り立ってるから送信の問題が残る -->
@@ -132,7 +177,7 @@
 
 
 
-	<script>
+	<script type="text/javascript">
 		var selecterBox = document.getElementById('credit_form');
 		var selecterBox2 = document.getElementById('point_form');
 		//var check = false;
