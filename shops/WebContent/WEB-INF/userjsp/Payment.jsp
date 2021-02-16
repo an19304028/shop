@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,17 +41,41 @@
 
 	<h2>支払方法</h2>
 
-	<label>
-		<input type="radio" name="rs" value="1" onclick="formSwitch();" checked>
-		現金でのお支払い
-	</label>
-	<br>
+	<div id="Payment_cash">
+		<label>
+			<input type="radio" name="rs" value="1" onclick="formSwitch();" checked>
+			現金でのお支払い
+		</label>
+	</div>
 
-	<label>
-		<input id="js-check" type="radio" name="rs" value="1" onclick="formSwitch();" >
-		クレジットカードでのお支払い
-	</label>
+	<div id="Payment_Exist">
+		<label>
+			<input type="radio" name="rs" value="1" onclick="formSwitch();">
+			既存のクレジットカードでのお支払い
+		</label>
+		<table>
+		<tr>
+			<th>カード番号</th>
+			<th>名義人</th>
+			<th>有効期限</th>
+		</tr>
+			<c:forEach var="item" items="${data}">
+				<input type="radio" name="credit" value="1">
+				<tr>
+					<td>${item.cardNumber}</td>
+					<td>${item.userName}</td>
+					<td>${item.expirationDate}</td>
+				</tr>
+			</c:forEach>
+		</table>
+	</div>
 
+	<div id="Payment_New">
+		<label>
+			<input id="js-check" type="radio" name="rs" value="1" onclick="formSwitch();" >
+			新規クレジットカードでのお支払い
+		</label>
+	</div>
 
 	<form method='post' action='addcredit' >
 		<div id="credit_form">
@@ -116,6 +141,9 @@
 		    check = document.getElementById('js-check');
 		    if (check.checked=='' || check.checked==false) {
 		        selecterBox.style.display = "none";
+		        $('#cardNumber').removeAttr("required");
+				$('#securityCode').removeAttr("required");
+				$('#payCount').removeAttr("required");
 
 		    } else if (check.checked==true) {
 		        selecterBox.style.display = "block";
