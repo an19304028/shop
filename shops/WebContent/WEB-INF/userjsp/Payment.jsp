@@ -129,6 +129,7 @@
 			<br>
 			支払回数<input id="payCount" type='text' name='payCount'><br>
 			<br>
+			<input type="hidden" name="point" value="${requestScope.itempoint}">
 			<input type='submit' value='登録'>
 		</form>
 
