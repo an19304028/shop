@@ -1,33 +1,14 @@
 package daofactory;
 
 
-import dao.user.RemoveUserDao;
-import dao.user.MySQLRemoveUserDao;
-import dao.user.RemoveCreditDao;
-import dao.user.AddCreditDao;
-import dao.user.AddUserDao;
-import dao.user.EditUserDao;
-import dao.user.GetCreditDao;
-import dao.user.GetPasswordDao;
-import dao.user.GetUserDao;
-import dao.user.LoginDao;
-import dao.user.MySQLAddCreditDao;
-import dao.user.MySQLAddUserDao;
-import dao.user.MySQLEditUserDao;
-import dao.user.MySQLGetCreditDao;
-import dao.user.MySQLGetPasswordDao;
-import dao.user.MySQLGetUserDao;
-import dao.user.MySQLLoginDao;
-import dao.user.MySQLRemoveCreditDao;
 import dao.admin.AddImageDao;
 import dao.admin.ColorDao;
 import dao.admin.GetImageDao;
-import dao.admin.MySQLGetImageDao;
-
 import dao.admin.GetUserListDao;
 import dao.admin.ItemDao;
 import dao.admin.MySQLAddImageDao;
 import dao.admin.MySQLColorDao;
+import dao.admin.MySQLGetImageDao;
 import dao.admin.MySQLGetUserListDao;
 import dao.admin.MySQLItemDao;
 import dao.admin.MySQLRemoveImageDao;
@@ -60,6 +41,26 @@ import dao.order.MySQLRemoveAllCartDao;
 import dao.order.MySQLRemoveCartDao;
 import dao.order.RemoveAllCartDao;
 import dao.order.RemoveCartDao;
+import dao.user.AddCreditDao;
+import dao.user.AddUserDao;
+import dao.user.EditPasswordDao;
+import dao.user.EditUserDao;
+import dao.user.GetCreditDao;
+import dao.user.GetPasswordDao;
+import dao.user.GetUserDao;
+import dao.user.LoginDao;
+import dao.user.MySQLAddCreditDao;
+import dao.user.MySQLAddUserDao;
+import dao.user.MySQLEditPasswordDao;
+import dao.user.MySQLEditUserDao;
+import dao.user.MySQLGetCreditDao;
+import dao.user.MySQLGetPasswordDao;
+import dao.user.MySQLGetUserDao;
+import dao.user.MySQLLoginDao;
+import dao.user.MySQLRemoveCreditDao;
+import dao.user.MySQLRemoveUserDao;
+import dao.user.RemoveCreditDao;
+import dao.user.RemoveUserDao;
 
 public class MySQLDaoFactory extends AbstractDaoFactory{
 	public ColorDao getColorDao() {
@@ -87,7 +88,7 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 		// TODO 自動生成されたメソッド・スタブ
 		return new MySQLAddUserDao();
 	}
-	
+
 	//admin
 	public AddImageDao getAddImageDao() { return new MySQLAddImageDao();}
 	public ItemDao getItemDao() { return new MySQLItemDao();}
@@ -116,7 +117,7 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 	public RemoveCartDao getRemoveCartDao() { return new MySQLRemoveCartDao();}
 	public RemoveAllCartDao getRemoveAllCartDao() { return new MySQLRemoveAllCartDao();}
 
-	
+
 	//user
 	public AddCreditDao getAddCreditDao() { return new MySQLAddCreditDao();}
 	public EditUserDao getEditUserDao() { return new MySQLEditUserDao();}
@@ -125,6 +126,7 @@ public class MySQLDaoFactory extends AbstractDaoFactory{
 	public LoginDao getLoginDao() { return new MySQLLoginDao();}
 	public RemoveCreditDao getRemoveCreditDao() { return new MySQLRemoveCreditDao();}
 	public GetUserDao getGetUserDao() { return new MySQLGetUserDao();}
+	public EditPasswordDao getEditPasswordDao() {return new MySQLEditPasswordDao();}
 
 
 }

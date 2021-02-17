@@ -2,15 +2,8 @@ package daofactory;
 
 import java.io.InputStream;
 import java.util.Properties;
+
 import command.CommandFactory;
-import dao.user.AddCreditDao;
-import dao.user.AddUserDao;
-import dao.user.EditUserDao;
-import dao.user.GetCreditDao;
-import dao.user.GetPasswordDao;
-import dao.user.GetUserDao;
-import dao.user.LoginDao;
-import dao.user.RemoveCreditDao;
 import dao.admin.AddImageDao;
 import dao.admin.ColorDao;
 import dao.admin.GetImageDao;
@@ -25,13 +18,21 @@ import dao.item.GetItemDetailDao;
 import dao.item.GetUserItemListDao;
 import dao.item.SearchItemDao;
 import dao.item.SortItemDao;
-
 import dao.order.AddCartDao;
 import dao.order.AddOrderDao;
 import dao.order.GetCartListDao;
 import dao.order.GetOrderListDao;
 import dao.order.RemoveAllCartDao;
 import dao.order.RemoveCartDao;
+import dao.user.AddCreditDao;
+import dao.user.AddUserDao;
+import dao.user.EditPasswordDao;
+import dao.user.EditUserDao;
+import dao.user.GetCreditDao;
+import dao.user.GetPasswordDao;
+import dao.user.GetUserDao;
+import dao.user.LoginDao;
+import dao.user.RemoveCreditDao;
 import dao.user.RemoveUserDao;
 
 
@@ -42,7 +43,7 @@ public abstract class AbstractDaoFactory {
 		try {
 			InputStream file = CommandFactory.class.getClassLoader().getResourceAsStream("dao.properties");
 			//p.load(new FileInputStream("../dao.properties"));
-			
+
 
 			p.load(file);
 			String name = p.getProperty("mysql");
@@ -52,21 +53,21 @@ public abstract class AbstractDaoFactory {
 		}catch(Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return factory;
 	}
 	public abstract ColorDao getColorDao();
 	public abstract AddUserDao getAddUserDao();
 	public abstract GetUserListDao getUserListDao();
 	public abstract RemoveUserDao getRemoveUserDao();
-	
+
 	//dao.admin
-	public abstract AddImageDao getAddImageDao();	
+	public abstract AddImageDao getAddImageDao();
 	public abstract ItemDao getItemDao();
 	public abstract RemoveImageDao getRemoveImageDao();
 	public abstract GetImageDao getGetImageDao();
 
-	
+
 	//dao.favorite
 	public abstract AddFavoDao getAddFavoDao();
 	public abstract GetFavoListDao getGetFavoListDao();
@@ -97,6 +98,7 @@ public abstract class AbstractDaoFactory {
 	public abstract LoginDao getLoginDao();
 	public abstract RemoveCreditDao getRemoveCreditDao();
 	public abstract GetUserDao getGetUserDao();
+	public abstract EditPasswordDao getEditPasswordDao();
 
 
 }
