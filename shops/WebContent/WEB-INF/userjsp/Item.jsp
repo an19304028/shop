@@ -26,8 +26,70 @@
 			$("#footer").load("common/Footer.html");
 		});
 	</script>
-	<p>${mess1}</p>
-	<table id="item-list" border="1">
+	<p><font color="red">${mess1}</font></p>
+	<p>商品名：${itemName}</p>
+	<p>価格：${price}円(税込)</p>
+	<p>ポイント：${point}pt</p>
+	<form name="addcart" action=""  method="post">
+		<input type="hidden" name="userId" value="${sessionScope.userId}">
+		<input type="hidden" name="itemName" value="${itemName}">
+		数量：<input type="text" name="buyCount" value="1" id="buyCount" class="buyCount${status.count}"><br>
+		<table id="item-list" border="1">
+			<tr>
+				<th>サイズ/カラー</th><th>選択</th>
+			</tr>
+			<c:forEach var="item" items="${data}" varStatus="status">
+		  		<p style="display: none" id="stock"  class="buyCount${status.count}">${item.stockCount}</p>
+				<tr>
+					<td>${item.sizeName}/${item.colorName}</td>
+		  				 <c:choose>
+		 						<c:when test="${item.stockCount!=0}">
+				    				<td><input type="radio" name="itemId" value="${item.itemId}" required></td>
+				    			
+			    				</c:when>
+			    				<c:otherwise>
+				    				<td>
+							    		<input type="hidden" name="userId" value="${sessionScope.userId}" form="restock">
+							    		<input type="hidden" name="itemId" value="${item.itemId}" form="restock">
+							    		<input type="hidden" name="itemName" value="${itemName}" form="restock">
+							    		<p><font color="red">×売り切れ</font></p>
+							    		<input type="submit"  onclick="checkStock();" value="再入荷のお知らせを受け取る" form="restock">
+			    						
+			   						</td>
+			    				</c:otherwise>
+			  				</c:choose>
+				</tr>
+				<script>
+					console.log(stock);
+					var className = document.getElementsByClassName("buyCount${status.count}")[0];
+					console.log(className)
+					function checkStock(){
+						var stock = document.getElementsByClassName("buyCount${status.count}")[0];
+						var buyCount = document.getElementsByClassName("buyCount${status.count}")[1];
+						console.log(stock+" "+buyCount);
+						if(Number(stock)<Number(buyCount)){
+							alert("在庫数を超えています");
+						}else if(buyCount==""){
+							alert("入力してください");
+						}else{
+							document.addcart.action= 'addcart';
+						}
+					}
+				</script>
+			</c:forEach>
+		</table>
+		<input type="submit"  onclick="checkStock();" value="カートに追加">
+	</form>
+	<script type = "text/javascript">
+	    function restockForm(){
+	        document.deleteForm.mode.value = "deleteText";
+	        document.deleteForm.submit();
+	    }
+	</script>
+	<form id="restock" action="restock"  method="post">
+	</form>
+	
+	<%-- <table id="item-list" border="1">
 		<tr>
 
 			<th>商品名</th>
@@ -39,17 +101,27 @@
 			<th>詳細</th>
 			<!-- <th>画像</th> -->
 		</tr>
+		<tr>
+			 <td>${itemName}</td>
+			 <td>${price}</td>
+			 <td id="stock">${data.stockCount}</td>
+			 <td>${data.sizeName}</td>
+			 <td>${data.colorName}</td>
+			 <td>${data.price}</td>
+			 <td>${data.categoryName}</td>
+			 <td>${data.detail}</td>
+		</tr>
 		<c:forEach var="item" items="${data}">
 			<tr>
 
 			    <td>${item.itemName}</td>
-			    <td id="stock">${item.stockCount}</td>
+			    <td>${item.stockCount}</td>
 			    <td>${item.sizeName}</td>
 			    <td>${item.colorName}</td>
 			    <td>${item.price}</td>
 			    <td>${item.categoryName}</td>
 			    <td>${item.detail}</td>
-			 <%--    <td><img src="image/item/${item.imagePath}"  width="40px" height="40px"></td> --%>
+			    <td><img src="image/item/${item.imagePath}"  width="40px" height="40px"></td>
 			    <c:choose>
 			    <c:when test="${item.stockCount!=0}">
 			    <td>
@@ -57,7 +129,7 @@
 			    		<input type="hidden" name="userId" value="${sessionScope.userId}">
 			    		<input type="hidden" name="itemId" value="${item.itemId}">
 			    		<input type="hidden" name="itemName" value="${item.itemName}">
-			    		<input type="text" name="buyCount" id="buyCount">
+			    		<input type="text" name="buyCount" >
 			    		<input type="submit"  onclick="checkStock();" value="カートに追加">
 			    	</form>
 			    </td>
@@ -80,6 +152,7 @@
 				    			<input type="hidden" name="userId" value="${sessionScope.userId}">
 			    				<input type="hidden" name="itemId" value="${item.itemId}">
 			    				<input type="image" src="image/icon/nofavo.png">
+			    				<input type="hidden" name="itemName" value="${item.itemName}">
 			    				<!-- <input type="submit" name="itemId" value="♡"> -->
 			    			</form>
 			    		</c:when>
@@ -87,6 +160,7 @@
 			    			<form action="removefavo" method="post">
 				    			<input type="hidden" name="userId" value="${sessionScope.userId}">
 			    				<input type="hidden" name="itemId" value="${item.itemId}" class="st">
+			    				<input type="hidden" name="itemName" value="${item.itemName}">
 			    				<input type="image" src="image/icon/yesfavo.png">
 			    				<!-- <input type="submit" name="itemId" value="削除"> -->
 			    			</form>
@@ -95,22 +169,8 @@
 			    </td>
 			</tr>
 		</c:forEach>
-</table>
-	<script>
-		console.log(stock);
-		function checkStock(){
-			var stock = document.getElementById("stock").textContent;
-			var buyCount = document.getElementById("buyCount").value;
-			console.log(stock);
-			if(Number(stock)<Number(buyCount)){
-				alert("在庫数を超えています");
-			}else if(buyCount==""){
-				alert("入力してください");
-			}else{
-				document.addcart.action= 'addcart';
-			}
-		}
-	</script>
+</table> --%>
+	
 
 </div>
 	<!-- フッター -->

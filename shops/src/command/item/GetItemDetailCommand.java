@@ -2,6 +2,7 @@ package command.item;
 
 import java.util.List;
 
+import bean.Item;
 import command.AbstractCommand;
 import dao.favorite.GetFavoListDao;
 import dao.item.GetItemDetailDao;
@@ -17,7 +18,12 @@ public class GetItemDetailCommand extends AbstractCommand{
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetItemDetailDao dao = factory.getGetItemDetailDao();
-
+		
+		rc.setAttribute("itemName", itemName);
+		rc.setAttribute("price", dao.getPrice(itemId));
+		rc.setAttribute("point", dao.getPoint(itemId));
+		
+		
 		List item = dao.getItemDetail(itemName);
 		System.out.println(item);
 
