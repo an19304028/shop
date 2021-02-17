@@ -62,8 +62,9 @@
 	   </table> --%>
    <p>${mess}</p>
 
+	<div id="payment-form">
 
-	<h2>支払方法</h2>
+	<h2 align="center">支払方法</h2>
 
 
 <%-- 	<div id="Payment_Exist">
@@ -87,19 +88,20 @@
 			</c:forEach>
 		</table>
 	</div> --%>
-
+		<br>
 		<label>
 			<input id="js-check" type="radio" name="rs" value="1" onclick="formSwitch();" form="getordercheck" required>
 			クレジットカードでのお支払い
 		</label>
 	<div id="credit_form">
 	<form method='post' action='addcredit' >
+		<table class="contact-table">
 			<input type='hidden' name='userId' value='${sessionScope.userId}'><br>
-			カード番号<input id="cardNumber" type='text' name='cardNumber'><br>
+			<tr><th>カード番号</th><td><input id="cardNumber" type='text' name='cardNumber'></td></tr>
 			<!-- 名義人<input id="name" type='text' name='name' required><br> -->
-			セキュリティーコード<input id="securityCode" type='text' name='securityCode'><br>
+			<tr><th>セキュリティー<br>コード</th><td><input id="securityCode" type='text' name='securityCode'></td></tr>
 			<!-- 有効期限<input id="expirationDate" type='text' name='expirationDate' required><br> -->
-			有効期限<select name="expirationMonth">
+			<tr><th>有効期限</th><td><select name="expirationMonth">
 						<option value="1">1</option>
 						<option value="2">2</option>
 						<option value="3">3</option>
@@ -124,10 +126,10 @@
 						<option value="28">28</option>
 						<option value="29">29</option>
 						<option value="30">30</option>
-					</select> 年
+					</select> 年</td></tr>
 			<!-- ↑ 月/年の表記 -->
-			<br>
-			支払回数<input id="payCount" type='text' name='payCount'><br>
+			<tr><th>支払回数</th><td><input id="payCount" type='text' name='payCount'></td></tr>
+		</table>
 			<br>
 			<input type="hidden" name="point" value="${requestScope.itempoint}">
 			<input type='submit' value='登録'>
@@ -137,7 +139,7 @@
 <%-- 		<form method="post" action="getcredit">
 			<input type="hidden" name='userId' value="${sessionScope.userId}">
 			<input type="submit" value="カード情報を取得"> --%>
-			<table border="1">
+			<table class="contact-table" border="1">
 				<tr>
 					<th>　</th>
 					<th>カード番号</th>
@@ -161,12 +163,13 @@
 		<div id="Payment_cash">
 		<label>
 			<input type="radio" name="rs" value="1" onclick="formSwitch();" form="getordercheck" required>
-			現金でのお支払い
+			現金でのお支払い<br><br>
 		</label>
 		</div>
 
-		<h2>ポイント利用</h2>
-		<div id="point_form">
+		<div id="point-form">
+			<br>
+			<h3>ポイント利用</h3>
 			現在のポイント:<p id="nowpoint">${sessionScope.userPoint}</p>pt<br>
 			<label>ご利用ポイント</label>
 			<input type="text" name="usepoint" id="usepoint" form="getordercheck" value="0">pt <br>
@@ -177,6 +180,8 @@
 			<input type="hidden" name="itempoint" value="${requestScope.itempoint}">
 			<input onclick="checkPoint();" type="submit" value="確定">
 		</form>
+
+		</div>
 
 
 

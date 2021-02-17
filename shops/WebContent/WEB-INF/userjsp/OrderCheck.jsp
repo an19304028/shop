@@ -30,7 +30,7 @@
 		});
 	</script>
 
-				<table id="table" border="1">
+				<table class="contact-table" border="1">
 				<tr>
 					<th>商品名</th>
 					<th>サイズ</th>
@@ -50,8 +50,11 @@
 					</tr>
 				</c:forEach>
 			</table>
+
+			<div  style="float: right;margin-right:150px;">
 			<p>${itempoint}</p>
 			<p>利用ポイント：${point}pt</p>
+			</div>
 
 			<form action="addorder" method="post">
 				<c:forEach var="item" items="${data}">
@@ -63,7 +66,7 @@
 				<input type="hidden" name="userId" value="${sessionScope.userId}">
 				<input type="hidden" name="usepoint" value="${point}">
 				<input type="hidden" name="itempoint" value="${itempoint}">
-				<input type="submit" value="確定">
+				<input style="float: right;margin-right:150px;" id="buy-button" type="submit" value="確定">
 			</form>
 
 			<br>

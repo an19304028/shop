@@ -30,7 +30,7 @@
 
 <div id="wrapper">
 
-	<h1>買い物かご</h1>
+	<h1 align="center">買い物かご</h1>
 
 	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 	<script>
@@ -45,7 +45,7 @@
 
 	<c:choose>
 		<c:when test="${total!=0}">
-			<table id="table" border="1">
+			<table class="contact-table" border="1">
 				<tr>
 					<th>商品名</th>
 					<th>サイズ</th>
@@ -53,6 +53,7 @@
 					<th>数量</th>
 					<th>ポイント</th>
 					<th>価格</th>
+					<th>　</th>
 				</tr>
 				<c:forEach var="item" items="${data}">
 					<tr>
@@ -73,12 +74,13 @@
 				</c:forEach>
 			</table>
 
-			<p>${mess}　 ${point}pt</p>
-
 			<form action="removeallcart" onSubmit="return checkSubmit()" method="post">
 				<input type="hidden" name="userId" value="${sessionScope.userId}">
-				<input type="submit" value="カートを空にする">
+				<input style="flote:right;margin-left:120px;" id="cart-clear-button" type="submit" value="カートを空にする">
 			</form>
+
+			<h2 style="flote:right;padding-right:150px;" align="right">${mess}　 ${point}pt</h2>
+
 			<form action="inputorder" method="post">
 				<c:forEach var="item" items="${data}">
 					<input type="hidden" name="itemId" value="${item.itemId}">
@@ -88,7 +90,7 @@
 
 				<input type="hidden" name="userId" value="${sessionScope.userId}">
 				<input type="hidden" name="point" value="${point}">
-				<input type="submit" value="購入手続きへ進む">
+				<input	style="float: right;margin-right:120px;" id="next-button" type="submit" value="購入手続きへ進む">
 			</form>
 
 			<br>
