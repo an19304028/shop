@@ -18,6 +18,17 @@ public class WebResponseContext implements ResponseContext {
 
 		return result;
 	}
+	@Override
+	public void setResult2(Object bean) {
+		result = bean;
+		
+	}
+
+	@Override
+	public Object getResult2() {
+
+		return result;
+	}
 
 	@Override
 	public void setTarget(String transferInfo) {

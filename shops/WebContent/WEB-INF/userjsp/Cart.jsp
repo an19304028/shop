@@ -49,8 +49,8 @@
 					    <td>${item.sizeName}</td>
 					    <td>${item.colorName}</td>
 					    <td>${item.buyCount}</td>
-			   		    <td>${item.point}</td>
-					    <td>${item.price}</td>
+			   		    <td>${item.point}pt</td>
+					    <td>${item.price}円</td>
 					    <td>
 						    <form action="removecart" method="post">
 					    		<input type="hidden" name="itemId" value="${item.itemId}">

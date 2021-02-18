@@ -119,4 +119,29 @@ public class MySQLGetItemDetailDao implements GetItemDetailDao{
 		}
 		return point;
 	}
+	public List getImage(String itemId) {
+		ArrayList image = new ArrayList();
+		try {
+			Connection cn = Connector.connect();
+
+			String sql = "SELECT i.item_id, im.image_path FROM shop.item_table i JOIN image_table im USING(item_id)  WHERE item_id=?";
+			st = cn.prepareStatement(sql);
+			
+			st.setString(1,itemId);
+			
+			ResultSet rs = st.executeQuery();
+			
+			while(rs.next()) {
+				Item i = new Item();
+				i.setItemId(rs.getString(1));
+				i.setImagePath(rs.getString(2));
+				image.add(i);
+				System.out.println("image:"+i.getItemId()+i.getImagePath());
+			}
+			cn.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return image;
+	}
 }

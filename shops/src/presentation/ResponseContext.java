@@ -7,5 +7,7 @@ public interface ResponseContext {
 	String getTarget();
 	void setResponse(Object res);
 	Object getResponse();
+	void setResult2(Object bean);
+	Object getResult2();
 	
 }

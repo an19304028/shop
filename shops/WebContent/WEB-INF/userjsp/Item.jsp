@@ -17,7 +17,11 @@
 <body>
 <div id="wrapper">
 <jsp:include page="Header.jsp" flush="true" />
+
 	<p><font color="red">${mess1}</font></p>
+	<c:forEach var="image" items="${image}" >
+		 <img src="${image.imagePath}"  width="100px" height="100px">
+	</c:forEach>
 	<p>商品名：${itemName}
 
 	</p>
@@ -26,42 +30,49 @@
 	<form name="addcart" action=""  method="post">
 		<input type="hidden" name="userId" value="${sessionScope.userId}">
 		<input type="hidden" name="itemName" value="${itemName}">
-		数量：<input type="text" name="buyCount" value="1" id="buyCount" class="buyCount${status.count}"><br>
+		数量：<input type="text" name="buyCount" value="1" id="buyCount" class="buyCount"><br>
 		<table id="item-list" border="1">
 			<tr>
 				<th>サイズ/カラー</th><th>選択</th>
 			</tr>
 			<c:forEach var="item" items="${data}" varStatus="status">
-		  		<p style="display: none" id="stock"  class="buyCount${status.count}">${item.stockCount}</p>
+		  		<p style="display: none" id="stock"  class="stockCount${status.count}">${item.stockCount}</p>
 				<tr>
 					<td>${item.sizeName}/${item.colorName}</td>
 		  				 <c:choose>
 		 						<c:when test="${item.stockCount!=0}">
-				    				<td><input type="radio" name="itemId" value="${item.itemId}" required></td>
-
+				    				<td><input type="radio" class="radio${status.count}" name="itemId" value="${item.itemId}" required></td>
+				    				
 			    				</c:when>
 			    				<c:otherwise>
 				    				<td>
 							    		<input type="hidden" name="userId" value="${sessionScope.userId}" form="restock">
 							    		<input type="hidden" name="itemId" value="${item.itemId}" form="restock">
 							    		<input type="hidden" name="itemName" value="${itemName}" form="restock">
-							    		<p><font color="red">×売り切れ</font></p>
-							    		<input type="submit"  onclick="checkStock();" value="再入荷のお知らせを受け取る" form="restock">
-
+							    		<p><font color="red" >×売り切れ</font></p>
+							    		<input type="hidden" class="radio${status.count}" value="no" style="display:none;">
+							    		<input type="submit"  value="再入荷のお知らせを受け取る" form="restock">
+										
+							    		<input type="hidden" name="itemName" value="${itemName}">
 			   						</td>
 			    				</c:otherwise>
 			  				</c:choose>
 				</tr>
 				<script>
-					console.log(stock);
-					var className = document.getElementsByClassName("buyCount${status.count}")[0];
-					console.log(className)
+					
+					var radio1 = document.getElementsByClassName("radio${status.count}")[0].value;
+					console.log(radio1);
+					var className = document.getElementsByClassName("stockCount${status.count}")[0].innerHTML;
+					var buy = document.getElementsByClassName("buyCount")[0].value;
+					console.log(className+" "+buy)
 					function checkStock(){
-						var stock = document.getElementsByClassName("buyCount${status.count}")[0];
-						var buyCount = document.getElementsByClassName("buyCount${status.count}")[1];
+						var stock = document.getElementsByClassName("stockCount${status.count}")[0].innerHTML;
+						var buyCount = document.getElementsByClassName("buyCount")[0].value;
+						var radio = document.getElementsByClassName("radio${status.count}")[0].value;
 						console.log(stock+" "+buyCount);
 						if(Number(stock)<Number(buyCount)){
 							alert("在庫数を超えています");
+							document.addcart.action= 'getitemdetail?itemId=${itemId}';
 						}else if(buyCount==""){
 							alert("入力してください");
 						}else{
@@ -71,7 +82,8 @@
 				</script>
 			</c:forEach>
 		</table>
-		<input type="submit"  onclick="checkStock();" value="カートに追加">
+			<input type="submit"  onclick="checkStock();" value="カートに追加">
+			
 	</form>
 	<c:choose>
 			  <c:when test = "${favoCheck == false}">
@@ -101,6 +113,7 @@
 	</script>
 	<form id="restock" action="restock"  method="post">
 	</form>
+
 
 	<%-- <table id="item-list" border="1">
 		<tr>

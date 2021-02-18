@@ -33,8 +33,8 @@
 					    <td>${item.sizeName}</td>
 					    <td>${item.colorName}</td>
 					    <td>${item.buyCount}</td>
-			   		    <td>${item.point}</td>
-					    <td>${item.price}</td>
+			   		    <td>${item.point}pt</td>
+					    <td>${item.price}円</td>
 					</tr>
 				</c:forEach>
 			</table>
@@ -53,8 +53,18 @@
 			</form>
 
 			<div  style="float: right;margin-right:150px;">
-			<p>${itempoint}</p>
-			<p>利用ポイント：${point}pt</p>
+			<p>小計：${price}円</p>
+			<c:choose>
+				<c:when test="${point==0}">
+					<p>ポイント利用：利用なし</p>
+				</c:when>
+				<c:otherwise>
+					<p>ポイント利用：${point}</p>
+				</c:otherwise>
+			
+			</c:choose>
+			<p>お支払総額：${total}円</p>
+			<p>獲得予定ポイント：${itempoint}pt</p>
 			</div>
 
 			<br>

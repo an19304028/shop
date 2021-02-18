@@ -28,7 +28,7 @@ public class WebApplicationController implements ApplicationController {
 		HttpServletRequest req = (HttpServletRequest) reqc.getRequest();
 		HttpServletResponse res = (HttpServletResponse) resc.getResponse();
 		req.setAttribute("data", resc.getResult());
-		
+		req.setAttribute("data2", resc.getResult2());
 		
 		
 		RequestDispatcher rd = req.getRequestDispatcher(resc.getTarget());

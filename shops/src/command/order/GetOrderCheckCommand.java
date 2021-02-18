@@ -18,10 +18,13 @@ public class GetOrderCheckCommand extends AbstractCommand {
 		GetCartListDao dao = factory.getGetCartListDao();
 		
 		int point = dao.getPoint(userId);
+		int price = dao.getTotalAmount(userId);
 		System.out.println(point);
 		rc.setAttribute("point", usepoint);
 		rc.setAttribute("itempoint", itempoint);
-
+		rc.setAttribute("price", price);
+		int total = price-Integer.parseInt(usepoint);
+		rc.setAttribute("total",total);
 		List cart = dao.getCartList(userId);
 		resc.setResult(cart);
 		resc.setTarget("/WEB-INF/userjsp/OrderCheck.jsp");

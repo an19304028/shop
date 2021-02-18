@@ -15,6 +15,13 @@
 </script>
 </head>
 <body>
+	<!-- ヘッダー -->
+	<div id="header"></div>
+
+	<!-- 買い物かご用 -->
+	<a class="mypage_img" href=""><img src="image/header/mypage.png"></a>
+	<a class="cart_img" href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
+
 <div id="wrapper">
 <jsp:include page="Header.jsp" flush="true" />
 	<p>${mess}</p>
@@ -30,11 +37,12 @@
 				<tr>
 
 				    <td>${item.itemName}</td>
-				    <td><img src="image/item/${item.imagePath}"  width="40px" height="40px"></td>
+				    <td><img src="${item.imagePath}"  width="40px" height="40px"></td>
 				    <td>
 				    	<form action="getitemdetail" onSubmit="return checkSubmit()" method="post">
 
 				    		<input type="hidden" name="itemId" value="${item.itemId}">
+				    		<input type="hidden" name="itemName" value="${item.itemName}">
 
 				    		<input type="submit" value="商品詳細へ">
 				    	</form>

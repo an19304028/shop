@@ -33,7 +33,7 @@
 				<tr>
 
 				    <td>${item.itemName}</td>
-				    <td><img src="image/item/${item.imagePath}"  width="40px" height="40px"></td>
+				    <td><img src="${item.imagePath}"  width="40px" height="40px"></td>
 				    <td>
 				    	<form action="getitemdetail" onSubmit="return checkSubmit()" method="post">
 

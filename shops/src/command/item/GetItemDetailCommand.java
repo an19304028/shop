@@ -24,6 +24,10 @@ public class GetItemDetailCommand extends AbstractCommand{
 		rc.setAttribute("point", dao.getPoint(itemId));
 		rc.setAttribute("itemId",itemId);
 		
+		List image = dao.getImage(itemId);
+		rc.setAttribute("image", image);
+		System.out.println("image:"+image);
+		
 		
 		List item = dao.getItemDetail(itemName);
 		System.out.println(item);

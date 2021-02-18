@@ -7,5 +7,6 @@ public interface GetItemDetailDao {
 	List getItem(String key);
 	String getPrice(String itemId);
 	String getPoint(String itemId);
+	List getImage(String itemId);
 
 }
