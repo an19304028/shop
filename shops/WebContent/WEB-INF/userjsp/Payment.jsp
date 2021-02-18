@@ -117,9 +117,10 @@
 			<!-- ↑ 月/年の表記 -->
 			<tr><th>支払回数</th><td><input id="payCount" type='text' name='payCount'></td></tr>
 		</table>
-			<br>
+			<div align="center" style="margin-bottom:30px;">
 			<input type="hidden" name="point" value="${requestScope.itempoint}">
-			<input type='submit' value='登録'>
+			<input id="creditRegist-button"type='submit' value='登録'>
+			</div>
 		</form>
 
 		<h3>既存のクレジットカードから選択</h3>
@@ -162,10 +163,10 @@
 			<input type="text" name="usepoint" id="usepoint" form="getordercheck" value="0">pt <br>
 		</div>
 
-		<form method="post" name="ordercheck" action="" id="getordercheck">
+		<form align="center" method="post" name="ordercheck" action="" id="getordercheck">
 			<input type='hidden' name='userId' value='${sessionScope.userId}'><br>
 			<input type="hidden" name="itempoint" value="${requestScope.itempoint}">
-			<input onclick="checkPoint();" type="submit" value="確定">
+			<input id="payment-ok-button" onclick="checkPoint();" type="submit" value="確定">
 		</form>
 
 		</div>

@@ -225,7 +225,7 @@
 	#search{
 	  width          : 180px;
 	  height         : 29px;
-	  margin-left    : -7%;
+	  margin-left    : 5%;
 	  margin-bottom  : 2%;
 	  letter-spacing : 0.1em;
 	  font-weight    : bold;
@@ -312,7 +312,8 @@
 	}
 
 	#login-button, #create-button, #create-ok-button, #contact-button,
-	#cart-clear-button, #next-button, #buy-button{
+	#cart-clear-button, #next-button, #buy-button, #creditRegist-button,
+	#payment-ok-button{
 		margin : 10px;
 		padding : 10px 20px;
 		background: #eee;
