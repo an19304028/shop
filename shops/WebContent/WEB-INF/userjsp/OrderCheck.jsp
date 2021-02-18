@@ -51,12 +51,6 @@
 				</c:forEach>
 			</table>
 
-			<div  style="float: right;margin-right:150px;">
-			<p>${itempoint}</p>
-			<p>利用ポイント：${point}pt</p>
-			<p>合計金額：${price}</p>
-			</div>
-
 			<form action="addorder" method="post">
 				<c:forEach var="item" items="${data}">
 					<input type="hidden" name="itemId" value="${item.itemId}">
@@ -67,8 +61,13 @@
 				<input type="hidden" name="userId" value="${sessionScope.userId}">
 				<input type="hidden" name="usepoint" value="${point}">
 				<input type="hidden" name="itempoint" value="${itempoint}">
-				<input style="float: right;margin-right:150px;" id="buy-button" type="submit" value="確定">
+				<input style="float: right;margin-right:200px;" id="buy-button" type="submit" value="確定">
 			</form>
+
+			<div  style="float: right;margin-right:150px;">
+			<p>${itempoint}</p>
+			<p>利用ポイント：${point}pt</p>
+			</div>
 
 			<br>
 

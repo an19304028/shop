@@ -1,3 +1,48 @@
+<%@page contentType="text/html" pageEncoding="UTF-8" session="false" %>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
+<title>header</title>
+<meta charset="utf-8">
+<script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+
+<script>
+	$(function(){
+	  var pagetop = $('#page-top');
+	  pagetop.hide();
+	  $(window).scroll(function () {
+	     if ($(this).scrollTop() > 100) {
+	          pagetop.fadeIn();
+	     } else {
+	          pagetop.fadeOut();
+	     }
+	  });
+	  pagetop.click(function () {
+	     $('body, html').animate({ scrollTop: 0 }, 500);
+	     return false;
+	  });
+	});
+
+	$(function(){
+	  var pagetop = $('#page-top');
+	  pagetop.hide();
+	  $(window).scroll(function () {
+	     if ($(this).scrollTop() > 100) {
+	          pagetop.fadeIn();
+	     } else {
+	          pagetop.fadeOut();
+	     }
+	  });
+	  pagetop.click(function () {
+	     $('body, html').animate({ scrollTop: 0 }, 500);
+	     return false;
+	  });
+	});
+</script>
+</head>
+<body>
 	<!-- バナー クリックするとTOPにもどる  -->
 	<a href=""><img src=""/></a>
 
@@ -6,6 +51,10 @@
 			<input type="text" name="key" class="searchText">
 			<input type="image" src="image/header/search.png" class="searchButton">
 		</form>
+
+		<!-- 買い物かご用 -->
+		<a class="mypage_img" href=""><img src="image/header/mypage.png"></a>
+		<a class="cart_img" href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
 
 
 	<!-- ここからヘッダー -->
@@ -176,7 +225,7 @@
 	#search{
 	  width          : 180px;
 	  height         : 29px;
-	  margin-left    : 5%;
+	  margin-left    : -7%;
 	  margin-bottom  : 2%;
 	  letter-spacing : 0.1em;
 	  font-weight    : bold;
@@ -512,39 +561,6 @@
 
 </style>
 
-	<script>
-
-	$(function(){
-	  var pagetop = $('#page-top');
-	  pagetop.hide();
-	  $(window).scroll(function () {
-	     if ($(this).scrollTop() > 100) {
-	          pagetop.fadeIn();
-	     } else {
-	          pagetop.fadeOut();
-	     }
-	  });
-	  pagetop.click(function () {
-	     $('body, html').animate({ scrollTop: 0 }, 500);
-	     return false;
-	  });
-	});
-
-	$(function(){
-	  var pagetop = $('#page-top');
-	  pagetop.hide();
-	  $(window).scroll(function () {
-	     if ($(this).scrollTop() > 100) {
-	          pagetop.fadeIn();
-	     } else {
-	          pagetop.fadeOut();
-	     }
-	  });
-	  pagetop.click(function () {
-	     $('body, html').animate({ scrollTop: 0 }, 500);
-	     return false;
-	  });
-	});
-
-	</script>
+</body>
+</html>
 

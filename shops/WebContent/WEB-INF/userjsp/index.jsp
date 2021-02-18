@@ -8,7 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
 
 <title>index</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+	$(function(){
+		$("#footer").load("common/Footer.html");
+	});
+</script>
 
+</head>
 <body>
 
 	<!-- ヘッダー -->
@@ -17,28 +24,13 @@
 	<!-- ポイント -->
 	<div><p>${SessionScope.userPoint}</p></div>
 
-	<!-- 買い物かご用 -->
-	<a class="mypage_img" href=""><img src="image/header/mypage.png"></a>
-	<a class="cart_img" href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
 
 
 
 <div id="wrapper">
 
 
-
-<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-
-	<script>
-
-		$(function(){
-			$("#header").load("common/Header.html");
-		});
-
-		$(function(){
-			$("#footer").load("common/Footer.html");
-		});
-	</script>
+ <jsp:include page="Header.jsp" flush="true" />
 
 	<h1>ホーム</h1>
 
