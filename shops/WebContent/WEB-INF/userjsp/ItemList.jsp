@@ -7,6 +7,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
 <title>アイテム一覧</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+	$(function(){
+		$("#footer").load("common/Footer.html");
+	});
+</script>
 </head>
 <body>
 	<!-- ヘッダー -->
@@ -17,17 +23,7 @@
 	<a class="cart_img" href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
 
 <div id="wrapper">
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-
-	<script>
-		$(function(){
-			$("#header").load("common/Header.html");
-		});
-
-		$(function(){
-			$("#footer").load("common/Footer.html");
-		});
-	</script>
+<jsp:include page="Header.jsp" flush="true" />
 	<p>${mess}</p>
 	<c:choose>
 		<c:when test="${count>0}">

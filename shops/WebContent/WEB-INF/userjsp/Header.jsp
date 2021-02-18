@@ -211,6 +211,7 @@
 
 		transition: all 0.2s ease;
 		-webkit-transition: all 0.2s ease;
+				border-radius:30px;
 	}
 
 	li.mega__menu:hover ul.mega__menu-second {

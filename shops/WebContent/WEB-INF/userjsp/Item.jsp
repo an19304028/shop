@@ -7,28 +7,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
 <title>Item</title>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script>
+	$(function(){
+		$("#footer").load("common/Footer.html");
+	});
+</script>
 </head>
 <body>
-	<!-- ヘッダー -->
-	<div id="header"></div>
-
-	<!-- 買い物かご用 -->
-	<a class="mypage_img" href=""><img src="image/header/mypage.png"></a>
-	<a class="cart_img" href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
-
 <div id="wrapper">
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-	<script>
-		$(function(){
-			$("#header").load("common/Header.html");
-		});
-		$(function(){
-			$("#footer").load("common/Footer.html");
-		});
-	</script>
+<jsp:include page="Header.jsp" flush="true" />
 	<p><font color="red">${mess1}</font></p>
 	<p>商品名：${itemName}
-		
+
 	</p>
 	<p>価格：${price}円(税込)</p>
 	<p>ポイント：${point}pt</p>
@@ -47,7 +38,7 @@
 		  				 <c:choose>
 		 						<c:when test="${item.stockCount!=0}">
 				    				<td><input type="radio" name="itemId" value="${item.itemId}" required></td>
-				    			
+
 			    				</c:when>
 			    				<c:otherwise>
 				    				<td>
@@ -56,7 +47,7 @@
 							    		<input type="hidden" name="itemName" value="${itemName}" form="restock">
 							    		<p><font color="red">×売り切れ</font></p>
 							    		<input type="submit"  onclick="checkStock();" value="再入荷のお知らせを受け取る" form="restock">
-			    						
+
 			   						</td>
 			    				</c:otherwise>
 			  				</c:choose>
@@ -110,7 +101,7 @@
 	</script>
 	<form id="restock" action="restock"  method="post">
 	</form>
-	
+
 	<%-- <table id="item-list" border="1">
 		<tr>
 
@@ -168,12 +159,12 @@
 			    </c:otherwise>
 			    </c:choose>
 			    <td>
-			    	
+
 			    </td>
 			</tr>
 		</c:forEach>
 </table> --%>
-	
+
 
 </div>
 	<!-- フッター -->

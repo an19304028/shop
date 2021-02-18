@@ -17,20 +17,10 @@
 
 </head>
 <body>
-
-	<!-- ヘッダー -->
-	<div id="header"></div>
-
 	<!-- ポイント -->
 	<div><p>${SessionScope.userPoint}</p></div>
-
-
-
-
 <div id="wrapper">
-
-
- <jsp:include page="Header.jsp" flush="true" />
+<jsp:include page="Header.jsp" flush="true" />
 
 	<h1>ホーム</h1>
 
