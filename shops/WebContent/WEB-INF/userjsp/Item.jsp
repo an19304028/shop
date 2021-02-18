@@ -27,7 +27,9 @@
 		});
 	</script>
 	<p><font color="red">${mess1}</font></p>
-	<p>商品名：${itemName}</p>
+	<p>商品名：${itemName}
+		
+	</p>
 	<p>価格：${price}円(税込)</p>
 	<p>ポイント：${point}pt</p>
 	<form name="addcart" action=""  method="post">
@@ -80,6 +82,26 @@
 		</table>
 		<input type="submit"  onclick="checkStock();" value="カートに追加">
 	</form>
+	<c:choose>
+			  <c:when test = "${favoCheck == false}">
+			  	<form action="addfavo" onSubmit="return checkSubmit()" method="post">
+				   	<input type="hidden" name="userId" value="${sessionScope.userId}">
+			    	<input type="hidden" name="itemId" value="${itemId}">
+			    	<input type="image" src="image/icon/nofavo.png">
+			    	<input type="hidden" name="itemName" value="${itemName}">
+			    	<!-- <input type="submit" name="itemId" value="♡"> -->
+			    </form>
+			   </c:when>
+			   <c:otherwise>
+			   	<form action="removefavo" method="post">
+					<input type="hidden" name="userId" value="${sessionScope.userId}">
+			    	<input type="hidden" name="itemId" value="${itemId}" class="st">
+			    	<input type="hidden" name="itemName" value="${itemName}">
+			    	<input type="image" src="image/icon/yesfavo.png">
+			    	<!-- <input type="submit" name="itemId" value="削除"> -->
+			   	 </form>
+			    </c:otherwise>
+		</c:choose>
 	<script type = "text/javascript">
 	    function restockForm(){
 	        document.deleteForm.mode.value = "deleteText";
@@ -146,26 +168,7 @@
 			    </c:otherwise>
 			    </c:choose>
 			    <td>
-			    	<c:choose>
-			    		<c:when test = "${favoCheck == false}">
-			    			<form action="addfavo" onSubmit="return checkSubmit()" method="post">
-				    			<input type="hidden" name="userId" value="${sessionScope.userId}">
-			    				<input type="hidden" name="itemId" value="${item.itemId}">
-			    				<input type="image" src="image/icon/nofavo.png">
-			    				<input type="hidden" name="itemName" value="${item.itemName}">
-			    				<!-- <input type="submit" name="itemId" value="♡"> -->
-			    			</form>
-			    		</c:when>
-			    		<c:otherwise>
-			    			<form action="removefavo" method="post">
-				    			<input type="hidden" name="userId" value="${sessionScope.userId}">
-			    				<input type="hidden" name="itemId" value="${item.itemId}" class="st">
-			    				<input type="hidden" name="itemName" value="${item.itemName}">
-			    				<input type="image" src="image/icon/yesfavo.png">
-			    				<!-- <input type="submit" name="itemId" value="削除"> -->
-			    			</form>
-			    		</c:otherwise>
-			    	</c:choose>
+			    	
 			    </td>
 			</tr>
 		</c:forEach>

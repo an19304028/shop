@@ -22,6 +22,7 @@ public class GetItemDetailCommand extends AbstractCommand{
 		rc.setAttribute("itemName", itemName);
 		rc.setAttribute("price", dao.getPrice(itemId));
 		rc.setAttribute("point", dao.getPoint(itemId));
+		rc.setAttribute("itemId",itemId);
 		
 		
 		List item = dao.getItemDetail(itemName);
