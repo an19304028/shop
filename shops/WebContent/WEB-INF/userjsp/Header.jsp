@@ -1,5 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" session="false" %>
- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +53,6 @@
 		</form>
 
 		<!-- 買い物かご用 -->
-		<a class="mypage_img" href=""><img src="image/header/mypage.png"></a>
 		<a class="cart_img" href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
 
 
