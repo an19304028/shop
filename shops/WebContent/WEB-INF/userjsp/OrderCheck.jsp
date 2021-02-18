@@ -54,6 +54,7 @@
 			<div  style="float: right;margin-right:150px;">
 			<p>${itempoint}</p>
 			<p>利用ポイント：${point}pt</p>
+			<p>合計金額：${price}</p>
 			</div>
 
 			<form action="addorder" method="post">
