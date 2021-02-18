@@ -31,7 +31,7 @@
 				<tr><th>お問い合わせ内容</th><td><textarea name="entry.1696159737" id=""  rows="10" cols="60" required></textarea></td></tr>
 			</table>
 
-			<div><input id="contact-button" type="submit" value="この内容で問い合わせる"></div>
+			<div align="center"><input id="contact-button" type="submit" value="この内容で問い合わせる"></div>
 		</form>
 	</div>
 

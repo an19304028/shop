@@ -78,7 +78,7 @@
 
 				<input type="hidden" name="userId" value="${sessionScope.userId}">
 				<input type="hidden" name="point" value="${point}">
-				<input	style="float: right;margin-right:120px;" id="next-button" type="submit" value="購入手続きへ進む">
+				<input	style="float: right;margin-right:120px;marginbuttom:30px;" id="next-button" type="submit" value="購入手続きへ進む">
 			</form>
 
 			<br>
