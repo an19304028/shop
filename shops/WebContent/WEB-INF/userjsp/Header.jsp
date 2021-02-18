@@ -53,8 +53,9 @@
 		</form>
 
 		<!-- 買い物かご用 -->
-		<a class="cart_img" href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
-
+		<div class="cart_img">
+		<a href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
+		</div>
 
 	<!-- ここからヘッダー -->
 
@@ -140,18 +141,15 @@
 		color : dimgray;
 	}
 
+	.cart_img{
+		position       : absolute;
+		top:35px;
+		margin-left    : 1165px;
+	}
 	.cart_img img{
 		height : 35px;
-		position : absolute;
-		right : 5%;
-		top : 25px;
 	}
-	.mypage_img img{
-		height : 35px;
-		position : absolute;
-		right : 8%;
-		top : 25px;
-	}
+
 
 
 	/* ---------- メニュー ---------- */
@@ -223,10 +221,10 @@
 	/* ---------- 検索フォーム ---------- */
 
 	#search{
+	  display        : inline-block;
 	  width          : 180px;
 	  height         : 29px;
-	  margin-left    : 5%;
-	  margin-bottom  : 2%;
+	  margin-top	 : 3%;
 	  letter-spacing : 0.1em;
 	  font-weight    : bold;
 	  line-height    : 0;

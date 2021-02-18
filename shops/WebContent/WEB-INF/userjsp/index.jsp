@@ -39,9 +39,6 @@
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 </div>
-
-<p id="page-top"><a href="#"><img src="image/header/pagetop.png" height="50" width="50" alt="ページトップボタン"></a></p>
-
 <div id="footer-wrap">
 	<!-- フッター -->
 	<div id="footer"></div>
