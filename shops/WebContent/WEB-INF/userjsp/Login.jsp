@@ -47,7 +47,7 @@
 			 	}, false);
 		 	</script>
 
-		 	<a style="font-size:80%;" href="inputpass">パスワードをお忘れの方はこちら</a>
+		 	<a style="font-size:80%;" href="inputremindpass">パスワードをお忘れの方はこちら</a>
 	</div>
 
 	<div id="create-account">

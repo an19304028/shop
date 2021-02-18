@@ -28,8 +28,8 @@
 			<table class="contact-table">
 				<tr><th>お名前</th><td><input type="text" name="entry.1591633300" id="" placeholder="" required></td></tr>
 				<tr><th>メールアドレス</th><td><input type="text" name="entry.326955045" id="" placeholder="" required></td></tr>
-				<tr><th>お問い合わせ内容</th><td><input type="hidden" value="パスワード変更" name="entry.1696159737" id="" required></td></tr>
 			</table>
+			<input type="hidden" value="パスワード変更" name="entry.1696159737" id="" required>
 
 			<div><input id="contact-button" type="submit" value="送信"></div>
 		</form>
