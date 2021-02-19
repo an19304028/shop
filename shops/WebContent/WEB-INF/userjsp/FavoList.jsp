@@ -19,13 +19,15 @@
 <%@ include file="Header.jsp" %>
 
 	<h2>お気に入り一覧</h2>
-	
+
+	<h2 align="center">お気に入り一覧</h2>
+
 	<c:choose>
 	<c:when test="${favo==0}">
 		<p>お気に入りに登録しているものはありません</p>
 	</c:when>
 	<c:otherwise>
-	<table id="favo-list" border="1">
+	<table  class="contact-table" border="1">
 		<tr>
 			<th>商品名</th>
 			<th>在庫数</th>
@@ -33,7 +35,7 @@
 			<th>カラー</th>
 			<th>価格</th>
 			<th>カテゴリー</th>
-			<th>詳細</th>
+			<th></th>
 			<!-- <th>画像</th> -->
 		</tr>
 		<c:forEach var="item" items="${data}">
@@ -44,7 +46,6 @@
 			    <td>${item.colorName}</td>
 			    <td>${item.price}</td>
 			    <td>${item.categoryName}</td>
-			    <td>${item.detail}</td>
 			 <%--    <td><img src="image/item/${item.imagePath}"  width="40px" height="40px"></td> --%>
 			 	<td>
 			    	<form action="removelistfavo" method="post">
@@ -62,6 +63,6 @@
 
 <div id="footer-wrap">
 	<div id="footer"></div>
-</div>/div>
+</div>
 </body>
 </html>

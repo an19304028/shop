@@ -18,14 +18,14 @@
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
 
-	<h1>購入履歴</h1>
+	<h2 align="center">購入履歴</h2>
 	<c:choose>
 		<c:when test="${history==0}">
 			<p>注文履歴がありません</p>
 		</c:when>
 		<c:otherwise>
-				
-	<table id="item-list" border="1">
+
+	<table  class="contact-table" border="1">
 		<tr>
 			<th>商品名</th>
 			<th>画像</th>

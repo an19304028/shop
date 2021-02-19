@@ -51,10 +51,17 @@
 			<input type="image" src="image/header/search.png" class="searchButton">
 		</form>
 
+		<!-- logo -->
+		<div class="logo_img">
+			<a href="getcategory?category=new"><img width="200px" src="image/header/logo.png"></a>
+		</div>
+
 		<!-- 買い物かご用 -->
 		<div class="cart_img">
 		<a href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
 		</div>
+
+
 
 	<!-- ここからヘッダー -->
 
@@ -164,6 +171,19 @@
 		color : dimgray;
 	}
 
+
+
+	/* ｰｰｰｰｰｰｰｰｰｰ header img ---------- */
+
+	.logo_img{
+		position       : absolute;
+		top:5px;
+		left: 50%;
+		transform: translateX(-50%);
+		-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+	}
+
 	.cart_img{
 		position       : absolute;
 		top:35px;
@@ -172,8 +192,6 @@
 	.cart_img img{
 		height : 35px;
 	}
-
-	/* ｰｰｰｰｰｰｰｰｰｰ header_img ---------- */
 
 	div.header_img img{
 	margin: 0 calc(50% - 50vw);
@@ -231,14 +249,14 @@
 		position: absolute;
 		top: 40px;
 		left: 0;
-		width: 100%;
+		width: 100vw;
 		background: rgba(255,255,255,0.9);
 		padding: 0px;
 		box-sizing: border-box;
-
+		margin: 0 calc(50% - 50vw);
 		transition: all 0.2s ease;
 		-webkit-transition: all 0.2s ease;
-				border-radius:30px;
+
 	}
 
 	li.mega__menu:hover ul.mega__menu-second {
@@ -341,7 +359,8 @@
 
 	#login-button, #create-button, #create-ok-button, #contact-button,
 	#cart-clear-button, #next-button, #buy-button, #creditRegist-button,
-	#payment-ok-button{
+	#payment-ok-button, #user-edit-button, #user-delete-button, #edit-ok-button,
+	#item-detail-button {
 		margin : 10px;
 		padding : 10px 20px;
 		background: #eee;
@@ -352,6 +371,16 @@
 		-moz-appearance: none;
 		appearance: none;
 		cursor: pointer;
+	}
+
+	#user-delete-button {
+		background: lightslategray;
+		color:white;
+	}
+
+	#item-detail-button {
+		width:80%;
+		background: whitesmoke;
 	}
 
 	#create-account {
@@ -406,7 +435,7 @@
 
 	/* ---------- ユーザー登録 ---------- */
 
-	#create-form{
+	.create-form{
 		width : 550px;
 		padding : 40px;
 		margin : auto;
@@ -414,15 +443,15 @@
 		text-align:center;
 	}
 
-	#create-form table {
+	.create-form table {
 		margin:auto;
 	}
 
-	#create-form table th{
+	.create-form table th{
 		width:100px;
 	}
 
-	#create-form #loginId,#password,#name,#kana,#mail,#birthday,#tel,#postalCode,#address{
+	.create-form #loginId,#password,#name,#kana,#mail,#birthday,#tel,#postalCode,#address,#gender{
 		margin: 10px;
 		padding : 5px 10px;
 		width : 300px;

@@ -19,8 +19,11 @@
 
 <%@ include file="Header.jsp" %>
 
+	<h2 style="color:#555;margin-bottom:30px;" align="center">${category}</h2>
+
 	<p>${login}</p>
 	<p>${mess}</p>
+
 
 
 	<c:choose>
@@ -39,7 +42,7 @@
 
 					<input type="hidden" name="itemName" value="${item.itemName}">
 					<input type="hidden" name="itemId" value="${item.itemId}">
-			   		<input type="submit" value="商品詳細へ">
+			   		<input id="item-detail-button" type="submit" value="商品詳細へ">
 
 			   </form>
 				</div>

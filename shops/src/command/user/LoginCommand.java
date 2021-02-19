@@ -1,7 +1,10 @@
 package command.user;
 
+import java.util.List;
+
 import bean.User;
 import command.AbstractCommand;
+import dao.user.GetUserDao;
 import dao.user.LoginDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
@@ -40,9 +43,10 @@ public class LoginCommand extends AbstractCommand {
 					target = path;
 				}
 				token = "OK";
-
+				
+				
 				rc.setSessionAttribute("userId", userId);
-				mes = userId+"でログインしました";
+				mes = "ログインしました";
 				int point = dao.getPoint(userId);
 				System.out.println(point);
 				rc.setSessionAttribute("userPoint", point);

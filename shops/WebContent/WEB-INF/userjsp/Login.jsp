@@ -25,6 +25,7 @@
 
 	<div id="login-box">
 		<h1 style="margin:10px;">ログイン</h1>
+		<p><font color="red">${login}</font></p>
 		<font color="dimgray" size="2">ユーザー名とパスワードを入力してください</font>
 	  	<form action="login" method="post" >
 	  		<input type="hidden" name="itemId" value=<%= itemId %> />
