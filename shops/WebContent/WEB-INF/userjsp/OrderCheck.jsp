@@ -65,6 +65,10 @@
 			</c:choose>
 			<p>お支払総額：${total}円</p>
 			<p>獲得予定ポイント：${itempoint}pt</p>
+			<br>
+			<p>発送先</p>
+			<p>名前：${name}</p>
+			<p>住所：${address}</p>
 			</div>
 
 			<br>
