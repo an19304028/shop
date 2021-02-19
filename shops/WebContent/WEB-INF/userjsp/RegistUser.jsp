@@ -17,7 +17,7 @@
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
 
-	<div id="create-form">
+	<div class="create-form">
 	 <h1 align="center">ユーザー登録</h1>
 	 <form method="post" action="adduser">
 	    <font color="red">${mess}</font><br>

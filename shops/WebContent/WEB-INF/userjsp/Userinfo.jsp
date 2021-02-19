@@ -17,48 +17,32 @@
 <body>
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
+	<h2 align="center">アカウント情報</h2>
 	<p>${mess}</p>
-	<table id="item-list" border="1">
-		<tr>
-
-			<th>名前</th>
-			<th>ふりがな</th>
-			<th>メール</th>
-			<th>ログインID</th>
-			<th>性別</th>
-			<th>誕生日</th>
-			<th>電話番号</th>
-			<th>郵便番号</th>
-			<th>住所</th>
-		</tr>
+	<table  class="contact-table" border="1">
 		<c:forEach var="item" items="${data}">
-			<tr>
-
-			    <td>${item.name}</td>
-			    <td>${item.kana}</td>
-			    <td>${item.mail}</td>
-			    <td>${item.loginId}</td>
-			    <td>${item.gender}</td>
-			    <td>${item.birthday}</td>
-			    <td>${item.tell}</td>
-			    <td>${item.postalCode}</td>
-			    <td>${item.address}</td>
-			    <td>
-			    	<form action="getuseredit"  method="post">
-				    	<input type="hidden" name="userId" value="${sessionScope.userId}">
-			    		<input type="submit"  value="編集">
-			    	</form>
-			    </td>
-			    <td>
-			    	<form action="withdrawal" onSubmit="return checkSubmit()" method="post">
-		    		<input type="hidden" name="userId" value="${sessionScope.userId}">
-		    		<input type="submit" value="削除">
-		    	</form>
-			    </td>
-			</tr>
+		    <tr><th>名前</th><td>${item.name}</td></tr>
+		    <tr><th>ふりがな</th><td>${item.kana}</td></tr>
+		    <tr><th>メール</th><td>${item.mail}</td></tr>
+		    <tr><th>ログインID</th><td>${item.loginId}</td></tr>
+		    <tr><th>性別</th><td>${item.gender}</td></tr>
+		    <tr><th>誕生日</th><td>${item.birthday}</td></tr>
+		    <tr><th>電話番号</th><td>${item.tell}</td></tr>
+		    <tr><th>郵便番号</th><td>${item.postalCode}</td></tr>
+		    <tr><th>住所</th><td>${item.address}</td></tr>
 		</c:forEach>
 </table>
+			<div align="center">
+		    	<form action="getuseredit"  method="post">
+			    	<input type="hidden" name="userId" value="${sessionScope.userId}">
+		    		<input id="user-edit-button" type="submit"  value="編集">
+		    	</form>
 
+		    	<form action="withdrawal" onSubmit="return checkSubmit()" method="post">
+		    		<input type="hidden" name="userId" value="${sessionScope.userId}">
+		    		<input id="user-delete-button" type="submit" value="退会">
+		    	</form>
+			</div>
 </div>
 	<!-- フッター -->
 <div id="footer-wrap">
