@@ -84,7 +84,7 @@
 	<form method='post' action='addcredit' >
 		<input type='hidden' name='userId' value='${sessionScope.userId}'><br>
 		<table class="contact-table">
-			
+
 			<tr><th>カード番号</th><td><input id="cardNumber" type='text' name='cardNumber' maxlength=20></td></tr>
 			<!-- 名義人<input id="name" type='text' name='name' required><br> -->
 			<tr><th>セキュリティー<br>コード</th><td><input id="securityCode" type='text' name='securityCode' maxlength="4"></td></tr>
@@ -162,7 +162,7 @@
 				<label><input type="radio" name="addressCheck" value="address">他の住所を指定</label><br>
 				名前：<input type="text" name="name" ><br>
 				住所：<input type="text" name="address" ><br>
-			
+
 			</c:forEach>
 		<div id="point-form">
 			<br>
@@ -171,7 +171,7 @@
 			<label>ご利用ポイント</label>
 			<input type="text" name="usepoint" id="usepoint" form="getordercheck" value="0">pt <br>
 		</div>
-		
+
 
 
 		<form align="center" method="post" name="ordercheck" action="" id="getordercheck">
@@ -182,7 +182,7 @@
 
 		</div>
 
-	
+
 
 
 	<script>
