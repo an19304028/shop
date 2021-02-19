@@ -17,27 +17,45 @@
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
 
+	<h2>サイトマップ</h2>
+	<br><br>
+
+	<nav>
 	<ul>
-	<li>TOP</li>
-	<li><a>CATEGORY</a>
+	<li><a href="getcategory?category=new">TOP</a></li>
+	<li><a href="getcategory?category=new">CATEGORY</a>
 		<ul>
-			<li><a href="inputcategory">ALL</a></li>
-			<li><a href="">TOPS</a></li>
-			<li><a href="">BOTTOMS</a></li>
-			<li><a href="">ONEPIECE</a></li>
-			<li><a href="">OUTER</a></li>
-			<li><a href="">ACCESSORY</a></li>
-			<li><a href="">OTHER</a></li>
+		<li><a href="getcategory?category=ALL">ALL</a></li>
+		<li><a href="getcategory?category=TOPS">TOPS</a></li>
+		<li><a href="getcategory?category=BOTTOMS">BOTTOMS</a></li>
+		<li><a href="getcategory?category=ONEPIECE">ONEPIECE</a></li>
+		<li><a href="getcategory?category=OUTER">OUTER</a></li>
+		<li><a href="getcategory?category=ACCESSORY">ACCESSORY</a></li>
+		<li><a href="getcategory?category=OTHER">OTHER</a></li>
 		</ul>
 	</li>
-	<li><a href="inputguide">ガイド</a></li>
-	<li><a href="inputcontact">お問い合わせ</a></li>
-	<li><a href="inputlogin">ログイン</a></li>
-	<br>
-	<li><a href="inputcart">買い物かご</a></li>
-	<br>
-	<li><a href="inputlogout">ログアウト</a></li>
+	<li><a href="inputguide">GUIDE</a></li>
+	<li><a href="inputcontact">CONTACT</a></li>
+	<c:choose>
+		<c:when test="${sessionScope.userId==null}">
+		<li><a href="logininput">LOGIN</a></li>
+		</c:when>
+		<c:otherwise>
+		<li><a href="getuser?userId=${sessionScope.userId}">MYPAGE</a>
+			<ul>
+				<li><a href="getuser?userId=${sessionScope.userId}">ユーザー情報</a></li>
+				<li><a href="getfavolist?userId=${sessionScope.userId}">お気に入り</a></li>
+				<li><a href="getorderlist">購入履歴</a></li>
+				<li><a href="logout">ログアウト</a></li>
+			</ul>
+		</li>
+		</c:otherwise>
+	</c:choose>
+
+
 	</ul>
+	</nav>
+
 
 </div>
 	<!-- フッター -->

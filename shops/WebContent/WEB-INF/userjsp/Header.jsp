@@ -53,7 +53,7 @@
 
 		<!-- logo -->
 		<div class="logo_img">
-			<a href="getcategory?category=new"><img width="200px" src="image/header/logo.png"></a>
+			<a href="getcategory?category=new"><img width="180px" src="image/header/logo.png"></a>
 		</div>
 
 		<!-- 買い物かご用 -->
@@ -177,7 +177,7 @@
 
 	.logo_img{
 		position       : absolute;
-		top:5px;
+		top:10px;
 		left: 50%;
 		transform: translateX(-50%);
 		-webkit-transform: translateX(-50%);
@@ -360,7 +360,7 @@
 	#login-button, #create-button, #create-ok-button, #contact-button,
 	#cart-clear-button, #next-button, #buy-button, #creditRegist-button,
 	#payment-ok-button, #user-edit-button, #user-delete-button, #edit-ok-button,
-	#item-detail-button {
+	#item-detail-button, #addcart-button, #restock-button {
 		margin : 10px;
 		padding : 10px 20px;
 		background: #eee;
@@ -371,6 +371,10 @@
 		-moz-appearance: none;
 		appearance: none;
 		cursor: pointer;
+	}
+
+	#addcart-button {
+		text-align:center;
 	}
 
 	#user-delete-button {
@@ -641,6 +645,29 @@
 
 	.column04 li {
 		width: calc(25% - 20px);
+	}
+
+	/* ---------- item ---------- */
+
+	#item-leftbox{
+		width:600px;
+		float:left;
+	}
+
+	#item-rightbox{
+		width:600px;
+		float:left;
+	}
+
+	table.item-table {
+		border-collapse: collapse;
+		border-top	 : none;
+		border-left	 : none;
+		border-right : none;
+	}
+
+	table.item-table th,tr,td{
+		padding: 10px 20px;
 	}
 
 

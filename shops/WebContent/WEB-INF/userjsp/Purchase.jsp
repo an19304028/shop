@@ -24,7 +24,5 @@
 <div id="footer-wrap">
 	<div id="footer"></div>
 </div>
-
- <input type="button" value="TOPページに戻る">
 </body>
 </html>

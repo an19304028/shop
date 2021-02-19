@@ -18,6 +18,8 @@
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
 
+	<h2 align="center">購入手続き確認</h2>
+
     <table class="contact-table" border="1">
     <tr>
      <th>商品名</th>
@@ -71,6 +73,8 @@
    <p>住所：${address}</p>
    </div>
 
+   <br><br><br><br><br><br>
+   <br><br><br><br><br><br>
    <br><br><br><br><br><br>
 
 

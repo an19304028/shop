@@ -37,7 +37,7 @@
 				<div>
 				<img src="${item.imagePath}"  width="200px" height="200px"><br>
 				${item.itemName}<br>
-				${item.price}円 (+tax)
+				${item.price}円 (税込み)
 				<form action="getitemdetail" onSubmit="return checkSubmit()" method="post">
 
 					<input type="hidden" name="itemName" value="${item.itemName}">
