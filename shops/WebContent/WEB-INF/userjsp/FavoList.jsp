@@ -20,9 +20,8 @@
 
 <<<<<<< HEAD
 	<h2>お気に入り一覧</h2>
-=======
+
 	<h2 align="center">お気に入り一覧</h2>
->>>>>>> branch 'main' of https://github.com/an19304028/shop
 
 	<c:choose>
 	<c:when test="${favo==0}">
