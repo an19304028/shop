@@ -20,6 +20,11 @@
 	#nowpoint{
 		display:inline;
 	}
+	#addr-form1, #addr-form2{
+		display:none;
+	}
+
+
 </style>
 
 </head>
@@ -84,7 +89,7 @@
 	<form method='post' action='addcredit' >
 		<input type='hidden' name='userId' value='${sessionScope.userId}'><br>
 		<table class="contact-table">
-			
+
 			<tr><th>カード番号</th><td><input id="cardNumber" type='text' name='cardNumber' maxlength=20></td></tr>
 			<!-- 名義人<input id="name" type='text' name='name' required><br> -->
 			<tr><th>セキュリティー<br>コード</th><td><input id="securityCode" type='text' name='securityCode' maxlength="4"></td></tr>
@@ -156,13 +161,17 @@
 		</label>
 		</div>
 			<c:forEach var="item" items="${userInfo}">
-				<label><input type="radio" name="addressCheck" >登録された住所を指定</label><br>
+				<label><input id="addr-check" type="radio" name="addressCheck"  onclick="formSwitch2();">登録された住所を指定</label><br>
+			<div id="addr-form1">
 				名前：<input type="text" name="name" value="${item.name}" form="getordercheck" readonly><br>
 				住所：<input type="text" name="address"  form="getordercheck" value="${item.address}" readonly><br>
-				<label><input type="radio" name="addressCheck" >他の住所を指定</label><br>
+			</div>
+				<label><input type="radio" name="addressCheck"  onclick="formSwitch2();">他の住所を指定</label><br>
+			<div id="addr-form2">
 				名前：<input type="text" name="name"  form="getordercheck"><br>
 				住所：<input type="text" name="address"  form="getordercheck"><br>
-			
+			</div>
+
 			</c:forEach>
 		<div id="point-form">
 			<br>
@@ -171,7 +180,7 @@
 			<label>ご利用ポイント</label>
 			<input type="text" name="usepoint" id="usepoint" form="getordercheck" value="0">pt <br>
 		</div>
-		
+
 
 
 		<form align="center" method="post" name="ordercheck" action="" id="getordercheck">
@@ -182,12 +191,11 @@
 
 		</div>
 
-	
+
 
 
 	<script>
 		var selecterBox = document.getElementById('credit_form');
-		var selecterBox2 = document.getElementById('point_form');
 		//var check = false;
 		//クレジット
 		function formSwitch() {
@@ -208,6 +216,23 @@
 		        selecterBox.style.display = "none";
 		    }
 		}
+		//住所
+		/* var selecterBox2 = document.getElementsByClassName('addr-form'); */
+		function formSwitch2() {
+		   /*  check = document.getElementById('js-check2'); */
+		    if ($('[id="addr-check"]').prop('checked')==true) {
+		    	$('[id="addr-form1"]').css('display', 'block');
+		    	$('[id="addr-form2"]').css('display', 'none');
+		    	/* $("#addr-form2").$('input[name="name"]').removeAttr("required");
+		    	$("#addr-form2"). $('input[name="address"]').removeAttr("required"); */
+		    } else {
+		    	$('[id="addr-form1"]').css('display', 'none');
+		    	$('[id="addr-form2"]').css('display', 'block');
+		    	/* $("#addr-form2").$('input[name="name"]').removeAttr("required");
+		    	$("#addr-form2"). $('input[name="address"]').removeAttr("required"); */
+		    }
+		}
+
 
 		window.addEventListener('load', formSwitch());
 
