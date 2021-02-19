@@ -19,7 +19,7 @@
 <%@ include file="Header.jsp" %>
 
 	<h2>お気に入り一覧</h2>
-	
+
 	<c:choose>
 	<c:when test="${favo==0}">
 		<p>お気に入りに登録しているものはありません</p>
@@ -62,6 +62,6 @@
 
 <div id="footer-wrap">
 	<div id="footer"></div>
-</div>/div>
+</div>
 </body>
 </html>
