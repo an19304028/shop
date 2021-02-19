@@ -31,6 +31,9 @@ public class GetItemDetailCommand extends AbstractCommand{
 		
 		List item = dao.getItemDetail(itemName);
 		System.out.println(item);
+		
+		String detail = dao.getDetail(itemId);
+		rc.setAttribute("detail", detail);
 
 		resc.setResult(item);
 		if(rc.getSessonAttribute("userId")==null) {
