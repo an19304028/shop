@@ -52,7 +52,6 @@
     <input style="float: right;margin-right:200px;" id="buy-button" type="submit" value="確定">
    </form>
 
-<<<<<<< HEAD
    <div  style="float: right;margin-right:150px;">
    <p>小計：${price}円</p>
    <c:choose>
@@ -62,7 +61,6 @@
     <c:otherwise>
      <p>ポイント利用：${point}</p>
     </c:otherwise>
-
 
    </c:choose>
    <p>お支払総額：${total}円</p>
