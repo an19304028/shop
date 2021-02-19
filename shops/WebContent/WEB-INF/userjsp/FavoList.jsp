@@ -16,10 +16,15 @@
 </head>
 <body>
 <div id="wrapper">
-<jsp:include page="Header.jsp" flush="true" />
+<%@ include file="Header.jsp" %>
 
 	<h2>お気に入り一覧</h2>
-
+	
+	<c:choose>
+	<c:when test="${favo==0}">
+		<p>お気に入りに登録しているものはありません</p>
+	</c:when>
+	<c:otherwise>
 	<table id="favo-list" border="1">
 		<tr>
 			<th>商品名</th>
@@ -51,6 +56,8 @@
 			</tr>
 		</c:forEach>
 	</table>
+	</c:otherwise>
+	</c:choose>
 </div>
 
 <div id="footer-wrap">

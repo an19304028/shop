@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="wrapper">
-<jsp:include page="Header.jsp" flush="true" />
+<%@ include file="Header.jsp" %>
 
 	<div id="create-form">
 	 <h1 align="center">ユーザー登録</h1>

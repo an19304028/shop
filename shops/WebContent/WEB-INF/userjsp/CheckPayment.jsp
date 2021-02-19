@@ -15,7 +15,7 @@
 </script>
 <body>
 <div id="wrapper">
-<jsp:include page="Header.jsp" flush="true" />
+<%@ include file="Header.jsp" %>
 
 	<p>以下の内容で良いですか？</p>
 

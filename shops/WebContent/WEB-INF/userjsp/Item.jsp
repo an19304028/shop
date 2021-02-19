@@ -16,7 +16,7 @@
 </head>
 <body>
 <div id="wrapper">
-<jsp:include page="Header.jsp" flush="true" />
+<%@ include file="Header.jsp" %>
 
 	<p><font color="red">${mess1}</font></p>
 	<c:forEach var="image" items="${image}" >

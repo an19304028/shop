@@ -1,11 +1,10 @@
-<%@page contentType="text/html" pageEncoding="UTF-8" session="false" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
+<%@ page pageEncoding="UTF-8" %>
 <title>header</title>
-<meta charset="utf-8">
+
 <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
 
 <script>
@@ -77,10 +76,27 @@
 	</li>
 	<li class="mega__menu"><a href="inputguide">GUIDE</a></li>
 	<li class="mega__menu"><a href="inputcontact">CONTACT</a></li>
-	<li class="mega__menu"><a href="logininput">LOGIN</a></li>
+	<c:choose>
+		<c:when test="${sessionScope.userId==null}">
+		<li class="mega__menu"><a href="logininput">LOGIN</a></li>
+		</c:when>
+		<c:otherwise>
+		<li class="mega__menu"><a href="">MyPage</a>
+			<ul class="mega__menu-second">
+				<li><a href="getuser?userId=${sessionScope.userId}">ユーザー情報</a></li>
+				<li><a href="getfavolist?userId=${sessionScope.userId}">お気に入り</a></li>
+				<li><a href="getorderlist">購入履歴</a></li>
+				
+			</ul>
+		</li>
+		</c:otherwise>
+	</c:choose>
+	
+	
 	</ul>
 	</nav>
 
+	
 	<p id="page-top"><a href="#"><img src="image/header/pagetop.png" height="50" width="50" alt="ページトップボタン"></a></p>
 
 	<br><br><br><br>

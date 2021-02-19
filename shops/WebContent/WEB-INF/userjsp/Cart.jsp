@@ -27,7 +27,7 @@
 </head>
 <body>
 <div id="wrapper">
-<jsp:include page="Header.jsp" flush="true" />
+<%@ include file="Header.jsp" %>
 
 	<h1 align="center">買い物かご</h1>
 

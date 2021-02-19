@@ -15,7 +15,7 @@
 </head>
 <body>
 <div id="wrapper">
-<jsp:include page="Header.jsp" flush="true" />
+<%@ include file="Header.jsp" %>
 
 
 		<h1>パスワードの変更が完了しました</h1>

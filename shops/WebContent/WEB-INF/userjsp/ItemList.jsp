@@ -23,7 +23,7 @@
 	<a class="cart_img" href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
 
 <div id="wrapper">
-<jsp:include page="Header.jsp" flush="true" />
+<%@ include file="Header.jsp" %>
 	<p>${mess}</p>
 	<c:choose>
 		<c:when test="${count>0}">

@@ -16,7 +16,7 @@
 </head>
 <body>
 <div id="wrapper">
-<jsp:include page="Header.jsp" flush="true" />
+<%@ include file="Header.jsp" %>
 
 				<table class="contact-table" border="1">
 				<tr>

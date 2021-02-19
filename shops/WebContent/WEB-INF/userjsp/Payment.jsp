@@ -26,7 +26,7 @@
 
 <body>
 <div id="wrapper">
-<jsp:include page="Header.jsp" flush="true" />
+<%@ include file="Header.jsp" %>
 	 <%--  <table id="table" border="1">
 	    <tr>
 	     <th>商品名</th>

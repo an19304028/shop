@@ -16,7 +16,7 @@
 </head>
 <body>
 <div id="wrapper">
-<jsp:include page="Header.jsp" flush="true" />
+<%@ include file="Header.jsp" %>
 	<p>${mess}</p>
 	<table id="item-list" border="1">
 		<tr>

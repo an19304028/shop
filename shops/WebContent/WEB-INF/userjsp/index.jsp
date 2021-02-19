@@ -20,7 +20,7 @@
 	<!-- ポイント -->
 	<div><p>${SessionScope.userPoint}</p></div>
 <div id="wrapper">
-<jsp:include page="Header.jsp" flush="true" />
+<%@ include file="Header.jsp" %>
 
 	<h1>ホーム</h1>
 

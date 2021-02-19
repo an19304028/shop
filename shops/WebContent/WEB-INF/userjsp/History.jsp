@@ -16,7 +16,7 @@
 </head>
 <body>
 <div id="wrapper">
-<jsp:include page="Header.jsp" flush="true" />
+<%@ include file="Header.jsp" %>
 
 	<h1>購入履歴</h1>
 	<table id="item-list" border="1">
@@ -32,7 +32,7 @@
 		<c:forEach var="item" items="${data}">
 		<tr>
 			<td>${item.itemName}</td>
-			<td><img src="image/item/${item.imagePath}"  width="40px" height="40px"></td>
+			<td><img src="${item.imagePath}"  width="40px" height="40px"></td>
 			<td>${item.sizeName}</td>
 			<td>${item.colorName}</td>
 			<td>${item.price}</td>

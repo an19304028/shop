@@ -16,8 +16,8 @@
 </head>
 <body>
 <div id="wrapper">
-<jsp:include page="Header.jsp" flush="true" />
 
+<%@ include file="Header.jsp" %>
 
 	<p>${login}</p>
 	<p>${mess}</p>
