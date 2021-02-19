@@ -17,28 +17,68 @@
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
 
-		 <h1>登録内容の編集</h1>
-	<c:forEach var="item" items="${data}">
-	 <form method="post" action="edituser">
-	    <font color="red">${mess}</font><br>
-	    <font color="blue">※ユーザー名、パスワードは10字以内の半角英数字のみで作成して下さい。</font><br>
-	      名前：<input type="text" name="name" value="${item.name}" readonly /><br>
-	      ふりがな：<input type="text" name="kana" value="${item.kana}" readonly /><br>
-	      メール：<input type="text" name="mail" value="${item.mail}" maxlength="300"  required /><br>
-	      ログインID：<input type="text" name="loginId" value="${item.loginId}" maxlength="20" required /><br>
+	<div class="create-form">
 
-	      性別：<input type="text" name="gender" value="${item.gender}" readonly/><br>
-	     誕生日：<input type="text" name="birthday" value="${item.birthday}"  readonly/><br>
-	     電話番号：<input type="text" name="tell" value="${item.tell}" maxlength="20" required /><br>
-	     郵便番号:<input type="text" name="postalCode" value="${item.postalCode}"maxlength="7" required /><br>
-	     住所:<input type="text" name="address"  value="${item.address}"maxlength="150" required /><br>
+		 <h2 align="center">登録内容の編集</h2>
 
-		パスワード：<input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[0-9A-Za-z]+$" maxlength="10" name="password" required /><br>
-	      <input type="checkbox" id="password-check">パスワードを表示する<br>
-	      <input type="hidden" name="userId" value="${sessionScope.userId}">
-      <input type="submit" value="編集" />
-    </form>
-	</c:forEach>
+		<c:forEach var="item" items="${data}">
+		 <form method="post" action="edituser">
+		    <font color="red">${mess}</font><br>
+		    <font color="blue" size="2">※ユーザー名、パスワードは10字以内の半角英数字のみで作成して下さい。</font><br>
+
+		    <table>
+		    <tr>
+	      <th scope="row"><label>
+				名前</label></th>
+				<td><input type="text" name="name" id="name" value="${item.name}" readonly /></td>
+		<tr>
+	      <th scope="row"><label>
+				ふりがな</label></th>
+				<td><input type="text" name="kana" id="kana" value="${item.kana}" readonly /></td>
+		<tr>
+	      <th scope="row"><label>
+				メール</label></th>
+				<td><input type="text" name="mail" id="mail" value="${item.mail}" maxlength="300"  required /></td>
+		<tr>
+	      <th scope="row"><label>
+				ログインID</label></th>
+				<td><input type="text" name="loginId" id="loginId" value="${item.loginId}" maxlength="20" required /></td>
+		<tr>
+	      <th scope="row"><label>
+				性別</label></th>
+				<td><input type="text" name="gender" id="gender" value="${item.gender}" readonly/></td>
+		<tr>
+	      <th scope="row"><label>
+				誕生日</label></th>
+				<td><input type="text" name="birthday" id="birthday" value="${item.birthday}"  readonly/></td>
+		<tr>
+	      <th scope="row"><label>
+				電話番号</label></th>
+				<td><input type="text" name="tel" id="tel" value="${item.tell}" maxlength="20" required /></td>
+		<tr>
+	      <th scope="row"><label>
+				郵便番号</label></th>
+				<td><input type="text" name="postalCode" id="postalCode" value="${item.postalCode}"maxlength="7" required /></td>
+		<tr>
+	      <th scope="row"><label>
+				住所</label></th>
+				<td><input type="text" name="address" id="address"  value="${item.address}"maxlength="150" required /></td>
+		<tr>
+	      <th scope="row"><label>
+				パスワード</label></th>
+				<td>
+					<input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[0-9A-Za-z]+$" maxlength="10" name="password" required /><br>
+					<input type="checkbox" id="password-check"><label for="password-check">パスワードを表示する</label><br>
+	      		</td>
+	      	</table>
+
+			<input type="hidden" name="userId" value="${sessionScope.userId}">
+	    	<input id="edit-ok-button" type="submit" value="編集" />
+	    </form>
+		</c:forEach>
+
+	</div>
+
 	<script>
 	 		const pwd = document.getElementById('password');
 	 		const pwdCheck = document.getElementById('password-check');
