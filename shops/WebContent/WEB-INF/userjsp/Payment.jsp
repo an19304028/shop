@@ -155,13 +155,14 @@
 			現金でのお支払い<br><br>
 		</label>
 		</div>
-				<c:forEach var="item" items="${userInfo}">
-				<label><input type="radio" name="addressCheck"  value="address">登録された住所を指定</label><br>
-				名前：<input type="text" name="name" value="${item.name}" readonly><br>
-				住所：<input type="text" name="address" value="${item.address}" readonly><br>
-				<label><input type="radio" name="addressCheck" value="address">他の住所を指定</label><br>
-				名前：<input type="text" name="name" ><br>
-				住所：<input type="text" name="address" ><br>
+
+			<c:forEach var="item" items="${userInfo}">
+				<label><input type="radio" name="addressCheck" >登録された住所を指定</label><br>
+				名前：<input type="text" name="name" value="${item.name}" form="getordercheck" readonly><br>
+				住所：<input type="text" name="address"  form="getordercheck" value="${item.address}" readonly><br>
+				<label><input type="radio" name="addressCheck" >他の住所を指定</label><br>
+				名前：<input type="text" name="name"  form="getordercheck"><br>
+				住所：<input type="text" name="address"  form="getordercheck"><br>
 
 			</c:forEach>
 		<div id="point-form">
