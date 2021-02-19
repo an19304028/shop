@@ -26,19 +26,19 @@
 	<table>
 		<tr>
 	      <th scope="row"><label>名前</label></th>
-	      <td><input type="text" name="name" id="name" required /></td>
+	      <td><input type="text" name="name" id="name" maxlength="30" required /></td>
 	    </tr>
 	    <tr>
 	      <th scope="row"><label>ふりがな</label></th>
-	      <td><input type="text" name="kana" id="kana" required /></td>
+	      <td><input type="text" name="kana" id="kana" maxlength="60" required /></td>
 	    </tr>
 	    <tr>
 	      <th scope="row"><label>メール</label></th>
-	      <td><input type="text" name="mail" id="mail" required /></td>
+	      <td><input type="text" name="mail" id="mail" maxlength="300" required /></td>
 	    </tr>
 	    <tr>
 	      <th scope="row"><label>ログインID</label></th>
-	      <td><input type="text" name="loginId" id="loginId" required /></td>
+	      <td><input type="text" name="loginId" id="loginId" maxlength="20" required /></td>
 	    </tr>
 	    <tr>
 	      <th scope="row"><label>パスワード</label></th>
@@ -65,15 +65,15 @@
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>電話番号</label></th>
-	      <td><input type="text" name="tell" id="tel" required /></td>
+	      <td><input type="text" name="tell" id="tel" maxlength="20" required /></td>
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>郵便番号</label></th>
-	      <td><input type="text" name="postalCode" id="postalCode" required /></td>
+	      <td><input type="text" name="postalCode" id="postalCode" maxlength="8" required /></td>
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>住所</label></th>
-	      <td><input type="text" name="address" id="address" required /></td>
+	      <td><input type="text" name="address" id="address" maxlength="150" required /></td>
 	     </tr>
 	</table>
 

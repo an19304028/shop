@@ -24,14 +24,14 @@
 	    <font color="blue">※ユーザー名、パスワードは10字以内の半角英数字のみで作成して下さい。</font><br>
 	      名前：<input type="text" name="name" value="${item.name}" readonly /><br>
 	      ふりがな：<input type="text" name="kana" value="${item.kana}" readonly /><br>
-	      メール：<input type="text" name="mail" value="${item.mail}" required /><br>
-	      ログインID：<input type="text" name="loginId" value="${item.loginId}" required /><br>
+	      メール：<input type="text" name="mail" value="${item.mail}" maxlength="300"  required /><br>
+	      ログインID：<input type="text" name="loginId" value="${item.loginId}" maxlength="20" required /><br>
 
 	      性別：<input type="text" name="gender" value="${item.gender}" readonly/><br>
 	     誕生日：<input type="text" name="birthday" value="${item.birthday}"  readonly/><br>
-	     電話番号：<input type="text" name="tell" value="${item.tell}" required /><br>
-	     郵便番号:<input type="text" name="postalCode" value="${item.postalCode}" required /><br>
-	     住所:<input type="text" name="address"  value="${item.address}" required /><br>
+	     電話番号：<input type="text" name="tell" value="${item.tell}" maxlength="20" required /><br>
+	     郵便番号:<input type="text" name="postalCode" value="${item.postalCode}"maxlength="7" required /><br>
+	     住所:<input type="text" name="address"  value="${item.address}"maxlength="150" required /><br>
 
 		パスワード：<input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[0-9A-Za-z]+$" maxlength="10" name="password" required /><br>
 	      <input type="checkbox" id="password-check">パスワードを表示する<br>

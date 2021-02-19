@@ -84,9 +84,9 @@
 	<form method='post' action='addcredit' >
 		<table class="contact-table">
 			<input type='hidden' name='userId' value='${sessionScope.userId}'><br>
-			<tr><th>カード番号</th><td><input id="cardNumber" type='text' name='cardNumber'></td></tr>
+			<tr><th>カード番号</th><td><input id="cardNumber" type='text' name='cardNumber' maxlength=20></td></tr>
 			<!-- 名義人<input id="name" type='text' name='name' required><br> -->
-			<tr><th>セキュリティー<br>コード</th><td><input id="securityCode" type='text' name='securityCode'></td></tr>
+			<tr><th>セキュリティー<br>コード</th><td><input id="securityCode" type='text' name='securityCode' maxlength="4"></td></tr>
 			<!-- 有効期限<input id="expirationDate" type='text' name='expirationDate' required><br> -->
 			<tr><th>有効期限</th><td><select name="expirationMonth">
 						<option value="1">1</option>
