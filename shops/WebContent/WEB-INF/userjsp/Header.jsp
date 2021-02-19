@@ -62,7 +62,7 @@
 
 	<nav>
 	<ul class="header__menu">
-	<li class="mega__menu"><a href="/shops/">TOP</a></li>
+	<li class="mega__menu"><a href="getcategory?category=new">TOP</a></li>
 	<li class="mega__menu"><a href="getcategory?category=new">CATEGORY</a>
 		<ul class="mega__menu-second">
 		<li><a href="getcategory?category=ALL">ALL</a></li>
@@ -81,22 +81,23 @@
 		<li class="mega__menu"><a href="logininput">LOGIN</a></li>
 		</c:when>
 		<c:otherwise>
-		<li class="mega__menu"><a href="">MyPage</a>
+		<li class="mega__menu"><a href="getuser?userId=${sessionScope.userId}">MYPAGE</a>
 			<ul class="mega__menu-second">
 				<li><a href="getuser?userId=${sessionScope.userId}">ユーザー情報</a></li>
 				<li><a href="getfavolist?userId=${sessionScope.userId}">お気に入り</a></li>
 				<li><a href="getorderlist">購入履歴</a></li>
-
+				<li><a href="logout">ログアウト</a></li>
+				
 			</ul>
 		</li>
 		</c:otherwise>
 	</c:choose>
-
-
+	
+	
 	</ul>
 	</nav>
 
-
+	
 	<p id="page-top"><a href="#"><img src="image/header/pagetop.png" height="50" width="50" alt="ページトップボタン"></a></p>
 
 	<br><br><br><br>
@@ -571,11 +572,6 @@
 	#point-form{
 		margin:10px 0px;
 		border-top : 0.5px solid #555;
-	}
-
-	/* ---------- guide ---------- */
-	#guide-detail {
-		padding: 0 30px;
 	}
 
 
