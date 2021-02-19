@@ -21,32 +21,38 @@
 
 	<p>${login}</p>
 	<p>${mess}</p>
+
+
 	<c:choose>
-		<c:when test="${count>0}">
-			<table id="item-list" border="1">
-			<tr>
+	<c:when test="${count>0}">
+	<div class="column04">
+	<ul>
+	<c:forEach var="item" items="${data}">
 
-				<th>商品名</th>
-				<th>画像</th>
-			</tr>
-			<c:forEach var="item" items="${data}">
-				<tr>
 
-				    <td>${item.itemName}</td>
-				    <td><img src="${item.imagePath}"  width="40px" height="40px"></td>
-				    <td>
-				    	<form action="getitemdetail" onSubmit="return checkSubmit()" method="post">
+			<li>
+				<div>
+				<img src="${item.imagePath}"  width="200px" height="200px"><br>
+				${item.itemName}<br>
+				${item.price}円 (+tax)
+				<form action="getitemdetail" onSubmit="return checkSubmit()" method="post">
 
-				    		<input type="hidden" name="itemName" value="${item.itemName}">
-							<input type="hidden" name="itemId" value="${item.itemId}">
-				    		<input type="submit" value="商品詳細へ">
-				    	</form>
-				    </td>
-				</tr>
-			</c:forEach>
-			</table>
-		</c:when>
+					<input type="hidden" name="itemName" value="${item.itemName}">
+					<input type="hidden" name="itemId" value="${item.itemId}">
+			   		<input type="submit" value="商品詳細へ">
+
+			   </form>
+				</div>
+			</li>
+
+
+	</c:forEach>
+	</ul>
+	</div>
+	</c:when>
 	</c:choose>
+
+
 
 </div>
 

@@ -87,17 +87,23 @@
 				<li><a href="getfavolist?userId=${sessionScope.userId}">お気に入り</a></li>
 				<li><a href="getorderlist">購入履歴</a></li>
 				<li><a href="logout">ログアウト</a></li>
-				
+
 			</ul>
 		</li>
 		</c:otherwise>
 	</c:choose>
-	
-	
+
+
 	</ul>
 	</nav>
 
-	
+	<!-- header_img -->
+	<div class="header_img">
+	<img src="image/header/header_img.jpeg"  onselectstart="return false;" onmousedown="return false;" />
+	</div>
+
+
+
 	<p id="page-top"><a href="#"><img src="image/header/pagetop.png" height="50" width="50" alt="ページトップボタン"></a></p>
 
 	<br><br><br><br>
@@ -167,6 +173,13 @@
 		height : 35px;
 	}
 
+	/* ｰｰｰｰｰｰｰｰｰｰ header_img ---------- */
+
+	div.header_img img{
+	margin: 0 calc(50% - 50vw);
+	width:100vw;
+	}
+
 
 
 	/* ---------- メニュー ---------- */
@@ -219,7 +232,7 @@
 		top: 40px;
 		left: 0;
 		width: 100%;
-		background: rgba(200,200,200,0.1);
+		background: rgba(255,255,255,0.9);
 		padding: 0px;
 		box-sizing: border-box;
 
@@ -573,6 +586,34 @@
 		margin:10px 0px;
 		border-top : 0.5px solid #555;
 	}
+
+	/* ---------- itemlist ---------- */
+	.column04 ul {
+		width: calc(100% + 20px);
+		margin: 0 -10px;
+		display: flex;
+		flex-wrap: wrap;
+		list-style: none;
+	}
+
+	.column04 li {
+		padding:10px;
+	}
+
+	.column04 img {
+		text-align:center;
+	}
+
+	.column04 li div {
+		text-align:center;
+		font-size: 100%;
+		display: block;
+	}
+
+	.column04 li {
+		width: calc(25% - 20px);
+	}
+
 
 
 </style>
