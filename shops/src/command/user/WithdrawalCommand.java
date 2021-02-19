@@ -16,10 +16,10 @@ public class WithdrawalCommand extends AbstractCommand{
 		System.out.println("削除"+userId);
 		dao.removeUser(userId);
 
-		rc.setAttribute("mess","退会しました");
+		rc.setAttribute("login","退会しました");
 		rc.removeSessionAttribute("userId");
 
-		resc.setTarget("/WEB-INF/userjsp/Logout.jsp");
+		resc.setTarget("getcategory?category=new");
 		System.out.println("target:"+resc.getTarget());
 
 		return resc;

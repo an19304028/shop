@@ -32,6 +32,7 @@
 		<input type="hidden" name="userId" value="${sessionScope.userId}">
 		<input type="hidden" name="itemName" value="${itemName}">
 		数量：<input type="text" name="buyCount" value="1" id="buyCount" class="buyCount"><br>
+		
 		<table id="item-list" border="1">
 			<tr>
 				<th>サイズ/カラー</th><th>選択</th>

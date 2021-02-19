@@ -17,13 +17,13 @@ public class LogOutCommand extends AbstractCommand {
 		String userId = (String) rc.getSessonAttribute("userId");
 		System.out.println(userId);
 		if(userId==null) {
-			rc.setAttribute("mess", "ログインしてません");
+			rc.setAttribute("login", "ログインしてません");
 		}else {
 			getRequestContext().invalidateSession();
 			System.out.println(userId);
-			rc.setAttribute("mess", userId+"からログアウトしました");
+			rc.setAttribute("login", "ログアウトしました");
 		}
-		resc.setTarget("/WEB-INF/userjsp/Logout.jsp");
+		resc.setTarget("getcategory?category=new");
 		System.out.println("target:"+resc.getTarget());
 		return resc;
 	}

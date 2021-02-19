@@ -82,8 +82,9 @@
 		</label>
 	<div id="credit_form">
 	<form method='post' action='addcredit' >
+		<input type='hidden' name='userId' value='${sessionScope.userId}'><br>
 		<table class="contact-table">
-			<input type='hidden' name='userId' value='${sessionScope.userId}'><br>
+			
 			<tr><th>カード番号</th><td><input id="cardNumber" type='text' name='cardNumber' maxlength=20></td></tr>
 			<!-- 名義人<input id="name" type='text' name='name' required><br> -->
 			<tr><th>セキュリティー<br>コード</th><td><input id="securityCode" type='text' name='securityCode' maxlength="4"></td></tr>
@@ -154,7 +155,15 @@
 			現金でのお支払い<br><br>
 		</label>
 		</div>
-
+			<c:forEach var="item" items="${userInfo}">
+				<label><input type="radio" name="addressCheck" >登録された住所を指定</label><br>
+				名前：<input type="text" name="name" value="${item.name}" form="getordercheck" readonly><br>
+				住所：<input type="text" name="address"  form="getordercheck" value="${item.address}" readonly><br>
+				<label><input type="radio" name="addressCheck" >他の住所を指定</label><br>
+				名前：<input type="text" name="name"  form="getordercheck"><br>
+				住所：<input type="text" name="address"  form="getordercheck"><br>
+			
+			</c:forEach>
 		<div id="point-form">
 			<br>
 			<h3>ポイント利用</h3>
@@ -162,6 +171,8 @@
 			<label>ご利用ポイント</label>
 			<input type="text" name="usepoint" id="usepoint" form="getordercheck" value="0">pt <br>
 		</div>
+		
+
 
 		<form align="center" method="post" name="ordercheck" action="" id="getordercheck">
 			<input type='hidden' name='userId' value='${sessionScope.userId}'><br>
@@ -171,6 +182,7 @@
 
 		</div>
 
+	
 
 
 	<script>

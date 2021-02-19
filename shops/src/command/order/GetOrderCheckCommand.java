@@ -17,6 +17,13 @@ public class GetOrderCheckCommand extends AbstractCommand {
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetCartListDao dao = factory.getGetCartListDao();
 		
+		String name = rc.getParameter("name")[0];
+		String address = rc.getParameter("address")[0];
+		
+		rc.setAttribute("name",name);
+		rc.setAttribute("address", address);
+		
+		
 		int point = dao.getPoint(userId);
 		int price = dao.getTotalAmount(userId);
 		System.out.println(point);

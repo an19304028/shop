@@ -12,7 +12,7 @@ import daofactory.Connector;
 
 public class MySQLGetCategoryDao implements GetCategoryDao{
 	private PreparedStatement st = null;
-	
+
 	@Override
 	public List getCategory(String category) {
 		ArrayList list = new ArrayList();
@@ -20,23 +20,25 @@ public class MySQLGetCategoryDao implements GetCategoryDao{
 			Connection cn = Connector.connect();
 			String sql=null;
 			if(category.equals("ALL")) {
-				sql = "SELECT i.item_id, i.item_name, im.image_path FROM shop.item_table i JOIN image_table im USING(item_id) JOIN category_table c USING(category_id) WHERE image_path LIKE '%samne.jpg%'";
+				sql = "SELECT i.item_id, i.item_name, im.image_path, i.price FROM shop.item_table i JOIN image_table im USING(item_id) JOIN category_table c USING(category_id) WHERE image_path LIKE '%samne.jpg%'";
 				st = cn.prepareStatement(sql);
 			}else {
-				sql = "SELECT i.item_id, i.item_name, im.image_path FROM shop.item_table i JOIN image_table im USING(item_id) JOIN category_table c USING(category_id) WHERE category_name=? AND image_path LIKE '%samne.jpg%'";
+				sql = "SELECT i.item_id, i.item_name, im.image_path, i.price FROM shop.item_table i JOIN image_table im USING(item_id) JOIN category_table c USING(category_id) WHERE category_name=? AND image_path LIKE '%samne.jpg%'";
 				st = cn.prepareStatement(sql);
-				
+
 				st.setString(1,category);
-				
+
 			}
-			
+
 			ResultSet rs = st.executeQuery();
-			
+
 			while(rs.next()) {
 				Item i = new Item();
 				i.setItemId(rs.getString(1));
 				i.setItemName(rs.getString(2));
 				i.setImagePath(rs.getString(3));
+				i.setPrice(rs.getInt(4));
+
 
 				list.add(i);
 			}
@@ -44,7 +46,7 @@ public class MySQLGetCategoryDao implements GetCategoryDao{
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return list;
 	}
 	public int getCategoryCount(String category) {
@@ -58,11 +60,11 @@ public class MySQLGetCategoryDao implements GetCategoryDao{
 			}else {
 				sql = "SELECT COUNT(i.item_id) FROM shop.item_table i JOIN category_table USING(category_id) JOIN image_table im USING(item_id) WHERE category_name=? AND image_path LIKE '%samne.jpg%'";
 				st = cn.prepareStatement(sql);
-				
+
 				st.setString(1,category);
 			}
-			
-			
+
+
 			ResultSet rs = st.executeQuery();
 			if(rs.next()) {
 				count = rs.getInt(1);
@@ -77,15 +79,16 @@ public class MySQLGetCategoryDao implements GetCategoryDao{
 		ArrayList list = new ArrayList();
 		try {
 			Connection cn = Connector.connect();
-			String sql="SELECT i.item_id, i.item_name, im.image_path FROM shop.item_table i JOIN image_table im USING(item_id) JOIN category_table c USING(category_id) WHERE image_path LIKE '%samne.jpg%' ORDER BY add_date LIMIT 30";
+			String sql="SELECT i.item_id, i.item_name, im.image_path, i.price FROM shop.item_table i JOIN image_table im USING(item_id) JOIN category_table c USING(category_id) WHERE image_path LIKE '%samne.jpg%' ORDER BY add_date LIMIT 30";
 			st = cn.prepareStatement(sql);
 			ResultSet rs = st.executeQuery();
-			
+
 			while(rs.next()) {
 				Item i = new Item();
 				i.setItemId(rs.getString(1));
 				i.setItemName(rs.getString(2));
 				i.setImagePath(rs.getString(3));
+				i.setPrice(rs.getInt(4));
 
 				list.add(i);
 			}
@@ -93,8 +96,8 @@ public class MySQLGetCategoryDao implements GetCategoryDao{
 		}catch(SQLException e) {
 			e.printStackTrace();
 		}
-		
+
 		return list;
 	}
-	
+
 }
