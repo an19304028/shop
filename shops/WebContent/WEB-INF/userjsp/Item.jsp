@@ -27,6 +27,7 @@
 	</p>
 	<p>価格：${price}円(税込)</p>
 	<p>ポイント：${point}pt</p>
+	<p>${detail}</p>
 	<form name="addcart" action=""  method="post">
 		<input type="hidden" name="userId" value="${sessionScope.userId}">
 		<input type="hidden" name="itemName" value="${itemName}">
@@ -113,6 +114,7 @@
 	</script>
 	<form id="restock" action="restock"  method="post">
 	</form>
+	
 
 
 	<%-- <table id="item-list" border="1">

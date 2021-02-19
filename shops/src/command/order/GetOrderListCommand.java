@@ -20,6 +20,11 @@ public class GetOrderListCommand extends AbstractCommand{
 		List orders = dao.getOrderList(userId);
 		System.out.println(orders);
 		resc.setResult(orders);
+		if(orders.size()==0) {
+			rc.setAttribute("history", 0);
+		}else {
+			rc.setAttribute("history", 1);
+		}
 
 		resc.setTarget("/WEB-INF/userjsp/History.jsp");
 		System.out.println("target:"+resc.getTarget());

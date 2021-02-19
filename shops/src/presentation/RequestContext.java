@@ -16,4 +16,5 @@ public interface RequestContext {
 	
 	public abstract void setSessionAttribute(String key, Object o);
 	public abstract Object getSessonAttribute(String key);
+	public abstract void removeSessionAttribute(String key);
 }

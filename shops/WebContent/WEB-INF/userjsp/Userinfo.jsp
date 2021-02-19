@@ -49,6 +49,12 @@
 			    		<input type="submit"  value="編集">
 			    	</form>
 			    </td>
+			    <td>
+			    	<form action="withdrawal" onSubmit="return checkSubmit()" method="post">
+		    		<input type="hidden" name="userId" value="${sessionScope.userId}">
+		    		<input type="submit" value="削除">
+		    	</form>
+			    </td>
 			</tr>
 		</c:forEach>
 </table>

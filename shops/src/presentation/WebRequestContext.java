@@ -83,5 +83,9 @@ public class WebRequestContext implements RequestContext {
 		session = request.getSession();
 		return session.getAttribute(key);
 	}
+	public void removeSessionAttribute(String key) {
+		session = request.getSession();
+		session.removeAttribute(key);
+	}
 
 }

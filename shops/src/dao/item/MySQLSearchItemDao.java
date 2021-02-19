@@ -19,7 +19,7 @@ public class MySQLSearchItemDao implements SearchItemDao{
 		try {
 			Connection cn = Connector.connect();
 			//結合で書いて
-			String sql = "SELECT i.item_id, i.item_name, i.stock_count, s.size_name ,c.color_name, ca.category_name, i.price, i.detail, im.image_path FROM shop.item_table i JOIN shop.size_table s USING(size_id) JOIN shop.color_table c USING(color_id) JOIN shop.category_table ca USING(category_id) JOIN shop.image_table im USING(item_id) WHERE image_path LIKE '%samne.jpg' AND i.detail LIKE ?";
+			String sql = "SELECT i.item_id, i.item_name, i.stock_count, s.size_name ,c.color_name, ca.category_name, i.price, i.detail, im.image_path FROM shop.item_table i JOIN shop.size_table s USING(size_id) JOIN shop.color_table c USING(color_id) JOIN shop.category_table ca USING(category_id) JOIN shop.image_table im USING(item_id) WHERE image_path LIKE '%samne.jpg' AND i.item_name LIKE ? ";
 			st = cn.prepareStatement(sql);
 			
 			st.setString(1,key);
@@ -54,7 +54,7 @@ public class MySQLSearchItemDao implements SearchItemDao{
 		int count=0;
 		try {
 			Connection cn = Connector.connect();
-			String sql = "SELECT COUNT(i.item_id) FROM shop.item_table i JOIN shop.size_table s USING(size_id) JOIN shop.color_table c USING(color_id) JOIN shop.category_table ca USING(category_id) JOIN shop.image_table im USING(item_id) WHERE i.detail LIKE ?";
+			String sql = "SELECT COUNT(i.item_id) FROM shop.item_table i JOIN shop.size_table s USING(size_id) JOIN shop.color_table c USING(color_id) JOIN shop.category_table ca USING(category_id) JOIN shop.image_table im USING(item_id) WHERE image_path LIKE '%samne.jpg' AND i.item_name LIKE ?";
 			st = cn.prepareStatement(sql);
 			
 			st.setString(1,key);

@@ -144,4 +144,26 @@ public class MySQLGetItemDetailDao implements GetItemDetailDao{
 		}
 		return image;
 	}
+	public String getDetail(String itemId) {
+		String detail = null;
+		try {
+			Connection cn = Connector.connect();
+
+			String sql = "SELECT detail FROM shop.item_table  Where item_id=?";
+			st = cn.prepareStatement(sql);
+			
+			st.setString(1,itemId);
+			
+			ResultSet rs = st.executeQuery();
+			
+			if(rs.next()) {
+				detail = rs.getString(1);
+			}
+		
+			cn.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return detail;
+	}
 }

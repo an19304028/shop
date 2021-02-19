@@ -19,6 +19,12 @@
 <%@ include file="Header.jsp" %>
 
 	<h1>購入履歴</h1>
+	<c:choose>
+		<c:when test="${history==0}">
+			<p>注文履歴がありません</p>
+		</c:when>
+		<c:otherwise>
+				
 	<table id="item-list" border="1">
 		<tr>
 			<th>商品名</th>
@@ -40,7 +46,8 @@
 		</tr>
 		</c:forEach>
 	</table>
-
+	</c:otherwise>
+	</c:choose>
 </div>
 
 
