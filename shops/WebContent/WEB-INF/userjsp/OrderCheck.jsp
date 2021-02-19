@@ -71,7 +71,7 @@
    <p>住所：${address}</p>
    </div>
 
-   <br>
+   <br><br><br><br><br><br>
 
 
 </div>
