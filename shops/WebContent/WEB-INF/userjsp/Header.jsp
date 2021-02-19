@@ -86,17 +86,17 @@
 				<li><a href="getuser?userId=${sessionScope.userId}">ユーザー情報</a></li>
 				<li><a href="getfavolist?userId=${sessionScope.userId}">お気に入り</a></li>
 				<li><a href="getorderlist">購入履歴</a></li>
-				
+
 			</ul>
 		</li>
 		</c:otherwise>
 	</c:choose>
-	
-	
+
+
 	</ul>
 	</nav>
 
-	
+
 	<p id="page-top"><a href="#"><img src="image/header/pagetop.png" height="50" width="50" alt="ページトップボタン"></a></p>
 
 	<br><br><br><br>
@@ -571,6 +571,11 @@
 	#point-form{
 		margin:10px 0px;
 		border-top : 0.5px solid #555;
+	}
+
+	/* ---------- guide ---------- */
+	#guide-detail {
+		padding: 0 30px;
 	}
 
 
