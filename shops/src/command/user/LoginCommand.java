@@ -24,7 +24,7 @@ public class LoginCommand extends AbstractCommand {
 
 		String id = rc.getParameter("loginId")[0];
 		String pass = rc.getParameter("pass")[0];
-
+	
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		LoginDao dao = factory.getLoginDao();
@@ -44,6 +44,8 @@ public class LoginCommand extends AbstractCommand {
 				}
 				token = "OK";
 				
+				rc.setAttribute("itemId", rc.getSessonAttribute("itemId"));
+				rc.setAttribute("itemName",rc.getSessonAttribute("itemName"));
 				
 				rc.setSessionAttribute("userId", userId);
 				mes = "ログインしました";

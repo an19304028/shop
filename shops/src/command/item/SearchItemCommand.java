@@ -23,15 +23,18 @@ public class SearchItemCommand extends AbstractCommand {
 		if(dao.getSearchCount(key2)!=0) {
 			items = dao.searchItem(key2);
 			int count = dao.getSearchCount(key2);
-			rc.setAttribute("mess",key+"の検索結果："+count+"件");
+			rc.setAttribute("category",key+" の検索結果："+count+"件");
 			rc.setAttribute("count", count);
+			rc.setAttribute("sort", 0);
+			
 		}else {
-			rc.setAttribute("mess","商品がありません");
+			rc.setAttribute("sort", 0);
+			rc.setAttribute("category","商品が見つかりませんでした");
 			
 		}
 		
 		resc.setResult(items);
-		resc.setTarget("/WEB-INF/userjsp/ItemList.jsp");
+		resc.setTarget("/WEB-INF/userjsp/Category.jsp");
 		System.out.println("target:"+resc.getTarget());
 		return resc;
 	}

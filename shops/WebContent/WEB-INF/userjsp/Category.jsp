@@ -26,6 +26,7 @@
 	<c:choose>
 	<c:when test="${category=='new'}">
 	</c:when>
+	<c:when test="${sort==0}"></c:when>
 	<c:otherwise>
 	
 	<form action="getcategory" method="post">
