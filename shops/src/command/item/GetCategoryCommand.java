@@ -12,7 +12,14 @@ public class GetCategoryCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
 		String category = rc.getParameter("category")[0];
-
+		String sort = null;
+		if(rc.getParameter("sort")[0].equals("no")) {
+			sort="id";
+		}else {
+			sort=rc.getParameter("sort")[0];
+		}
+		System.out.println("sort"+sort);
+		
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetCategoryDao dao = factory.getGetCategoryDao();
 		List item = null;
@@ -21,10 +28,11 @@ public class GetCategoryCommand extends AbstractCommand{
 			item = dao.getNewItem();
 			rc.setAttribute("mess", "新着30件");
 			rc.setAttribute("count", 1);
+			rc.setAttribute("category","new");
 			resc.setResult(item);
 		}else {
-			if(dao.getCategoryCount(category)!=0) {
-				item = dao.getCategory(category);
+			if(dao.getCategoryCount(category)!=0){
+				item = dao.getCategory(category,sort);
 				System.out.println(item);
 				int count = dao.getCategoryCount(category);
 				rc.setAttribute("mess",count+"件");

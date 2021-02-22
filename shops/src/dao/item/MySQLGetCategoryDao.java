@@ -14,20 +14,30 @@ public class MySQLGetCategoryDao implements GetCategoryDao{
 	private PreparedStatement st = null;
 
 	@Override
-	public List getCategory(String category) {
+	public List getCategory(String category,String sort) {
 		ArrayList list = new ArrayList();
 		try {
 			Connection cn = Connector.connect();
 			String sql=null;
 			if(category.equals("ALL")) {
-				sql = "SELECT i.item_id, i.item_name, im.image_path, i.price FROM shop.item_table i JOIN image_table im USING(item_id) JOIN category_table c USING(category_id) WHERE image_path LIKE '%samne.jpg%'";
+				sql = "SELECT i.item_id, i.item_name, im.image_path, i.price, add_date FROM shop.item_table i JOIN image_table im USING(item_id) JOIN category_table c USING(category_id) WHERE image_path LIKE '%samne.jpg%'";
 				st = cn.prepareStatement(sql);
+				
 			}else {
-				sql = "SELECT i.item_id, i.item_name, im.image_path, i.price FROM shop.item_table i JOIN image_table im USING(item_id) JOIN category_table c USING(category_id) WHERE category_name=? AND image_path LIKE '%samne.jpg%'";
+				sql = "SELECT i.item_id, i.item_name, im.image_path, i.price,add_date FROM shop.item_table i JOIN image_table im USING(item_id) JOIN category_table c USING(category_id) WHERE category_name=? AND image_path LIKE '%samne.jpg%' ORDER BY ?";
 				st = cn.prepareStatement(sql);
 
 				st.setString(1,category);
-
+				if(sort.equals("price")) {
+					st.setInt(2, 4);
+				}else if(sort.equals("new")) {
+					st.setInt(2, 5);
+				}else if(sort.equals("id")) {
+					st.setInt(2, 1);
+				}else if(sort.equals("name")) {
+					st.setInt(2, 2);
+				}
+				System.out.println("dao"+sort);
 			}
 
 			ResultSet rs = st.executeQuery();
@@ -99,5 +109,6 @@ public class MySQLGetCategoryDao implements GetCategoryDao{
 
 		return list;
 	}
+	
 
 }
