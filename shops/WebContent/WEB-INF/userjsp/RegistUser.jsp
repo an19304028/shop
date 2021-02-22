@@ -65,7 +65,7 @@
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>電話番号</label></th>
-	      <td><input type="text" name="tell" id="tel" maxlength="20" required /></td>
+	      <td><input type="text" name="tell" id="tell" maxlength="20" required /></td>
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>郵便番号</label></th>
