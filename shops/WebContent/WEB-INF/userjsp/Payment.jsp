@@ -176,9 +176,9 @@
 		<div id="point-form">
 			<br>
 			<h3>ポイント利用</h3>
-			現在のポイント:<p id="nowpoint">${sessionScope.userPoint}</p>pt<br>
+			現在のポイント：<p id="nowpoint">${sessionScope.userPoint}</p>pt<br>
 			<label>ご利用ポイント</label>
-			<input type="text" name="usepoint" id="usepoint" form="getordercheck" value="0">pt <br>
+			<input class="input-area" type="text" name="usepoint" id="usepoint" form="getordercheck" value="0">pt <br>
 		</div>
 
 
