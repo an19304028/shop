@@ -467,6 +467,19 @@
 		border-right : none;
 	}
 
+	.input-area,.buyCount{
+		margin: 10px;
+		padding : 5px 10px;
+		height: 30px;
+		width:50px;
+
+		border-bottom: 1px solid;
+		border-top	 : none;
+		border-left	 : none;
+		border-right : none;
+	}
+
+
 	.radiobutton {
 	  display: none;
 	}
@@ -655,11 +668,14 @@
 	}
 
 	#item-rightbox{
+		position:relative;
 		width:600px;
 		float:left;
 	}
 
 	table.item-table {
+		width:100%;
+		text-align:center;
 		border-collapse: collapse;
 		border-top	 : none;
 		border-left	 : none;
@@ -668,6 +684,32 @@
 
 	table.item-table th,tr,td{
 		padding: 10px 20px;
+	}
+
+	.item-name{
+		float:left;
+		padding-left:10px;
+	}
+
+	#favo-button {
+		position:absolute;
+		float:left;
+
+		border:1px solid darkgray;
+		border-radius:20px;
+		padding:3px 15px;
+		right:10px;
+
+	}
+
+	#favo-button input[type="image"]{
+		vertical-align:middle;
+	}
+
+	#addcart-button {
+		position:absolute;
+		right:0;
+		margin-top:20px;
 	}
 
 
