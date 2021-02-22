@@ -23,8 +23,30 @@
 
 	<p>${login}</p>
 	<p>${mess}</p>
+	<c:choose>
+	<c:when test="${category=='new'}">
+	</c:when>
+	<c:otherwise>
+	
+	<form action="getcategory" method="post">
+		<input type="hidden" value="${category}" name="category">
+		<input type="hidden" value="new" name="sort">
+		<input type="submit" value="新着">
+	</form>
+	<form action="getcategory" method="post">
+		<input type="hidden" value="${category}" name="category">
+		<input type="hidden" value="name" name="sort">
+		<input type="submit" value="商品名">
+	</form>
+	<form action="getcategory" method="post">
+		<input type="hidden" value="${category}" name="category">
+		<input type="hidden" value="price" name="sort">
+		<input type="submit" value="価格">
+	</form>
+	
 
-
+	</c:otherwise>
+	</c:choose>
 
 	<c:choose>
 	<c:when test="${count>0}">
@@ -55,7 +77,7 @@
 	</c:when>
 	</c:choose>
 
-
+	
 
 </div>
 

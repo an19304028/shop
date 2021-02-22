@@ -23,7 +23,7 @@ public class LogOutCommand extends AbstractCommand {
 			System.out.println(userId);
 			rc.setAttribute("login", "ログアウトしました");
 		}
-		resc.setTarget("getcategory?category=new");
+		resc.setTarget("getcategory?category=new&sort=no");
 		System.out.println("target:"+resc.getTarget());
 		return resc;
 	}
