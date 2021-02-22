@@ -360,7 +360,7 @@
 	#login-button, #create-button, #create-ok-button, #contact-button,
 	#cart-clear-button, #next-button, #buy-button, #creditRegist-button,
 	#payment-ok-button, #user-edit-button, #user-delete-button, #edit-ok-button,
-	#item-detail-button, #addcart-button, #restock-button {
+	#item-detail-button, #addcart-button, #restock-button,.sort-button,.submit-button {
 		margin : 10px;
 		padding : 10px 20px;
 		background: #eee;
@@ -585,7 +585,7 @@
 	}
 
 	.contact-table th {
-		background: snow;
+		background: whitesmoke;
 		padding: 20px;
 		position: relative;
 		text-align: center;
@@ -634,6 +634,15 @@
 	}
 
 	/* ---------- itemlist ---------- */
+
+	#sort-area{
+		display:flex;
+		justify-content: center;
+	}
+	.sort-button{
+		margin:0px 10px;
+	}
+
 	.column04 ul {
 		width: calc(100% + 20px);
 		margin: 0 -10px;
@@ -710,6 +719,19 @@
 		position:absolute;
 		right:0;
 		margin-top:20px;
+	}
+
+	/* ---------- sitemap ---------- */
+
+	#sitemap-leftbox {
+		float :left;
+		padding:0 0 0 300px;
+
+	}
+
+	#sitemap-rightbox {
+		float :left;
+		padding:0 0 0 300px;
 	}
 
 

@@ -17,7 +17,9 @@
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
 
+
 	<h1 align="center">ご利用案内</h1>
+
 
 	<div id="guidejump">
 		<ul class="guide-list">
@@ -29,6 +31,8 @@
 		</ul>
 	</div>
 
+
+<div id="guide" style="padding-left:90px;">
 	<section>
 		<h2 style="padding-top:50px;padding-bottom:10px;" id="link1">注文方法</h2>
 		<div id="guide-detail">
@@ -90,7 +94,8 @@
 	<section>
 		<h2 style="padding-top:100px;padding-bottom:10px;" id="link5">返品について</h2>
 		<div id="guide-detail">
-			<p>商品管理には十分留意しておりますが、万一不良品であった場合やご注文の商品と違う場合は商品到着後、7日以内に当店までご連絡をお願い致します。<br>
+			<p>商品管理には十分留意しておりますが、万一不良品であった場合やご注文の商品と違う場合は商品到着後、<br>
+			7日以内に当店までご連絡をお願い致します。<br>
 			※期限を過ぎた場合はご対応致しかねますので予めご了承下さい。<br>
 			<br>
 			ご注文後の商品のキャンセル・返品・交換には初期不良の場合以外では、受け付けておりません。<br>
@@ -141,6 +146,8 @@
 			<p style="padding-top:50px;"></p>
 		</div>
 	</section>
+
+	</div>
 
 </div>
 

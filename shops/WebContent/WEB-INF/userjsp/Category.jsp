@@ -21,40 +21,42 @@
 
 	<h2 style="color:#555;margin-bottom:30px;" align="center">${category}</h2>
 
-	<p>${login}</p>
-	<p>${mess}</p>
-	<c:choose>
-	<c:when test="${category=='new'}">
-	</c:when>
-	<c:when test="${sort==0}"></c:when>
-	<c:otherwise>
-	
-	<form action="getcategory" method="post">
-		<input type="hidden" value="${category}" name="category">
-		<input type="hidden" value="new" name="sort">
-		<input type="submit" value="新着">
-	</form>
-	<form action="getcategory" method="post">
-		<input type="hidden" value="${category}" name="category">
-		<input type="hidden" value="name" name="sort">
-		<input type="submit" value="商品名">
-	</form>
-	<form action="getcategory" method="post">
-		<input type="hidden" value="${category}" name="category">
-		<input type="hidden" value="price" name="sort">
-		<input type="submit" value="価格">
-	</form>
-	
+	<p align="center">${login}</p>
 
-	</c:otherwise>
-	</c:choose>
+	<div id="sort-area">
+			<c:choose>
+			<c:when test="${category=='new'}">
+			</c:when>
+			<c:when test="${sort==0}"></c:when>
+			<c:otherwise>
+
+			<form action="getcategory" method="post">
+				<input type="hidden" value="${category}" name="category">
+				<input type="hidden" value="new" name="sort">
+				<input class="sort-button" type="submit" value="新着">
+			</form>
+			<form action="getcategory" method="post">
+				<input type="hidden" value="${category}" name="category">
+				<input type="hidden" value="name" name="sort">
+				<input class="sort-button" type="submit" value="商品名">
+			</form>
+			<form action="getcategory" method="post">
+				<input type="hidden" value="${category}" name="category">
+				<input type="hidden" value="price" name="sort">
+				<input class="sort-button" type="submit" value="価格">
+			</form>
+
+			</c:otherwise>
+			</c:choose>
+	</div>
+
+	<p align="center" style="padding:20px 10px;">${mess}</p>
 
 	<c:choose>
 	<c:when test="${count>0}">
 	<div class="column04">
 	<ul>
 	<c:forEach var="item" items="${data}">
-
 
 			<li>
 				<div>
@@ -78,7 +80,7 @@
 	</c:when>
 	</c:choose>
 
-	
+
 
 </div>
 

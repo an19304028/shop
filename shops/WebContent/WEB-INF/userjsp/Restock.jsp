@@ -24,20 +24,27 @@
 		var submitted = false;
 	</script>
 	<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location='send-o';}"></iframe>
-	<h1>再入荷のお知らせ</h1>
-	<p>こちらの商品が入荷した際、メールにてお知らせをいたします。</p>
+	<h1 align="center">再入荷のお知らせ</h1>
+	<p align="center">こちらの商品が入荷した際、メールにてお知らせをいたします。</p>
+
+	<p style="padding:10px;"></p><hr style="width:900px;"><p style="padding:10px;"></p>
+
+
 	<c:forEach var="item" items="${data}">
-	<p>商品名：${item.itemName}</p>
-	<p>サイズ/カラー：${item.sizeName}/${item.colorName}</p>
-	<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScf0hRD9zG7tnof6JfRKlskSwdiQ7u8C9FahSCaWAPR-z-Avg/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
-		<input type="hidden" name="entry.2081137255" value= <%=userId %> readonly />
-		　　　　　　お名前：<input type="text" name="entry.983308274" /><br>
-		通知メールアドレス：<input type="text" name="entry.102717670" /><br>
-		<input type="hidden" name="entry.1770593522" value="${item.itemId}" readonly />
-		　　　　　　商品名：<input type="text" name="entry.298775810" value= "${item.itemName}" readonly />
-		<input type="submit">
-	</form>
+		<div align="center">
+			<p>商品名：${item.itemName}</p>
+			<p>サイズ/カラー：${item.sizeName}/${item.colorName}</p>
+		</div>
+		<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScf0hRD9zG7tnof6JfRKlskSwdiQ7u8C9FahSCaWAPR-z-Avg/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+			<table class="contact-table" border="1">
+				<tr><th>お名前</th><td><input type="hidden" name="entry.2081137255" value= <%=userId %> readonly /><input type="text" name="entry.983308274" /></td></tr>
+				<tr><th>通知メールアドレス</th><td><input type="text" name="entry.102717670" /></td></tr>
+				<tr><th>商品名</th><td><input type="hidden" name="entry.1770593522" value="${item.itemId}" readonly /><input type="text" name="entry.298775810" value= "${item.itemName}" readonly /></td></tr>
+			</table>
+			<div align="center"><input class="submit-button" type="submit"></div>
+		</form>
 	</c:forEach>
+
 
 </div>
 
