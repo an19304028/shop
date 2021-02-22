@@ -46,6 +46,7 @@ public class LoginCommand extends AbstractCommand {
 				
 				rc.setAttribute("itemId", rc.getSessonAttribute("itemId"));
 				rc.setAttribute("itemName",rc.getSessonAttribute("itemName"));
+				rc.setAttribute("buyCount", rc.getSessonAttribute("buyCount"));
 				
 				rc.setSessionAttribute("userId", userId);
 				mes = "ログインしました";

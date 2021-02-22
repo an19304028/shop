@@ -20,9 +20,12 @@ public class GetItemDetailCommand extends AbstractCommand{
 		if(rc.getSessonAttribute("itemId")==null) {
 			itemId = rc.getParameter("itemId")[0];
 			itemName = rc.getParameter("itemName")[0];
+			
 		}else {
 			itemId = (String) rc.getSessonAttribute("itemId");
 			itemName = (String) rc.getSessonAttribute("itemName");
+			rc.removeSessionAttribute("itemId");
+			rc.removeSessionAttribute("itemName");
 		}
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();

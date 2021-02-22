@@ -30,7 +30,7 @@
 <%@ include file="Header.jsp" %>
 
 	<h1 align="center">買い物かご</h1>
-
+	<p>${edit}</p>
 	<c:choose>
 		<c:when test="${total!=0}">
 			<table class="contact-table" border="1">
@@ -39,8 +39,8 @@
 					<th>サイズ</th>
 					<th>カラー</th>
 					<th>数量</th>
-					<th>ポイント</th>
 					<th>価格</th>
+					<th>ポイント</th>
 					<th>　</th>
 				</tr>
 				<c:forEach var="item" items="${data}">
@@ -48,9 +48,16 @@
 						<td>${item.itemName}</td>
 					    <td>${item.sizeName}</td>
 					    <td>${item.colorName}</td>
-					    <td>${item.buyCount}</td>
-			   		    <td>${item.point}pt</td>
+					    <td>
+					    	<form action="editcart" method="post">
+					    		<input type="text" value="${item.buyCount}" size="6" name="buyCount">
+					    		<input type="hidden"  name="itemId" value="${item.itemId}" >
+					    		<input type="hidden" name="userId" value="${sessionScope.userId}">
+					    		<input type="submit" value="編集">
+					    	</form>
+					    </td>
 					    <td>${item.price}円</td>
+					    <td>${item.point}pt</td>
 					    <td>
 						    <form action="removecart" method="post">
 					    		<input type="hidden" name="itemId" value="${item.itemId}">

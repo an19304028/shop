@@ -19,19 +19,42 @@ public class MySQLAddCartDao implements AddCartDao{
 	public void addCart(Cart c){
 		try {
 			Connection cn = Connector.connect();
-
-			String sql = "INSERT INTO shop.cart_table VALUES(?, ?, ?)";
-
-			st = cn.prepareStatement(sql);
-
+			
+			String select  = "SELECT * FROM cart_table WHERE user_id=? AND item_id=?";
+			st = cn.prepareStatement(select);
 			st.setString(1, c.getUserId());
 			st.setString(2, c.getItemId());
-			st.setInt(3, c.getBuyCount());
-
-			st.executeUpdate();
-
-
-			cn.commit();
+			
+			ResultSet rs = st.executeQuery();
+			
+			String sql = null;
+			
+			if(rs.next()==true) {
+				rs.close();
+				sql ="UPDATE shop.cart_table SET buy_count = buy_count + ? WHERE user_id = ? AND item_id = ?";
+				
+				st = cn.prepareStatement(sql);
+				
+				st.setInt(1, c.getBuyCount());
+				st.setString(2, c.getUserId());
+				st.setString(3, c.getItemId());
+				System.out.println("Update");
+				st.execute();
+				cn.commit();
+			}else {
+				rs.close();
+				sql = "INSERT INTO shop.cart_table VALUES(?, ?, ?)";
+	
+				st = cn.prepareStatement(sql);
+	
+				st.setString(1, c.getUserId());
+				st.setString(2, c.getItemId());
+				st.setInt(3, c.getBuyCount());
+				st.execute();
+				cn.commit();
+			}
+			
+			
 			cn.close();
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -84,5 +107,26 @@ public class MySQLAddCartDao implements AddCartDao{
 		}
 		return count;
 		
+	}
+	public void editCart(Cart c){
+		try {
+			Connection cn = Connector.connect();
+
+			String sql = "UPDATE shop.cart_table SET buy_count = ? WHERE user_id = ? AND item_id = ?";
+
+			st = cn.prepareStatement(sql);
+
+			st.setInt(1, c.getBuyCount());
+			st.setString(2, c.getUserId());
+			st.setString(3, c.getItemId());
+
+			st.executeUpdate();
+
+
+			cn.commit();
+			cn.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
 	}
 }

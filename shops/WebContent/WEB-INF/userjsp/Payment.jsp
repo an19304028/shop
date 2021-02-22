@@ -248,6 +248,7 @@
 			console.log("point:"+point+"\t usepoint"+usepoint);
 			if(Number(point)<Number(usepoint)){
 				alert("ポイントが不足しています");
+				document.ordercheck.action= 'inputorder?point=usepoint';
 			}else if(usepoint == ""){
 				alert("ポイントを入力してください");
 			}else{

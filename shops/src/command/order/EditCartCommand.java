@@ -7,31 +7,20 @@ import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;
 
-public class AddCartCommand extends AbstractCommand{
+public class EditCartCommand extends AbstractCommand{
 
 	@Override
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
-		System.out.println("AddCartCommandだよ");
 		
 		String userId = (String)rc.getSessonAttribute("userId");
 		System.out.println("USERID:" + (String)rc.getSessonAttribute("userId"));
-		
-		String itemId=null;
-		String buyCount=null;
-		
-		if(rc.getSessonAttribute("itemId")==null) {
-			itemId = rc.getParameter("itemId")[0];
-			buyCount = rc.getParameter("buyCount")[0];
-		}else {
-			itemId = (String) rc.getSessonAttribute("itemId");
-			buyCount = (String) rc.getSessonAttribute("buyCount");
-			rc.removeSessionAttribute("itemId");
-			rc.removeSessionAttribute("buyCount");
-		}
-		
-		int buyCount2 = Integer.parseInt(buyCount);
-	
+
+		String itemId = rc.getParameter("itemId")[0];
+		System.out.println("ITEMID:" + rc.getParameter("itemId")[0]);
+
+
+		int buyCount = Integer.parseInt(rc.getParameter("buyCount")[0]);
 		System.out.println("BUYCOUNT:" + rc.getParameter("buyCount")[0]);
 
 		System.out.println(userId +"\t"+itemId+"\t"+buyCount);
@@ -39,7 +28,8 @@ public class AddCartCommand extends AbstractCommand{
 		Cart c = new Cart();
 		c.setUserId(userId);
 		c.setItemId(itemId);
-		c.setBuyCount(buyCount2);
+		c.setBuyCount(buyCount);
+
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		AddCartDao dao = factory.getAddCartDao();
 
@@ -47,13 +37,13 @@ public class AddCartCommand extends AbstractCommand{
 		int cartcount = dao.getCartCount(c);
 
 		System.out.println(stock+"\t"+cartcount);
-		if(stock>=buyCount2+cartcount) {
-			dao.addCart(c);
-			rc.setAttribute("mess1",itemId+"を"+buyCount+"個カートに追加しました");
+		if(stock>=buyCount+cartcount) {
+			dao.editCart(c);
+			rc.setAttribute("edit","編集しました");
 			resc.setTarget("getcartlist");
-		}else if(stock<buyCount2+cartcount) {
-			rc.setAttribute("mess1","すでにカートに入っています。これ以上は在庫が足りません");
-			resc.setTarget("getitemdetail");
+		}else if(stock<buyCount+cartcount) {
+			rc.setAttribute("edit","在庫が足りません");
+			resc.setTarget("getcartlist");
 		}
 
 
