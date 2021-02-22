@@ -38,7 +38,7 @@ public class LoginCommand extends AbstractCommand {
 			if(pass.equals(u.getPassword())) {
 				String path = rc.getOldPath();
 				if( path == null) {
-					target = "/getcategory?category=new";
+					target = "/getcategory?category=new&sort=no";
 				}else {
 					target = path;
 				}
