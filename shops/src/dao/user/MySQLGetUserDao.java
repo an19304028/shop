@@ -62,8 +62,10 @@ public class MySQLGetUserDao implements GetUserDao {
 
 			ResultSet rs = st.executeQuery();
 
-			while(rs.next()) {
+			if(rs.next()) {
 				id = rs.getString(1);
+			}else {
+				id="noid";
 			}
 			cn.close();
 
