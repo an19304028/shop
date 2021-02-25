@@ -4,7 +4,6 @@
 <head>
 <%@ page pageEncoding="UTF-8" %>
 <title>${itemName}</title>
-
 <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
 
 
