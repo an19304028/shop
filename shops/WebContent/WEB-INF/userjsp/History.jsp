@@ -18,10 +18,10 @@
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
 
-	<h2 align="center">購入履歴</h2>
+	<h2 align="center">購入履歴</h2><br>
 	<c:choose>
 		<c:when test="${history==0}">
-			<p>注文履歴がありません</p>
+			<p align="center">注文履歴がありません</p>
 		</c:when>
 		<c:otherwise>
 
