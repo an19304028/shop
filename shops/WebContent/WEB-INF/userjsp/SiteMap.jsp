@@ -22,16 +22,16 @@
 
 	<div id="sitemap-leftbox">
 		<ul>
-		<li><a href="getcategory?category=new">TOP</a></li>
-		<li><a href="getcategory?category=new">CATEGORY</a>
+		<li><a href="getcategory?category=new&sort=no">TOP</a></li>
+		<li><a href="getcategory?category=new&sort=no">CATEGORY</a>
 			<ul>
-			<li><a href="getcategory?category=ALL">　ALL</a></li>
-			<li><a href="getcategory?category=TOPS">　TOPS</a></li>
-			<li><a href="getcategory?category=BOTTOMS">　BOTTOMS</a></li>
-			<li><a href="getcategory?category=ONEPIECE">　ONEPIECE</a></li>
-			<li><a href="getcategory?category=OUTER">　OUTER</a></li>
-			<li><a href="getcategory?category=ACCESSORY">　ACCESSORY</a></li>
-			<li><a href="getcategory?category=OTHER">　OTHER</a></li>
+			<li><a href="getcategory?category=ALL&sort=no">　ALL</a></li>
+			<li><a href="getcategory?category=TOPS&sort=no">　TOPS</a></li>
+			<li><a href="getcategory?category=BOTTOMS&sort=no">　BOTTOMS</a></li>
+			<li><a href="getcategory?category=ONEPIECE&sort=no">　ONEPIECE</a></li>
+			<li><a href="getcategory?category=OUTER&sort=no">　OUTER</a></li>
+			<li><a href="getcategory?category=ACCESSORY&sort=no">　ACCESSORY</a></li>
+			<li><a href="getcategory?category=OTHER&sort=no">　OTHER</a></li>
 			</ul>
 		</li>
 		<li><a href="inputguide">GUIDE</a></li>

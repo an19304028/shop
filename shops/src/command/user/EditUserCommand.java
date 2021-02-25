@@ -12,7 +12,7 @@ public class EditUserCommand extends AbstractCommand{
 		RequestContext rc = getRequestContext();
 		String mail = rc.getParameter("mail")[0];
 		String loginId = rc.getParameter("loginId")[0];
-		String password = rc.getParameter("password")[0];
+		//String password = rc.getParameter("password")[0];
 		String tell = rc.getParameter("tell")[0];
 		String postalCode = rc.getParameter("postalCode")[0];
 		String address = rc.getParameter("address")[0];
@@ -23,7 +23,7 @@ public class EditUserCommand extends AbstractCommand{
 		User u = new User();
 		u.setMail(mail);
 		u.setLoginId(loginId);
-		u.setPassword(password);
+		//u.setPassword(password);
 		u.setTell(tell);
 		u.setPostalCode(postalCode);
 		u.setAddress(address);

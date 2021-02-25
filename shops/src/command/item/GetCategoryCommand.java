@@ -28,7 +28,7 @@ public class GetCategoryCommand extends AbstractCommand{
 			item = dao.getNewItem();
 			rc.setAttribute("mess", "新着30件");
 			rc.setAttribute("count", 1);
-			rc.setAttribute("category","new");
+			rc.setAttribute("category","NEW");
 			resc.setResult(item);
 		}else {
 			if(dao.getCategoryCount(category)!=0){

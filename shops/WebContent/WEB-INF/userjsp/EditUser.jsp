@@ -65,11 +65,11 @@
 				<td><input type="text" name="address" id="address"  value="${item.address}"maxlength="150" required /></td>
 		<tr>
 	      <th scope="row"><label>
-				パスワード</label></th>
+				<!-- パスワード</label></th>
 				<td>
 					<input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[0-9A-Za-z]+$" maxlength="10" name="password" required /><br>
 					<input type="checkbox" id="password-check"><label for="password-check">パスワードを表示する</label><br>
-	      		</td>
+	      		</td> -->
 	      	</table>
 
 			<input type="hidden" name="userId" value="${sessionScope.userId}">

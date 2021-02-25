@@ -37,11 +37,11 @@ public class EditCartCommand extends AbstractCommand{
 		int cartcount = dao.getCartCount(c);
 
 		System.out.println(stock+"\t"+cartcount);
-		if(stock>=buyCount+cartcount) {
+		if(stock>=buyCount) {
 			dao.editCart(c);
 			rc.setAttribute("edit","編集しました");
 			resc.setTarget("getcartlist");
-		}else if(stock<buyCount+cartcount) {
+		}else if(stock<buyCount) {
 			rc.setAttribute("edit","在庫が足りません");
 			resc.setTarget("getcartlist");
 		}

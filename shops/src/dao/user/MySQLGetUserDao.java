@@ -18,7 +18,7 @@ public class MySQLGetUserDao implements GetUserDao {
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "SELECT user_id, name, kana, mail, login_id, password, gender, birthday, tell, postal_code, address, point FROM shop.user_table WHERE user_id=?";
+			String sql = "SELECT user_id, name, kana, mail, login_id, password, gender, date_format(birthday, '%Y/%m/%d'), tell, postal_code, address, point FROM shop.user_table WHERE user_id=?";
 			st = cn.prepareStatement(sql);
 			st.setString(1, userId);
 
