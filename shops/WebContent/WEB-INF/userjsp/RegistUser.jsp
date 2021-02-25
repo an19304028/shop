@@ -53,7 +53,7 @@
 	      <th scope="row"><label>性別</label></th>
 	      <td>
       		<div class="radiobox">
-	      	<input id="radio1" class="radiobutton" type="radio" name="gender" value="男" /><label for="radio1">男</label>
+	      	<input id="radio1" class="radiobutton" type="radio" name="gender" value="男" required /><label for="radio1">男</label>
 	     	<input id="radio2" class="radiobutton" type="radio" name="gender" value="女" /><label for="radio2">女</label>
 	     	<input id="radio3" class="radiobutton" type="radio" name="gender" value="その他" /><label for="radio3">その他</label>
 	     	</div>

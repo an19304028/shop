@@ -56,7 +56,8 @@
 
 	<div id="payment-form">
 
-	<h2 align="center">支払方法</h2>
+	<h2 align="center" style="padding-bottom:20px;">ご購入手続き</h2>
+	<h3 style="padding-bottom:10px;">支払方法</h3>
 
 
 <%-- 	<div id="Payment_Exist">
@@ -80,7 +81,6 @@
 			</c:forEach>
 		</table>
 	</div> --%>
-		<br>
 		<label>
 			<input id="js-check" type="radio" name="rs" value="1" onclick="formSwitch();" form="getordercheck" required>
 			クレジットカードでのお支払い
@@ -160,16 +160,23 @@
 			現金でのお支払い<br><br>
 		</label>
 		</div>
+
+
+		<h3 style="padding-bottom:10px;">お届け先の選択</h3>
 			<c:forEach var="item" items="${userInfo}">
-				<label><input id="addr-check" type="radio" name="addressCheck"  onclick="formSwitch2();">登録された住所を指定</label><br>
+				<label><input id="addr-check" type="radio" name="addressCheck"  onclick="formSwitch2();"> 登録された住所を指定</label><br>
 			<div id="addr-form1">
-				名前：<input type="text" name="name" value="${item.name}" form="getordercheck" readonly><br>
-				住所：<input type="text" name="address"  form="getordercheck" value="${item.address}" readonly><br>
+				<table class="contact-table" border="1">
+					<tr><th>名前</th><td><input type="text" name="name" value="${item.name}" form="getordercheck" readonly></td></tr>
+					<tr><th>住所</th><td><input type="text" name="address"  form="getordercheck" value="${item.address}" readonly></td></tr>
+				</table>
 			</div>
-				<label><input type="radio" name="addressCheck"  onclick="formSwitch2();">他の住所を指定</label><br>
+				<label><input type="radio" name="addressCheck"  onclick="formSwitch2();"> 他の住所を指定</label><br>
 			<div id="addr-form2">
-				名前：<input type="text" name="name"  form="getordercheck"><br>
-				住所：<input type="text" name="address"  form="getordercheck"><br>
+				<table class="contact-table" border="1">
+					<tr><th>名前</th><td><input type="text" name="name"  form="getordercheck"></td></tr>
+					<tr><th>住所</th><td><input type="text" name="address"  form="getordercheck"></td></tr>
+				</table>
 			</div>
 
 			</c:forEach>
@@ -248,7 +255,6 @@
 			console.log("point:"+point+"\t usepoint"+usepoint);
 			if(Number(point)<Number(usepoint)){
 				alert("ポイントが不足しています");
-				document.ordercheck.action= 'inputorder?point=usepoint';
 			}else if(usepoint == ""){
 				alert("ポイントを入力してください");
 			}else{
