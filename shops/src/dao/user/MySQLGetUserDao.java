@@ -48,4 +48,28 @@ public class MySQLGetUserDao implements GetUserDao {
 
 		return user;
 	}
+	@Override
+	public String getUserId(String loginId) {
+		String id = null;
+
+		try {
+			Connection cn = Connector.connect();
+
+			String sql = "SELECT user_id from shop.user_table WHERE login_id = '?'";
+
+			st = cn.prepareStatement(sql);
+			st.setString(1, loginId);
+
+			ResultSet rs = st.executeQuery();
+
+			while(rs.next()) {
+				id = rs.getString(1);
+			}
+			cn.close();
+
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return id;
+	}
 }
