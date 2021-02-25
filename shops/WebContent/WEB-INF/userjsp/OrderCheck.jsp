@@ -74,11 +74,13 @@
 
 
 	   <p>お支払総額：${total}円</p>
+	   <p>支払方法：${pay}</p>
 	   <p>獲得予定ポイント：${itempoint}pt</p>
 	</div>
 	<div  style="float:left; margin-left:100px;">
    <p>発送先</p>
    <p>名前：${name}</p>
+   <p>郵便番号：${postalCode}</p>
    <p>住所：${address}</p>
    </div>
 

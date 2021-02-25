@@ -29,7 +29,7 @@
 
 	<c:choose>
 	<c:when test="${favo==0}">
-		<p>お気に入りに登録しているものはありません</p>
+		<p align="center">お気に入りに登録しているものはありません</p>
 	</c:when>
 	<c:otherwise>
 	<table id="table1"  class="contact-table" border="1">

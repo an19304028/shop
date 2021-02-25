@@ -27,6 +27,10 @@ public class InputOrderCommand extends AbstractCommand {
 		//Credit c = new Credit();
 		//c.setUserId(userId);
 		List credit = dao.getCredit(userId);
+		if(credit.size()==0) {
+			rc.setAttribute("credit", 0);
+		}
+		rc.setAttribute("creditData", credit);
 		resc.setResult(credit);
 		resc.setTarget("/WEB-INF/userjsp/Payment.jsp");
 		return resc;

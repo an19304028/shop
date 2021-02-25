@@ -28,8 +28,8 @@
 
 	<table  class="contact-table" border="1">
 		<tr>
+			<th></th>
 			<th>商品名</th>
-			<th>画像</th>
 			<th>サイズ</th>
 			<th>色</th>
 			<th>値段</th>
@@ -38,8 +38,8 @@
 		</tr>
 		<c:forEach var="item" items="${data}">
 		<tr>
-			<td>${item.itemName}</td>
 			<td><img src="${item.imagePath}"  width="40px" height="40px"></td>
+			<td>${item.itemName}</td>
 			<td>${item.sizeName}</td>
 			<td>${item.colorName}</td>
 			<td>${item.price}円</td>

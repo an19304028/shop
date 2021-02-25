@@ -25,8 +25,11 @@
 		display:none;
 	}
 
-
+	#table3 tr:hover {
+      background-color: #dcdcdc;   
+    }
 </style>
+
 
 </head>
 
@@ -53,7 +56,7 @@
 	      </tr>
 	    </c:forEach>
 	   </table> --%>
-   <p>${mess}</p>
+   <p align="center">${mess}</p>
 
 	<div id="payment-form">
 
@@ -91,9 +94,9 @@
 		<input type='hidden' name='userId' value='${sessionScope.userId}'><br>
 		<table class="contact-table">
 
-			<tr><th>カード番号</th><td><input id="cardNumber" type='text' name='cardNumber' maxlength=20></td></tr>
+			<tr><th>カード番号</th><td><input id="cardNumber" type='text' name='cardNumber' minlength="16" maxlength=16></td></tr>
 			<!-- 名義人<input id="name" type='text' name='name' required><br> -->
-			<tr><th>セキュリティー<br>コード</th><td><input id="securityCode" type='text' name='securityCode' maxlength="4"></td></tr>
+			<tr><th>セキュリティー<br>コード</th><td><input id="securityCode" type='text' name='securityCode' minlength="3" maxlength="4"></td></tr>
 			<!-- 有効期限<input id="expirationDate" type='text' name='expirationDate' required><br> -->
 			<tr><th>有効期限</th><td><select name="expirationMonth">
 						<option value="1">1</option>
@@ -129,35 +132,48 @@
 			<input id="creditRegist-button"type='submit' value='登録'>
 			</div>
 		</form>
-
+		<c:choose>
+			<c:when test="${credit==0}">
+				<p>カードが登録されていません</p>
+			</c:when>
+		<c:otherwise>
 		<h3>既存のクレジットカードから選択</h3>
 <%-- 		<form method="post" action="getcredit">
 			<input type="hidden" name='userId' value="${sessionScope.userId}">
 			<input type="submit" value="カード情報を取得"> --%>
-			<table class="contact-table" border="1">
+			<table id="table3" class="contact-table" border="1">
 				<tr>
 					<th>　</th>
 					<th>カード番号</th>
 <!-- 					<th>名義人</th> -->
 					<th>有効期限</th>
+					<th></th>
 				</tr>
-				<c:forEach var="item" items="${data}">
+				<c:forEach var="item" items="${data}" varStatus="status">
 					<tr>
-						<td><input type="radio" name="credit" form="getordercheck"></td>
+						<td><input type="radio" class="ra" name="credit" form="getordercheck"></td>
 						<td>${item.cardNumber}</td>
 						<%-- <td>${item.userName}</td> --%>
 						<td>${item.expirationDate}</td>
+						<td>
+							<form action="" method="post">
+								<input type="submit" value="削除">
+							</form>
+						</td>
 					</tr>
+					
 				</c:forEach>
 			</table>
 			<!-- <input type="submit" value="このカードを使用"> -->
 <!-- 		</form> -->
+		</c:otherwise>
+		</c:choose>
 		</div>
 
 		<br>
 		<div id="Payment_cash">
 		<label>
-			<input type="radio" name="rs" value="1" onclick="formSwitch();" form="getordercheck" required>
+			<input type="radio" name="rs" value="2" onclick="formSwitch();" form="getordercheck" required>
 			現金でのお支払い<br><br>
 		</label>
 		</div>
@@ -165,21 +181,22 @@
 
 		<h3 style="padding-bottom:10px;">お届け先の選択</h3>
 			<c:forEach var="item" items="${userInfo}">
-				<label><input id="addr-check" type="radio" name="addressCheck"  onclick="formSwitch2();"> 登録された住所を指定</label><br>
-			<div id="addr-form1">
+				<!-- <label><input id="addr-check" type="radio" name="addressCheck"  onclick="formSwitch2();"> 登録された住所を指定</label><br> -->
+			<!-- <div id="addr-form1"> -->
 				<table class="contact-table" border="1">
-					<tr><th>名前</th><td><input type="text" name="name" value="${item.name}" form="getordercheck" readonly></td></tr>
-					<tr><th>住所</th><td><input type="text" name="address"  form="getordercheck" value="${item.address}" readonly></td></tr>
+					<tr><th>名前</th><td><input type="text" name="name" value="${item.name}" form="getordercheck" required></td></tr>
+					<tr><th>郵便番号</th><td><input type="text" name="postalCode" value="${item.postalCode}" form="getordercheck" required></td></tr>
+					<tr><th>住所</th><td><input type="text" name="address"  form="getordercheck" value="${item.address}" required></td></tr>
 				</table>
-			</div>
-				<label><input type="radio" name="addressCheck"  onclick="formSwitch2();"> 他の住所を指定</label><br>
+			<!-- </div> -->
+		<!-- 		<label><input type="radio" name="addressCheck"  onclick="formSwitch2();"> 他の住所を指定</label><br>
 			<div id="addr-form2">
 				<table class="contact-table" border="1">
 					<tr><th>名前</th><td><input type="text" name="name"  form="getordercheck"></td></tr>
 					<tr><th>住所</th><td><input type="text" name="address"  form="getordercheck"></td></tr>
 				</table>
 			</div>
-
+ -->
 			</c:forEach>
 		<div id="point-form">
 			<br>
@@ -231,13 +248,13 @@
 		    if ($('[id="addr-check"]').prop('checked')==true) {
 		    	$('[id="addr-form1"]').css('display', 'block');
 		    	$('[id="addr-form2"]').css('display', 'none');
-		    	$("#addr-form2").$('input[name="name"]').removeAttr("required");
-		    	$("#addr-form2"). $('input[name="address"]').removeAttr("required");
+		    	$('[id="addr-form2"]').$('input[name="name"]').removeAttr("required");
+		    	$('[id="addr-form2"]'). $('input[name="address"]').removeAttr("required");
 		    } else {
 		    	$('[id="addr-form1"]').css('display', 'none');
 		    	$('[id="addr-form2"]').css('display', 'block');
-		    	$("#addr-form2").$('input[name="name"]').removeAttr("required");
-		    	$("#addr-form2"). $('input[name="address"]').removeAttr("required");
+		    	$('[id="addr-form2"]').$('input[name="name"]').removeAttr("required");
+		    	$('[id="addr-form2"]'). $('input[name="address"]').removeAttr("required");
 		    }
 		}
 
@@ -262,7 +279,15 @@
 				document.ordercheck.action= 'getordercheck';
 			}
 		}
+
+		$("#table3 tr").on('click',function(){
+			var count = $('#table3 tr').index(this);
+			var index = count-1;
+			console.log(index);
+			$('input:radio[name="credit"]:eq('+index+')').prop('checked', true);
+		});
 	</script>
+<script>
 
 
 </div>

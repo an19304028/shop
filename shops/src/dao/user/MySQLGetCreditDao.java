@@ -13,7 +13,7 @@ import daofactory.Connector;
 public class MySQLGetCreditDao implements GetCreditDao {
 	private PreparedStatement st = null;
 	public List getCredit(String userId) {
-		ArrayList credit = new ArrayList();
+		ArrayList credit =  new ArrayList();
 		try {
 			Connection cn = Connector.connect();
 			String sql = "SELECT * FROM shop.credit_table WHERE user_id=?";
@@ -22,6 +22,7 @@ public class MySQLGetCreditDao implements GetCreditDao {
 
 			ResultSet rs = st.executeQuery();
 			while(rs.next()) {
+	
 				Credit c = new Credit();
 
 				String expirationDate = new String(rs.getString(4));
@@ -36,6 +37,7 @@ public class MySQLGetCreditDao implements GetCreditDao {
 
 
 				credit.add(c);
+				System.out.println(c);
 			}
 		cn.close();
 		}catch(SQLException e) {

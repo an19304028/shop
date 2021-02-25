@@ -19,10 +19,18 @@ public class GetOrderCheckCommand extends AbstractCommand {
 		
 		String name = rc.getParameter("name")[0];
 		String address = rc.getParameter("address")[0];
+		String postalCode = rc.getParameter("postalCode")[0];
+		String rs = rc.getParameter("rs")[0];
 		
 		rc.setAttribute("name",name);
 		rc.setAttribute("address", address);
+		rc.setAttribute("postalCode", postalCode);
 		
+		if(rs.equals("1")) {
+			rc.setAttribute("pay", "クレジットカード");
+		}else if(rs.equals("2")) {
+			rc.setAttribute("pay", "現金");
+		}
 		
 		int point = dao.getPoint(userId);
 		int price = dao.getTotalAmount(userId);
