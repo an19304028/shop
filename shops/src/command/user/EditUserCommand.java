@@ -1,5 +1,6 @@
 package command.user;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import bean.User;
@@ -13,6 +14,10 @@ import presentation.ResponseContext;
 public class EditUserCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
+		String name = rc.getParameter("name")[0];
+		String kana = rc.getParameter("kana")[0];
+		String gender = rc.getParameter("gender")[0];
+		String birthday = rc.getParameter("birthday")[0];
 		String mail = rc.getParameter("mail")[0];
 		String loginId = rc.getParameter("loginId")[0];
 		//String password = rc.getParameter("password")[0];
@@ -31,17 +36,27 @@ public class EditUserCommand extends AbstractCommand{
 		u.setPostalCode(postalCode);
 		u.setAddress(address);
 		u.setUserId(userId);
+		u.setName(name);
+		u.setKana(kana);
+		u.setBirthday(birthday);
+		u.setGender(gender);
+		
+		ArrayList a = new ArrayList();
+		a.add(u);
+		
+		
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		EditUserDao dao = factory.getEditUserDao();
-	
-		
 		
 		GetUserDao user = factory.getGetUserDao();
-		List users = user.getUser(userId);
+
+		
+		
+		
 		if(user.getUserId(loginId).equals("noid")==false) {
 			rc.setAttribute("mess", "このIDは使われています");
-			resc.setResult(users);
+			resc.setResult(a);
 			resc.setTarget("/WEB-INF/userjsp/EditUser.jsp");
 			System.out.println(u.getName());
 			

@@ -5,7 +5,7 @@
 <%@ page pageEncoding="UTF-8" %>
 <title>${itemName}</title>
 <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
-
+<meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0">
 
 
 <script>

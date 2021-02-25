@@ -13,8 +13,14 @@
 	$(function(){
 		$("#footer").load("common/Footer.html");
 	});
+	
 </script>
 </head>
+<style>
+	#table1 tr:hover {
+      background-color: #dcdcdc;   
+    }
+</style>
 <body>
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
@@ -37,13 +43,17 @@
 			<th></th>
 			<!-- <th>画像</th> -->
 		</tr>
+	
 		<c:forEach var="item" items="${data}">
+		
+			
 			<tr>
+				<td style="display:none;">${item.itemId}</td>
 			    <td>${item.itemName}</td>
 			     <td><img src="${item.imagePath}"  width="40px" height="40px"></td>
 			    <td>${item.sizeName}</td>
 			    <td>${item.colorName}</td>
-			    <td>${item.price}</td>
+			    <td>${item.price}円</td>
 			    <td>${item.categoryName}</td>
 			 <%--    <td><img src="image/item/${item.imagePath}"  width="40px" height="40px"></td> --%>
 			 	<td>
@@ -53,12 +63,23 @@
 			    		<input type="submit" name="itemId" value="削除">
 			    	</form>
 			    </td>
+			   
 			</tr>
+			
 		</c:forEach>
 	</table>
 	</c:otherwise>
 	</c:choose>
 </div>
+	<script>
+		$("#table1 tr").on('click',function(){
+			var itemId = $(this).closest('tr').children("td")[0].innerText;
+			var itemName = $(this).closest('tr').children("td")[1].innerText;
+			console.log(itemId+itemName);
+			location.href="getitemdetail?itemId="+itemId+"&itemName="+itemName;
+			
+		});
+		</script>
 
 <div id="footer-wrap">
 	<div id="footer"></div>

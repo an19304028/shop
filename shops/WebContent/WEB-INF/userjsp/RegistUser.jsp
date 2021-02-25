@@ -35,15 +35,15 @@
 	    </tr>
 	    <tr>
 	      <th scope="row"><label>メール</label></th>
-	      <td><input type="text" name="mail" id="mail" maxlength="300" value="${user.mail}" required /></td>
+	      <td><input type="text" name="mail" id="mail"  minlength="6"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" maxlength="300" value="${user.mail}" required /></td>
 	    </tr>
 	    <tr>
 	      <th scope="row"><label>ログインID</label></th>
-	      <td><input type="text" name="loginId" id="loginId" maxlength="20" value="${user.loginId}" required /></td>
+	      <td><input type="text" name="loginId" id="loginId" minlength="6" pattern="^[0-9A-Za-z]+$"  maxlength="20" value="${user.loginId}" required /></td>
 	    </tr>
 	    <tr>
 	      <th scope="row"><label>パスワード</label></th>
-	      <td><input type="password" style="font-family:Verdana" class="field" id="password" value="${user.password}" pattern="^[0-9A-Za-z]+$" maxlength="10" name="password" required /></td>
+	      <td><input type="password" style="font-family:Verdana " minlength="6"  class="field" id="password" value="${user.password}" pattern="^[0-9A-Za-z]+$" maxlength="10" name="password" required /></td>
 	    </tr>
 	    <tr>
 	      <th scope="row">
@@ -66,11 +66,11 @@
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>電話番号</label></th>
-	      <td><input type="text" name="tell" id="tel" maxlength="20" value="${user.tell}" required /></td>
+	      <td><input type="text" name="tell" id="tel" maxlength="20" minlength="8"  value="${user.tell}" required /></td>
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>郵便番号</label></th>
-	      <td><input type="text" name="postalCode" id="postalCode" maxlength="8" value="${user.postalCode}" required /></td>
+	      <td><input type="text" name="postalCode" id="postalCode" minlength="7"  maxlength="7" value="${user.postalCode}" required /></td>
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>住所</label></th>

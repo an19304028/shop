@@ -25,6 +25,11 @@
 		}
 	}
 </script>
+<style>
+	#table2 tr:hover {
+      background-color: #dcdcdc;   
+    }
+</style>
 </head>
 <body>
 <div id="wrapper">
@@ -34,7 +39,7 @@
 	<br><p align="center">${edit}</p>
 	<c:choose>
 		<c:when test="${total!=0}">
-			<table class="contact-table" border="1">
+			<table id="table2" class="contact-table" border="1">
 				<tr>
 					<th>商品名</th>
 					<th>サイズ</th>
@@ -46,6 +51,7 @@
 				</tr>
 				<c:forEach var="item" items="${data}">
 					<tr>
+						<td style="display:none;">${item.itemId}</td>
 						<td>${item.itemName}</td>
 					    <td>${item.sizeName}</td>
 					    <td>${item.colorName}</td>
@@ -102,6 +108,21 @@
 <div id="footer-wrap">
 	<div id="footer"></div>
 </div>
-
+<script>
+		//アイテム詳細へ飛ばすjs
+		$("#table2 tr").on('click',function(){
+			var id = $(this).closest('tr').children("td")[0].innerText;
+			var item = id.substr(0,4);
+			var valueId = id.substr(4,1);
+			valueId=1;
+			
+			console.log(id+" "+item+valueId);
+			itemId=item+valueId;
+			var itemName = $(this).closest('tr').children("td")[1].innerText;
+			console.log(itemId+itemName);
+			location.href="getitemdetail?itemId="+itemId+"&itemName="+itemName;
+			
+		});
+		</script>
 </body>
 </html>
