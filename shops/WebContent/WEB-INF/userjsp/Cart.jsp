@@ -30,7 +30,7 @@
 <%@ include file="Header.jsp" %>
 
 	<h1 align="center">買い物かご</h1>
-	<p>${edit}</p>
+	<br><p align="center">${edit}</p>
 	<c:choose>
 		<c:when test="${total!=0}">
 			<table class="contact-table" border="1">
@@ -91,10 +91,11 @@
 			<br>
 	</c:when>
 	<c:otherwise>
-		<p>${mess} </p>
+		<p align="center">${mess} </p>
 	</c:otherwise>
 	</c:choose>
 
+	<br><br><br><br><br><br><br>
 </div>
 
 <div id="footer-wrap">
