@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/x-icon" href="image/header/favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
 <title>snazzy</title>
@@ -62,7 +63,7 @@
 				<div>
 				<img src="${item.imagePath}"  width="200px" height="200px"><br>
 				${item.itemName}<br>
-				${item.price}円 (税込み)
+				${item.price}円 (税込)
 				<form action="getitemdetail" onSubmit="return checkSubmit()" method="post">
 
 					<input type="hidden" name="itemName" value="${item.itemName}">

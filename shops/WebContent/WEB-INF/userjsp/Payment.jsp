@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/x-icon" href="image/header/favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
 <title>クレカ登録画面</title>
@@ -231,12 +232,12 @@
 		    	$('[id="addr-form1"]').css('display', 'block');
 		    	$('[id="addr-form2"]').css('display', 'none');
 		    	$("#addr-form2").$('input[name="name"]').removeAttr("required");
-		    	$("#addr-form2"). $('input[name="address"]').removeAttr("required"); 
+		    	$("#addr-form2"). $('input[name="address"]').removeAttr("required");
 		    } else {
 		    	$('[id="addr-form1"]').css('display', 'none');
 		    	$('[id="addr-form2"]').css('display', 'block');
 		    	$("#addr-form2").$('input[name="name"]').removeAttr("required");
-		    	$("#addr-form2"). $('input[name="address"]').removeAttr("required"); 
+		    	$("#addr-form2"). $('input[name="address"]').removeAttr("required");
 		    }
 		}
 

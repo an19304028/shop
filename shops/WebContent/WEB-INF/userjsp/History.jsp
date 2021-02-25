@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/x-icon" href="image/header/favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
 <title>購入履歴</title>
@@ -41,7 +42,7 @@
 			<td><img src="${item.imagePath}"  width="40px" height="40px"></td>
 			<td>${item.sizeName}</td>
 			<td>${item.colorName}</td>
-			<td>${item.price}</td>
+			<td>${item.price}円</td>
 			<td>${item.buyDate}</td>
 		</tr>
 		</c:forEach>

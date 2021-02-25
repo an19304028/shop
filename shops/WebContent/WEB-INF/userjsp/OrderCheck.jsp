@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="icon" type="image/x-icon" href="image/header/favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
 <title>購入手続き確認</title>
@@ -70,8 +71,8 @@
     </c:otherwise>
 
    </c:choose>
-    
-   
+
+
 	   <p>お支払総額：${total}円</p>
 	   <p>獲得予定ポイント：${itempoint}pt</p>
 	</div>
@@ -81,9 +82,9 @@
    <p>住所：${address}</p>
    </div>
 
-  
-   
-   
+
+
+
 
    <br><br><br><br><br><br>
    <br><br><br><br><br><br>
