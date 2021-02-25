@@ -1,8 +1,11 @@
 package command.user;
 
+import java.util.List;
+
 import bean.User;
 import command.AbstractCommand;
 import dao.user.EditUserDao;
+import dao.user.GetUserDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;
@@ -31,11 +34,25 @@ public class EditUserCommand extends AbstractCommand{
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		EditUserDao dao = factory.getEditUserDao();
-		dao.editUser(u);
-		rc.setAttribute("mess", "変更しました");
-
-		resc.setTarget("getuser");
-		System.out.println("target:"+resc.getTarget());
+	
+		
+		
+		GetUserDao user = factory.getGetUserDao();
+		List users = user.getUser(userId);
+		if(user.getUserId(loginId).equals("noid")==false) {
+			rc.setAttribute("mess", "このIDは使われています");
+			resc.setResult(users);
+			resc.setTarget("/WEB-INF/userjsp/EditUser.jsp");
+			System.out.println(u.getName());
+			
+		}else {
+	
+			dao.editUser(u);
+			rc.setAttribute("mess", "変更しました");
+			resc.setTarget("getuser");
+			System.out.println("target:"+resc.getTarget());
+		}
+		
 
 		return resc;
 	}

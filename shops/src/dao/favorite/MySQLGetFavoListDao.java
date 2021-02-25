@@ -34,7 +34,7 @@ public class MySQLGetFavoListDao implements GetFavoListDao{
 				f.setPrice(rs.getInt(6));
 				f.setCategoryName(rs.getString(7));
 				f.setDetail(rs.getString(8));
-				//f.setImagePath(rs.getString(9));
+				f.setImagePath(rs.getString(9));
 
 				System.out.println(f.getItemId()+f.getCategoryName()+f.getSizeName());
 

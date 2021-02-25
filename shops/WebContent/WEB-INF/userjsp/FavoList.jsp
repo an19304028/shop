@@ -25,10 +25,10 @@
 		<p>お気に入りに登録しているものはありません</p>
 	</c:when>
 	<c:otherwise>
-	<table  class="contact-table" border="1">
+	<table id="table1"  class="contact-table" border="1">
 		<tr>
 			<th>商品名</th>
-			<th>在庫数</th>
+			<th>画像</th>
 			<th>サイズ</th>
 			<th>カラー</th>
 			<th>価格</th>
@@ -39,7 +39,7 @@
 		<c:forEach var="item" items="${data}">
 			<tr>
 			    <td>${item.itemName}</td>
-			    <td>${item.stockCount}</td>
+			     <td><img src="${item.imagePath}"  width="40px" height="40px"></td>
 			    <td>${item.sizeName}</td>
 			    <td>${item.colorName}</td>
 			    <td>${item.price}</td>

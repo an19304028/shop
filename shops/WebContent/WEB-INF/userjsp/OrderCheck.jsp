@@ -13,6 +13,11 @@
   $("#footer").load("common/Footer.html");
  });
 </script>
+	<style>
+   	.pay{
+   		background-color: #444444;
+   	}
+   </style>
 </head>
 <body>
 <div id="wrapper">
@@ -51,10 +56,10 @@
     <input type="hidden" name="userId" value="${sessionScope.userId}">
     <input type="hidden" name="usepoint" value="${point}">
     <input type="hidden" name="itempoint" value="${itempoint}">
-    <input style="float: right;margin-right:200px;" id="buy-button" type="submit" value="確定">
+    <input style="float: right;margin-right:300px;" id="buy-button" type="submit" value="確定">
    </form>
 
-   <div  style="float: right;margin-right:150px;">
+   <div  style="float:left; margin-left:250px;">
    <p>小計：${price}円</p>
    <c:choose>
     <c:when test="${point==0}">
@@ -65,13 +70,20 @@
     </c:otherwise>
 
    </c:choose>
-   <p>お支払総額：${total}円</p>
-   <p>獲得予定ポイント：${itempoint}pt</p>
-   <br>
+    
+   
+	   <p>お支払総額：${total}円</p>
+	   <p>獲得予定ポイント：${itempoint}pt</p>
+	</div>
+	<div  style="float:left; margin-left:100px;">
    <p>発送先</p>
    <p>名前：${name}</p>
    <p>住所：${address}</p>
    </div>
+
+  
+   
+   
 
    <br><br><br><br><br><br>
    <br><br><br><br><br><br>

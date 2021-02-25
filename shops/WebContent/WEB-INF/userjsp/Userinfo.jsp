@@ -18,7 +18,7 @@
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
 	<h2 align="center">アカウント情報</h2>
-	<p>${mess}</p>
+	<p align="center"><font color="red">${mess}</font></p>
 	<table  class="contact-table" border="1">
 		<c:forEach var="item" items="${data}">
 		    <tr><th>名前</th><td>${item.name}</td></tr>

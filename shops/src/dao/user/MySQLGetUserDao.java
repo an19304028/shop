@@ -55,7 +55,7 @@ public class MySQLGetUserDao implements GetUserDao {
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "SELECT user_id from shop.user_table WHERE login_id = '?'";
+			String sql = "SELECT user_id from shop.user_table WHERE login_id = ?";
 
 			st = cn.prepareStatement(sql);
 			st.setString(1, loginId);

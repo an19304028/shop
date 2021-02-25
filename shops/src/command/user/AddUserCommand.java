@@ -3,6 +3,7 @@ package command.user;
 import bean.User;
 import command.AbstractCommand;
 import dao.user.AddUserDao;
+import dao.user.GetUserDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;
@@ -40,14 +41,22 @@ public class AddUserCommand extends AbstractCommand{
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		AddUserDao dao = factory.getAddUserDao();
+		
+		GetUserDao user = factory.getGetUserDao();
+		if(user.getUserId(loginId).equals("noid")==false) {
+			rc.setAttribute("mess", "このIDは使われています");
+			resc.setTarget("/WEB-INF/userjsp/RegistUser.jsp");
+			System.out.println(u.getName());
+			rc.setAttribute("user", u);
+		}else {
 
-		dao.addUser(u);
-		rc.setAttribute("mess",name+"を登録しました");
-
-
-		resc.setTarget("/WEB-INF/userjsp/RegistUser.jsp");
-		System.out.println("target:"+resc.getTarget());
-
+			dao.addUser(u);
+			rc.setAttribute("mess",name+"を登録しました");
+	
+	
+			resc.setTarget("/WEB-INF/userjsp/RegistUser.jsp");
+			System.out.println("target:"+resc.getTarget());
+		}
 		return resc;
 	}
 }

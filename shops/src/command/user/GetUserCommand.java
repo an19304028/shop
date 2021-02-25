@@ -23,6 +23,7 @@ public class GetUserCommand extends AbstractCommand {
 		System.out.println(dao.getUser(userId));
 		
 		resc.setResult(users);
+		rc.setAttribute("item", users);
 		resc.setTarget("/WEB-INF/userjsp/Userinfo.jsp");
 		System.out.println("target:"+resc.getTarget());
 		return resc;

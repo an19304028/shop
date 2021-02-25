@@ -20,29 +20,29 @@
 	<div class="create-form">
 	 <h1 align="center">ユーザー登録</h1>
 	 <form method="post" action="adduser">
-	    <font color="red">${mess}</font><br>
+	    <p align="center"><font color="red">${mess}</font></p><br>
 	    <font color="blue" size="2">※ユーザー名、パスワードは10字以内の半角英数字のみで作成して下さい。</font><br>
 
 	<table>
 		<tr>
 	      <th scope="row"><label>名前</label></th>
-	      <td><input type="text" name="name" id="name" maxlength="30" required /></td>
+	      <td><input type="text" name="name" value="${user.name}" id="name" maxlength="30" required /></td>
 	    </tr>
 	    <tr>
 	      <th scope="row"><label>ふりがな</label></th>
-	      <td><input type="text" name="kana" id="kana" maxlength="60" required /></td>
+	      <td><input type="text" name="kana" id="kana" value="${user.kana}" maxlength="60" required /></td>
 	    </tr>
 	    <tr>
 	      <th scope="row"><label>メール</label></th>
-	      <td><input type="text" name="mail" id="mail" maxlength="300" required /></td>
+	      <td><input type="text" name="mail" id="mail" maxlength="300" value="${user.mail}" required /></td>
 	    </tr>
 	    <tr>
 	      <th scope="row"><label>ログインID</label></th>
-	      <td><input type="text" name="loginId" id="loginId" maxlength="20" required /></td>
+	      <td><input type="text" name="loginId" id="loginId" maxlength="20" value="${user.loginId}" required /></td>
 	    </tr>
 	    <tr>
 	      <th scope="row"><label>パスワード</label></th>
-	      <td><input type="password" style="font-family:Verdana" class="field" id="password" pattern="^[0-9A-Za-z]+$" maxlength="10" name="password" required /></td>
+	      <td><input type="password" style="font-family:Verdana" class="field" id="password" value="${user.password}" pattern="^[0-9A-Za-z]+$" maxlength="10" name="password" required /></td>
 	    </tr>
 	    <tr>
 	      <th scope="row">
@@ -61,19 +61,19 @@
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>誕生日</label></th>
-	      <td><input type="date" name="birthday" id="birthday" required /></td>
+	      <td><input type="date" name="birthday" id="birthday" value="${user.birthday}" required /></td>
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>電話番号</label></th>
-	      <td><input type="text" name="tell" id="tel" maxlength="20" required /></td>
+	      <td><input type="text" name="tell" id="tel" maxlength="20" value="${user.tell}" required /></td>
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>郵便番号</label></th>
-	      <td><input type="text" name="postalCode" id="postalCode" maxlength="8" required /></td>
+	      <td><input type="text" name="postalCode" id="postalCode" maxlength="8" value="${user.postalCode}" required /></td>
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>住所</label></th>
-	      <td><input type="text" name="address" id="address" maxlength="150" required /></td>
+	      <td><input type="text" name="address" id="address" maxlength="150" value="${user.address}" required /></td>
 	     </tr>
 	</table>
 

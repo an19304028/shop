@@ -230,13 +230,13 @@
 		    if ($('[id="addr-check"]').prop('checked')==true) {
 		    	$('[id="addr-form1"]').css('display', 'block');
 		    	$('[id="addr-form2"]').css('display', 'none');
-		    	/* $("#addr-form2").$('input[name="name"]').removeAttr("required");
-		    	$("#addr-form2"). $('input[name="address"]').removeAttr("required"); */
+		    	$("#addr-form2").$('input[name="name"]').removeAttr("required");
+		    	$("#addr-form2"). $('input[name="address"]').removeAttr("required"); 
 		    } else {
 		    	$('[id="addr-form1"]').css('display', 'none');
 		    	$('[id="addr-form2"]').css('display', 'block');
-		    	/* $("#addr-form2").$('input[name="name"]').removeAttr("required");
-		    	$("#addr-form2"). $('input[name="address"]').removeAttr("required"); */
+		    	$("#addr-form2").$('input[name="name"]').removeAttr("required");
+		    	$("#addr-form2"). $('input[name="address"]').removeAttr("required"); 
 		    }
 		}
 
