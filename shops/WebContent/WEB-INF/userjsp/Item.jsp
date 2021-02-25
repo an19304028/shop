@@ -17,7 +17,7 @@
 	});
 </script>
 <style>
-	#table4 tr:hover {
+	#table4 .tr2:hover {
       background-color: #dcdcdc;   
     }
 </style>
@@ -118,7 +118,7 @@
 				</tr>
 				<c:forEach var="item" items="${data}" varStatus="status">
 			  		<p style="display: none" id="stock"  class="stockCount${status.count}">${item.stockCount}</p>
-					<tr>
+					<tr class="tr2">
 						<td>${item.sizeName}/${item.colorName}</td>
 			  				 <c:choose>
 		 						<c:when test="${item.stockCount!=0}">

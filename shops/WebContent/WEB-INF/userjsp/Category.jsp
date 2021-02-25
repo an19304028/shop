@@ -13,7 +13,19 @@
 	$(function(){
 		$("#footer").load("common/Footer.html");
 	});
+
+	$(document).on('click', '#itemlist', function(){
+		  var index = $('.form_01').index(this);
+
+		console.log('#form_'+index);
+		$('#form_'+index).submit();
+	});
 </script>
+<style>
+	#itemlist :hover {
+      background-color: #dcdcdc;   
+    }
+</style>
 </head>
 <body>
 <div id="wrapper">
@@ -55,20 +67,21 @@
 
 	<c:choose>
 	<c:when test="${count>0}">
-	<div class="column04">
+	<div class="column04" >
 	<ul>
-	<c:forEach var="item" items="${data}">
+	<c:forEach var="item" items="${data}" varStatus="status">
 
-			<li>
+			<li id="itemlist" class="form_01">
 				<div>
+				
 				<img src="${item.imagePath}"  width="200px" height="200px"><br>
 				${item.itemName}<br>
 				${item.price}円 (税込)
-				<form action="getitemdetail" onSubmit="return checkSubmit()" method="post">
+				<form action="getitemdetail" name="form1"  id="form_${status.index}" method="post">
 
 					<input type="hidden" name="itemName" value="${item.itemName}">
 					<input type="hidden" name="itemId" value="${item.itemId}">
-			   		<input id="item-detail-button" type="submit" value="商品詳細へ">
+			   		<!-- <input id="item-detail-button" type="submit" value="商品詳細へ"> -->
 
 			   </form>
 				</div>
@@ -84,6 +97,7 @@
 
 
 </div>
+	
 
 <!-- フッター -->
 <div id="footer-wrap">

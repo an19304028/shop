@@ -15,7 +15,7 @@ public class MySQLAddUserDao implements AddUserDao{
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "INSERT into shop.user_table(name, kana, mail, login_id, password, gender, birthday, tell, postal_code, address) VALUES(?,?,?,?,?,?,?,?,?,?)";
+			String sql = "INSERT into shop.user_table(name, kana, mail, login_id, password, gender, birthday, tell, postal_code, address,point) VALUES(?,?,?,?,?,?,?,?,?,?,0)";
 
 			st = cn.prepareStatement(sql);
 

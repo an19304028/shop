@@ -50,11 +50,13 @@ public class MySQLAddOrderDao implements AddOrderDao{
 				st.executeUpdate();
 			}
 
-			String pointsql= "UPDATE shop.user_table set point = point - ? + ? where user_id = ?";
+			String pointsql= "UPDATE shop.user_table set point= CASE WHEN point<? THEN point + ? ELSE point - ? + ? END WHERE user_id = ?";
 			st = cn.prepareStatement(pointsql);
 			st.setInt(1,usepoint);
 			st.setInt(2, point);
-			st.setString(3, o.getUserId());
+			st.setInt(3, usepoint);
+			st.setInt(4, point);
+			st.setString(5, o.getUserId());
 
 			st.executeUpdate();
 
