@@ -44,6 +44,17 @@
 		    	</form>
 			</div>
 </div>
+<script type="text/javascript">
+	function checkSubmit() {
+		result = confirm("本当に退会しても良いですか？(退会したらユーザー情報はすべて削除されます)");
+		if (result) {
+			document.myform.action = "";
+			} else {
+			alert("キャンセルします。");
+			return false;
+		}
+	}
+</script>
 	<!-- フッター -->
 <div id="footer-wrap">
 	<div id="footer"></div>

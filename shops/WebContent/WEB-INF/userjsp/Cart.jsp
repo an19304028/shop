@@ -17,7 +17,7 @@
 	function checkSubmit() {
 		result = confirm("空にしても良いですか？");
 		if (result) {
-			document.myform.action = "PostWriteServlet";
+			document.myform.action = "";
 			} else {
 			alert("キャンセルします。");
 			return false;
