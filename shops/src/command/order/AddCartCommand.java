@@ -3,6 +3,7 @@ package command.order;
 import bean.Cart;
 import command.AbstractCommand;
 import dao.order.AddCartDao;
+import dao.user.LoginDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;
@@ -51,6 +52,9 @@ public class AddCartCommand extends AbstractCommand{
 			dao.addCart(c);
 			rc.setAttribute("mess1",itemId+"を"+buyCount+"個カートに追加しました");
 			resc.setTarget("getcartlist");
+			LoginDao cart = factory.getLoginDao();
+			String cartCount = cart.getCartCount(userId);
+			rc.setSessionAttribute("cartCount", cartCount);
 		}else if(stock<buyCount2+cartcount) {
 			rc.setAttribute("mess1","すでにカートに入っているか、在庫が足りません");
 			resc.setTarget("getitemdetail");

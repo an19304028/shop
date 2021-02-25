@@ -83,4 +83,27 @@ public class MySQLLoginDao implements LoginDao{
 		}
 		return point;
 	}
+	public String getCartCount(String loginId) {
+		String userId = null;
+		try {
+			Connection cn = Connector.connect();
+
+			String sql = "SELECT SUM(c.buy_count) FROM shop.user_table JOIN cart_table c USING(user_id) WHERE user_id=?";
+
+			st=cn.prepareStatement(sql);
+			st.setString(1, loginId);
+
+			ResultSet rs =  st.executeQuery();
+			
+			if(rs.next()) {
+				userId = rs.getString(1);
+			}
+
+			cn.commit();
+			cn.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return userId;
+	}
 }

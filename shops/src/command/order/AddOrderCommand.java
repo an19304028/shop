@@ -61,6 +61,8 @@ public class AddOrderCommand extends AbstractCommand{
 
 		removedao.removeAllCart(userId);
 		
+		rc.removeSessionAttribute("cartCount");
+		
 		LoginDao login = factory.getLoginDao();
 		int points = login.getPoint(userId);
 		rc.setSessionAttribute("userPoint", points);

@@ -81,7 +81,7 @@
 				<input style="flote:right;margin-left:120px;" id="cart-clear-button" type="submit" value="カートを空にする">
 			</form>
 
-			<h2 style="flote:right;padding-right:150px;" align="right">${mess}　 ${point}pt</h2>
+			<h2 style="flote:right;padding-right:150px;" align="right">${sessionScope.cartCount}点　${mess}　 ${point}pt</h2>
 
 			<form action="inputorder" method="post">
 				<c:forEach var="item" items="${data}">
@@ -89,7 +89,7 @@
 					<input type="hidden" name="buyCount" value="${item.buyCount}">
 					<input type="hidden" name="price" value="${item.price}">
 				</c:forEach>
-
+				
 				<input type="hidden" name="userId" value="${sessionScope.userId}">
 				<input type="hidden" name="point" value="${point}">
 				<input	style="float: right;margin-right:120px;marginbuttom:30px;" id="next-button" type="submit" value="購入手続きへ進む">

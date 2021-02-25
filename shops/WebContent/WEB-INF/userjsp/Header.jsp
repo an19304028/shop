@@ -56,13 +56,28 @@
 		<div class="logo_img">
 			<a href="getcategory?category=new"><img width="180px" src="image/header/logo.png"></a>
 		</div>
-		
-		<!-- 買い物かご用 -->
-		<div class="cart_img" >
-		<p style="float:left; margin-top:5px;">${sessionScope.userPoint}pt　</p>
-		<a href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
-		</div>
-
+		<c:choose>
+			<c:when test="${sessionScope.userId==null}">
+			
+			</c:when>
+			<c:otherwise>
+				<!-- 買い物かご用 -->
+				<div class="point_pos">
+				<p>${sessionScope.userPoint}pt　</p>
+				</div>
+				<div class="cart_img"  >
+				<a href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
+				<c:choose>
+				<c:when test="${sessionScope.cartCount==null}">
+				</c:when>
+				<c:otherwise>
+				<p class="navCartIcon"  align="center">${sessionScope.cartCount}</p>
+				</c:otherwise>
+				</c:choose>
+				</div>
+				
+			</c:otherwise>
+		</c:choose>
 
 
 	<!-- ここからヘッダー -->
@@ -188,6 +203,11 @@
 		position       : absolute;
 		top:35px;
 		margin-left    : 1165px;
+	}
+	.point_pos{
+		position       : absolute;
+		top:40px;
+		margin-left    : 1100px;
 	}
 	.cart_img img{
 		height : 35px;
@@ -762,7 +782,27 @@
 		padding:0 0 0 300px;
 	}
 
-
+	/* ---------- カートの中の数 ---------- */
+	li.navCart{
+	position: relative;
+	} 
+	.navCartIcon{
+		position: absolute;
+		right: 20px;
+		top: -3px;
+		width: 17px;
+		height: 17px;
+		font-size: 11px;
+		border-radius: 9px;
+		background: #c7004c;/*商品数〇色の指定 */
+		box-shadow: 0px 1px 2px #ccc;
+		line-height: 17px;
+		text-aligen: center;
+		color: #fff;/*商品数文字色の指定 */
+		
+	}
+	
+		
 
 </style>
 
