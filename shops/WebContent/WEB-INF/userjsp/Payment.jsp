@@ -287,7 +287,6 @@
 			$('input:radio[name="credit"]:eq('+index+')').prop('checked', true);
 		});
 	</script>
-<script>
 
 
 </div>

@@ -16,6 +16,11 @@
 		$("#footer").load("common/Footer.html");
 	});
 </script>
+<style>
+	#table4 tr:hover {
+      background-color: #dcdcdc;   
+    }
+</style>
 </head>
 <body>
 <div id="wrapper">
@@ -107,7 +112,7 @@
 			<input type="hidden" name="itemName" value="${itemName}">
 			数量：<input type="text" name="buyCount" value="1" id="buyCount" class="buyCount"><br>
 			<br>
-			<table class="item-table" border="1">
+			<table class="item-table" id="table4" border="1">
 				<tr>
 					<th>サイズ/カラー</th><th>選択</th>
 				</tr>
@@ -155,6 +160,15 @@
 								document.addcart.action= 'addcart';
 							}
 						}
+						
+						//ラジオボタンjs
+						
+						$("#table4 tr").on('click',function(){
+							var count = $('#table4 tr').index(this);
+							var index = count-1;
+							console.log(index);
+							$('input:radio[name="itemId"]:eq('+index+')').prop('checked', true);
+						});
 					</script>
 				</c:forEach>
 			</table>
@@ -172,7 +186,7 @@
 		</form>
 
 	</div>
-
+	
 
 	<br><br><br><br><br><br>
 	<br><br><br><br><br><br>

@@ -18,7 +18,7 @@
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
 
-	<p><font color="red">${mess}</font></p>
+	<p align="center"><font color="red">${mess}</font></p>
 
 </div>
 	<!-- フッター -->

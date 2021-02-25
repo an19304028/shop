@@ -51,21 +51,21 @@
 				</tr>
 				<c:forEach var="item" items="${data}">
 					<tr>
-						<td style="display:none;">${item.itemId}</td>
-						<td>${item.itemName}</td>
-					    <td>${item.sizeName}</td>
-					    <td>${item.colorName}</td>
+						<td class="tr1" style="display:none;">${item.itemId}</td>
+						<td class="tr1">${item.itemName}</td>
+					    <td class="tr1">${item.sizeName}</td>
+					    <td class="tr1">${item.colorName}</td>
 					    <td>
 					    	<form action="editcart" method="post">
-					    		<input type="text" style="width:15px;float:left;" value="${item.buyCount}" size="6" name="buyCount">
+					    		<input type="text" style="width:20px;float:left;" value="${item.buyCount}" size="6" name="buyCount">
 					    		<input type="hidden"  name="itemId" value="${item.itemId}" >
 					    		<input type="hidden" name="userId" value="${sessionScope.userId}">
 					    		<input type="submit" style="float:left;margin:12px 0 0 15px;" value="編集">
 					    	</form>
 					    </td>
-					    <td>${item.price}円</td>
-					    <td>${item.point}pt</td>
-					    <td>
+					    <td class="tr1">${item.price}円</td>
+					    <td class="tr1">${item.point}pt</td>
+					    <td class="tr1">
 						    <form action="removecart" method="post">
 					    		<input type="hidden" name="itemId" value="${item.itemId}">
 					    		<input type="hidden" name="userId" value="${sessionScope.userId}">
@@ -110,7 +110,7 @@
 </div>
 <script>
 		//アイテム詳細へ飛ばすjs
-		$("#table2 tr").on('click',function(){
+		$("#table2 .tr1").on('click',function(){
 			var id = $(this).closest('tr').children("td")[0].innerText;
 			var item = id.substr(0,4);
 			var valueId = id.substr(4,1);
