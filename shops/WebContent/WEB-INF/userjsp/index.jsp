@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<META http-equiv="Refresh" content="0;URL=getcategory?category=new&sort=no">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
 <link rel="icon" type="image/x-icon" href="image/header/favicon.png">
@@ -16,7 +17,7 @@
 
 </head>
 <body>
-	<!-- ポイント -->
+	<%-- <!-- ポイント -->
 	<div><p>${SessionScope.userPoint}</p></div>
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
@@ -44,6 +45,6 @@
 </div>
 
 
-
+ --%>
 </body>
 </html>
