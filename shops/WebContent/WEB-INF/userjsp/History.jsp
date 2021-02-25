@@ -14,6 +14,11 @@
 		$("#footer").load("common/Footer.html");
 	});
 </script>
+<style>
+	#table5 tr:hover {
+      background-color: #dcdcdc;   
+    }
+</style>
 </head>
 <body>
 <div id="wrapper">
@@ -26,7 +31,7 @@
 		</c:when>
 		<c:otherwise>
 
-	<table  class="contact-table" border="1">
+	<table  id="table5" class="contact-table" border="1">
 		<tr>
 			<th></th>
 			<th>商品名</th>
@@ -38,6 +43,7 @@
 		</tr>
 		<c:forEach var="item" items="${data}">
 		<tr>
+			<td style="display:none;">${item.itemId}</td>
 			<td><img src="${item.imagePath}"  width="40px" height="40px"></td>
 			<td>${item.itemName}</td>
 			<td>${item.sizeName}</td>
@@ -50,7 +56,15 @@
 	</c:otherwise>
 	</c:choose>
 </div>
-
+<script>
+		$("#table5 tr").on('click',function(){
+			var itemId = $(this).closest('tr').children("td")[0].innerText;
+			var itemName = $(this).closest('tr').children("td")[2].innerText;
+			console.log(itemId+itemName);
+			location.href="getitemdetail?itemId="+itemId+"&itemName="+itemName;
+			
+		});
+		</script>
 
 <!-- フッター -->
 <div id="footer-wrap">

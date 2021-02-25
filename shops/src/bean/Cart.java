@@ -13,6 +13,7 @@ public class Cart implements Serializable {
 	private int buyCount;
 	private int point;
 	private int price;
+	private String colorImagePath;
 
 	public String getUserId() {
 		return userId;
@@ -74,5 +75,11 @@ public class Cart implements Serializable {
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	public void setColorImagePath(String colorImagePath) {
+		this.colorImagePath = colorImagePath;
+	}
+ 	public String getColorImagePath() {
+ 		return colorImagePath;
+ 	}
 
 }

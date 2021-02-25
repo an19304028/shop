@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import bean.Cart;
 import bean.Item;
 import daofactory.Connector;
 
@@ -101,6 +102,32 @@ public class MySQLGetCategoryDao implements GetCategoryDao{
 				i.setPrice(rs.getInt(4));
 
 				list.add(i);
+			}
+			cn.close();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}
+
+		return list;
+	}
+	public List getColor(String itemName) {
+		ArrayList list = new ArrayList();
+		try {
+			Connection cn = Connector.connect();
+			String sql="SELECT item_name, c.color_image_path FROM item_table JOIN color_table c USING(color_id) WHERE item_name=? ORDER BY item_name, item_id";
+			st = cn.prepareStatement(sql);
+			
+			st.setString(1, itemName);
+			
+			ResultSet rs = st.executeQuery();
+
+			while(rs.next()) {
+				Cart c = new Cart();
+				
+				c.setItemName(rs.getString(1));
+				c.setColorImagePath(rs.getString(2));
+				
+				list.add(c);
 			}
 			cn.close();
 		}catch(SQLException e) {

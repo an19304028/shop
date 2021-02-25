@@ -56,9 +56,10 @@
 		<div class="logo_img">
 			<a href="getcategory?category=new"><img width="180px" src="image/header/logo.png"></a>
 		</div>
-
+		
 		<!-- 買い物かご用 -->
-		<div class="cart_img">
+		<div class="cart_img" >
+		<p style="float:left; margin-top:5px;">${sessionScope.userPoint}pt　</p>
 		<a href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
 		</div>
 

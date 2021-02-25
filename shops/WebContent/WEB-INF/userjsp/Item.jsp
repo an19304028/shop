@@ -110,16 +110,17 @@
 		<form name="addcart" action=""  method="post">
 			<input type="hidden" name="userId" value="${sessionScope.userId}">
 			<input type="hidden" name="itemName" value="${itemName}">
-			数量：<input type="text" name="buyCount" value="1" id="buyCount" class="buyCount"><br>
+			数量：<input type="text" name="buyCount" value="1" id="buyCount" class="buyCount" required><br>
 			<br>
 			<table class="item-table" id="table4" border="1">
 				<tr>
 					<th>サイズ/カラー</th><th>選択</th>
 				</tr>
 				<c:forEach var="item" items="${data}" varStatus="status">
-			  		<p style="display: none" id="stock"  class="stockCount${status.count}">${item.stockCount}</p>
+			  		
 					<tr class="tr2">
-						<td>${item.sizeName}/${item.colorName}</td>
+						<td style="display: none" id="stock"  class="stockCount${status.count}">${item.stockCount}</td>
+						<td>${item.sizeName}/${item.colorName}<img src="${item.colorImagePath}" width="10px" height="10px"></td>
 			  				 <c:choose>
 		 						<c:when test="${item.stockCount!=0}">
 				    				<td><input type="radio" class="radio${status.count}" name="itemId" value="${item.itemId}" required></td>
@@ -141,16 +142,9 @@
 					</tr>
 					<script>
 
-						var radio1 = document.getElementsByClassName("radio${status.count}")[0].value;
-						console.log(radio1);
-						var className = document.getElementsByClassName("stockCount${status.count}")[0].innerHTML;
-						var buy = document.getElementsByClassName("buyCount")[0].value;
-						console.log(className+" "+buy)
+						console.log(stock+buyCount)
 						function checkStock(){
-							var stock = document.getElementsByClassName("stockCount${status.count}")[0].innerHTML;
-							var buyCount = document.getElementsByClassName("buyCount")[0].value;
-							var radio = document.getElementsByClassName("radio${status.count}")[0].value;
-							console.log(stock+" "+buyCount);
+							
 							if(Number(stock)<Number(buyCount)){
 								alert("在庫数を超えています");
 								document.addcart.action= 'getitemdetail?itemId=${itemId}';
@@ -163,13 +157,8 @@
 						
 						//ラジオボタンjs
 						
-						$("#table4 tr").on('click',function(){
-							var count = $('#table4 tr').index(this);
-							var index = count-1;
-							console.log(index);
-							$('input:radio[name="itemId"]:eq('+index+')').prop('checked', true);
-						});
-					</script>
+					
+					</script> 
 				</c:forEach>
 			</table>
 				<input id="addcart-button" type="submit"  onclick="checkStock();" value="カートに入れる">
@@ -181,6 +170,18 @@
 		        document.deleteForm.mode.value = "deleteText";
 		        document.deleteForm.submit();
 		    }
+		    
+			$("#table4 tr").on('click',function(){
+				var count = $('#table4 tr').index(this);
+				stockCount = $(this).closest('tr').children("td")[0].innerText;
+				buyCount = $('#buyCount').val();
+				console.log("stock:"+stockCount+"buyCount"+buyCount);
+				
+				
+				var index = count-1;
+				console.log(index);
+				$('input:radio[name="itemId"]:eq('+index+')').prop('checked', true);
+			});
 		</script>
 		<form id="restock" action="restock"  method="post">
 		</form>

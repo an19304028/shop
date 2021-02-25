@@ -94,9 +94,9 @@
 		<input type='hidden' name='userId' value='${sessionScope.userId}'><br>
 		<table class="contact-table">
 
-			<tr><th>カード番号</th><td><input id="cardNumber" type='text' name='cardNumber' minlength="16" maxlength=16></td></tr>
+			<tr><th>カード番号</th><td><input id="cardNumber" type='text' name='cardNumber' pattern="[1-9][0-9]*" minlength="16" maxlength=16></td></tr>
 			<!-- 名義人<input id="name" type='text' name='name' required><br> -->
-			<tr><th>セキュリティー<br>コード</th><td><input id="securityCode" type='text' name='securityCode' minlength="3" maxlength="4"></td></tr>
+			<tr><th>セキュリティー<br>コード</th><td><input id="securityCode" type='text' name='securityCode' pattern="[1-9][0-9]*" minlength="3" maxlength="4"></td></tr>
 			<!-- 有効期限<input id="expirationDate" type='text' name='expirationDate' required><br> -->
 			<tr><th>有効期限</th><td><select name="expirationMonth">
 						<option value="1">1</option>
@@ -125,7 +125,7 @@
 						<option value="30">30</option>
 					</select> 年</td></tr>
 			<!-- ↑ 月/年の表記 -->
-			<tr><th>支払回数</th><td><input id="payCount" type='text' name='payCount'></td></tr>
+			<tr><th>支払回数</th><td><input id="payCount" pattern="[1-9][1-9]*" type='text' name='payCount'></td></tr>
 		</table>
 			<div align="center" style="margin-bottom:30px;">
 			<input type="hidden" name="point" value="${requestScope.itempoint}">

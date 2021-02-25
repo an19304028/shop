@@ -15,6 +15,7 @@ public class Item implements Serializable{
 	private String sizeName;
 	private String categoryName;
 	private String colorName;
+	private String colorImagePath;
 
 	public String getSizeName() {
 		return sizeName;
@@ -88,5 +89,11 @@ public class Item implements Serializable{
 	public void setDetail(String detail) {
 		this.detail = detail;
 	}
+	public void setColorImagePath(String colorImagePath) {
+		this.colorImagePath = colorImagePath;
+	}
+ 	public String getColorImagePath() {
+ 		return colorImagePath;
+ 	}
 
 }

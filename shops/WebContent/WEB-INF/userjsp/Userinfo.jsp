@@ -31,6 +31,7 @@
 		    <tr><th>電話番号</th><td>${item.tell}</td></tr>
 		    <tr><th>郵便番号</th><td>${item.postalCode}</td></tr>
 		    <tr><th>住所</th><td>${item.address}</td></tr>
+		    <tr><th>所持ポイント</th><td>${item.point}pt</td></tr>
 		</c:forEach>
 </table>
 			<div align="center">

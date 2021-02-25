@@ -52,7 +52,7 @@ public class AddCartCommand extends AbstractCommand{
 			rc.setAttribute("mess1",itemId+"を"+buyCount+"個カートに追加しました");
 			resc.setTarget("getcartlist");
 		}else if(stock<buyCount2+cartcount) {
-			rc.setAttribute("mess1","すでにカートに入っています。これ以上は在庫が足りません");
+			rc.setAttribute("mess1","すでにカートに入っているか、在庫が足りません");
 			resc.setTarget("getitemdetail");
 		}
 
