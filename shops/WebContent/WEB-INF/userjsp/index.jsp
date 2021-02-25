@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
+<META http-equiv="Refresh" content="0;URL=getcategory?category=new&sort=no">
 <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
 
 <title>index</title>
@@ -17,7 +17,7 @@
 
 </head>
 <body>
-	<!-- ポイント -->
+<%-- 	<!-- ポイント -->
 	<div><p>${SessionScope.userPoint}</p></div>
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
@@ -45,6 +45,6 @@
 </div>
 
 
-
+ --%>
 </body>
 </html>
