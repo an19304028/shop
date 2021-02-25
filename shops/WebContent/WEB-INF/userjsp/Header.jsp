@@ -106,14 +106,14 @@
 
 	<!-- header_img -->
 	<div class="header_img">
-	<img src="image/header/header_img.jpeg"  onselectstart="return false;" onmousedown="return false;" />
+	<img src="image/header/header.png"  onselectstart="return false;" onmousedown="return false;" />
 	</div>
 
 
 
 	<p id="page-top"><a href="#"><img src="image/header/pagetop.png" height="50" width="50" alt="ページトップボタン"></a></p>
 
-	<br><br><br><br>
+	<br><br>
 
 	</div>
 
@@ -177,7 +177,7 @@
 
 	.logo_img{
 		position       : absolute;
-		top:10px;
+		top:15px;
 		left: 50%;
 		transform: translateX(-50%);
 		-webkit-transform: translateX(-50%);
@@ -212,12 +212,12 @@
 	}
 	.header__menu li {
 		width:120px;
-		height : 50px;
+		height : 70px;
 		display: inline-block;
 	}
 
 	.header__menu li a {
-		line-height : 50px;
+		line-height : 70px;
 		display:block;
     	width:100%;
 
@@ -247,7 +247,7 @@
 
 	li.mega__menu ul.mega__menu-second {
 		position: absolute;
-		top: 40px;
+		top: 45px;
 		left: 0;
 		width: 100vw;
 		background: rgba(255,255,255,0.9);
@@ -260,7 +260,7 @@
 	}
 
 	li.mega__menu:hover ul.mega__menu-second {
-		top: 50px;
+		top: 70px;
 		visibility: visible;
 		opacity: 1;
 	}

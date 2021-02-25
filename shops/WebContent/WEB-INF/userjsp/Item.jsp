@@ -20,18 +20,50 @@
 
 	<p><font color="red">${mess1}</font></p>
 
+
+
+
+
 	<div id="item-leftbox">
 		<c:forEach var="image" items="${image}" >
-			 <img src="${image.imagePath}"  width="100px" height="100px">
+			<img src="${image.imagePath}"  width="100px" height="100px" class="thumb">
+			<i id="prev" class="fas fa-arrow-circle-left"></i>
+			<i id="next" class="fas fa-arrow-circle-right"></i>
 		</c:forEach>
 	</div>
 
+
+
+	<script>
+		$(function() {
+		 $('img.thumb').mouseover(function(){
+		 // "_thumb"を削った画像ファイル名を取得
+		 var selectedSrc = $(this).attr('src').replace(/^(.+)_thumb(\.gif|\.jpg|\.png+)$/, "$1"+"$2");
+
+		 // 画像入れ替え
+		 $('img.mainImage').stop().fadeOut(50,
+		 function(){
+		 $('img.mainImage').attr('src', selectedSrc);
+		 $('img.mainImage').stop().fadeIn(200);
+		 }
+		 );
+		 // サムネイルの枠を変更
+		 $(this).css({"border":"2px solid #ff5a71"});
+		 });
+
+		 // マウスアウトでサムネイル枠もとに戻す
+		 $('img.thumb').mouseout(function(){
+		 $(this).css({"border":""});
+		 });
+		});
+	</script>
+
+
+
+
+
 	<div id="item-rightbox">
-
-
 		<h2 class="item-name">${itemName}</h2>
-
-
 		<div id="favo-button">
 			<c:choose>
 				  <c:when test = "${favoCheck == false}">
@@ -55,10 +87,10 @@
 			</c:choose>
 		</div>
 
-
 		<br style="clear:left;">
 		<hr style="clear:left;">
 		<br style="clear:left;">
+
 		<h3>価格：${price}円(税込)</h3>
 		<p>ポイント：${point}pt</p>
 		<br>
@@ -78,23 +110,23 @@
 					<tr>
 						<td>${item.sizeName}/${item.colorName}</td>
 			  				 <c:choose>
-			 						<c:when test="${item.stockCount!=0}">
-					    				<td><input type="radio" class="radio${status.count}" name="itemId" value="${item.itemId}" required></td>
+		 						<c:when test="${item.stockCount!=0}">
+				    				<td><input type="radio" class="radio${status.count}" name="itemId" value="${item.itemId}" required></td>
 
-				    				</c:when>
-				    				<c:otherwise>
-					    				<td>
-								    		<input type="hidden" name="userId" value="${sessionScope.userId}" form="restock">
-								    		<input type="hidden" name="itemId" value="${item.itemId}" form="restock">
-								    		<input type="hidden" name="itemName" value="${itemName}" form="restock">
-								    		<p><font color="red" >×売り切れ</font></p>
-								    		<input type="hidden" class="radio${status.count}" value="no" style="display:none;">
-								    		<input id="restock-button" type="submit"  value="再入荷のお知らせを受け取る" form="restock">
+			    				</c:when>
+			    				<c:otherwise>
+				    				<td>
+							    		<input type="hidden" name="userId" value="${sessionScope.userId}" form="restock">
+							    		<input type="hidden" name="itemId" value="${item.itemId}" form="restock">
+							    		<input type="hidden" name="itemName" value="${itemName}" form="restock">
+							    		<p><font color="red" >×売り切れ</font></p>
+							    		<input type="hidden" class="radio${status.count}" value="no" style="display:none;">
+							    		<input id="restock-button" type="submit"  value="再入荷のお知らせを受け取る" form="restock">
 
-								    		<input type="hidden" name="itemName" value="${itemName}">
-				   						</td>
-				    				</c:otherwise>
-				  				</c:choose>
+							    		<input type="hidden" name="itemName" value="${itemName}">
+			   						</td>
+			    				</c:otherwise>
+				  			</c:choose>
 					</tr>
 					<script>
 

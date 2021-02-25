@@ -18,8 +18,6 @@
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
 
-	<h2>お気に入り一覧</h2>
-
 	<h2 align="center">お気に入り一覧</h2>
 
 	<c:choose>
