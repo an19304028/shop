@@ -30,11 +30,11 @@
 		    <tr>
 	      <th scope="row"><label>
 				名前</label></th>
-				<td><input type="text" name="name" id="name" value="${item.name}" readonly /></td>
+				<td><input type="text" name="name" id="name" style="color:lightgray;" value="${item.name}" readonly /></td>
 		<tr>
 	      <th scope="row"><label>
 				ふりがな</label></th>
-				<td><input type="text" name="kana" id="kana" value="${item.kana}" readonly /></td>
+				<td><input type="text" name="kana" id="kana" style="color:lightgray;" value="${item.kana}" readonly /></td>
 		<tr>
 	      <th scope="row"><label>
 				メール</label></th>
@@ -46,11 +46,11 @@
 		<tr>
 	      <th scope="row"><label>
 				性別</label></th>
-				<td><input type="text" name="gender" id="gender" value="${item.gender}" readonly/></td>
+				<td><input type="text" name="gender" id="gender" style="color:lightgray;" value="${item.gender}" readonly/></td>
 		<tr>
 	      <th scope="row"><label>
 				誕生日</label></th>
-				<td><input type="text" name="birthday" id="birthday" value="${item.birthday}"  readonly/></td>
+				<td><input type="text" name="birthday" id="birthday" style="color:lightgray;" value="${item.birthday}"  readonly/></td>
 		<tr>
 	      <th scope="row"><label>
 				電話番号</label></th>
