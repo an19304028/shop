@@ -3,9 +3,11 @@
 <html>
 <head>
 <%@ page pageEncoding="UTF-8" %>
-<title>header</title>
+<title>${itemName}</title>
 
 <script src="//code.jquery.com/jquery-2.2.0.min.js"></script>
+
+
 
 <script>
 	$(function(){
@@ -674,11 +676,12 @@
 	#item-leftbox{
 		width:600px;
 		float:left;
+		margin:10px;
 	}
 
 	#item-rightbox{
 		position:relative;
-		width:600px;
+		width:550px;
 		float:left;
 	}
 
@@ -720,6 +723,33 @@
 		right:0;
 		margin-top:20px;
 	}
+
+	/* ---------- item img ---------- */
+
+
+	/* 全体のスタイル */
+	.swiper-wrapper {
+		width: 100%;
+		height: 100%;
+	}
+	/* 全スライド共通スタイル */
+	.swiper-slide {
+		color: #ffffff;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		line-height: 100%;
+	}
+
+	div.swiper-button-prev{
+		filter:saturate(0%);
+	}
+
+	div.swiper-button-next{
+		filter:saturate(0%);
+	}
+
+
 
 	/* ---------- sitemap ---------- */
 

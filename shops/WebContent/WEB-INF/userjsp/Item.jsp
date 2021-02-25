@@ -6,6 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/css/swiper.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.3/js/swiper.min.js">
 <title>Item</title>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
@@ -21,43 +23,46 @@
 	<p><font color="red">${mess1}</font></p>
 
 
-
+	<br>
 
 
 	<div id="item-leftbox">
-		<c:forEach var="image" items="${image}" >
-			<img src="${image.imagePath}"  width="100px" height="100px" class="thumb">
-			<i id="prev" class="fas fa-arrow-circle-left"></i>
-			<i id="next" class="fas fa-arrow-circle-right"></i>
-		</c:forEach>
-	</div>
+
+		<p style="padding-bottom:35px;"></p>
 
 
+		<div class="swiper-container">
+			<!-- メイン表示部分 -->
+			<div class="swiper-wrapper">
+				<!-- 各スライド -->
+				<c:forEach var="image" items="${image}" >
+					<div class="swiper-slide">
+			 			<img src="${image.imagePath}" width="450px" >
+			 		</div>
+				</c:forEach>
+			</div>
+			<div class="swiper-button-prev"></div>
+			<div class="swiper-button-next"></div>
+		</div>
 
-	<script>
-		$(function() {
-		 $('img.thumb').mouseover(function(){
-		 // "_thumb"を削った画像ファイル名を取得
-		 var selectedSrc = $(this).attr('src').replace(/^(.+)_thumb(\.gif|\.jpg|\.png+)$/, "$1"+"$2");
-
-		 // 画像入れ替え
-		 $('img.mainImage').stop().fadeOut(50,
-		 function(){
-		 $('img.mainImage').attr('src', selectedSrc);
-		 $('img.mainImage').stop().fadeIn(200);
-		 }
-		 );
-		 // サムネイルの枠を変更
-		 $(this).css({"border":"2px solid #ff5a71"});
-		 });
-
-		 // マウスアウトでサムネイル枠もとに戻す
-		 $('img.thumb').mouseout(function(){
-		 $(this).css({"border":""});
-		 });
+			<script>
+		var mySwiper = new Swiper('.swiper-container', {
+			navigation: {
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev'
+			}
 		});
 	</script>
 
+
+
+		<%-- <c:forEach var="image" items="${image}" >
+			 <img src="${image.imagePath}"  width="100px" height="100px">
+		</c:forEach> --%>
+
+
+
+	</div>
 
 
 
