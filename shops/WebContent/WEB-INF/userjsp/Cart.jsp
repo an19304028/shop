@@ -50,10 +50,10 @@
 					    <td>${item.colorName}</td>
 					    <td>
 					    	<form action="editcart" method="post">
-					    		<input type="text" value="${item.buyCount}" size="6" name="buyCount">
+					    		<input type="text" style="width:15px;float:left;" value="${item.buyCount}" size="6" name="buyCount">
 					    		<input type="hidden"  name="itemId" value="${item.itemId}" >
 					    		<input type="hidden" name="userId" value="${sessionScope.userId}">
-					    		<input type="submit" value="編集">
+					    		<input type="submit" style="float:left;margin:12px 0 0 15px;" value="編集">
 					    	</form>
 					    </td>
 					    <td>${item.price}円</td>
