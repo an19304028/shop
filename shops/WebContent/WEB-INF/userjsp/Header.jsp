@@ -173,8 +173,6 @@
 		color : dimgray;
 	}
 
-
-
 	/* ｰｰｰｰｰｰｰｰｰｰ header img ---------- */
 
 	.logo_img{
