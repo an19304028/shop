@@ -31,7 +31,7 @@
 				<tr><th>お名前</th><td><input type="text" name="entry.1331742073" id="" placeholder="" required></td></tr>
 				<tr><th>メールアドレス</th><td><input type="text" name="entry.148043242" id="" placeholder="" required></td></tr>
 			</table>
-			<div><input id="contact-button" type="submit" value="送信"></div>
+			<div align="center"><input id="contact-button" type="submit" value="送信"></div>
 		</form>
 	</div>
 

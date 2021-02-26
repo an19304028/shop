@@ -54,7 +54,7 @@ public class AddUserCommand extends AbstractCommand{
 			rc.setAttribute("mess",name+"を登録しました");
 	
 	
-			resc.setTarget("/WEB-INF/userjsp/RegistUser.jsp");
+			resc.setTarget("logininput");
 			System.out.println("target:"+resc.getTarget());
 		}
 		return resc;

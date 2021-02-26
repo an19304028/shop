@@ -187,7 +187,7 @@
 			<!-- <div id="addr-form1"> -->
 				<table class="contact-table" border="1">
 					<tr><th>名前</th><td><input type="text" name="name" value="${item.name}" form="getordercheck" required></td></tr>
-					<tr><th>郵便番号</th><td><input type="text" name="postalCode" value="${item.postalCode}" form="getordercheck" required></td></tr>
+					<tr><th>郵便番号</th><td><input type="text" name="postalCode" minlength="7"  maxlength="7"  pattern="[1-9][0-9]*"  value="${item.postalCode}" form="getordercheck" required></td></tr>
 					<tr><th>住所</th><td><input type="text" name="address"  form="getordercheck" value="${item.address}" required></td></tr>
 				</table>
 			<!-- </div> -->

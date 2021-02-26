@@ -55,11 +55,11 @@
 		<tr>
 	      <th scope="row"><label>
 				電話番号</label></th>
-				<td><input type="text" name="tell" id="tel" value="${item.tell}" minlength="8" maxlength="20" required /></td>
+				<td><input type="text" name="tell" id="tel"  pattern="[1-9][0-9]*"  value="${item.tell}" minlength="8" maxlength="20" required /></td>
 		<tr>
 	      <th scope="row"><label>
 				郵便番号</label></th>
-				<td><input type="text" name="postalCode" id="postalCode" minlength="7" value="${item.postalCode}"maxlength="7" required /></td>
+				<td><input type="text" name="postalCode"  pattern="[1-9][0-9]*"  id="postalCode" minlength="7" value="${item.postalCode}"maxlength="7" required /></td>
 		<tr>
 	      <th scope="row"><label>
 				住所</label></th>
