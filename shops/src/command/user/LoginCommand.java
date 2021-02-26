@@ -63,6 +63,10 @@ public class LoginCommand extends AbstractCommand {
 					String cartCount = dao.getCartCount(userId);
 					rc.setSessionAttribute("cartCount", cartCount);
 					
+					String buyCount = dao.getBuyCount(userId);
+					rc.setSessionAttribute("buyCount", buyCount);
+					System.out.println("buyCount"+buyCount);
+					
 				}else {
 					mes = "パスワードが違います";
 					target = "/WEB-INF/userjsp/Login.jsp";

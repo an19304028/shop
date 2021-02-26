@@ -54,6 +54,11 @@ public class AddCartCommand extends AbstractCommand{
 			resc.setTarget("getcartlist");
 			LoginDao cart = factory.getLoginDao();
 			String cartCount = cart.getCartCount(userId);
+			
+			String buyCount1 = cart.getBuyCount(userId);
+			rc.setSessionAttribute("buyCount", buyCount1);
+			System.out.println("buyCount"+buyCount1);
+			
 			rc.setSessionAttribute("cartCount", cartCount);
 		}else if(stock<buyCount2+cartcount) {
 			rc.setAttribute("mess1","すでにカートに入っているか、在庫が足りません");

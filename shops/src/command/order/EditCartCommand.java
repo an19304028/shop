@@ -48,6 +48,10 @@ public class EditCartCommand extends AbstractCommand{
 			String cartCount = cart.getCartCount(userId);
 			rc.setSessionAttribute("cartCount", cartCount);
 			
+			String buyCount1 = cart.getBuyCount(userId);
+			rc.setSessionAttribute("buyCount", buyCount1);
+			System.out.println("buyCount"+buyCount1);
+			
 			resc.setTarget("getcartlist");
 		}else if(stock<buyCount) {
 			rc.setAttribute("edit","在庫が足りません");

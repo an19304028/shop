@@ -24,6 +24,10 @@ public class RemoveCartCommand extends AbstractCommand{
 		LoginDao cart = factory.getLoginDao();
 		String cartCount = cart.getCartCount(userId);
 		rc.setSessionAttribute("cartCount", cartCount);
+		
+		String buyCount1 = cart.getBuyCount(userId);
+		rc.setSessionAttribute("buyCount", buyCount1);
+		System.out.println("buyCount"+buyCount1);
 
 		rc.setAttribute("mess","カートから"+itemId+"を削除しました");
 

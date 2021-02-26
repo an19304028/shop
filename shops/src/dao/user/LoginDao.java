@@ -7,4 +7,5 @@ public interface LoginDao {
 	public String getUserId(String loginId);
 	public int getPoint(String loginId);
 	public String getCartCount(String loginId);
+	public String getBuyCount(String loginId);
 }
