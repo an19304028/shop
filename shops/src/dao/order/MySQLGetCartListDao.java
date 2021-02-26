@@ -18,7 +18,7 @@ public class MySQLGetCartListDao implements GetCartListDao {
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "SELECT i.item_id, i.item_name, co.color_name, s.size_name, buy_count, TRUNCATE(price/200,0)*SUM(buy_count) point ,i.price*SUM(buy_count), co.color_image_path FROM cart_table c JOIN item_table i USING(item_id) JOIN size_table s USING(size_id) JOIN color_table co USING(color_id) WHERE user_id=? GROUP BY item_id, user_id";
+			String sql = "SELECT i.item_id, i.item_name, co.color_name, s.size_name, buy_count, TRUNCATE(SUM(price * buy_count)/200,0) ,i.price*SUM(buy_count), co.color_image_path FROM cart_table c JOIN item_table i USING(item_id) JOIN size_table s USING(size_id) JOIN color_table co USING(color_id) WHERE user_id=? GROUP BY item_id, user_id";
 			st = cn.prepareStatement(sql);
 			st.setString(1, userId);
 
