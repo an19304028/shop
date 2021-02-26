@@ -156,7 +156,9 @@
 						<%-- <td>${item.userName}</td> --%>
 						<td>${item.expirationDate}</td>
 						<td>
-							<form action="" method="post">
+							<form action="removecredit" method="post">
+								<input type="hidden" name="cardNumber" value="${item.cardNumber}">
+								<input type="hidden" name="point" value="${point}">
 								<input type="submit" value="削除">
 							</form>
 						</td>

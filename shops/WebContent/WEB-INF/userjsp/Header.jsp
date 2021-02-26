@@ -54,7 +54,7 @@
 
 		<!-- logo -->
 		<div class="logo_img">
-			<a href="getcategory?category=new"><img width="180px" src="image/header/logo.png"></a>
+			<a href="/shops/"><img width="180px" src="image/header/logo.png"></a>
 		</div>
 		<c:choose>
 			<c:when test="${sessionScope.userId==null}">

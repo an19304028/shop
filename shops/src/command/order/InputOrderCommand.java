@@ -15,7 +15,7 @@ public class InputOrderCommand extends AbstractCommand {
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetCreditDao dao = factory.getGetCreditDao();
 		RequestContext rc = getRequestContext();
-		String userId = rc.getParameter("userId")[0];
+		String userId = (String) rc.getSessonAttribute("userId");
 		String point = rc.getParameter("point")[0];
 		rc.setAttribute("itempoint", point);
 		
