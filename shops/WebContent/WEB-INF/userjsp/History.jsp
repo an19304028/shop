@@ -47,7 +47,7 @@
 			<td><img src="${item.imagePath}"  width="40px" height="40px"></td>
 			<td>${item.itemName}</td>
 			<td>${item.sizeName}</td>
-			<td>${item.colorName}</td>
+			<td>${item.colorName}<img src="${item.colorImagePath}" width="10px" height="10px"></td>
 			<td>${item.price}円</td>
 			<td>${item.buyDate}</td>
 		</tr>

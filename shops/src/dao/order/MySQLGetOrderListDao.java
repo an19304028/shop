@@ -19,7 +19,7 @@ public class MySQLGetOrderListDao implements GetOrderListDao{
 		try {
 			Connection cn = Connector.connect();
 
-			String sql = "SELECT REPLACE(item_table.item_id,SUBSTR(item_table.item_id,5,1),'1'), item_name, size_name, color_name, item_table.price, date_format(buy_date, '%Y/%m/%d %H:%i'),image_path FROM shop.order_table JOIN shop.order_detail USING(order_id) JOIN shop.item_table USING (item_id) JOIN shop.size_table USING (size_id) JOIN shop.color_table USING(color_id) JOIN shop.image_table ON(LEFT(shop.item_table.item_id,4)=(LEFT(shop.image_table.item_id,4))) WHERE user_id = ? and image_path LIKE '%samne.jpg' ORDER BY buy_date desc";
+			String sql = "SELECT REPLACE(item_table.item_id,SUBSTR(item_table.item_id,5,1),'1'), item_name, size_name, color_name, item_table.price, date_format(buy_date, '%Y/%m/%d %H:%i'),image_path, color_image_path FROM shop.order_table JOIN shop.order_detail USING(order_id) JOIN shop.item_table USING (item_id) JOIN shop.size_table USING (size_id) JOIN shop.color_table USING(color_id) JOIN shop.image_table ON(LEFT(shop.item_table.item_id,4)=(LEFT(shop.image_table.item_id,4))) WHERE user_id = ? and image_path LIKE '%samne.jpg' ORDER BY buy_date desc";
 			st = cn.prepareStatement(sql);
 
 			st.setString(1, userId);
@@ -34,6 +34,7 @@ public class MySQLGetOrderListDao implements GetOrderListDao{
 				o.setPrice(rs.getInt(5));
 				o.setBuyDate(rs.getString(6));
 				o.setImagePath(rs.getString(7));
+				o.setColorImagePath(rs.getString(8));
 
 				order.add(o);
 			}

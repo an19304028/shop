@@ -2,6 +2,7 @@ package command.order;
 
 import command.AbstractCommand;
 import dao.order.RemoveCartDao;
+import dao.user.LoginDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;
@@ -19,6 +20,10 @@ public class RemoveCartCommand extends AbstractCommand{
 
 		System.out.println("カートから削除:"+itemId);
 		dao.removeCart(userId, itemId);
+		
+		LoginDao cart = factory.getLoginDao();
+		String cartCount = cart.getCartCount(userId);
+		rc.setSessionAttribute("cartCount", cartCount);
 
 		rc.setAttribute("mess","カートから"+itemId+"を削除しました");
 
