@@ -58,7 +58,7 @@
 		</div>
 		<c:choose>
 			<c:when test="${sessionScope.userId==null}">
-			
+
 			</c:when>
 			<c:otherwise>
 				<!-- 買い物かご用 -->
@@ -75,7 +75,7 @@
 				</c:otherwise>
 				</c:choose>
 				</div>
-				
+
 			</c:otherwise>
 		</c:choose>
 
@@ -510,7 +510,7 @@
 	  padding: 7px 15px;
 	}
 	.radiobutton:checked + label {
-	  background-color: seashell;
+	  background-color: darksalmon;
 	}
 
 	/* ---------- お問い合わせ ---------- */
@@ -785,7 +785,7 @@
 	/* ---------- カートの中の数 ---------- */
 	li.navCart{
 	position: relative;
-	} 
+	}
 	.navCartIcon{
 		position: absolute;
 		right: 20px;
@@ -799,10 +799,10 @@
 		line-height: 17px;
 		text-aligen: center;
 		color: #fff;/*商品数文字色の指定 */
-		
+
 	}
-	
-		
+
+
 
 </style>
 
