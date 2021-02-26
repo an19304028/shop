@@ -22,23 +22,26 @@
 	<h2>パスワード変更フォーム</h2><br>
 
 	<form action="editpass" method="POST">
-	<table>
-		<tr>
-	     	<th scope="row" style="width:150px;"><label>ログインID</label></th>
-			<td><input type="text" style="font-family:Verdana" id="name" name="loginId" required></td>
-		</tr>
-	    <tr>
-	      	<th scope="row"><label>変更後のパスワード</label></th>
-			<td><input type="password" style="font-family:Verdana" id="password" pattern="^[0-9A-Za-z]+$" maxlength="10" name="password" required /><br>
-		<input type="checkbox" id="password-check"><label for="password-check">パスワードを表示する</label></td>
-	    </tr>
-	    <tr>
-	      	<th scope="row"><label>変更後のパスワード<br>(再入力)</label></th>
-			<td><input type="password" style="font-family:Verdana; background-color:#f8f8f8;" id="confirm" pattern="^[0-9A-Za-z]+$" maxlength="10" name="confirm" oninput="CheckPassword(this)"  required /><br>
-		<input type="checkbox" id="confirm-check"><label for="confirm-check">パスワードを表示する</label>
-		</td>
-			     </tr>
-	</table>
+		<table>
+			<tr>
+				<th scope="row" style="width:150px;"><label>ログインID</label></th>
+				<td><input type="text" style="font-family:Verdana" id="name" name="loginId" required></td>
+			</tr>
+			<tr>
+				<th scope="row"><label>変更後のパスワード</label></th>
+				<td>
+					<input type="password" style="font-family:Verdana" id="password" pattern="^[0-9A-Za-z]+$" maxlength="10" name="password" required /><br>
+					<input type="checkbox" id="password-check"><label for="password-check">パスワードを表示する</label>
+				</td>
+			</tr>
+			<tr>
+				<th scope="row"><label>変更後のパスワード<br>(再入力)</label></th>
+				<td>
+					<input type="password" style="font-family:Verdana; background-color:#f8f8f8;" id="confirm" pattern="^[0-9A-Za-z]+$" maxlength="10" name="confirm" oninput="CheckPassword(this)"  required /><br>
+					<input type="checkbox" id="confirm-check"><label for="confirm-check">パスワードを表示する</label>
+				</td>
+			</tr>
+		</table>
 		<input class="submit-button" type="submit" value="送信">
 	</form>
 
