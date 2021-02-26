@@ -26,7 +26,7 @@
 	}
 
 	#table3 tr:hover {
-      background-color: #dcdcdc;   
+      background-color: #dcdcdc;
     }
 </style>
 
@@ -163,7 +163,7 @@
 							</form>
 						</td>
 					</tr>
-					
+
 				</c:forEach>
 			</table>
 			<!-- <input type="submit" value="このカードを使用"> -->
@@ -213,7 +213,8 @@
 		<form align="center" method="post" name="ordercheck" action="" id="getordercheck">
 			<input type='hidden' name='userId' value='${sessionScope.userId}'><br>
 			<input type="hidden" name="itempoint" value="${requestScope.itempoint}">
-			<input id="payment-ok-button" onclick="checkPoint();" type="submit" value="確定">
+			<input type="button" id="buy-button" onclick="history.back()" value="戻る">
+			<input id="payment-ok-button" onclick="checkPoint();" type="submit" value="確認画面へ">
 		</form>
 
 		</div>

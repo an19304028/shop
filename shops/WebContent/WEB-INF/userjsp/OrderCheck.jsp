@@ -57,7 +57,8 @@
     <input type="hidden" name="userId" value="${sessionScope.userId}">
     <input type="hidden" name="usepoint" value="${point}">
     <input type="hidden" name="itempoint" value="${itempoint}">
-    <input style="float: right;margin-right:300px;" id="buy-button" type="submit" value="確定">
+    <input style="margin-left:830px;" id="buy-button" type="button" onclick="history.back()" value="戻る">
+    <input style="float: right;margin-right:200px;" id="buy-button" type="submit" value="確定">
    </form>
 
    <div  style="float:left; margin-left:250px;">
@@ -74,9 +75,10 @@
    </c:choose>
 
 
-	   <p>お支払総額：${total}円</p>
+
 	   <p>支払方法：${pay}</p>
 	   <p>獲得予定ポイント：${itempoint}pt</p>
+	   <b>お支払総額：${total}円</b>
 	</div>
 	<div  style="float:left; margin-left:100px;">
    <p>発送先</p>
