@@ -19,7 +19,7 @@
 <%@ include file="Header.jsp" %>
 
 
-	<h1 align="center">ご利用案内</h1>
+	<h1 align="center">ご利用ガイド</h1>
 
 
 	<div id="guidejump">

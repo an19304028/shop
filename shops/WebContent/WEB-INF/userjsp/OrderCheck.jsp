@@ -7,7 +7,7 @@
 <link rel="icon" type="image/x-icon" href="image/header/favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
-<title>購入手続き確認</title>
+<title>ご購入手続き確認</title>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
  $(function(){
@@ -24,7 +24,7 @@
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
 
-	<h2 align="center">購入手続き確認</h2>
+	<h2 align="center">ご購入手続き確認</h2>
 
     <table class="contact-table" border="1">
     <tr>

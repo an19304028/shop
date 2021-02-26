@@ -7,7 +7,7 @@
 <link rel="icon" type="image/x-icon" href="image/header/favicon.png">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1.0, user-scalable=no">
-<title>Cart</title>
+<title>お買い物かご</title>
 <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 <script>
 	$(function(){
@@ -82,7 +82,7 @@
 				<input style="flote:right;margin-left:20px;" id="cart-clear-button" type="submit" value="カートを空にする">
 			</form>
 
-			<h2 style="flote:right;padding-right:150px;" align="right">${sessionScope.cartCount}点　${mess}　 ${point}pt</h2>
+			<h2 style="flote:right;padding-right:150px;" align="right">${sessionScope.buyCount}点　${mess}　 ${point}pt</h2>
 
 			<form action="inputorder" method="post">
 				<c:forEach var="item" items="${data}">
