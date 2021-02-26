@@ -1,7 +1,6 @@
 package command.user;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import bean.User;
 import command.AbstractCommand;
@@ -40,34 +39,26 @@ public class EditUserCommand extends AbstractCommand{
 		u.setKana(kana);
 		u.setBirthday(birthday);
 		u.setGender(gender);
-		
+
 		ArrayList a = new ArrayList();
 		a.add(u);
-		
-		
+
+
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		EditUserDao dao = factory.getEditUserDao();
-		
+
 		GetUserDao user = factory.getGetUserDao();
 
-		
-		
-		
-		if(user.getUserId(loginId).equals("noid")==false) {
-			rc.setAttribute("mess", "このIDは使われています");
-			resc.setResult(a);
-			resc.setTarget("/WEB-INF/userjsp/EditUser.jsp");
-			System.out.println(u.getName());
-			
-		}else {
-	
+
+
+
+
 			dao.editUser(u);
 			rc.setAttribute("mess", "変更しました");
 			resc.setTarget("getuser");
 			System.out.println("target:"+resc.getTarget());
-		}
-		
+
 
 		return resc;
 	}

@@ -43,7 +43,7 @@
 		<tr>
 	      <th scope="row"><label>
 				ログインID</label></th>
-				<td><input type="text" name="loginId" id="loginId" minlength="6" pattern="^[0-9A-Za-z]+$"  value="${item.loginId}" maxlength="20" required /></td>
+				<td><input type="text" name="loginId" id="loginId"  style="color:lightgray;" minlength="6" pattern="^[0-9A-Za-z]+$"  value="${item.loginId}" maxlength="20"  readonly/></td>
 		<tr>
 	      <th scope="row"><label>
 				性別</label></th>
