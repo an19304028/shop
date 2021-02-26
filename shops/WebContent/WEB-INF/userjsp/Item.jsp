@@ -18,7 +18,7 @@
 </script>
 <style>
 	#table4 .tr2:hover {
-      background-color: #dcdcdc;   
+      background-color: #dcdcdc;
     }
 </style>
 </head>
@@ -117,10 +117,10 @@
 					<th>サイズ/カラー</th><th>選択</th>
 				</tr>
 				<c:forEach var="item" items="${data}" varStatus="status">
-			  		
+
 					<tr class="tr2">
 						<td style="display: none" id="stock"  class="stockCount${status.count}">${item.stockCount}</td>
-						<td>${item.sizeName}/${item.colorName}<img src="${item.colorImagePath}" width="10px" height="10px"></td>
+						<td>${item.sizeName}/${item.colorName} <img src="${item.colorImagePath}" width="10px" height="10px"></td>
 			  				 <c:choose>
 		 						<c:when test="${item.stockCount!=0}">
 				    				<td><input type="radio" class="radio${status.count}" name="itemId" value="${item.itemId}" required></td>
@@ -144,7 +144,7 @@
 
 						console.log(stock+buyCount)
 						function checkStock(){
-							
+
 							if(Number(stock)<Number(buyCount)){
 								alert("在庫数を超えています");
 								document.addcart.action= 'getitemdetail?itemId=${itemId}';
@@ -154,11 +154,11 @@
 								document.addcart.action= 'addcart';
 							}
 						}
-						
+
 						//ラジオボタンjs
-						
-					
-					</script> 
+
+
+					</script>
 				</c:forEach>
 			</table>
 				<input id="addcart-button" type="submit"  onclick="checkStock();" value="カートに入れる">
@@ -170,14 +170,14 @@
 		        document.deleteForm.mode.value = "deleteText";
 		        document.deleteForm.submit();
 		    }
-		    
+
 			$("#table4 tr").on('click',function(){
 				var count = $('#table4 tr').index(this);
 				stockCount = $(this).closest('tr').children("td")[0].innerText;
 				buyCount = $('#buyCount').val();
 				console.log("stock:"+stockCount+"buyCount"+buyCount);
-				
-				
+
+
 				var index = count-1;
 				console.log(index);
 				$('input:radio[name="itemId"]:eq('+index+')').prop('checked', true);
@@ -187,7 +187,7 @@
 		</form>
 
 	</div>
-	
+
 
 	<br><br><br><br><br><br>
 	<br><br><br><br><br><br>

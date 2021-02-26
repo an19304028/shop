@@ -54,7 +54,7 @@
 						<td class="tr1" style="display:none;">${item.itemId}</td>
 						<td class="tr1">${item.itemName}</td>
 					    <td class="tr1">${item.sizeName}</td>
-					    <td class="tr1">${item.colorName}<img src="${item.colorImagePath}" width="10px" height="10px"></td>
+					    <td class="tr1">${item.colorName} <img src="${item.colorImagePath}" width="10px" height="10px"></td>
 					    <td>
 					    	<form action="editcart" method="post">
 					    		<input type="text" style="width:20px;float:left;" pattern="[1-9][0-9]*" title="0を指定する場合は削除を押してください" value="${item.buyCount}" size="6" name="buyCount">

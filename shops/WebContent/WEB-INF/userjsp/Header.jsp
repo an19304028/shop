@@ -70,6 +70,10 @@
 				<c:choose>
 				<c:when test="${sessionScope.cartCount==null}">
 				</c:when>
+
+				<c:when test="${sessionScope.cartCount==0}">
+    			</c:when>
+
 				<c:otherwise>
 				<p class="navCartIcon"  align="center">${sessionScope.cartCount}</p>
 				</c:otherwise>
@@ -151,6 +155,11 @@
 	}
 
  	/* ---------- スクロールバー ---------- */
+
+ 	body{
+ 		overflow-x: hidden;
+ 	}
+
 	::-webkit-scrollbar{
 	  width: 13px;
 	}
