@@ -62,14 +62,14 @@
    </form>
 
    <div  style="float:left; margin-left:250px;">
-   <p>総点数：${sessionScope.cartCount}点</p>
+   <p>総点数：${sessionScope.buyCount}点</p>
    <p>小計：${price}円</p>
    <c:choose>
     <c:when test="${point==0}">
      <p>ポイント利用：利用なし</p>
     </c:when>
     <c:otherwise>
-     <p>ポイント利用：${point}</p>
+     <p>ポイント利用：${point}pt</p>
     </c:otherwise>
 
    </c:choose>

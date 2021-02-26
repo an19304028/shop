@@ -85,6 +85,14 @@
 			</c:forEach>
 		</table>
 	</div> --%>
+		<div id="Payment_cash">
+		<label>
+			<input type="radio" name="rs" value="2" onclick="formSwitch();" form="getordercheck" required>
+			現金でのお支払い
+			
+		</label>
+		</div>
+	
 		<label>
 			<input id="js-check" type="radio" name="rs" value="1" onclick="formSwitch();" form="getordercheck" required>
 			クレジットカードでのお支払い
@@ -173,12 +181,8 @@
 		</div>
 
 		<br>
-		<div id="Payment_cash">
-		<label>
-			<input type="radio" name="rs" value="2" onclick="formSwitch();" form="getordercheck" required>
-			現金でのお支払い<br><br>
-		</label>
-		</div>
+		<br>
+
 
 
 		<h3 style="padding-bottom:10px;">お届け先の選択</h3>
@@ -276,7 +280,7 @@
 			console.log("point:"+point+"\t usepoint"+usepoint);
 			if(Number(point)<Number(usepoint)){
 				alert("ポイントが不足しています");
-				document.ordercheck.action= 'inputorder?point=${sessionScop.point}';
+				document.ordercheck.action= 'inputorder?point=${sessionScop.userPoint}';
 			}else if(usepoint == ""){
 				alert("ポイントを入力してください");
 			}else{

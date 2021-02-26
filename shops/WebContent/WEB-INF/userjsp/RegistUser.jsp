@@ -62,7 +62,7 @@
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>誕生日</label></th>
-	      <td><input type="date" name="birthday" id="birthday" value="${user.birthday}" required /></td>
+	      <td><input type="date" name="birthday" min="1900-01-01"  id="birthday" value="${user.birthday}" required /></td>
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>電話番号</label></th>
