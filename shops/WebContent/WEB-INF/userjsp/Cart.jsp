@@ -27,7 +27,7 @@
 </script>
 <style>
 	#table2 tr:hover {
-      background-color: #dcdcdc;   
+      background-color: #dcdcdc;
     }
 </style>
 </head>
@@ -78,7 +78,8 @@
 
 			<form action="removeallcart" onSubmit="return checkSubmit()" method="post">
 				<input type="hidden" name="userId" value="${sessionScope.userId}">
-				<input style="flote:right;margin-left:120px;" id="cart-clear-button" type="submit" value="カートを空にする">
+				<input style="margin-left:110px;" type="button" id="buy-button" onclick="location.href='getcategory?category=new&sort=no'" value="お買い物を続ける">
+				<input style="flote:right;margin-left:20px;" id="cart-clear-button" type="submit" value="カートを空にする">
 			</form>
 
 			<h2 style="flote:right;padding-right:150px;" align="right">${sessionScope.cartCount}点　${mess}　 ${point}pt</h2>
@@ -89,7 +90,7 @@
 					<input type="hidden" name="buyCount" value="${item.buyCount}">
 					<input type="hidden" name="price" value="${item.price}">
 				</c:forEach>
-				
+
 				<input type="hidden" name="userId" value="${sessionScope.userId}">
 				<input type="hidden" name="point" value="${point}">
 				<input	style="float: right;margin-right:120px;marginbuttom:30px;" id="next-button" type="submit" value="購入手続きへ進む">
@@ -115,13 +116,13 @@
 			var item = id.substr(0,4);
 			var valueId = id.substr(4,1);
 			valueId=1;
-			
+
 			console.log(id+" "+item+valueId);
 			itemId=item+valueId;
 			var itemName = $(this).closest('tr').children("td")[1].innerText;
 			console.log(itemId+itemName);
 			location.href="getitemdetail?itemId="+itemId+"&itemName="+itemName;
-			
+
 		});
 		</script>
 </body>
