@@ -185,13 +185,13 @@
 
 
 
-		<h3 style="padding-bottom:10px;">お届け先の選択</h3>
+		<h3 style="padding-bottom:10px;">お届け先の指定</h3>
 			<c:forEach var="item" items="${userInfo}">
 				<!-- <label><input id="addr-check" type="radio" name="addressCheck"  onclick="formSwitch2();"> 登録された住所を指定</label><br> -->
 			<!-- <div id="addr-form1"> -->
 				<table class="contact-table" border="1">
 					<tr><th>名前</th><td><input type="text" name="name" value="${item.name}" form="getordercheck" required></td></tr>
-					<tr><th>郵便番号</th><td><input type="text" name="postalCode" minlength="7"  maxlength="7"  pattern="[1-9][0-9]*"  value="${item.postalCode}" form="getordercheck" required></td></tr>
+					<tr><th>郵便番号</th><td><input type="text" name="postalCode" minlength="7"  maxlength="7"  pattern="^\d{7}$"  value="${item.postalCode}" form="getordercheck" required></td></tr>
 					<tr><th>住所</th><td><input type="text" name="address"  form="getordercheck" value="${item.address}" required></td></tr>
 				</table>
 			<!-- </div> -->
