@@ -484,7 +484,7 @@
 		width:100px;
 	}
 
-	.create-form #loginId,#password,#name,#kana,#mail,#birthday,#tel,#postalCode,#address,#gender{
+	.create-form #loginId,#password,#name,#kana,#mail,#birthday,#tel,#postalCode,#address,#gender,#confirm{
 		margin: 10px;
 		padding : 5px 10px;
 		width : 300px;
