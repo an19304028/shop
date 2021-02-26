@@ -22,7 +22,7 @@
 	 <h1 align="center">ユーザー登録</h1>
 	 <form method="post" action="adduser">
 	    <p align="center"><font color="red">${mess}</font></p><br>
-	    <font color="blue" size="2">※ユーザー名、パスワードは10字以内の半角英数字のみで作成して下さい。</font><br>
+	    <font color="blue" size="2">※ログインID、パスワードは10字以内の半角英数字のみで作成して下さい。</font><br>
 
 	<table>
 		<tr>

@@ -25,7 +25,7 @@
 		<c:forEach var="item" items="${data}">
 		 <form method="post" action="edituser">
 		    <p align="center"><font color="red" >${mess}</font></p><br>
-		    <font color="blue" size="2">※ユーザー名、パスワードは10字以内の半角英数字のみで作成して下さい。</font><br>
+		    <font color="blue" size="2">※ログインIDは10字以内の半角英数字のみで作成して下さい。</font><br>
 
 		    <table>
 		    <tr>
