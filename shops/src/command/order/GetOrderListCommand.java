@@ -14,7 +14,7 @@ public class GetOrderListCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		RequestContext rc = getRequestContext();
-		String userId = (String) rc.getSessonAttribute("userId");
+		String userId = (String) rc.getSessionAttribute("userId");
 		GetOrderListDao dao = factory.getGetOrderListDao();
 
 		List orders = dao.getOrderList(userId);

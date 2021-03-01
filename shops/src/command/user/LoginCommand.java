@@ -49,16 +49,16 @@ public class LoginCommand extends AbstractCommand {
 					}
 					token = "OK";
 					
-					rc.setAttribute("itemId", rc.getSessonAttribute("itemId"));
-					rc.setAttribute("itemName",rc.getSessonAttribute("itemName"));
-					rc.setAttribute("buyCount", rc.getSessonAttribute("buyCount"));
+					rc.setAttribute("itemId", rc.getSessionAttribute("itemId"));
+					rc.setAttribute("itemName",rc.getSessionAttribute("itemName"));
+					rc.setAttribute("buyCount", rc.getSessionAttribute("buyCount"));
 						
 					rc.setSessionAttribute("userId", userId);
 					mes = "ログインしました";
 					int point = dao.getPoint(userId);
 					System.out.println(point);
 					rc.setSessionAttribute("userPoint", point);
-					System.out.println(rc.getSessonAttribute("userPoint"));
+					System.out.println(rc.getSessionAttribute("userPoint"));
 					
 					String cartCount = dao.getCartCount(userId);
 					rc.setSessionAttribute("cartCount", cartCount);

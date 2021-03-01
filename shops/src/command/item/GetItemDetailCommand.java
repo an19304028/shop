@@ -17,13 +17,13 @@ public class GetItemDetailCommand extends AbstractCommand{
 		String itemName=null;
 		
 		RequestContext rc = getRequestContext();
-		if(rc.getSessonAttribute("itemId")==null) {
+		if(rc.getSessionAttribute("itemId")==null) {
 			itemId = rc.getParameter("itemId")[0];
 			itemName = rc.getParameter("itemName")[0];
 			
 		}else {
-			itemId = (String) rc.getSessonAttribute("itemId");
-			itemName = (String) rc.getSessonAttribute("itemName");
+			itemId = (String) rc.getSessionAttribute("itemId");
+			itemName = (String) rc.getSessionAttribute("itemName");
 			rc.removeSessionAttribute("itemId");
 			rc.removeSessionAttribute("itemName");
 		}
@@ -48,13 +48,13 @@ public class GetItemDetailCommand extends AbstractCommand{
 		rc.setAttribute("detail", detail);
 
 		resc.setResult(item);
-		if(rc.getSessonAttribute("userId")==null) {
+		if(rc.getSessionAttribute("userId")==null) {
 			System.out.println(rc.getAttribute("favoCheck"));
 			if(rc.getAttribute("favoCheck")==null) {
 				rc.setAttribute("favoCheck", "false");
 			}
 		}else {
-			String userId = (String) rc.getSessonAttribute("userId");
+			String userId = (String) rc.getSessionAttribute("userId");
 			GetFavoListDao favo = factory.getGetFavoListDao();
 			boolean favoCheck = favo.getCheckfavo(userId, itemId);
 			rc.setAttribute("favoCheck", favoCheck);

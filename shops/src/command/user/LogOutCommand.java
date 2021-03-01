@@ -14,7 +14,7 @@ public class LogOutCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
 		// TODO 自動生成されたメソッド・スタブ
 		RequestContext rc = getRequestContext();
-		String userId = (String) rc.getSessonAttribute("userId");
+		String userId = (String) rc.getSessionAttribute("userId");
 		System.out.println(userId);
 		if(userId==null) {
 			rc.setAttribute("login", "ログインしてません");

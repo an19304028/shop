@@ -11,7 +11,7 @@ import presentation.ResponseContext;
 public class GetOrderCheckCommand extends AbstractCommand {
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
-		String userId = (String)rc.getSessonAttribute("userId");
+		String userId = (String)rc.getSessionAttribute("userId");
 		String usepoint = rc.getParameter("usepoint")[0];
 		String itempoint = rc.getParameter("itempoint")[0];
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();

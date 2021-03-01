@@ -15,18 +15,18 @@ public class AddCartCommand extends AbstractCommand{
 		RequestContext rc = getRequestContext();
 		System.out.println("AddCartCommandだよ");
 		
-		String userId = (String)rc.getSessonAttribute("userId");
-		System.out.println("USERID:" + (String)rc.getSessonAttribute("userId"));
+		String userId = (String)rc.getSessionAttribute("userId");
+		System.out.println("USERID:" + (String)rc.getSessionAttribute("userId"));
 		
 		String itemId=null;
 		String buyCount=null;
 		
-		if(rc.getSessonAttribute("itemId")==null) {
+		if(rc.getSessionAttribute("itemId")==null) {
 			itemId = rc.getParameter("itemId")[0];
 			buyCount = rc.getParameter("buyCount")[0];
 		}else {
-			itemId = (String) rc.getSessonAttribute("itemId");
-			buyCount = (String) rc.getSessonAttribute("buyCount");
+			itemId = (String) rc.getSessionAttribute("itemId");
+			buyCount = (String) rc.getSessionAttribute("buyCount");
 			rc.removeSessionAttribute("itemId");
 			rc.removeSessionAttribute("buyCount");
 		}

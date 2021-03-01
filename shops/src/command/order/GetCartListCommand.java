@@ -16,7 +16,7 @@ public class GetCartListCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetCartListDao dao = factory.getGetCartListDao();
 
-		String userId = (String)rc.getSessonAttribute("userId");
+		String userId = (String)rc.getSessionAttribute("userId");
 
 		List cart = dao.getCartList(userId);
 

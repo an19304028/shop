@@ -66,7 +66,7 @@ public class AddOrderCommand extends AbstractCommand{
 		LoginDao login = factory.getLoginDao();
 		int points = login.getPoint(userId);
 		rc.setSessionAttribute("userPoint", points);
-		System.out.println(rc.getSessonAttribute("userPoint"));
+		System.out.println(rc.getSessionAttribute("userPoint"));
 
 		resc.setTarget("/WEB-INF/userjsp/Purchase.jsp");
 		System.out.println("target:"+resc.getTarget());
