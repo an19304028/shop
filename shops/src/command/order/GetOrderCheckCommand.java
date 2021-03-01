@@ -1,5 +1,6 @@
 package command.order;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 import command.AbstractCommand;
@@ -40,8 +41,8 @@ public class GetOrderCheckCommand extends AbstractCommand {
 
 		int cartPoint = (int) rc.getSessionAttribute("cartPoint");
 		int totalPrice = price - Integer.parseInt(usepoint);
-		rc.setAttribute("price", price);
-		rc.setSessionAttribute("totalPrice", totalPrice);
+		rc.setAttribute("price", NumberFormat.getNumberInstance().format(new Integer(price)));
+		rc.setSessionAttribute("totalPrice", NumberFormat.getNumberInstance().format(new Integer(totalPrice)));
 
 		int total = price-Integer.parseInt(usepoint);
 		rc.setAttribute("total",total);
