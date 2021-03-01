@@ -27,6 +27,16 @@ public class GetItemDetailCommand extends AbstractCommand{
 			rc.removeSessionAttribute("itemId");
 			rc.removeSessionAttribute("itemName");
 		}
+		
+		if(itemId.substring(4,4).equals("1")==false){
+			String itemId1 = itemId.substring(0,4);
+			
+			itemId = itemId1 + "1";
+			
+			System.out.println("アイテムID"+itemId1+" "+itemId);
+			
+	
+		}
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetItemDetailDao dao = factory.getGetItemDetailDao();

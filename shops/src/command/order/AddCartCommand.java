@@ -31,6 +31,8 @@ public class AddCartCommand extends AbstractCommand{
 			rc.removeSessionAttribute("buyCount");
 		}
 		
+		
+		
 		int buyCount2 = Integer.parseInt(buyCount);
 	
 		System.out.println("BUYCOUNT:" + rc.getParameter("buyCount")[0]);
