@@ -87,12 +87,12 @@
 	</div> --%>
 		<div id="Payment_cash">
 		<label>
-			<input type="radio" name="rs" value="2" onclick="formSwitch();" form="getordercheck" required>
+			<input type="radio" name="rs" value="2" onclick="formSwitch();" form="getordercheck" checked required>
 			現金でのお支払い
-			
+
 		</label>
 		</div>
-	
+
 		<label>
 			<input id="js-check" type="radio" name="rs" value="1" onclick="formSwitch();" form="getordercheck" required>
 			クレジットカードでのお支払い
@@ -133,7 +133,7 @@
 						<option value="30">30</option>
 					</select> 年</td></tr>
 			<!-- ↑ 月/年の表記 -->
-			<tr><th>支払回数</th><td><input id="payCount" pattern="[1-9][1-9]*" type='text' name='payCount'></td></tr>
+			<!-- <tr><th>支払回数</th><td><input id="payCount" pattern="[1-9][1-9]*" type='text' name='payCount'></td></tr>-->
 		</table>
 			<div align="center" style="margin-bottom:30px;">
 			<input type="hidden" name="point" value="${requestScope.itempoint}">
