@@ -183,9 +183,8 @@
 		appearance: none;
 		cursor: pointer;
 	}
-
 	.submit-button a{
-		display: block;
+		display:block;
 	}
 
 	.box{
@@ -208,7 +207,7 @@
 	}
 
 	table.item-table th,tr,td{
-		padding: 10px 20px;
+		padding: 10px 20px 10px 10px;
 	}
 	input[type="text"]{
 		border-top	 : none;
@@ -216,6 +215,7 @@
 		border-right : none;
 		border-bottom: 1px solid lightgray;
 		padding:5px;
+		width:100%;
 
 	}
 

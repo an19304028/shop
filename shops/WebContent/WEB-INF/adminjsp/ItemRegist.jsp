@@ -9,18 +9,6 @@
 <title>ItemRegist</title>
 </head>
 <body>
-	<a href="admininput">>> 管理者TOP</a><br><br>
-	<a href="getitemlist">商品一覧</a>
-	<h2>商品追加</h2>
-
-	<form method='post' action="getmaxitemid">
-		<input type="submit"  value="最後のIDのを取得">
-		<c:forEach var="item" items="${data}">
-			<font color="blue">${item.itemId}</font>
-		</c:forEach>
-	</form>
-
-	<div id="output_message"></div>
 
 	<script type="text/javascript">
 		  function getColorPath() {
@@ -29,28 +17,142 @@
 		    console.log(colorId);
 		    return colorId;
 		  }
-
-
   	</script>
 
-	<form method='post' action='additem'>
-		アイテムID<input id="itemId" type="text" name="itemId" required><br>
-		商品名<input id="itemName" type='text' name='itemName' required><br>
-		在庫数<input id="stockCount" type='text' name='stockCount' required><br>
-		サイズID<input id="sizeId" type='text' name='sizeId' required><br>
-		カラーID<input id="colorId" type='text' name='colorId' required><br>
-		価格<input id="price" type='text' name='price' required><br>
-		カテゴリーID<input id="categoryId" type='text' name='categoryId' required><br>
-		詳細<input id="detail" type='text' name='detail' required><br>
-		<br>
-		<input type='submit' value='登録'>
-	</form>
-	<h2>画像の追加</h2>
-	<form action="addimage" method="post">
-	画像のパス<input id="imagePath" type='text' name='imagePath' required><br>
-	アイテムID<input id="itemId" type='text' name='itemId' required><br>
-	<input type='submit' value='登録'>
-	</form>
+	<div id="wrapper">
+	<div align="center" class="submit-button" style="width:150px;float:left;"><a href="admininput">管理ページTOP</a></div>
+	<div align="center" class="submit-button" style="width:150px;float:left;margin-left:770px;"><a href="getitemlist">アイテム一覧</a></div>
+	<br style="clear:left;">
+	<h2 align="center" style="margin-top:0;">アイテム登録</h2>
+
+	<div id="output_message"></div>
+
+
+
+		<div class="box" style="border:1px solid #000;width:550px;float:left;margin-bottom:20px;">
+
+			<h3 align="center" style="margin:10px;">商品登録</h3><hr>
+
+			<form method='post' action="getmaxitemid">
+				<input class="submit-button" type="submit"  value="最後のIDのを取得">
+				<c:forEach var="item" items="${data}">
+					<font color="blue">${item.itemId}</font>
+				</c:forEach>
+			</form>
+
+
+			<form method='post' action='additem'>
+			<table class="create-form">
+				<tr><th>アイテムID</th><td><input id="itemId" type="text" name="itemId" required></td></tr>
+				<tr><th>商品名</th><td><input id="itemName" type='text' name='itemName' required></td></tr>
+				<tr><th>在庫数</th><td><input id="stockCount" type='text' name='stockCount' required></td></tr>
+				<tr><th>サイズID</th><td><input id="sizeId" type='text' name='sizeId' required></td></tr>
+				<tr><th>カラーID</th><td><input id="colorId" type='text' name='colorId' required></td></tr>
+				<tr><th>価格</th><td><input id="price" type='text' name='price' required></td></tr>
+				<tr><th>カテゴリーID</th><td><input id="categoryId" type='text' name='categoryId' required></td></tr>
+				<tr><th>詳細</th><td><input id="detail" type='text' name='detail' required></td></tr>
+			</table>
+			<input class="submit-button" type='submit' value='登録'>
+			</form>
+			<br>
+		</div>
+
+		<div class="box" style="border:1px solid #000;width:550px;float:left;margin-bottom:20px;">
+			<h3 align="center" style="margin:10px;">画像の追加</h3><hr>
+			<form action="addimage" method="post">
+			<table class="create-form">
+				<tr><th>画像のパス</th><td><input id="imagePath" type='text' name='imagePath' required></td></tr>
+				<tr><th>アイテムID</th><td><input id="itemId" type='text' name='itemId' required></td></tr>
+			</table>
+			<input class="submit-button" type='submit' value='登録'>
+			</form>
+		</div>
+
+
+	</div>
+
+	<style>
+
+	body{
+		font-family:Yu Gothic;
+	}
+
+	a{
+		text-decoration: none;
+
+		color : #000;
+		text-decoration: none;
+	}
+	a:visited{
+		color : #000;
+	}
+
+
+
+	#wrapper {
+		width: 1200px;
+		margin-left: auto;
+	    margin-right: auto;
+		min-height: 100vh;
+		padding-bottom: 150px;
+	}
+
+	.box{
+		text-align:center;
+		margin:10px 10px 30px 10px;
+		padding:10px;
+		width:450px;
+		border 	: 1px solid dimgray;
+		border-radius:10px;
+	}
+
+
+	.create-form{
+		width : 550px;
+		padding:0 20px;
+		text-align:center;
+	}
+
+	.create-form table {
+		margin:auto;
+	}
+
+	.create-form table th{
+		width:100px;
+	}
+
+	.create-form input{
+		margin: 10px;
+		padding : 5px 10px;
+		width : 350px;
+		height: 30px;
+
+		border-bottom: 1px solid;
+		border-top	 : none;
+		border-left	 : none;
+		border-right : none;
+	}
+
+	.submit-button {
+		margin : 10px;
+		padding : 10px 20px;
+		background: #eee;
+		border: none;
+		border-radius : 20px;
+		outline: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		cursor: pointer;
+	}
+
+	.submit-button a{
+		display: block;
+	}
+
+
+
+	</style>
 
 </body>
 </html>
