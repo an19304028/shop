@@ -47,10 +47,10 @@
 			<li><a href="logininput">LOGIN</a></li>
 			</c:when>
 			<c:otherwise>
-			<li><a href="getuser?userId=${sessionScope.userId}">MYPAGE</a>
+			<li><a href="getuser">MYPAGE</a>
 				<ul>
-					<li><a href="getuser?userId=${sessionScope.userId}">　ユーザー情報</a></li>
-					<li><a href="getfavolist?userId=${sessionScope.userId}">　お気に入り</a></li>
+					<li><a href="getuser">　ユーザー情報</a></li>
+					<li><a href="getfavolist">　お気に入り</a></li>
 					<li><a href="getorderlist">　購入履歴</a></li>
 					<li><a href="logout">　ログアウト</a></li>
 				</ul>

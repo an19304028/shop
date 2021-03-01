@@ -10,12 +10,12 @@ import presentation.ResponseContext;
 public class AddCreditCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc){
 		RequestContext rc = getRequestContext();
-		String userId = rc.getParameter("userId")[0];
+		String userId = (String) rc.getSessionAttribute("userId");
 		String cardNumber = rc.getParameter("cardNumber")[0];
 		String securityCode = rc.getParameter("securityCode")[0];
 		String expirationMonth = rc.getParameter("expirationMonth")[0];
 		String expirationYear = rc.getParameter("expirationYear")[0];
-		String payCount = rc.getParameter("payCount")[0];
+		//String payCount = rc.getParameter("payCount")[0];
 		
 		if(cardNumber!="") {
 			System.out.println("20"+ expirationYear+"-0"+expirationMonth+"-01");
@@ -36,7 +36,7 @@ public class AddCreditCommand extends AbstractCommand{
 			c.setCardNumber(cardNumber);
 			c.setSecurityCode(securityCode);
 			c.setExpirationDate(expirationDate);
-			c.setPayCount(Integer.parseInt(payCount));
+			//c.setPayCount(Integer.parseInt(payCount));
 	
 			AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 			AddCreditDao dao = factory.getAddCreditDao();

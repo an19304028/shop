@@ -66,7 +66,7 @@
 				<p>${sessionScope.userPoint}pt　</p>
 				</div>
 				<div class="cart_img"  >
-				<a href="getcartlist?userId=${sessionScope.userId}"><img src="image/header/cart.png"></a>
+				<a href="getcartlist"><img src="image/header/cart.png"></a>
 				<c:choose>
 				<c:when test="${sessionScope.cartCount==null}">
 				</c:when>
@@ -109,10 +109,10 @@
 		<li class="mega__menu"><a href="logininput">LOGIN</a></li>
 		</c:when>
 		<c:otherwise>
-		<li class="mega__menu"><a href="getuser?userId=${sessionScope.userId}">MYPAGE</a>
+		<li class="mega__menu"><a href="getuser">MYPAGE</a>
 			<ul class="mega__menu-second">
-				<li><a href="getuser?userId=${sessionScope.userId}">ユーザー情報</a></li>
-				<li><a href="getfavolist?userId=${sessionScope.userId}">お気に入り</a></li>
+				<li><a href="getuser">ユーザー情報</a></li>
+				<li><a href="getfavolist">お気に入り</a></li>
 				<li><a href="getorderlist">購入履歴</a></li>
 				<li><a href="logout">ログアウト</a></li>
 

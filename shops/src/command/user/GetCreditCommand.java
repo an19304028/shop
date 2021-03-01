@@ -13,7 +13,7 @@ public class GetCreditCommand extends AbstractCommand{
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetCreditDao dao = factory.getGetCreditDao();
 		RequestContext rc = getRequestContext();
-		String userId = rc.getParameter("userId")[0];
+		String userId = (String)rc.getSessionAttribute("userId");
 
 		//Credit c = new Credit();
 		//c.setUserId(userId);

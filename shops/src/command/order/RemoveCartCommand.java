@@ -12,7 +12,7 @@ public class RemoveCartCommand extends AbstractCommand{
 	@Override
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
-		String userId = rc.getParameter("userId")[0];
+		String userId = (String)rc.getSessionAttribute("userId");
 		String itemId = rc.getParameter("itemId")[0];
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
@@ -28,6 +28,9 @@ public class RemoveCartCommand extends AbstractCommand{
 		String buyCount1 = cart.getBuyCount(userId);
 		rc.setSessionAttribute("buyCount", buyCount1);
 		System.out.println("buyCount"+buyCount1);
+		
+		rc.removeSessionAttribute("cartPoint");
+		rc.removeSessionAttribute("total1");
 
 		rc.setAttribute("mess","カートから"+itemId+"を削除しました");
 

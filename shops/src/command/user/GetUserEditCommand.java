@@ -14,7 +14,7 @@ public class GetUserEditCommand extends AbstractCommand {
 		RequestContext rc = getRequestContext();
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		GetUserDao dao = factory.getGetUserDao(); 
-		String userId = rc.getParameter("userId")[0];
+		String userId = (String)rc.getSessionAttribute("userId");
 		
 		List users = dao.getUser(userId);
 		if(users.size()==0) {
