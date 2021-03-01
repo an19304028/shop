@@ -1,5 +1,6 @@
 package command.order;
 
+import java.text.NumberFormat;
 import java.util.List;
 
 import command.AbstractCommand;
@@ -26,7 +27,7 @@ public class GetCartListCommand extends AbstractCommand{
 			rc.setAttribute("mess","カートの中身がありません");
 			rc.setAttribute("total", 0);
 		}else {
-			rc.setSessionAttribute("total1",total);
+			rc.setSessionAttribute("total1",NumberFormat.getNumberInstance().format(Integer.parseInt(total)));
 			int point = dao.getPoint(userId);
 			System.out.println(point);
 			rc.setSessionAttribute("cartPoint", point);
