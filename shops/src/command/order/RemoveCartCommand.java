@@ -12,7 +12,7 @@ public class RemoveCartCommand extends AbstractCommand{
 	@Override
 	public ResponseContext execute(ResponseContext resc) {
 		RequestContext rc = getRequestContext();
-		String userId = rc.getParameter("userId")[0];
+		String userId = (String)rc.getSessionAttribute("userId");
 		String itemId = rc.getParameter("itemId")[0];
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
