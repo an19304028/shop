@@ -12,11 +12,13 @@ import presentation.ResponseContext;
 
 public class GetItemDetailCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
-		
+		RequestContext rc = getRequestContext();
 		String itemId=null;
 		String itemName=null;
 		
-		RequestContext rc = getRequestContext();
+		System.out.println(rc.getSessionAttribute("itemId"));
+		
+		
 		if(rc.getSessionAttribute("itemId")==null) {
 			itemId = rc.getParameter("itemId")[0];
 			itemName = rc.getParameter("itemName")[0];

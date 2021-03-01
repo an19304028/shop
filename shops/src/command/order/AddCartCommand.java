@@ -27,8 +27,7 @@ public class AddCartCommand extends AbstractCommand{
 		}else {
 			itemId = (String) rc.getSessionAttribute("itemId");
 			buyCount = (String) rc.getSessionAttribute("buyCount");
-			rc.removeSessionAttribute("itemId");
-			rc.removeSessionAttribute("buyCount");
+			
 		}
 		
 		
