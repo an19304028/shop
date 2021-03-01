@@ -206,6 +206,8 @@
 			</c:forEach>
 		<div id="point-form">
 			<br>
+			<h3>購入金額</h3>
+			<p>合計：\ ${requestScope.price} 円</p>
 			<h3>ポイント利用</h3>
 			現在のポイント：<p id="nowpoint">${sessionScope.userPoint}</p>pt<br>
 			<label>ご利用ポイント</label>
