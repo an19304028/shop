@@ -19,7 +19,7 @@
 <%@ include file="Header.jsp" %>
 
 
-		<h1>パスワードの変更が完了しました</h1>
+		<h1 align="center">パスワードの変更が完了しました</h1>
 
 
 
