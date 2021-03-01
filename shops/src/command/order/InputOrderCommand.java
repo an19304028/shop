@@ -16,14 +16,14 @@ public class InputOrderCommand extends AbstractCommand {
 		RequestContext rc = getRequestContext();
 		String userId = (String) rc.getSessionAttribute("userId");
 		String point = rc.getParameter("point")[0];
-		String price = rc.getParameter("price")[0];
+		//String price = rc.getParameter("price")[0];
 		rc.setAttribute("itempoint", point);
 
 		GetUserDao user = factory.getGetUserDao();
 		List users = user.getUser(userId);
 
 		rc.setAttribute("userInfo", users);
-		rc.setAttribute("price", price);
+		//rc.setAttribute("price", price);
 
 		//Credit c = new Credit();
 		//c.setUserId(userId);

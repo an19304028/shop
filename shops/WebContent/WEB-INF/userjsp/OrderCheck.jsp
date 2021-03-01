@@ -63,7 +63,7 @@
 
    <div  style="float:left; margin-left:250px;">
    <p>総点数：${sessionScope.buyCount}点</p>
-   <p>小計：${price}円</p>
+   <p>小計：\ ${price}円</p>
    <c:choose>
     <c:when test="${point==0}">
      <p>ポイント利用：利用なし</p>
@@ -77,8 +77,8 @@
 
 
 	   <p>支払方法：${pay}</p>
-	   <p>獲得予定ポイント：${itempoint}pt</p>
-	   <b>お支払総額：${total}円</b>
+	   <p>獲得予定ポイント：${sessionScope.cartPoint}pt</p>
+	   <b>お支払総額：\ ${sessionScope.totalPrice}円</b>
 	</div>
 	<div  style="float:left; margin-left:100px;">
    <p>発送先</p>

@@ -82,7 +82,7 @@
 				<input style="flote:right;margin-left:20px;" id="cart-clear-button" type="submit" value="カートを空にする">
 			</form>
 
-			<h2 style="flote:right;padding-right:150px;" align="right">${sessionScope.buyCount}点　${mess}　 ${point}pt</h2>
+			<h2 style="flote:right;padding-right:150px;" align="right">${sessionScope.buyCount}点　¥${sessionScope.total1}円　 ${sessionScope.cartPoint}pt</h2>
 
 			<form action="inputorder" method="post">
 				<c:forEach var="item" items="${data}">

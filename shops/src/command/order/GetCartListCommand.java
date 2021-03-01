@@ -4,6 +4,7 @@ import java.util.List;
 
 import command.AbstractCommand;
 import dao.order.GetCartListDao;
+import dao.user.LoginDao;
 import daofactory.AbstractDaoFactory;
 import presentation.RequestContext;
 import presentation.ResponseContext;
@@ -25,11 +26,14 @@ public class GetCartListCommand extends AbstractCommand{
 			rc.setAttribute("mess","カートの中身がありません");
 			rc.setAttribute("total", 0);
 		}else {
-			rc.setAttribute("mess",total+"円");
+			rc.setSessionAttribute("total1",total);
 			int point = dao.getPoint(userId);
 			System.out.println(point);
-			rc.setAttribute("point", point);
+			rc.setSessionAttribute("cartPoint", point);
 			rc.setAttribute("total", 1);
+			LoginDao login = factory.getLoginDao();
+			String buyCount1 = login.getBuyCount(userId);
+			rc.setSessionAttribute("buyCount", buyCount1);
 		}
 		resc.setResult(cart);
 		resc.setTarget("/WEB-INF/userjsp/Cart.jsp");

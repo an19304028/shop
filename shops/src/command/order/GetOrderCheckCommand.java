@@ -37,7 +37,12 @@ public class GetOrderCheckCommand extends AbstractCommand {
 		System.out.println(point);
 		rc.setAttribute("point", usepoint);
 		rc.setAttribute("itempoint", itempoint);
+		
+		int cartPoint = (int) rc.getSessionAttribute("cartPoint");
+		int totalPrice = price - cartPoint;
 		rc.setAttribute("price", price);
+		rc.setSessionAttribute("totalPrice", totalPrice);
+		
 		int total = price-Integer.parseInt(usepoint);
 		rc.setAttribute("total",total);
 		List cart = dao.getCartList(userId);

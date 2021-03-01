@@ -28,6 +28,9 @@ public class RemoveCartCommand extends AbstractCommand{
 		String buyCount1 = cart.getBuyCount(userId);
 		rc.setSessionAttribute("buyCount", buyCount1);
 		System.out.println("buyCount"+buyCount1);
+		
+		rc.removeSessionAttribute("cartPoint");
+		rc.removeSessionAttribute("total1");
 
 		rc.setAttribute("mess","カートから"+itemId+"を削除しました");
 
