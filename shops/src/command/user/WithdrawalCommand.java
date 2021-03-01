@@ -9,7 +9,7 @@ import presentation.ResponseContext;
 public class WithdrawalCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc){
 		RequestContext rc = getRequestContext();
-		String userId = rc.getParameter("userId")[0];
+		String userId = (String)rc.getSessionAttribute("userId");
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();
 		RemoveUserDao dao = factory.getRemoveUserDao();
