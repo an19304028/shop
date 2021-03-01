@@ -12,11 +12,13 @@ import presentation.ResponseContext;
 
 public class GetItemDetailCommand extends AbstractCommand{
 	public ResponseContext execute(ResponseContext resc) {
-		
+		RequestContext rc = getRequestContext();
 		String itemId=null;
 		String itemName=null;
 		
-		RequestContext rc = getRequestContext();
+		System.out.println(rc.getSessionAttribute("itemId"));
+		
+		
 		if(rc.getSessionAttribute("itemId")==null) {
 			itemId = rc.getParameter("itemId")[0];
 			itemName = rc.getParameter("itemName")[0];
@@ -26,6 +28,16 @@ public class GetItemDetailCommand extends AbstractCommand{
 			itemName = (String) rc.getSessionAttribute("itemName");
 			rc.removeSessionAttribute("itemId");
 			rc.removeSessionAttribute("itemName");
+		}
+		
+		if(itemId.substring(4,4).equals("1")==false){
+			String itemId1 = itemId.substring(0,4);
+			
+			itemId = itemId1 + "1";
+			
+			System.out.println("アイテムID"+itemId1+" "+itemId);
+			
+	
 		}
 
 		AbstractDaoFactory factory = AbstractDaoFactory.getFactory();

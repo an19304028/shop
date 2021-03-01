@@ -26,7 +26,7 @@
 <div id="wrapper">
 <%@ include file="Header.jsp" %>
 
-	<p><font color="red">${mess1}</font></p>
+	
 
 
 	<br>
@@ -110,8 +110,9 @@
 		<form name="addcart" action=""  method="post">
 			<input type="hidden" name="userId" value="${sessionScope.userId}">
 			<input type="hidden" name="itemName" value="${itemName}">
-			数量：<input type="text" name="buyCount" value="1" id="buyCount" class="buyCount" required><br>
+			数量：<input type="text" maxlength="3" name="buyCount" value="1" id="buyCount" class="buyCount" required><br>
 			<br>
+			<p><font color="red">${mess1}</font></p>
 			<table class="item-table" id="table4" border="1">
 				<tr>
 					<th>サイズ/カラー</th><th>選択</th>
@@ -193,7 +194,8 @@
 	<br><br><br><br><br><br>
 	<br><br><br><br><br><br>
 	<br><br><br><br><br><br>
-	<br><br>
+	<br><br><br><br><br><br>
+	<br><br><br><br><br><br>
 
 </div>
 	<!-- フッター -->
