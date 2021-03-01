@@ -56,7 +56,7 @@
 
     <input type="hidden" name="userId" value="${sessionScope.userId}">
     <input type="hidden" name="usepoint" value="${point}">
-    <input type="hidden" name="itempoint" value="${itempoint}">
+    <input type="hidden" name="itempoint" value="${sessionScope.cartPoint}">
     <input style="margin-left:830px;" id="buy-button" type="button" onclick="history.back()" value="戻る">
     <input style="float: right;margin-right:200px;" id="buy-button" type="submit" value="確定">
    </form>
