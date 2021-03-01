@@ -792,6 +792,7 @@
 	}
 
 	/* ---------- カートの中の数 ---------- */
+
 	li.navCart{
 	position: relative;
 	}
