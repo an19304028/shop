@@ -19,7 +19,7 @@
 <%@ include file="Header.jsp" %>
 
 
-		<h1>送信が完了しました</h1>
+		<h1 align="center">送信が完了しました</h1>
 
 
 
