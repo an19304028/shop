@@ -66,11 +66,11 @@
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>電話番号</label></th>
-	      <td><input type="text" name="tell" id="tel" maxlength="20"  pattern="^0\d{9,10}$"  minlength="8"  value="${user.tell}" required /></td>
+	      <td><input type="text" name="tell" id="tel" placeholder="ハイフンなしで入力してください" maxlength="20"  pattern="^0\d{9,10}$"  minlength="8"  value="${user.tell}" required /></td>
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>郵便番号</label></th>
-	      <td><input type="text" name="postalCode" id="postalCode"  pattern="^\d{7}$"  minlength="7"  maxlength="7" value="${user.postalCode}" required /></td>
+	      <td><input type="text" name="postalCode" id="postalCode"  placeholder="ハイフンなしで入力してください"   pattern="^\d{7}$"  minlength="7"  maxlength="7" value="${user.postalCode}" required /></td>
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>住所</label></th>
