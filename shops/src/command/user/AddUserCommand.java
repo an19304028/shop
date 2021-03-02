@@ -51,7 +51,7 @@ public class AddUserCommand extends AbstractCommand{
 		}else {
 
 			dao.addUser(u);
-			rc.setAttribute("mess",name+"を登録しました");
+			rc.setAttribute("mess","ユーザーを登録しました");
 	
 	
 			resc.setTarget("logininput");

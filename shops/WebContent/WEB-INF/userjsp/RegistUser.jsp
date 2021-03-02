@@ -31,7 +31,7 @@
 	    </tr>
 	    <tr>
 	      <th scope="row"><label>ふりがな</label></th>
-	      <td><input type="text" name="kana" id="kana" value="${user.kana}" maxlength="60" required /></td>
+	      <td><input type="text" name="kana" id="kana" value="${user.kana}" maxlength="60"  /></td>
 	    </tr>
 	    <tr>
 	      <th scope="row"><label>メール</label></th>
@@ -62,7 +62,7 @@
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>誕生日</label></th>
-	      <td><input type="date" name="birthday" min="1900-01-01"  id="birthday" value="${user.birthday}" required /></td>
+	      <td><input type="date" name="birthday" min="1900-01-01" max="2020-12-31"  id="birthday" value="${user.birthday}" required /></td>
 	     </tr>
 	     <tr>
 	      <th scope="row"><label>電話番号</label></th>
