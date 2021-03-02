@@ -40,7 +40,7 @@
 			<table class="contact-table" border="1">
 				<tr><th>お名前</th><td><input type="hidden" name="entry.2081137255" value= <%=userId %> readonly /><input type="text" name="entry.983308274" /></td></tr>
 				<tr><th>通知メールアドレス</th><td><input type="text" name="entry.102717670" /></td></tr>
-				<tr><th>商品名</th><td><input type="hidden" name="entry.1770593522" value="${item.itemId}" readonly /><input type="text" name="entry.298775810" value= "${item.itemName}" readonly /></td></tr>
+				<tr><th>商品名</th><td><input type="hidden" style="color:lightgray;" name="entry.1770593522" value="${item.itemId}" readonly /><input type="text" style="color:#808080;" name="entry.298775810" value= "${item.itemName}" readonly /></td></tr>
 			</table>
 			<div align="center"><input class="submit-button" type="submit"></div>
 		</form>
